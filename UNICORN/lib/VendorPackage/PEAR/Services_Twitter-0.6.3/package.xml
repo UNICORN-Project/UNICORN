@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Services_Twitter</name>
+ <channel>pear.php.net</channel>
+ <summary>PHP interface to Twitter&apos;s API</summary>
+ <description>An interface for communicating with Twitter&apos;s public API. Send status updates, fetch information, add friends, etc.</description>
+ <lead>
+  <name>Bill Shupp</name>
+  <user>shupp</user>
+  <email>shupp@php.net</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>David Jean Louis</name>
+  <user>izi</user>
+  <email>izi@php.net</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Joe Stump</name>
+  <user>jstump</user>
+  <email>joe@joestump.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-09-12</date>
+ <time>10:59:07</time>
+ <version>
+  <release>0.6.3</release>
+  <api>0.6.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>
+* Applied patch from steve_twitpic: support for users/lookup, geo/search, and geo/id (fixes #17694)
+* Updated the search endpoint
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="256a282bbf7d2e0088d7311a6dca2aa3" name="data/api.rng" role="data" />
+   <file baseinstalldir="/" md5sum="6613498cc5f6995aa93d6ef501194387" name="data/api.xml" role="data" />
+   <file baseinstalldir="/" md5sum="39b16d52295cbdcb3fa8abb58f33a468" name="Services/Twitter/Exception.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="/" md5sum="7c03875307004fcd7fd5832e5132c674" name="Services/Twitter.php" role="php">
+    <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="/" md5sum="02cbf3a6a29a032413b84930bf2dc8a0" name="tests/data/account/end_session.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9c6a5109f613d05206e51121099b8348" name="tests/data/account/rate_limit_status.dat" role="test" />
+   <file baseinstalldir="/" md5sum="cfeb14f3a9ef0b4ae54f140398500ecd" name="tests/data/account/update_delivery_device.dat" role="test" />
+   <file baseinstalldir="/" md5sum="0405da6f233bae39cb3a113924301915" name="tests/data/account/update_location.dat" role="test" />
+   <file baseinstalldir="/" md5sum="0de46be28de6ebef436fc3b0134e572b" name="tests/data/account/update_profile.dat" role="test" />
+   <file baseinstalldir="/" md5sum="1c8ce27681e4a0a7466a9c9b1b6002c7" name="tests/data/account/update_profile_background_image.dat" role="test" />
+   <file baseinstalldir="/" md5sum="3764022a60ae5c80a5f0845b38b93d08" name="tests/data/account/update_profile_colors.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9dc7e896a4c59d0061625c28404d21e6" name="tests/data/account/update_profile_image.dat" role="test" />
+   <file baseinstalldir="/" md5sum="f9b5735da58eb6581a6826989429bf44" name="tests/data/account/verify_credentials.dat" role="test" />
+   <file baseinstalldir="/" md5sum="e4a58ad24fd4c23e9d04bed9627563c2" name="tests/data/blocks/create_destroy.dat" role="test" />
+   <file baseinstalldir="/" md5sum="dd89852c399b80d00dacce37f3b4fda6" name="tests/data/direct_messages/destroy_new.dat" role="test" />
+   <file baseinstalldir="/" md5sum="3768bc01fe068362a5b338dbd7b83c22" name="tests/data/direct_messages/direct_messages.dat" role="test" />
+   <file baseinstalldir="/" md5sum="90fc25bc8125bddf00c36bbe2baab970" name="tests/data/direct_messages/sent.dat" role="test" />
+   <file baseinstalldir="/" md5sum="f7faa1f1c2146df940d2184613783844" name="tests/data/favorites/create.dat" role="test" />
+   <file baseinstalldir="/" md5sum="c35b2ee48fcc84b3ba4b8212254843db" name="tests/data/favorites/destroy.dat" role="test" />
+   <file baseinstalldir="/" md5sum="58e0494c51d30eb3494f7c9198986bb9" name="tests/data/favorites/favorites.dat" role="test" />
+   <file baseinstalldir="/" md5sum="a776325bda216117becf60d44afaebea" name="tests/data/friendships/create_destroy.dat" role="test" />
+   <file baseinstalldir="/" md5sum="ce4159c6c841f84a9311abe45cfc3078" name="tests/data/friendships/exists1.dat" role="test" />
+   <file baseinstalldir="/" md5sum="be2afd55b4c8b48eb903ec5df2345aa4" name="tests/data/friendships/exists2.dat" role="test" />
+   <file baseinstalldir="/" md5sum="68a1415b415fadad5cde4dd18f17feca" name="tests/data/friendships/exists3.dat" role="test" />
+   <file baseinstalldir="/" md5sum="942f3e9c6e967b888507ea6e7635f715" name="tests/data/friendships/exists4.dat" role="test" />
+   <file baseinstalldir="/" md5sum="71ae52fb0e7a7a6c66da13c54c4140bd" name="tests/data/help/downtime_schedule.dat" role="test" />
+   <file baseinstalldir="/" md5sum="3a1340f8eb8e7323cbb4f7b83e4b3a5e" name="tests/data/help/test.dat" role="test" />
+   <file baseinstalldir="/" md5sum="6a3221807e28dbc85f8ea2dc8c2f11da" name="tests/data/lists/create.dat" role="test" />
+   <file baseinstalldir="/" md5sum="dd386feb44255f24114c0da921e6854a" name="tests/data/lists/delete.dat" role="test" />
+   <file baseinstalldir="/" md5sum="eba308c81c1e106252afc47116d119dc" name="tests/data/lists/list.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9504e648fb1ee5dfd431d34eb8e98589" name="tests/data/lists/memberships.dat" role="test" />
+   <file baseinstalldir="/" md5sum="d40c0d981e4ff334533e973e2511671f" name="tests/data/lists/show.dat" role="test" />
+   <file baseinstalldir="/" md5sum="d2f518cc1d8c78c9a872e275a07c8158" name="tests/data/lists/statuses.dat" role="test" />
+   <file baseinstalldir="/" md5sum="aab4fa3d9f5ae979ad19a12fa7fcccb0" name="tests/data/lists/subscriptions.dat" role="test" />
+   <file baseinstalldir="/" md5sum="50cefed830862ee266304e059f6da6e3" name="tests/data/lists/update.dat" role="test" />
+   <file baseinstalldir="/" md5sum="cea82f2095f145389b49c5cf1a15c557" name="tests/data/list_members/create.dat" role="test" />
+   <file baseinstalldir="/" md5sum="4ded107e499f33ed00cd298d9907ef4d" name="tests/data/list_members/delete.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9e101680b5c2c9b27c62c000f01c3c60" name="tests/data/list_members/list.dat" role="test" />
+   <file baseinstalldir="/" md5sum="8aef21c3613e2fda0ced8432a43a2305" name="tests/data/list_members/show.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9822e5578ace574da93b749c3a676412" name="tests/data/list_subscribers/create.dat" role="test" />
+   <file baseinstalldir="/" md5sum="e4eeae0693c831a9c2d0191b7cabfab3" name="tests/data/list_subscribers/delete.dat" role="test" />
+   <file baseinstalldir="/" md5sum="ead6c3497861fbe1745d29b9298b6005" name="tests/data/list_subscribers/list.dat" role="test" />
+   <file baseinstalldir="/" md5sum="33e84083043b89de5ad5d58a15edaad7" name="tests/data/list_subscribers/show.dat" role="test" />
+   <file baseinstalldir="/" md5sum="e4a58ad24fd4c23e9d04bed9627563c2" name="tests/data/notifications/follow_leave.dat" role="test" />
+   <file baseinstalldir="/" md5sum="eebcd463b0c2502578ccaf87ba7fd034" name="tests/data/search/search.dat" role="test" />
+   <file baseinstalldir="/" md5sum="35848702e3e9ceaa8aa6727671a688a7" name="tests/data/statuses/destroy.dat" role="test" />
+   <file baseinstalldir="/" md5sum="00e312b372605ecdc91a5eb8ecbfbf14" name="tests/data/statuses/followers.dat" role="test" />
+   <file baseinstalldir="/" md5sum="67b6c166323914bd759bd00823edce5b" name="tests/data/statuses/friends.dat" role="test" />
+   <file baseinstalldir="/" md5sum="fd3da842601fb5411a2f69111230500b" name="tests/data/statuses/friends_timeline.dat" role="test" />
+   <file baseinstalldir="/" md5sum="1b7e36c794104609b7fdce136a29cd2e" name="tests/data/statuses/public_timeline.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9b56d3ee1570cf16a9d89c981110127a" name="tests/data/statuses/replies.dat" role="test" />
+   <file baseinstalldir="/" md5sum="0046dc6cc041eb9b5e80b58bf4a1200e" name="tests/data/statuses/show.dat" role="test" />
+   <file baseinstalldir="/" md5sum="2d8b5252d9ed884fb8951d7ae28b4f3c" name="tests/data/statuses/update.dat" role="test" />
+   <file baseinstalldir="/" md5sum="e05ea9496d8ce3d2ea24f8adfc4c3a30" name="tests/data/statuses/user_timeline.dat" role="test" />
+   <file baseinstalldir="/" md5sum="c555f3e13fdd878471c25abbbfffb534" name="tests/data/trends/available.dat" role="test" />
+   <file baseinstalldir="/" md5sum="9a735d3cb65052ae1b8a5b41cc0eb6e7" name="tests/data/trends/daily.dat" role="test" />
+   <file baseinstalldir="/" md5sum="99ed001febc439f29acbc2f30667a1c3" name="tests/data/trends/location.dat" role="test" />
+   <file baseinstalldir="/" md5sum="384fa953c1f8709d734a53e5cc55b5c0" name="tests/data/trends/weekly.dat" role="test" />
+   <file baseinstalldir="/" md5sum="8bf368c27dbf0cba15625c0fb11539d6" name="tests/data/users/show.dat" role="test" />
+   <file baseinstalldir="/" md5sum="247e05cce272a5528522d84a990fa035" name="tests/data/background.jpg" role="test" />
+   <file baseinstalldir="/" md5sum="a8156b483f8c180849f2c01a3fe92618" name="tests/data/options.dat" role="test" />
+   <file baseinstalldir="/" md5sum="fa5c8de54f615176ce77221188aef76b" name="tests/data/profile.png" role="test" />
+   <file baseinstalldir="/" md5sum="c3edffd74a2978f03b9e20af6ca4cb1b" name="tests/data/utf8.dat" role="test" />
+   <file baseinstalldir="/" md5sum="f6e32024c3f499eafb0ed69b9bf9dca5" name="tests/000-statuses-public_timeline.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="1a72d0711d054244ee2c67f512c9f790" name="tests/010-statuses-friends_timeline.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="e1c1fef8adb2dd797cda979b4a592715" name="tests/020-statuses-user_timeline.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="8f7a5152773b79d2e7130868978c5136" name="tests/030-statuses-show.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="f6377ff2cd1f857e1a2050ca7d70be0a" name="tests/040-statuses-update-destroy.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="1e1cb7c697dc33d2ad38c04b3cdb8b77" name="tests/060-statuses-friends.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="06219d8a1a5840248b9b504c55c7f24e" name="tests/070-statuses-followers.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="0d20ee73f62eaeed16978c6c17f23bc1" name="tests/100-users-show.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="4427bf732d828e569a81d48871d679bf" name="tests/150-lists-list.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="914b153b28a4dc4314647feb69f09bc2" name="tests/151-lists-update.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="d9003bac3195e09badc931b5e492ad03" name="tests/152-lists-show.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="03c846f9f85e6c7651a174ceb8090918" name="tests/153-lists-create-delete.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="99fb5d9ffadf406a03e113169e92c7b2" name="tests/160-lists-statuses.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="f585fe94a2f84ee5a97b22529e2bc255" name="tests/161-lists-memberships.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="6755f910472da401f6b9b015dae68a50" name="tests/162-lists-subscriptions.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="3191cf6b63214faa189bc2ba0b37355d" name="tests/180-list_members-create-delete.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="e04dcb67e96410366ef476b5d72b25f0" name="tests/181-list_members-list.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="e7aad38bfcb96ae077ff636d05be5d27" name="tests/182-list_members-show.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="f40beadcf444294ea5eb71d4932529b5" name="tests/190-list_subscribers-create-delete.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="9a84d885968276d24250b6d0fbe67b55" name="tests/191-list_subscribers-list.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="a084cde5dcf07068854d0030a60f60a9" name="tests/192-list_subscribers-show.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="8c482bbc47af691b930f910d29711e2f" name="tests/200-direct_messages.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="343e6c372b0d4aeeefb2b25a7e1e9909" name="tests/210-direct_messages-sent.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="78f2bddda51bb7952f96f4da95705592" name="tests/220-direct_messages-new-destroy.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="162a9f7df7de76726e658b66a6ec7d83" name="tests/300-friendships-create-destroy.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="b9a81655459e0dd7de8e390d19f86710" name="tests/310-friendships-exists.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="6a7918f7f014c671e6314b29346d6f75" name="tests/400-account-verify_credentials.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="259ff66f23a10430ab0d6efd2e15e17e" name="tests/410-account-end_session.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="95eaea9c5acb5835cf4e7148fb1376b8" name="tests/430-account-update_delivery_device.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="215c2942681ed9ad5807255ab980f086" name="tests/440-account-rate_limit_status.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="0a576f5891d8f2095dd936bf024e0cf4" name="tests/450-account-update_profile_colors.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="1d3ff13cf527041ca9cdddce8141b1ba" name="tests/460-account-update_profile_image.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="ea91fac43be9e2e2f5f0d6e1250b03bd" name="tests/470-account-update_profile_background_image.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="459ababb12d6fc4a762be7f9a4aa32e8" name="tests/480-account-update_profile.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="f3fb3a7432e62d159460789ef849e3e4" name="tests/500-favorites.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="5a4960670bad70e52639aa65a5d3c47a" name="tests/510-favorites-create-destroy.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="805a439093ec63b3eea55e6e3c3be686" name="tests/600-notifications-follow-leave.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="5fff443cfc70d63a0c7b7bec34e0ee76" name="tests/700-blocks-create-destroy.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="8728387e72a6cecfcad7e530533310ff" name="tests/800-help-test.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="0d39a2a48005c31d902d072e8351ae89" name="tests/810-search.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="4e6c97d44efd7c71836b62c743ce4c99" name="tests/820-trends-daily.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="9242f8fc2eb5c3314900cd5593ac5d57" name="tests/830-trends-weekly.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="2f48956e3647518fa31b43b2231d4dbb" name="tests/840-trends-available.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="f516d8160ae18d64e12c97d9855958c5" name="tests/850-trends-location.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="421862d357eca036878f81a4d86e8574" name="tests/900-exceptions.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="87ca292b4afe04ecb8a269a90a5c7715" name="tests/910-options.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="f13d5c489cd0d0bc42f2fa7e1538e6d9" name="tests/920-utf8.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="dee7de403657e181e46b8ca4fb6599e1" name="tests/930-validation.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="41cd3043f74b90ec4278dfd351db6da3" name="tests/940-oauth.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="7a2a6ad30c6bb84c00172964a89c45c8" name="tests/950-ssl.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="94b1a656bb3c87a01e7e9d5aee274ce4" name="tests/AllTests.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="/" md5sum="90df5a41e240eccef996976cab87d045" name="tests/setup.php" role="test" />
+   <file baseinstalldir="/" md5sum="36e0bd1c73507e13b254309f787b600c" name="tests/tests-config.php.example" role="test" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>PEAR</name>
+    <channel>pear.php.net</channel>
+    <min>1.4.0</min>
+   </package>
+   <package>
+    <name>HTTP_Request2</name>
+    <channel>pear.php.net</channel>
+   </package>
+   <extension>
+    <name>json</name>
+   </extension>
+   <extension>
+    <name>mbstring</name>
+   </extension>
+   <extension>
+    <name>simplexml</name>
+   </extension>
+  </required>
+  <optional>
+   <package>
+    <name>HTTP_OAuth</name>
+    <channel>pear.php.net</channel>
+    <min>0.1.7</min>
+   </package>
+  </optional>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <date>2008-04-12</date>
+   <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Initial release
+   </notes>
+  </release>
+  <release>
+   <date>2008-04-15</date>
+   <version>
+    <release>0.0.2</release>
+    <api>0.0.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Added Services_Twitter_Account::expire_session() + tests
+* Added Services_Twitter_Account::archive() + tests
+* Added Services_Twitter::favorites() + tests
+* Added Services_Twitter_Favorites::create() + tests
+* Added Services_Twitter_Favorites::destroy() + tests
+* Added Services_Twitter_Notifications::leave() + tests
+* Added Services_Twitter_Notifications::follow() + tests
+   </notes>
+  </release>
+  <release>
+   <date>2008-07-07</date>
+   <version>
+    <release>0.0.3</release>
+    <api>0.0.3</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Added Services_Twitter_Common::setOption() to allow setting a timeout and modifying the HTTP User-Agent.
+   </notes>
+  </release>
+  <release>
+   <date>2008-11-01</date>
+   <version>
+    <release>0.2.0</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Fixed a bug in the Services_Twitter_Account::end_session() method (jstump)
+* Fixed a singleton problem that only allowed a single instance to ever run (#14840, izi)
+* Added ability to specify an in_reply_to_status_id when sending an update (#14714, jstump)
+* Added ability to specify a source using setOption(&apos;source&apos;, $source) that is sent with all requests (#14715, jstump)
+* Added ability to retrieve someone else&apos;s followers (#14936, davidc)
+* Added Services_Twitter_Account::update_location() method (jstump)
+* Added Services_Twitter_Account::update_delivery_device() method (jstump)
+* Added Services_Twitter_Search::trends() method (jstump)
+* Added Services_Twitter_Search::query() method (jstump)
+   </notes>
+  </release>
+  <release>
+   <date>2009-08-26</date>
+   <version>
+    <release>0.3.0</release>
+    <api>0.3.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+This is a major update of Services_Twitter with some backward incompatible changes. 
+Please read this carefully before upgrading.
+
+General changes and bug fixes:
+------------------------------
+* moved code to svn.php.net (fixes bug #16534) [izi]
+* removed endpoints code (hard to maintain) in favor of a xml definition file and generic methods (fixes #15472) [izi]
+* better validation of parameters [izi]
+* switch to JSON format as default (XML is still available) [izi]
+* switch to HTTP_Request2 (fixes bug #15072) [izi]
+* make the test suite runnable locally with mock HTTP responses (fixes bug #15084 #15085), coverage is now 100% [izi]
+* updated dependencies in package.xml (fixes bug #16522) [izi]
+* automagically convert all strings to unicode before sending them to twitter [izi]
+
+Search API changes:
+-------------------
++ added trends/current method [izi]
++ added trends/daily method [izi]
++ added trends/weekly method [izi]
+
+REST API changes:
+-----------------
+* statuses/friends_timeline: removed &quot;since&quot; parameter (no longer supported) and added &quot;max_id&quot; parameter [izi]
+* statuses/user_timeline: removed &quot;since&quot; parameter (no longer supported) and added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
++ added statuses/mentions method (fixes bug #16475) [izi]
+- removed statuses/replies (no longer supported) [izi]
+* statuses/friends: removed &quot;since&quot; parameter (no longer supported) and added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
+* statuses/followers: added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
+* direct_messages: removed &quot;since&quot; parameter (no longer supported) and added &quot;max_id&quot; and &quot;count&quot; parameters [izi]
+* direct_messages/sent: removed &quot;since&quot; parameter (no longer supported) and added &quot;max_id&quot; and &quot;count&quot; parameters [izi]
+* direct_messages/new: added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
+* friendships/create: added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
+* friendships/destroy: added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
+* users/show: removed &quot;email&quot; parameter, no longer supported by the API [izi]
++ added friendships/show method [izi]
++ added &quot;Social Graph methods&quot;: friends/ids and followers/ids [izi]
+* notifications/follow: added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
+* notifications/leave: added &quot;user_id&quot; and &quot;screen_name&quot; parameters [izi]
++ added account/update_profile_colors [izi]
++ added account/update_delivery_device [izi]
++ added account/update_profile_image [izi]
++ added account/update_profile_background_image [izi]
++ added account/update_profile [izi]
++ added blocks/exists [izi]
++ added blocks/blocking [izi]
++ added saved_searches [izi]
++ added saved_searches/show [izi]
++ added saved_searches/create [izi]
++ added saved_searches/destroy [izi]
+- removed help/downtime_schedule (no longer supported) [izi]
+
+*** IMPORTANT: BACKWARD INCOMPATIBLE CHANGES ***
+
+- $twitter-&gt;search-&gt;query() has been replaced by $twitter-&gt;search() (you can also write $twitter-&gt;search-&gt;search())
+- the twitter API has changed, so some methods have been updated, removed or added (see above), you&apos;ll have probably to update your code
+- there are maybe some others incompatible changes, but it will be trivial to update your code
+   </notes>
+  </release>
+  <release>
+   <date>2009-09-14</date>
+   <version>
+    <release>0.4.0</release>
+    <api>0.4.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+New Features:
+-------------
+* OAuth support [shupp]
+* SSL support [izi]
+
+Fixes/improvements:
+-------------------
+* Fixed a bug in UTF8 detection [izi]
+* Fixed some unit tests [izi]
+* make use of setOption/getOption internally instead of manipulating the options array directly [izi]
+   </notes>
+  </release>
+  <release>
+   <date>2010-01-06</date>
+   <version>
+    <release>0.5.0</release>
+    <api>0.5.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+REST API changes:
+-----------------
++ added statuses/home_timeline method,
++ added statuses/retweeted_by_me method,
++ added statuses/retweeted_to_me method,
++ added statuses/retweets_of_me method,
++ added statuses/retweet method,
++ added statuses/retweets method,
++ added report_spam method,
+* changed old API url (http://twitter.com) to http://api.twitter.com/1,
+* replaced page by cursor attribute in statuses/friends, statuses/followers, friends/ids and followers/ids,
+* set auth required to false in account/rate_limit_status,
+- removed email parameter in account/update_profile method,
+
+Search API changes:
+-------------------
++ added locale parameter to search method.
+
+Other changes:
+--------------
+* fixed screenname regex,
+* fixed and improved some tests.
+   </notes>
+  </release>
+  <release>
+   <date>2010-02-28</date>
+   <version>
+    <release>0.5.1</release>
+    <api>0.5.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Fixed bug #17075.  Wrong test in package
+* Added mb_string requirement after reported issues
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.0</release>
+    <api>0.6.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-06-01</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Updated statuses/update method : added lat, long, place_id and display_coordinates parameters (closes feature request #17421)
+* Added lists and trends support from http://blog.cheki.net/archives/1618
+* Added generatePackage.php for easy package.xml management
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.1</release>
+    <api>0.6.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-06-05</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Fixed #17345.  Use internal errors for libxml to surpress warnings
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.2</release>
+    <api>0.6.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-08-08</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Search and routing fixes from nocontents@gmail.com
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.6.3</release>
+    <api>0.6.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-09-12</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Applied patch from steve_twitpic: support for users/lookup, geo/search, and geo/id (fixes #17694)
+* Updated the search endpoint
+   </notes>
+  </release>
+ </changelog>
+</package>

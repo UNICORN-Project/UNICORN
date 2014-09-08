@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Project</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="errorMsgTimeout">通信がタイムアウトしました。\n\n電波状況の良い所で再度実行してみて下さい。</string>
+    <string name="errorMsgServerError">ご迷惑をお掛けします。\n\nサーバーが致命的なエラーを発生させました。\n最初からやり直すか、それでも改善しない場合はシステム管理会社に問い合わせをして下さい。</string>
+    <string name="errorMsg400">エラーコード400\n\nデータの入力にあやまりがあるか\nサーバー側の問題により、処理を正常に受付出来ませんでした。\n最初からやり直すか、それでも改善しない場合はシステム管理会社に問い合わせをして下さい。</string>
+    <string name="errorMsg401">エラーコード401\n\n何らかの理由により、認証に失敗しました。\n最初からやり直すか、それでも改善しない場合はシステム管理会社に問い合わせをして下さい。</string>
+    <string name="errorMsg404">エラーコード404\n\n要求したデータが既に存在しませんでした。\n最初からやり直すか、それでも改善しない場合はシステム管理会社に問い合わせをして下さい。</string>
+    <string name="errorMsg503">エラーコード503\n\nご迷惑をお掛けします。\nサーバーが現在メンテナンス中です。\nしばらく経ってから再度実行して下さい。</string>
+</resources>

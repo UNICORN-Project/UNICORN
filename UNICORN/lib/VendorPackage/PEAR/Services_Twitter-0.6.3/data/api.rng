@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ This is the RNG file for validating Services_Twitter xml api mapping.
+
+@category  Services
+@package   Services_Twitter
+@author    Joe Stump <joe@joestump.net> 
+@author    David Jean Louis <izimobil@gmail.com> 
+@copyright 1997-2008 Joe Stump <joe@joestump.net> 
+@license   http://www.opensource.org/licenses/bsd-license.php New BSD License
+@version   SVN: $Id: api.rng 33 2009-01-04 22:10:05Z izimobil $
+-->
+
+<element name="api" 
+         xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+    <oneOrMore>
+        <element name="category">
+            <attribute name="name">
+                <data type="string"/>
+            </attribute>
+            <oneOrMore>
+                <element name="endpoint">
+                    <attribute name="name">
+                        <data type="string"/>
+                    </attribute>
+                    <attribute name="method">
+                        <choice>
+                            <value>GET</value>
+                            <value>POST</value>
+                            <value>DELETE</value>
+                        </choice>
+                    </attribute>
+                    <attribute name="auth_required">
+                        <data type="boolean"/>
+                    </attribute>
+                    <optional>
+                        <attribute name="min_args">
+                            <data type="integer"/>
+                        </attribute>
+                    </optional>
+                    <optional>
+                        <attribute name="routing">
+                            <data type="string"/>
+                        </attribute>
+                    </optional>
+                    <interleave>
+                        <optional>
+                            <!-- formats are not used at the moment -->
+                            <element name="formats">
+                                <text/>
+                            </element>
+                        </optional>
+                        <zeroOrMore>
+                            <element name="param">
+                                <attribute name="name">
+                                    <data type="string"/>
+                                </attribute>
+                                <attribute name="type">
+                                    <choice>
+                                        <value>string</value>
+                                        <value>integer</value>
+                                        <value>boolean</value>
+                                        <value>date</value>
+                                        <value>email</value>
+                                        <value>id_or_screenname</value>
+                                        <value>device</value>
+                                        <value>iso-639-1</value>
+                                        <value>geocode</value>
+                                        <value>lat</value>
+                                        <value>long</value>
+                                        <value>image</value>
+                                        <value>color</value>
+                                        <value>listid_or_slug</value>
+                                        <value>mode</value>
+                                    </choice>
+                                </attribute>
+                                <attribute name="required">
+                                    <data type="boolean"/>
+                                </attribute>
+                                <optional>
+                                    <attribute name="max_length">
+                                        <data type="integer"/>
+                                    </attribute>
+                                </optional>
+                            </element>
+                        </zeroOrMore>
+                    </interleave>
+                </element>
+            </oneOrMore>
+        </element>
+    </oneOrMore>
+</element>

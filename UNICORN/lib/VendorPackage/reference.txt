@@ -1,0 +1,13 @@
+PEARやfuel、ADODB等、外部ベンダーが作成したモジュールの置き場所として利用して下さい。
+HBOPでは
+・adodb5をデータベースモジュールのコアとして
+・PEARのHTTPRequest2をHTTPRequestクライアントモジュールのコアとして
+・simple_html_domをTemplateエンジンモジュールのコアとして
+・getttextをgettextコンパイルモジュールの代用モジュールとして
+それぞれ利用しています。
+また、それは差し替える事も可能です。
+差し替え方法は、HBOPの管理toolにアクセスするか、以下のドキュメントで確認して下さい。
+module-reference.txt
+
+
+以上

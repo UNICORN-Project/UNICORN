@@ -1,0 +1,80 @@
+<var selector="title#title" value="array(HtmlViewAssignor::PART_REPLACE_NODE_KEY => array('pagename' => 'Management '  . Flow::$params['get']['target_project'] . ' DBSettings'))" />
+<script type="text/javascript" src="./static/js/editarea/edit_area_full.js"></script>
+<script type="text/javascript">
+	if (640 >= $(window).width()) {
+		// モバイルの場合
+		editAreaLoader.init({
+			id: "createdb"
+			,start_highlight: true
+			,word_wrap: true
+			,allow_resize: "y"
+			,allow_toggle: false
+			,toolbar: "save, search, fullscreen, go_to_line, undo, redo, help"
+			,save_callback: "saved"
+			,language: "ja"
+			,syntax: "sql"
+			,show_line_colors: true
+		});
+		editAreaLoader.init({
+			id: "createtable"
+			,start_highlight: true
+			,word_wrap: true
+			,allow_resize: "y"
+			,allow_toggle: false
+			,toolbar: "save, search, fullscreen, go_to_line, undo, redo, help"
+			,save_callback: "saved"
+			,language: "ja"
+			,syntax: "sql"
+			,show_line_colors: true
+		});
+	}
+	else {
+		editAreaLoader.init({
+			id: "createdb"
+			,start_highlight: true
+			,allow_resize: "y"
+			,allow_toggle: false
+			,toolbar: "save, search, fullscreen, go_to_line, undo, redo, help"
+			,save_callback: "saved"
+			,language: "ja"
+			,syntax: "sql"
+			,show_line_colors: true
+		});
+		editAreaLoader.init({
+			id: "createtable"
+			,start_highlight: true
+			,allow_resize: "y"
+			,allow_toggle: false
+			,toolbar: "save, search, fullscreen, go_to_line, undo, redo, help"
+			,save_callback: "saved"
+			,language: "ja"
+			,syntax: "sql"
+			,show_line_colors: true
+		});
+	}
+	function saved(id, content){
+		if("createdb" == id){
+			$("#"+id).val(content);
+		}
+		else if("createtable" == id){
+			$("#"+id).val(content);
+		}
+		$('#modifydbsettings-form').submit();
+	}
+</script>
+<section id="main" class="mainbox panelbox">
+	<div class="maincontents">
+		<h2 frowparamsection="target_project">_flow_target_project_の初期DB定義設定を変更出来ます。</h2>
+		<br/>
+		<div flowpostformsectionerror="web/managementproject-modifydbsettings" id="modified-message" class="red errormsg"></div>
+		<br/>
+		<form id="modifydbsettings-form" flowpostformsection="web/managementproject-modifydbsettings">
+			<h3>CREATE DB</h3>
+			<textarea id="createdb" style="height: 200px; width: 100%;" name="createdb"></textarea>
+			<br/>
+			<h3>CREATE TABLE</h3>
+			<textarea id="createtable" style="height: 300px; width: 100%;" name="createtable"></textarea>
+			<input type="hidden" name="modify" value="1"/>
+		</form>
+	</div>
+</section>

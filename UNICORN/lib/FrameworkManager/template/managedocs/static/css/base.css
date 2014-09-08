@@ -1,0 +1,415 @@
+html {
+	/* style setting */
+	/* 基準フォントカラー */
+	color: #666;
+}
+
+header {
+	/* box setting */
+	z-index: 9;
+	display:block;
+	width: 100%;
+	height: 100px;
+	/* position setting */
+	top: 0;
+	vertical-align: center;
+}
+
+footer {
+	/* box setting */
+	z-index: 10;
+	display:block;
+	width: 100%;
+	height: 50px;
+	/* position setting */
+	position: fixed;
+	bottom: 0;
+	padding-top: 20px;
+	padding-right: 10px;
+	text-align: right;
+	/* style setting */
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+}
+
+footer a {
+	color: white;
+}
+
+.background {
+	/* box setting */
+	z-index: -1;
+	/* position setting */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* style setting */
+	background-color: blue;
+}
+
+.loading.active {
+	/* box setting */
+	display: block;
+	float: left;
+	width: 20px;
+	height: 20px;
+	/* position setting */
+	margin-left: -20px;
+	/* style setting */
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-image:
+		url(data:image/gif;base64,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);
+}
+
+/* ボタン */
+button {
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #ccc;
+	padding: 5px 20px !important;
+	font-weight: bold;
+	cursor: pointer;
+	color: white;
+}
+
+button,input[type=button],input[type=submit],button:active,input[type=button]:active,input[type=submit]:active
+	{
+	background: -moz-linear-gradient(top, #fff, orange 1%, orange 50%, #DFDFDF 99%, #ccc
+		);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff),
+		color-stop(0.01, orange), color-stop(0.5, orange),
+		color-stop(0.99, #FF8000), to(#ccc));
+	-moz-box-shadow: 1px 1px 2px #E7E7E7;
+	-webkit-box-shadow: 1px 1px 2px #E7E7E7;
+}
+
+/*
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+    background: -moz-linear-gradient(top, #fff, #e1e1e1 1%, #e1e1e1 50%, #cfcfcf 99%, #ccc);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.01, #e1e1e1), color-stop(0.5, #e1e1e1), color-stop(0.99, #cfcfcf), to(#ccc));
+    color: #666;
+}
+*/
+button:active,input[type=button]:active,input[type=submit]:active {
+	background: #ccc;
+	padding: 6px 20px 4px !important;
+}
+
+button[disabled=disabled],input[disabled=disabled]:active,input[disabled=disabled]:active,input[disabled=disabled]:active
+	{
+	background: -moz-linear-gradient(top, #fff, #e1e1e1 1%, #e1e1e1 50%, #cfcfcf 99%,
+		#ccc);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff),
+		color-stop(0.01, #e1e1e1), color-stop(0.5, #e1e1e1),
+		color-stop(0.99, #cfcfcf), to(#ccc));
+	color: #ccc;
+}
+
+input[type='text'], form input[type='password'] {
+	/* box setting */
+	width: 500px;
+	height: 30px;
+	background-color: RGBA(0, 0, 0, 0.2);
+	border: 1px solid white;
+	color: white;
+	font-size: 1em;
+}
+
+.buttonarea input {
+	/* box setting */
+	width: 150px;
+	height: 30px;
+	/* style setting */
+	color: white;
+	font-size: 1em;
+}
+
+p {
+	/* position setting */
+	padding: 2px;
+	word-wrap: break-word;
+}
+
+body {
+	/* position setting */
+}
+
+h2 {
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 20px;
+	padding-left: 0px;
+}
+
+h3 {
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 10px;
+	padding-left: 0px;
+}
+
+pre {
+	color: white;
+	font-size: 1em;
+}
+
+label {
+	line-height: 18px;
+}
+
+li {
+	padding: 5px;
+}
+
+
+table {
+	width: 100%;
+}
+
+table th {
+	width: 20%;
+	text-align: left;
+}
+
+table th.t-header {
+	text-align: center;
+}
+
+table td, table td * {
+	word-wrap: break-word;
+}
+
+.orange {
+	/* style setting */
+	color: darkorange;
+}
+
+.green {
+	/* style setting */
+	color: green;
+}
+
+.yellow {
+	/* style setting */
+	color: orange;
+}
+
+.red {
+	/* style setting */
+	color: red;
+	background-color: RGBA(0, 0, 0, 0.8);
+}
+
+.white {
+	/* style setting */
+	color: white;
+}
+.strong {
+	font-weight: bold;
+}
+
+.errormsg {
+	/* style setting */
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.input-text {
+	/* box setting */
+	width: 800px;
+	/* position setting */
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/* style setting */
+	border-radius: 0;
+	border: 0;
+	font-size: 1.2em;
+}
+
+.input-reset,.input-reset:active {
+	/* box setting */
+	width: 20px;
+	height: 20px;
+	/* position setting */
+	padding: 0;
+	padding-bottom: 3px;
+	/* style setting */
+	border: 0;
+	border-radius: 10px;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 0.5em;
+	background: -moz-linear-gradient(top, #ccc, #ccc 1%, #ccc 50%, #ccc 99%, #ccc);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ccc),
+		color-stop(0.01, #ccc), color-stop(0.5, #ccc), color-stop(0.99, #ccc),
+		to(#ccc));
+	-moz-box-shadow: 0px 0px 0px #ccc;
+	-webkit-box-shadow: 0px 0px 0px #ccc;
+}
+
+.input-reset:active {
+	background: -moz-linear-gradient(top, gray, gray 1%, gray 50%, gray 99%, gray);
+	background: -webkit-gradient(linear, left top, left bottom, from(gray),
+		color-stop(0.01, gray), color-stop(0.5, gray), color-stop(0.99, gray),
+		to(gray));
+}
+
+.input-reset:active {
+	background: -moz-linear-gradient(top, gray, gray 1%, gray 50%, gray 99%, gray);
+	background: -webkit-gradient(linear, left top, left bottom, from(gray),
+		color-stop(0.01, gray), color-stop(0.5, gray), color-stop(0.99, gray),
+		to(gray));
+}
+
+header.layout-container {
+	/* box setting */
+	height: 100px;
+	/* position setting */
+	display: -webkit-box;/* Safari,Google Chrome用 */
+	display: -moz-box;/* Firefox用 */
+	top: 0;
+}
+
+.mainbox.headerbox {
+	border-left: solid 1px #FFF;
+	border-right: solid 1px #FFF;
+}
+
+.layout-container {
+	/* box setting */
+	z-index: 1;
+	width: 100%;
+	height: calc(100% - 150px);
+	/* position setting */
+	position: fixed;
+	display: -webkit-box;/* Safari,Google Chrome用 */
+	display: -moz-box;/* Firefox用 */
+	-webkit-box-sizing: border-box;/* Safari,Google Chrome用 */
+	-moz-box-sizing: border-box;/* Firefox用 */
+	-ms-box-sizing: border-box;/* Internet Explorer 8用 */
+	box-sizing: border-box;/* Opera用 */
+	top: 100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.leftbox {
+	/* box setting */
+	width: 15%;
+	display: block;
+	-webkit-box-ordinal-group: 1;/* Safari,Google Chrome用（2番目に表示 */
+	-moz-box-ordinal-group: 1;/* Firefox用（2番目に表示） */
+	-webkit-box-sizing: border-box;/* Safari,Google Chrome用 */
+	-moz-box-sizing: border-box;/* Firefox用 */
+	-ms-box-sizing: border-box;/* Internet Explorer 8用 */
+	box-sizing: border-box;/* Opera用 */
+}
+
+.rightbox {
+	/* box setting */
+	width: 15%;
+	display: block;
+	-webkit-box-ordinal-group: 3;/* Safari,Google Chrome用（2番目に表示 */
+	-moz-box-ordinal-group: 3;/* Firefox用（2番目に表示） */
+	-webkit-box-sizing: border-box;/* Safari,Google Chrome用 */
+	-moz-box-sizing: border-box;/* Firefox用 */
+	-ms-box-sizing: border-box;/* Internet Explorer 8用 */
+	box-sizing: border-box;/* Opera用 */
+}
+
+.mainbox {
+	/* box setting */
+	display: block;
+	-webkit-box-flex: 1;/* Safari,Google Chrome用 */
+	-moz-box-flex: 1;/* Firefox用 */
+	-webkit-box-ordinal-group: 2;/* Safari,Google Chrome用（2番目に表示 */
+	-moz-box-ordinal-group: 2;/* Firefox用（2番目に表示） */
+	-webkit-box-sizing: border-box;/* Safari,Google Chrome用 */
+	-moz-box-sizing: border-box;/* Firefox用 */
+	-ms-box-sizing: border-box;/* Internet Explorer 8用 */
+	box-sizing: border-box;/* Opera用 */
+}
+
+.main .mainbox {
+	overflow: scroll;
+}
+
+
+.floatnavi li {
+	/* position setting */
+	padding: 5px 10px;
+	/* style setting */
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.floatnavi li a {
+	/* box setting */
+	display: block;
+	text-decoration: none;
+}
+
+.loginform h2 {
+	/* box setting */
+	display: block;
+	/* position setting */
+	padding: 50px;
+	/* style setting */
+	text-align: center;
+}
+
+.loginform form {
+	/* box setting */
+	width: 200px;
+	/* position setting */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loginform .errormsg {
+	/* box setting */
+	width: 100%;
+	/* position setting */
+	margin-left: auto;
+	margin-right: auto;
+	/* style setting */
+	text-align: center;
+}
+
+.loginform form p {
+	/* box setting */
+	display: block;
+	/* position setting */
+	margin-bottom: 10px;
+}
+
+.loginform form input {
+	/* position setting */
+	margin-bottom: 20px;
+	width: 200px;
+}
+
+.loginform form .buttonarea {
+	/* position setting */
+	margin-left: 25px;
+	margin-bottom: 40px;
+}
+
+.loginform form .buttonarea input {
+	width: 150px;
+}
+
+.error *{
+	color: red;
+	font-weight: bold;
+	margin-bottom: 20px;
+}

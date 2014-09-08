@@ -1,0 +1,24 @@
+<var selector="title#title" value="array(HtmlViewAssignor::PART_REPLACE_NODE_KEY => array('pagename' => 'Generate new project'))" />
+<section id="main" class="mainbox panelbox">
+	<div class="maincontents">
+		<h2>新たにプロジェクトを作成します。</h2>
+		<br/>
+		<br/>
+		<div>
+			<h3>作成するプロジェクトの情報入力して下さい。</h3>
+			<br/>
+			<form flowpostformsection="web/generatenewproject-execute">
+				<p>■プロジェクト名:</p>
+				<input type="text" name="project_name_must" value="" />
+				<br/>
+				<br/>
+				<div class="buttonarea">
+					<input type="submit" value="作成" />
+				</div>
+			</form>
+		</div>
+		<br/>
+		<br/>
+		<div flowpostformsectionerror="web/generatenewproject-execute" class="red errormsg"></div>
+	</div>
+</section>

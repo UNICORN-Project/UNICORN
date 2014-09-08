@@ -1,0 +1,150 @@
+/* スマフォ用スタイル定義 */
+@media screen and (max-width: 640px) {
+	*{
+		text-overflow: ellipsis;
+	}
+
+	header {
+		/* box setting */
+		height: 50px;
+		/* style setting */
+		color: white;
+		font-size: 1.5em;
+	}
+
+	header img {
+		width: 50%;
+		height: 50%;
+	}
+
+	header a:link {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	header a:visited {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	header a:hover {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	header a:active {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	.headerbox {
+		/* position setting */
+		margin: 5px;
+	}
+
+	.panelbox {
+		/* box setting */
+		width: 100%;
+		height: auto;
+		/* position setting */
+		margin: 0;
+		padding: 0;
+		/* style setting */
+		background-color: white;
+		border: 2px solid #white;
+		font-size: 1.5em;
+	}
+
+	#header {
+		/* style setting */
+		background-color: #ff288c;
+		border-bottom: 1px solid #cc288c;
+	}
+
+	#header .leftbox, #header .rightbox {
+		/* box setting */
+		width: 25%;
+		/* position setting */
+		margin: 0;
+		padding: 5px;
+		padding-right: 0;
+	}
+
+	#header .rightbox {
+		/* style setting */
+		white-space:nowrap;
+	}
+
+	#header .leftbox {
+		/* style setting */
+		word-wrap: break-word;
+	}
+
+	.rightbox.headerbox ul, .rightbox.headerbox li {
+		width: 100%;
+	}
+
+	#contents.container {
+		/* box setting */
+		display: block;
+		width: 100%;
+		height: calc(100% - 50px);
+		/* position setting */
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		top: 50px;
+		bottom: 0;
+	}
+
+	#contents .leftbox, #contents .rightbox {
+		/* position setting */
+		padding: 5px;
+		/* style setting */
+		background-color: #f0288c;
+		border-top: 1px solid #aa178c;
+		border-bottom: 2px solid #cc288c;
+		color: white;
+	}
+
+	#contents .leftbox p, #contents .rightbox p {
+		/* position setting */
+		padding: 0;
+		padding-bottom: 2px;
+		/* style setting */
+		color: white;
+	}
+
+	#contents li {
+		color: white;
+	}
+
+	#contents li a:link {
+		color: white;
+	}
+
+	#contents li a:visited {
+		color: white;
+	}
+
+	#contents li a:hover {
+		color: white;
+	}
+
+	#contents li a:active {
+		color: white;
+	}
+
+	#contents .mainbox {
+		padding: 5px;
+		height: calc(100% - 80px);
+	}
+}

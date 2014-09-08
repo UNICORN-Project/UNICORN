@@ -1,0 +1,333 @@
+<?xml version="1.0" ?>
+<xml>
+	<section id="Managementproject">
+		<execute>
+			<assign var="res" class="Auth" method="isCertification"/>
+			<if var="res" val="true">
+				<assign var="res" method="isset" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="false">
+					<exception/>
+				</if>
+				<assign var="res" method="strlen" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="0">
+					<exception/>
+				</if>
+				<flowviewparam selector="#baseURL" val="getConfig('BASE_URL', Flow::$params['get']['target_project'])"/>
+				<flowviewparam selector="#baseURL" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('href' => getConfig('BASE_URL', Flow::$params['get']['target_project'])))"/>
+				<flowviewparam selector="#DB_DSN" val="getConfig('DB_DSN', Flow::$params['get']['target_project'])"/>
+				<flowviewparam selector="#createdb" val="file_get_contents(getConfig('PROJECT_ROOT_PATH', Flow::$params['get']['target_project']).'core/createdb.sql')"/>
+				<flowviewparam selector="#createtable" val="file_get_contents(getConfig('PROJECT_ROOT_PATH', Flow::$params['get']['target_project']).'core/createtable.sql')"/>
+				<assign var="projectconf" val="simplexml_load_file(getConfigPathForConfigName(Flow::$params['get']['target_project']))"/>
+				<assign var="configs" val="array()"/>
+				<foreach eachas="projectconf">
+					<assign var="childeCount" val="$projectconfval->count()"/>
+					<if var="childeCount" style="&gt;" val="1">
+						<assign var="configs[]" val="array(array('.config-node-key' => 'ConfigureName:', '.config-node-val' => $projectconfkey), array('.config-node-key' => array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('class' => 'configname config-node-key'))))"/>
+						<foreach eachas="projectconfval">
+							<assign var="attribute" val="''"/>
+							<assign var="attributeCount" val="count($projectconfvalval->attributes())"/>
+							<if var="attributeCount" style="!=" val="0">
+								<assign var="tmpAttributes" val="$projectconfvalval->attributes()"/>
+								<assign var="attributes" val="array()"/>
+								<foreach eachas="tmpAttributes">
+									<assign var="attributes[]" val="$tmpAttributeskey.'='.$tmpAttributesval"/>
+								</foreach>
+								<assign var="attribute" val="' ('.implode(',',$attributes).')'"/>
+							</if>
+							<assign var="configs[]" val="array(array('.config-node-key' => $projectconfvalkey.$attribute, '.config-node-val' => $projectconfvalval->__toString()), array('.config-node-key' => array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('class' => 'config-node-key'))))"/>
+						</foreach>
+					</if>
+					<else>
+						<assign var="attribute" val="''"/>
+						<assign var="attributeCount" val="count($projectconfval->attributes())"/>
+						<if var="attributeCount" style="!=" val="0">
+							<assign var="tmpAttributes" val="$projectconfval->attributes()"/>
+							<assign var="attributes" val="array()"/>
+							<foreach eachas="tmpAttributes">
+								<assign var="attributes[]" val="$tmpAttributeskey.'='.$tmpAttributesval"/>
+							</foreach>
+							<assign var="attribute" val="' ('.implode(',',$attributes).')'"/>
+						</if>
+						<assign var="configs[]" val="array(array('.config-node-key' => $projectconfkey.$attribute, '.config-node-val' => $projectconfval->__toString()), array('.config-node-key' => array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('class' => 'config-node-key'))))"/>
+					</else>
+				</foreach>
+				<flowviewparam selector=".config-node" val="array(HtmlViewAssignor::LOOP_NODE_KEY => $configs)"/>
+				<assign var="useAutoGenerate" method="getAutoGenerateEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="useAutoGenerate" val="true">
+					<assign var="useAutoGenerate" val="string:on"/>
+					<flowviewparam selector="#useAutoGenerate" val="$useAutoGenerate"/>
+				</if>
+				<assign var="useAutoMigration" method="getAutoMigrationEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="useAutoMigration" val="true">
+					<assign var="useAutoMigration" val="string:on"/>
+					<flowviewparam selector="#useAutoMigration" val="$useAutoMigration"/>
+				</if>
+				<assign var="useAutoStageCheck" method="getAutoStageCheckEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="useAutoStageCheck" val="1">
+					<assign var="useAutoStageCheck" val="string:on"/>
+					<flowviewparam selector="#useAutoStageCheck" val="$useAutoStageCheck"/>
+				</if>
+				<assign var="isLocal" method="getLocalEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="isLocal" val="1">
+					<assign var="isLocal" val="string:on"/>
+					<flowviewparam selector="#isLocal" val="$isLocal"/>
+				</if>
+				<assign var="isTest" method="getTestEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="isTest" val="1">
+					<assign var="isTest" val="string:on"/>
+					<flowviewparam selector="#isTest" val="$isTest"/>
+				</if>
+				<assign var="isDevelopment" method="getDevelopmentEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="isDevelopment" val="1">
+					<assign var="isDevelopment" val="string:on"/>
+					<flowviewparam selector="#isDevelopment" val="$isDevelopment"/>
+				</if>
+				<assign var="isStaging" method="getStagingEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="isStaging" val="1">
+					<assign var="isStaging" val="string:on"/>
+					<flowviewparam selector="#isStaging" val="$isStaging"/>
+				</if>
+				<assign var="isDebug" method="getDebugEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if var="isDebug" val="1">
+					<assign var="isDebug" val="string:on"/>
+					<flowviewparam selector="#isDebug" val="$isDebug"/>
+				</if>
+				<assign var="stageTest" method="isTest" arg1="FALSE" arg2="Flow::$params['get']['target_project']"/>
+				<if var="stageTest" val="true">
+					<assign var="stageTest" val="string:on"/>
+					<flowviewparam selector="#stageTest" val="$stageTest"/>
+				</if>
+				<view baseview="base" flowpostformsection="web/generatenewproject-execute"/>
+			</if>
+			<else>
+				<flow section="web/login"/>
+			</else>
+		</execute>
+	</section>
+	<section id="Managementproject-modifyflags">
+		<execute>
+			<assign var="res" class="Auth" method="isCertification"/>
+			<if var="res" val="true">
+				<if var="res" val="false">
+					<exception/>
+				</if>
+				<assign var="res" method="strlen" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="0">
+					<exception/>
+				</if>
+				<assign var="useAutoGenerate" method="getAutoGenerateEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useAutoMigration" method="getAutoMigrationEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useAutoStageCheck" method="getAutoStageCheckEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useLocal" method="getLocalEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useTest" method="getTestEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useDev" method="getDevelopmentEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useStaging" method="getStagingEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<assign var="useDebug" method="getDebugEnabled" arg1="Flow::$params['get']['target_project']"/>
+				<if condition="true" val="isset(Flow::$params['post']['modify'])">
+					<assign var="modified" val="false"/>
+					<assign var="conName" val="PROJECT_NAME.'Configure'"/>
+					<assign var="basedir" val="dirname($conName::PROJECT_ROOT_PATH)"/>
+					<assign var="savepath" val="$basedir.'/'.Flow::$params['get']['target_project']"/>
+					<if condition="false" val="is_dir($savepath)">
+						<assign var="savepath" val="$basedir.'/'.Flow::$params['get']['target_project'].'Package'"/>
+					</if>
+					<if condition="true === isset(Flow::$params['post']['autogenerate-enabled']) &amp;&amp; (int)Flow::$params['post']['autogenerate-enabled'] !== (int)$useAutoGenerate &amp;&amp; 1 === (int)Flow::$params['post']['autogenerate-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.autogenerate'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.autogenerate'" arg2="0666"/>
+						<assign var="useAutoGenerate" val="true"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['autogenerate-enabled']) &amp;&amp; 1 === (int)$useAutoGenerate">
+						<assign var="res" method="unlink" arg1="$savepath.'/.autogenerate'"/>
+						<assign var="useAutoGenerate" val="false"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['automigration-enabled']) &amp;&amp; (int)Flow::$params['post']['automigration-enabled'] !== (int)$useAutoMigration &amp;&amp; 1 === (int)Flow::$params['post']['automigration-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.automigration'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.automigration'" arg2="0666"/>
+						<assign var="useAutoMigration" val="true"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['automigration-enabled']) &amp;&amp; 1 === (int)$useAutoMigration">
+						<assign var="res" method="unlink" arg1="$savepath.'/.automigration'"/>
+						<assign var="useAutoMigration" val="false"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['autostagecheck-enabled']) &amp;&amp; (int)Flow::$params['post']['autostagecheck-enabled'] !== (int)$useAutoStageCheck &amp;&amp; 1 === (int)Flow::$params['post']['autostagecheck-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.autostagecheck'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.autostagecheck'" arg2="0666"/>
+						<assign var="useAutoStageCheck" val="1"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['autostagecheck-enabled']) &amp;&amp; 1 === (int)$useAutoStageCheck">
+						<assign var="res" method="unlink" arg1="$savepath.'/.autostagecheck'"/>
+						<assign var="useAutoStageCheck" val="0"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['local-enabled']) &amp;&amp; (int)Flow::$params['post']['local-enabled'] !== (int)$useLocal &amp;&amp; 1 === (int)Flow::$params['post']['local-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.local'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.local'" arg2="0666"/>
+						<assign var="useLocal" val="1"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['local-enabled']) &amp;&amp; 1 === (int)$useLocal">
+						<assign var="res" method="unlink" arg1="$savepath.'/.local'"/>
+						<assign var="useLocal" val="0"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['test-enabled']) &amp;&amp; (int)Flow::$params['post']['test-enabled'] !== (int)$useTest &amp;&amp; 1 === (int)Flow::$params['post']['test-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.test'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.test'" arg2="0666"/>
+						<assign var="useTest" val="1"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['test-enabled']) &amp;&amp; 1 === (int)$useTest">
+						<assign var="res" method="unlink" arg1="$savepath.'/.test'"/>
+						<assign var="useTest" val="0"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['dev-enabled']) &amp;&amp; (int)Flow::$params['post']['dev-enabled'] !== (int)$useDev &amp;&amp; 1 === (int)Flow::$params['post']['dev-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.dev'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.dev'" arg2="0666"/>
+						<assign var="useDev" val="1"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['dev-enabled']) &amp;&amp; 1 === (int)$useDev">
+						<assign var="res" method="unlink" arg1="$savepath.'/.dev'"/>
+						<assign var="useDev" val="0"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['staging-enabled']) &amp;&amp; (int)Flow::$params['post']['staging-enabled'] !== (int)$useStaging &amp;&amp; 1 === (int)Flow::$params['post']['staging-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.staging'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.staging'" arg2="0666"/>
+						<assign var="useStaging" val="1"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['staging-enabled']) &amp;&amp; 1 === (int)$useStaging">
+						<assign var="res" method="unlink" arg1="$savepath.'/.staging'"/>
+						<assign var="useStaging" val="0"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true === isset(Flow::$params['post']['debug-enabled']) &amp;&amp; (int)Flow::$params['post']['debug-enabled'] !== (int)$useDebug &amp;&amp; 1 === (int)Flow::$params['post']['debug-enabled']">
+						<assign var="res" method="touch" arg1="$savepath.'/.debug'"/>
+						<assign var="res" method="chmod" arg1="$savepath.'/.debug'" arg2="0666"/>
+						<assign var="useDebug" val="1"/>
+						<assign var="modified" val="true"/>
+					</if>
+					<elseif condition="false === isset(Flow::$params['post']['debug-enabled']) &amp;&amp; 1 === (int)$useDebug">
+						<assign var="res" method="unlink" arg1="$savepath.'/.debug'"/>
+						<assign var="useDebug" val="0"/>
+						<assign var="modified" val="true"/>
+					</elseif>
+					<if condition="true" val="$modified">
+						<flowpostformsectionerror>環境フラグ設定設定の変更を保存しました。</flowpostformsectionerror>
+						<flowviewparam selector="#modified-message" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('class' => 'white errormsg'))"/>
+					</if>
+				</if>
+				<if var="useAutoGenerate" val="true">
+					<flowviewparam selector="#useAutoGenerate" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useAutoGenerate span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useAutoMigration" val="true">
+					<flowviewparam selector="#useAutoMigration" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useAutoMigration span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useAutoStageCheck" val="1">
+					<flowviewparam selector="#useAutoStageCheck" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useAutoStageCheck span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useLocal" val="1">
+					<flowviewparam selector="#useLocal" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useLocal span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useTest" val="1">
+					<flowviewparam selector="#useTest" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useTest span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useDev" val="1">
+					<flowviewparam selector="#useDev" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useDev span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useStaging" val="1">
+					<flowviewparam selector="#useStaging" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useStaging span.dispflag" val="str:ON"/>
+				</if>
+				<if var="useDebug" val="1">
+					<flowviewparam selector="#useDebug" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('checked'=>'checked'))"/>
+					<flowviewparam selector="#useDebug span.dispflag" val="str:ON"/>
+				</if>
+				<view baseview="base" flowpostformsection="web/managementproject-modifyflags"/>
+			</if>
+			<else>
+				<flow section="web/login"/>
+			</else>
+		</execute>
+	</section>
+	<section id="Managementproject-modifyconfigure">
+		<execute>
+			<assign var="res" class="Auth" method="isCertification"/>
+			<if var="res" val="true">
+				<assign var="res" method="isset" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="false">
+					<exception/>
+				</if>
+				<assign var="res" method="strlen" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="0">
+					<exception/>
+				</if>
+				<assign var="res" method="isset" arg1="Flow::$params['post']['modify']"/>
+				<if var="res" val="false">
+					<flowviewparam selector="#configxml" val="htmlspecialchars(file_get_contents(getConfigPathForConfigName(Flow::$params['get']['target_project'])))"/>
+				</if>
+				<else>
+					<assign var="res" method="simplexml_load_string" arg1="Flow::$params['post']['configxml']"/>
+					<if var="res" val="false">
+						<flowpostformsectionerror>(!)XMLの形式に間違があります! 保存しませんでした。&lt;br/&gt;正しいXMLに修正してから保存して下さい。</flowpostformsectionerror>
+					</if>
+					<else>
+						<assign var="res" method="file_put_contents" arg1="getConfigPathForConfigName(Flow::$params['get']['target_project'])" arg2="str_replace(' ', PHP_TAB, Flow::$params['post']['configxml'])"/>
+						<flowpostformsectionerror>コンフィグ設定の変更を保存しました。</flowpostformsectionerror>
+						<flowviewparam selector="#modified-message" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('class' => 'white errormsg'))"/>
+					</else>
+					<flowviewparam selector="#configxml" val="htmlspecialchars(Flow::$params['post']['configxml'])"/>
+				</else>
+				<view baseview="base" flowpostformsection="web/managementproject-modifyconfigure"/>
+			</if>
+			<else>
+				<flow section="web/login"/>
+			</else>
+		</execute>
+	</section>
+	<section id="Managementproject-modifydbsettings">
+		<execute>
+			<assign var="res" class="Auth" method="isCertification"/>
+			<if var="res" val="true">
+				<assign var="res" method="isset" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="false">
+					<exception/>
+				</if>
+				<assign var="res" method="strlen" arg1="Flow::$params['get']['target_project']"/>
+				<if var="res" val="0">
+					<exception/>
+				</if>
+				<assign var="res" method="isset" arg1="Flow::$params['post']['modify']"/>
+				<if var="res" val="false">
+					<flowviewparam selector="#createdb" val="htmlspecialchars(file_get_contents(getConfig('PROJECT_ROOT_PATH', Flow::$params['get']['target_project']).'core/createdb.sql'))"/>
+					<flowviewparam selector="#createtable" val="htmlspecialchars(file_get_contents(getConfig('PROJECT_ROOT_PATH', Flow::$params['get']['target_project']).'core/createtable.sql'))"/>
+				</if>
+				<else>
+					<assign var="res" method="file_put_contents" arg1="getConfig('PROJECT_ROOT_PATH', Flow::$params['get']['target_project']).'core/createdb.sql'" arg2="Flow::$params['post']['createdb']"/>
+					<assign var="res" method="file_put_contents" arg1="getConfig('PROJECT_ROOT_PATH', Flow::$params['get']['target_project']).'core/createtable.sql'" arg2="Flow::$params['post']['createtable']"/>
+					<flowpostformsectionerror>初期DB定義設定の変更を保存しました。</flowpostformsectionerror>
+					<flowviewparam selector="#modified-message" val="array(HtmlViewAssignor::REPLACE_ATTR_KEY => array('class' => 'white errormsg'))"/>
+					<flowviewparam selector="#createdb" val="htmlspecialchars(Flow::$params['post']['createdb'])"/>
+					<flowviewparam selector="#createtable" val="htmlspecialchars(Flow::$params['post']['createtable'])"/>
+				</else>
+				<view baseview="base" flowpostformsection="web/managementproject-modifydbsettings"/>
+			</if>
+			<else>
+				<flow section="web/login"/>
+			</else>
+		</execute>
+	</section>
+</xml>

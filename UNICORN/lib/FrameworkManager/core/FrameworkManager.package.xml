@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<xml>
+	<default>
+		<implement suffix=".class.php">class</implement>
+		<abstract suffix=".abstract.php">class</abstract>
+		<interface suffix=".interface.php">class</interface>
+		<!-- フレームワーク標準のMVCパターンを使用する場合のパス定義 -->
+		<controlmain suffix=".php">class/MVC/Controller</controlmain>
+	</default>
+	<WebFlowController>
+		<link>default.implement.MVC/Controller/web/WebFlowController</link>
+	</WebFlowController>
+	<Validations>
+		<link>default.implement.Utilities/GenericValidations</link>
+		<link>default.implement.Utilities/Validations</link>
+	</Validations>
+	<ProjectManager>
+		<link>default.implement.Project/ProjectManager</link>
+	</ProjectManager>
+</xml>

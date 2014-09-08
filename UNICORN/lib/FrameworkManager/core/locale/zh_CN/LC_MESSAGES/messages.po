@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-10 16:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: projectcore/locale/strings.php:11
+msgid "During maintenance."
+msgstr "正在维修。"
+
+#: projectcore/locale/strings.php:12
+msgid "Error has occurred when connecting to DB."
+msgstr "DB连接中发生错误。"
+
+#: projectcore/locale/strings.php:13
+msgid "An unexpected error has occured. Please try again."
+msgstr "意外错误。请请稍后再试。"
+
+#: projectcore/locale/strings.php:14
+msgid "Application version is old.\nPlease update to the lastest version."
+msgstr "这是旧版本。\n请更新新版本。"
+
+#: projectcore/locale/strings.php:15
+msgid "System error"
+msgstr "系统错误"
+
+#: projectcore/locale/strings.php:17
+msgid "Failed to login."
+msgstr "无法登录。"
+
+#: projectcore/locale/strings.php:18
+#, php-format
+msgid "%d:Critical error.\nThis error is seriously. Please contact to\n+813-6746-3123\nfor more details."
+msgstr "%d:紧急错误。这是严重错误。有关详细信息，请联系\n+813-6746-3123。"
+
+#: projectcore/locale/strings.php:19
+msgid "Your authentication code could not be verified.\nIn case you don't understand the correct authentication code.\nPlease try again by 'Resend'."
+msgstr "无法确认验证码。\n若不知正确验证码，\n请选“重发验证码”"
+
+#: projectcore/locale/strings.php:20
+msgid "Failed to upload file. Please try again."
+msgstr "无法上传文件。请重复上传。"
+
+#: projectcore/locale/strings.php:21
+msgid "Specified ID has been used already ."
+msgstr "指定ID已被使用。"
+
+#: projectcore/locale/strings.php:22
+msgid "Can not view because it has been blocked.\nPlease unblock and try again."
+msgstr "被锁，无法显示。\n请解锁重试。"
+
+#: projectcore/locale/strings.php:23
+msgid "You can't create album as friend."
+msgstr "无法以朋友资格创造照片集。"
+
+#: projectcore/locale/strings.php:24
+msgid "The format of email address is incorrect."
+msgstr "无法登记所制定的电子邮件地址。\n请重试或使用其他电子邮件地址。"
+
+#: projectcore/locale/strings.php:25
+msgid "Can not register by your specified email address.\nPlease try it again or use another email address."
+msgstr "指定电话号码已被使用。\n请脱离终端设备并重新登记。"
+
+#: projectcore/locale/strings.php:26
+msgid "Specified tel number has  been used already.\nPlease widthdraw it from the previous device and then register again."
+msgstr "指定电话号码已被使用。\n请脱离终端设备并重新登记。"
+
+#: projectcore/locale/strings.php:27
+msgid "You can't choose user has withdrawn to set member of existing group."
+msgstr "无法制定已脱离用户为朋友群的成员。"
+
+#: projectcore/locale/strings.php:28
+msgid "Please input group name between 3 and 20 characters."
+msgstr "输入3至20各字母为群名。"
+
+#: projectcore/locale/strings.php:29
+msgid "Please input the correct serial code."
+msgstr "请输入正确密码。"
+
+#: projectcore/locale/strings.php:30
+msgid "Stamp has expired so you can't use it."
+msgstr "邮票/印章已经过期。"
+
+#: projectcore/locale/strings.php:31
+msgid "The answer is incorrect!\nIf you don't understand anyway, please ask your friend directly!"
+msgstr "答案不正确！\n若不清楚，请直接与朋友询问。"
+
+#: projectcore/locale/strings.php:32
+msgid "This tutorial is already finished."
+msgstr "This tutorial is already finished."
+
+#: projectcore/locale/locale.php:66
+#, php-format
+msgid "%s' group %s"
+msgstr "%s小群 %s"
+
+#: projectcore/locale/strings.php:35
+msgid "unknown"
+msgstr "退会者"
+
+#: projectcore/locale/strings.php:38
+msgid "no name"
+msgstr "名無者"
+
+#: projectcore/locale/strings.php:41
+#, php-format
+msgid "%s uploaded photos"
+msgstr "%s已经上传图片"
+
+#: projectcore/locale/strings.php:42
+#, php-format
+msgid "%s wrote comments"
+msgstr "%s已经发表评论"
+
+#: projectcore/locale/strings.php:43
+#, php-format
+msgid "%s used stamps"
+msgstr "%s已经盖章"
+
+#: projectcore/locale/strings.php:44
+#, php-format
+msgid "Became friend with %s"
+msgstr "已经与%s结为朋友"
+
+#: projectcore/locale/strings.php:45
+#, php-format
+msgid "Received friend request from %s"
+msgstr "收到%s的加为朋友要求"
+
+#: projectcore/locale/strings.php:46
+#, php-format
+msgid "%s joined the album"
+msgstr "%s已经参加照片集"
+
+#: projectcore/locale/strings.php:47
+#, php-format
+msgid "%s joined the group"
+msgstr "%s已经加入小群"
+
+#: projectcore/locale/strings.php:48
+msgid "joined the group"
+msgstr "已经加入小群"
+
+#: projectcore/locale/strings.php:49
+#, php-format
+msgid "%s has left group"
+msgstr "%s已经离开小群"
+
+#: projectcore/locale/strings.php:52
+msgid "Let's use Unpublish talk album CiaoPic!\n"
+msgstr "请使用个人Talkalbum CiaoPic\n"
+
+#: projectcore/locale/strings.php:53
+#, php-format
+msgid "Let's use Unpublished talk album CiaoPic!\nPlease confirm album is created by %d from URL below♪\n\n※Expiration time is one week!\n"
+msgstr "请使用个人Talkalbum CiaoPic！\n请确认照片集是从以下URL及由%d创造的♪\n\n※一周为限\n"
+
+#: projectcore/locale/locale.php:100
+msgid "Relay PreFinish Subject\n"
+msgstr "感谢你完成了CiaoPic的继承手续第一阶段。\n"
+
+#: projectcore/locale/locale.php:101
+msgid "Relay PreFinish\n"
+msgstr "感谢你完成了CiaoPic的继承手续第一阶段,请访问以下的URL来完成接下来的手续。\n\n%url\n\n※此URL的有效时间为10分钟。\n※您的只能手机可以直接打开此URL，如果没有成功，请自行复制URL到您的浏览器处进行访问。\n※如果您对本邮件没有印象的话，可能是邮件地址错误而导致发送错误，非常抱歉，请将它删除。\n※本邮件不能进行回复。\n\nhttp://www.ciaopic.com/\n"
+
+#: projectcore/locale/locale.php:102
+msgid "Relay Finish Subject\n"
+msgstr "您的继承手续已经完成特此通知。\n"
+
+#: projectcore/locale/locale.php:103
+msgid "Relay Finish\n"
+msgstr "感谢您支持我们CiaoPic服务。\n您的继承手续已经完成特此通知。\n\n以下是注册内容：\n\n----------------------------------\n■电子邮件地址\n%address\n----------------------------------\n\n注册时您所输入的电子邮箱地址和密码将会在以后更换终端的手续中再次进行使用，请自行保管好，谢谢合作。\n\n感谢您支持CiaoPic服务，今后也请继续支持我们。\n\n※如果您对本邮件没有印象的话，可能是邮件地址错误而导致发送错误，非常抱歉，请将它删除。\n\nhttp://www.ciaopic.com/\n"
+
+#: projectcore/locale/locale.php:132
+msgid "CiaoPic - Unpublished talk album: This is private albums (free) for secret couple showing photos about their good memories (friends, couple, family, group)"
+msgstr "私人谈话CiaoPic专辑 ：私人照片专辑专保留两个亲切朋友的照片（如朋友，爱人，家里人和朋友群）"
+
+#: projectcore/locale/locale.php:133
+msgid "from"
+msgstr ""
+
+#: projectcore/locale/locale.php:134
+msgid "to"
+msgstr "的邀请"
+
+#: projectcore/locale/locale.php:135
+#, php-format
+msgid "invitation of %s♪"
+msgstr "发来的邀请♪"

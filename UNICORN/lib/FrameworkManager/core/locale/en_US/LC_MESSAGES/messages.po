@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-10 16:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: projectcore/locale/strings.php:11
+msgid "During maintenance."
+msgstr "During maintenance."
+
+#: projectcore/locale/strings.php:12
+msgid "Error has occurred when connecting to DB."
+msgstr "Error has occurred when connecting to DB."
+
+#: projectcore/locale/strings.php:13
+msgid "An unexpected error has occured. Please try again."
+msgstr "An unexpected error has occured. Please try again."
+
+#: projectcore/locale/strings.php:14
+msgid "Application version is old.\nPlease update to the lastest version."
+msgstr "Application version is old.\nPlease update to the lastest version."
+
+#: projectcore/locale/strings.php:15
+msgid "System error"
+msgstr "System error"
+
+#: projectcore/locale/strings.php:17
+msgid "Failed to login."
+msgstr "Failed to login."
+
+#: projectcore/locale/strings.php:18
+#, php-format
+msgid "%d:Critical error.\nThis error is seriously. Please contact to\n+813-6746-3123\nfor more details."
+msgstr "%d:Critical error.\nThis error is seriously. Please contact to\n+813-6746-3123\nfor more details."
+
+#: projectcore/locale/strings.php:19
+msgid "Your authentication code could not be verified.\nIn case you don't understand the correct authentication code.\nPlease try again by 'Resend'."
+msgstr "Your authentication code could not be verified.\nIn case you don't understand the correct authentication code.\nPlease try again by 'Resend'."
+
+#: projectcore/locale/strings.php:20
+msgid "Failed to upload file. Please try again."
+msgstr "Failed to upload file. Please try again."
+
+#: projectcore/locale/strings.php:21
+msgid "Specified ID has been used already ."
+msgstr "Specified ID has been used already ."
+
+#: projectcore/locale/strings.php:22
+msgid "Can not view because it has been blocked.\nPlease unblock and try again."
+msgstr "Can not view because it has been blocked.\nPlease unblock and try again."
+
+#: projectcore/locale/strings.php:23
+msgid "You can't create album as friend."
+msgstr "You can't create album as friend."
+
+#: projectcore/locale/strings.php:24
+msgid "The format of email address is incorrect."
+msgstr "The format of email address is incorrect."
+
+#: projectcore/locale/strings.php:25
+msgid "Can not register by your specified email address.\nPlease try it again or use another email address."
+msgstr "Can not register by your specified email address.\nPlease try it again or use another email address."
+
+#: projectcore/locale/strings.php:26
+msgid "Specified tel number has  been used already.\nPlease widthdraw it from the previous device and then register again."
+msgstr "Specified tel number has  been used already.\nPlease widthdraw it from the previous device and then register again."
+
+#: projectcore/locale/strings.php:27
+msgid "You can't choose user has withdrawn to set member of existing group."
+msgstr "You can't choose user has withdrawn to set member of existing group."
+
+#: projectcore/locale/strings.php:28
+msgid "Please input group name between 3 and 20 characters."
+msgstr "Please input group name between 3 and 20 characters."
+
+#: projectcore/locale/strings.php:29
+msgid "Please input the correct serial code."
+msgstr "Please input the correct serial code."
+
+#: projectcore/locale/strings.php:30
+msgid "Stamp has expired so you can't use it."
+msgstr "Stamp has expired so you can't use it."
+
+#: projectcore/locale/strings.php:31
+msgid "The answer is incorrect!\nIf you don't understand anyway, please ask your friend directly!"
+msgstr "The answer is incorrect!\nIf you don't understand anyway, please ask your friend directly!"
+
+#: projectcore/locale/strings.php:32
+msgid "This tutorial is already finished."
+msgstr "This tutorial is already finished."
+
+#: projectcore/locale/locale.php:66
+#, php-format
+msgid "%s' group %s"
+msgstr "%s' group %s"
+
+#: projectcore/locale/strings.php:35
+msgid "unknown"
+msgstr "unknown"
+
+#: projectcore/locale/strings.php:38
+msgid "no name"
+msgstr "no name"
+
+#: projectcore/locale/strings.php:41
+#, php-format
+msgid "%s uploaded photos"
+msgstr "%s uploaded photos"
+
+#: projectcore/locale/strings.php:42
+#, php-format
+msgid "%s wrote comments"
+msgstr "%s wrote comments"
+
+#: projectcore/locale/strings.php:43
+#, php-format
+msgid "%s used stamps"
+msgstr "%s used stamps"
+
+#: projectcore/locale/strings.php:44
+#, php-format
+msgid "Became friend with %s"
+msgstr "Became friend with %s"
+
+#: projectcore/locale/strings.php:45
+#, php-format
+msgid "Received friend request from %s"
+msgstr "Received friend request from %s"
+
+#: projectcore/locale/strings.php:46
+#, php-format
+msgid "%s joined the album"
+msgstr "%s joined the album"
+
+#: projectcore/locale/strings.php:47
+#, php-format
+msgid "%s joined the group"
+msgstr "%s joined the group"
+
+#: projectcore/locale/strings.php:48
+msgid "joined the group"
+msgstr "joined the group"
+
+#: projectcore/locale/strings.php:49
+#, php-format
+msgid "%s has left group"
+msgstr "%s has left group"
+
+#: projectcore/locale/strings.php:52
+msgid "Let's use Unpublish talk album CiaoPic!\n"
+msgstr "Let's use Unpublish talk album CiaoPic!\n"
+
+#: projectcore/locale/strings.php:53
+#, php-format
+msgid "Let's use Unpublished talk album CiaoPic!\nPlease confirm album is created by %d from URL below♪\n\n※Expiration time is one week!\n"
+msgstr "Let's use Unpublished talk album CiaoPic! \n Please confirm album is created by %d from URL below! \n \n *Expiration time is one week! \n"
+
+#: projectcore/locale/locale.php:100
+msgid "Relay PreFinish Subject\n"
+msgstr "Thank you for the taking over interim registration of CiaoPic.\n"
+
+#: projectcore/locale/locale.php:101
+msgid "Relay PreFinish\n"
+msgstr "Thank you for the taking over interim registration of CiaoPic. \n Please access the following URL and complete taking over. \n \n %url \n \n *The term of validity of this URL is 10 minutes. \n Please access URL earlier. \n *Depending on a mailer, URL may not be opened directly. \n when not opening, or it copies URL once and opens by Safari -- a memo -- please try the use after sticking on an application etc. \n *When there was no idea in this mail, the mail address may have been transmitted accidentally. \n Very sorry to trouble you, but please cancel. \n *It cannot reply to this mail. \n \n http://www.ciaopic.com/ \n"
+
+#: projectcore/locale/locale.php:102
+msgid "Relay Finish Subject\n"
+msgstr "We inform you that a taking over setup was completed.\n"
+
+#: projectcore/locale/locale.php:103
+msgid "Relay Finish\n"
+msgstr "Thank you for always using CiaoPic. \n We inform you that a taking over setup was completed. \n \n The following serves as the contents of registration. \n \n ---------------------------------- \n Mail address \n %address \n ---------------------------------- \n \n Since the mail address and password which were registered are needed when taking them over to other terminals, I am pleased, if it is kept carefully and gets. \n Please give me CiaoPic in the future. \n \n *When there was no idea in this mail, the mail address may have been transmitted accidentally. \n Very sorry to trouble you, but please cancel. \n *It cannot reply to this mail. \n \n http://www.ciaopic.com/ \n"
+
+#: projectcore/locale/locale.php:132
+msgid "CiaoPic - Unpublished talk album: This is private albums (free) for secret couple showing photos about their good memories (friends, couple, family, group)"
+msgstr "CiaoPic - Unpublished talk album: This is private albums (free) for secret couple showing photos about their good memories (friends, couple, family, group)"
+
+#: projectcore/locale/locale.php:133
+msgid "from"
+msgstr "from"
+
+#: projectcore/locale/locale.php:134
+msgid "to"
+msgstr "to"
+
+#: projectcore/locale/locale.php:135
+#, php-format
+msgid "invitation of %s♪"
+msgstr "invitation from"

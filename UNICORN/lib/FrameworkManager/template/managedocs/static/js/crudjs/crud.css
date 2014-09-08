@@ -1,0 +1,69 @@
+/* DatetimePickerのスタイルを拡張 */
+.xdsoft_datetimepicker div, .xdsoft_datetimepicker span {
+	color: #666;
+}
+
+#crudmain h2 {
+	margin-bottom: 20px;
+}
+
+#crudmain table.list {
+	table-layout:fixed;
+	width: 100%;
+}
+
+#crudmain th {
+	text-align: left;
+	padding: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#crudmain td {
+	padding: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#crudmain .list th {
+	border: 1px solid white;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#crudmain .list td {
+	border: 1px solid white;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#crudmain * {
+	word-wrap: break-word;
+}
+
+#crudmain div {
+	margin: 5px;
+}
+
+#crudmain .list-link {
+	margin-top: 20px;
+}
+
+#crudmain .create-new-record-link {
+	margin-top: 20px;
+}
+
+#crudmain .submit-button {
+	margin: 10px;
+}
+
+#crudmain .paging {
+	margin: 5px;
+}
+
+#crudmain .paging td {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}

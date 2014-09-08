@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<xml>
+	<section id="Login" type="web">
+		<execute>
+			<view flowpostformsection="web/login-certfy"/>
+		</execute>
+	</section>
+	<section id="Login-certfy" type="web">
+		<execute>
+			<if var="autoValidated" val="true">
+				<assign var="res" class="Auth" method="certify"/>
+				<if var="res" val="true">
+					<flow section="backflow"/>
+				</if>
+				<else>
+					<flowpostformsectionerror>ログイン出来ませんでした</flowpostformsectionerror>
+				</else>
+			</if>
+			<else>
+				<flowpostformsectionerror>メールアドレスとパスワードが間違っています</flowpostformsectionerror>
+			</else>
+			<view section="Login" flowpostformsection="web/login-certfy"/>
+		</execute>
+	</section>
+</xml>

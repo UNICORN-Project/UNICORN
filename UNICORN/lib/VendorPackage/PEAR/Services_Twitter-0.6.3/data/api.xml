@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This is the xml mapping of the Twitter REST API documented at:
+http://apiwiki.twitter.com/REST+API+Documentation
+
+This mapping is part of the PEAR Services_Twitter package available at: 
+http://pear.php.net/packages/Services_Twitter
+
+@category  Services
+@package   Services_Twitter
+@author    Joe Stump <joe@joestump.net> 
+@author    David Jean Louis <izimobil@gmail.com> 
+@copyright 1997-2008 Joe Stump <joe@joestump.net> 
+@license   http://www.opensource.org/licenses/bsd-license.php New BSD License
+@version   SVN: $Id: api.xml 35 2009-01-04 22:35:48Z izimobil $
+-->
+
+<api>
+
+    <!-- Status methods -->
+    <category name="statuses">
+        <endpoint name="public_timeline" method="GET" auth_required="false">
+            <formats>xml,json,rss,atom</formats>
+        </endpoint>
+        <endpoint name="home_timeline" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="friends_timeline" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="user_timeline" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="mentions" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="retweeted_by_me" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="retweeted_to_me" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="retweets_of_me" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="show" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="update" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="status" type="string" max_length="140" required="true"/>
+            <param name="in_reply_to_status_id" type="integer" required="false"/>
+            <param name="lat" type="lat" required="false"/>
+            <param name="long" type="long" required="false"/>
+            <param name="place_id" type="string" required="false"/>
+            <param name="display_coordinates" type="boolean" required="false"/>
+        </endpoint>
+        <endpoint name="destroy" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="retweet" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="retweets" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+            <param name="count" type="integer" max_length="100" required="false"/>
+        </endpoint>
+        <!-- 
+        FIXME API inconsistency: the two endpoints below belong to user methods
+        in the API documentation, but their path is set to "statuses", so we
+        keep them here.
+        -->
+        <endpoint name="friends" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="followers" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- List API methods -->
+    <category name="lists">
+        <endpoint name="create" method="POST" auth_required="true" min_args="2" routing="/:user/lists">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="name" type="string" required="true"/>
+            <param name="mode" type="mode" required="false"/>
+            <param name="description" type="string" max_length="100" required="false"/>
+        </endpoint>
+        <endpoint name="update" method="POST" auth_required="true" min_args="2" routing="/:user/lists/:id">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="id" type="listid_or_slug" required="true"/>
+            <param name="name" type="string" required="false"/>
+            <param name="mode" type="mode" required="false"/>
+            <param name="description" type="string" max_length="100" required="false"/>
+        </endpoint>
+        <endpoint name="list" method="GET" auth_required="true" min_args="1" routing="/:user/lists">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="show" method="GET" auth_required="true" min_args="2" routing="/:user/lists/:id">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="id" type="listid_or_slug" required="true"/>
+        </endpoint>
+        <endpoint name="delete" method="DELETE" auth_required="true" min_args="2" routing="/:user/lists/:id">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="id" type="listid_or_slug" required="true"/>
+        </endpoint>
+        <endpoint name="statuses" method="GET" auth_required="false" min_args="1" routing="/:user/lists/:list_id/statuses">
+            <formats>xml,json,atom</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="per_page" type="integer" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="memberships" method="GET" auth_required="true" min_args="1" routing="/:user/lists/memberships">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="subscriptions" method="GET" auth_required="true" min_args="1" routing="/:user/lists/subscriptions">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- List members API methods -->
+    <category name="list_members">
+        <endpoint name="list" method="GET" auth_required="true" min_args="2" routing="/:user/:list_id/members">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="create" method="POST" auth_required="true" min_args="3" routing="/:user/:list_id/members">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="delete" method="DELETE" auth_required="true" min_args="3" routing="/:user/:list_id/members">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="show" method="GET" auth_required="true" min_args="3" routing="/:user/:list_id/members/:id">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+    </category>
+
+    <!-- List subscribers API methods -->
+    <category name="list_subscribers">
+        <endpoint name="list" method="GET" auth_required="true" min_args="2" routing="/:user/:list_id/subscribers">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="create" method="POST" auth_required="true" min_args="2" routing="/:user/:list_id/subscribers">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+        </endpoint>
+        <endpoint name="delete" method="DELETE" auth_required="true" min_args="2" routing="/:user/:list_id/subscribers">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+        </endpoint>
+        <endpoint name="show" method="GET" auth_required="true" min_args="3" routing="/:user/:list_id/subscribers/:id">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="true"/>
+            <param name="list_id" type="listid_or_slug" required="true"/>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+    </category>
+
+    <!-- User methods -->
+    <category name="users">
+        <endpoint name="show" method="GET" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+        <endpoint name="lookup" method="GET" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="user_id" type="string" required="false"/>
+            <param name="screen_name" type="string" required="false"/>
+            <param name="include_entities" type="boolean" required="false"/>
+        </endpoint>
+        <endpoint name="search" method="GET" auth_required="false">
+            <formats>xml,json</formats>
+            <param name="q" type="string" required="true"/>
+            <param name="per_page" type="integer" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- Direct message methods -->
+    <category name="direct_messages">
+        <endpoint name="direct_messages" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="sent" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="max_id" type="integer" required="false"/>
+            <param name="count" type="integer" max_length="200" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="new" method="POST" auth_required="true" min_args="2">
+            <formats>xml,json</formats>
+            <param name="user" type="id_or_screenname" required="false"/>
+            <param name="text" type="string" max_length="140" required="true"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+        <endpoint name="destroy" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+    </category>
+
+    <!-- Frienship methods -->
+    <category name="friendships">
+        <endpoint name="create" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="follow" type="boolean" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+        <endpoint name="destroy" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+        <endpoint name="exists" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="user_a" type="id_or_screenname" required="true"/>
+            <param name="user_b" type="id_or_screenname" required="true"/>
+        </endpoint>
+        <endpoint name="show" method="GET" auth_required="false" min_args="2">
+            <formats>xml,json</formats>
+            <param name="source_id" type="id_or_screenname" required="false"/>
+            <param name="source_screen_name" type="id_or_screenname" required="false"/>
+            <param name="target_id" type="id_or_screenname" required="false"/>
+            <param name="target_screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- Social graph methods, divided in two categories: friends and followers -->
+    <category name="friends">
+        <endpoint name="ids" method="GET" auth_required="false" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+    </category>
+    <category name="followers">
+        <endpoint name="ids" method="GET" auth_required="false" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+            <param name="cursor" type="integer" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- Account methods -->
+    <category name="account">
+        <endpoint name="verify_credentials" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+        </endpoint>
+        <endpoint name="rate_limit_status" method="GET" auth_required="false">
+            <formats>xml,json</formats>
+        </endpoint>
+        <endpoint name="end_session" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+        </endpoint>
+        <endpoint name="update_delivery_device" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="device" type="device" required="true"/>
+        </endpoint>
+        <endpoint name="update_profile_colors" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="profile_background_color" type="color" required="false"/>
+            <param name="profile_text_color" type="color" required="false"/>
+            <param name="profile_link_color" type="color" required="false"/>
+            <param name="profile_sidebar_fill_color" type="color" required="false"/>
+            <param name="profile_sidebar_border_color" type="color" required="false"/>
+        </endpoint>
+        <endpoint name="update_profile_image" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="image" type="image" required="true"/>
+        </endpoint>
+        <endpoint name="update_profile_background_image" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="image" type="image" required="true"/>
+            <param name="tile" type="boolean" required="false"/>
+        </endpoint>
+        <endpoint name="update_profile" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="name" type="string" max_length="40" required="false"/>
+            <param name="url" type="string" max_length="100" required="false"/>
+            <param name="location" type="string" max_length="30" required="false"/>
+            <param name="description" type="string" max_length="160" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- Favorites methods -->
+    <category name="favorites">
+        <endpoint name="favorites" method="GET" auth_required="true">
+            <formats>xml,json,rss,atom</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <endpoint name="create" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="destroy" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+    </category>
+
+    <!-- Notification methods -->
+    <category name="notifications">
+        <endpoint name="follow" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+        <endpoint name="leave" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- Block methods -->
+    <category name="blocks">
+        <endpoint name="create" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="true"/>
+        </endpoint>
+        <endpoint name="destroy" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="true"/>
+        </endpoint>
+        <endpoint name="exists" method="GET" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+        <endpoint name="blocking" method="GET" auth_required="true">
+            <param name="page" type="integer" required="false"/>
+        </endpoint>
+        <!-- TODO add blocks/blocking/ids but this is not currently possible -->
+    </category>
+
+    <!-- Report spam methods -->
+    <category name="report_spam">
+        <endpoint name="report_spam" method="POST" auth_required="true" min_args="1">
+            <formats>xml,json</formats>
+            <param name="id" type="id_or_screenname" required="false"/>
+            <param name="user_id" type="id_or_screenname" required="false"/>
+            <param name="screen_name" type="id_or_screenname" required="false"/>
+        </endpoint>
+    </category>
+
+    <!-- Saved searches methods -->
+    <category name="saved_searches">
+        <endpoint name="saved_searches" method="GET" auth_required="true">
+            <formats>xml,json</formats>
+        </endpoint>
+        <endpoint name="show" method="GET" auth_required="false">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+        <endpoint name="create" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="query" type="string" required="true"/>
+        </endpoint>
+        <endpoint name="destroy" method="POST" auth_required="true">
+            <formats>xml,json</formats>
+            <param name="id" type="integer" required="true"/>
+        </endpoint>
+    </category>
+
+    <!-- TODO: add OAuth methods -->
+
+    <!-- Help methods -->
+    <category name="help">
+        <endpoint name="test" method="GET" auth_required="false">
+            <formats>xml,json</formats>
+        </endpoint>
+    </category>
+
+    <!-- Search API methods -->
+    <category name="search">
+        <endpoint name="search" method="GET" auth_required="false">
+            <formats>json,atom</formats>
+            <param name="q" type="string" required="true"/>
+            <param name="lang" type="iso-639-1" required="false"/>
+            <param name="locale" type="string" required="false"/>
+            <param name="rpp" type="integer" required="false"/>
+            <param name="page" type="integer" required="false"/>
+            <param name="since_id" type="integer" required="false"/>
+            <param name="until" type="date" required="false"/>
+            <param name="geocode" type="geocode" required="false"/>
+            <param name="show_user" type="boolean" required="false"/>
+            <param name="result_type" type="string" required="false"/>
+        </endpoint>
+    </category>
+    <category name="trends">
+        <endpoint name="trends" method="GET" auth_required="false">
+            <formats>json</formats>
+        </endpoint>
+        <endpoint name="current" method="GET" auth_required="false">
+            <formats>json</formats>
+            <param name="exclude" type="string" required="false"/>
+        </endpoint>
+        <endpoint name="daily" method="GET" auth_required="false">
+            <formats>json</formats>
+            <param name="date" type="date" required="false"/>
+            <param name="exclude" type="string" required="false"/>
+        </endpoint>
+        <endpoint name="weekly" method="GET" auth_required="false">
+            <formats>json</formats>
+            <param name="date" type="date" required="false"/>
+            <param name="exclude" type="string" required="false"/>
+        </endpoint>
+        <endpoint name="available" method="GET" auth_required="false">
+            <formats>xml,json</formats>
+            <param name="lat" type="string" required="false"/>
+            <param name="long" type="string" required="false"/>
+        </endpoint>
+        <endpoint name="location" method="GET" auth_required="false" min_args="1" routing="/trends/:woeid">
+            <formats>xml,json</formats>
+            <param name="woeid" type="integer" required="true"/>
+        </endpoint>
+    </category>
+    
+    <!-- Geo API Methods -->
+    <category name="geo">
+        <endpoint name="search" method="GET" min_args="1" auth_required="false">
+            <formats>json</formats>
+            <param name="lat" type="lat" required="false"/>
+            <param name="long" type="long" required="false"/>
+            <param name="query" type="string" required="false"/>
+            <param name="ip" type="string" required="false"/>
+            <param name="granularity" type="string" required="false"/>
+            <param name="accuracy" type="string" required="false"/>
+            <param name="max_results" type="integer" required="false"/>
+            <param name="contained_within" type="string" required="false"/>
+            <param name="autocomplete" type="boolean" required="false"/>
+        </endpoint>
+        <endpoint name="id" method="GET" auth_required="true" routing="/geo/id/:place_id">
+            <formats>json</formats>
+            <param name="place_id" type="string" required="true"/>
+        </endpoint>
+    </category>
+
+</api>

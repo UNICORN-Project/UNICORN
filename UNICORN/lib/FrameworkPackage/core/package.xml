@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<xml>
+	<default>
+		<!-- 自動走査パスの設定 -->
+		<!-- あまり多く定義するとフレームワークの速度が低下するので注意して下さい！ -->
+		<link suffix=".php">lib/FrameworkPackage/function</link>
+		<link suffix=".php">lib/GenericPackage/function</link>
+		<link suffix=".class.php">lib/FrameworkPackage/class/Exception</link>
+		<link suffix=".class.php">lib/GenericPackage/class/Exception</link>
+		<link suffix=".php">lib/VendorPackage/PEAR</link>
+		<link suffix=".php">lib/VendorPackage</link>
+		<implement suffix=".class.php">lib/FrameworkPackage/class</implement>
+		<implement suffix=".class.php">lib/GenericPackage/class</implement>
+		<abstract suffix=".abstract.php">lib/FrameworkPackage/class</abstract>
+		<abstract suffix=".abstract.php">lib/GenericPackage/class</abstract>
+		<interface suffix=".interface.php">lib/FrameworkPackage/class</interface>
+		<interface suffix=".interface.php">lib/GenericPackage/class</interface>
+		<!-- フレームワーク標準のMVCパターンを使用する場合のパス定義 -->
+		<controlmain suffix=".php">lib/FrameworkPackage/class/MVC/Controller</controlmain>
+		<modelmain suffix=".php">lib/FrameworkPackage/class/MVC/Model</modelmain>
+		<viewmain suffix=".php">lib/FrameworkPackage/class/MVC/View</viewmain>
+		<!-- 自動走査パスの設定ここまで！ -->
+		<!-- フレームワークの初期化時に必ず自動で読み込ませるファイルは以下に定義します。 -->
+		<auto>
+			<mobule>default.functions.inc.php</mobule>
+		</auto>
+	</default>
+	<!-- classマッピング定義ココから -->
+	<!-- 上記のdefault節で定義されてるパス配下で、且つ依存関係の無い単独動作のファイルは以下の個別定義追加は不要です -->
+	<Flow>
+		<link mapfrom="FlowManager" mapto="Flow">default.implement.Flow/FlowManager</link>
+	</Flow>
+	<WebFlowControllerBase>
+		<package>MVCControllerBase</package>
+		<package>WebControllerBase</package>
+		<link>default.implement.Flow/WebFlowControllerBase</link>
+	</WebFlowControllerBase>
+	<Core>
+		<link mapfrom="MVCCore" mapto="Core">default.implement.MVC/MVCCore</link>
+	</Core>
+	<Auth>
+		<package>DBO</package>
+		<package>Session</package>
+		<link>default.implement.Auth/Auth</link>
+	</Auth>
+	<Session>
+		<package>DBO</package>
+		<link>default.interface.Session/SessionIO</link>
+		<link>default.abstract.Session/SessionDataDB</link>
+		<link mapfrom="SessionDB" mapto="Session">default.implement.Session/SessionDB</link>
+	</Session>
+	<MVCControllerBase>
+		<link>default.interface.MVC/MVCController</link>
+		<link>default.abstract.MVC/MVCControllerBase</link>
+	</MVCControllerBase>
+	<WebControllerBase>
+		<package>MVCControllerBase</package>
+		<link>default.implement.MVC/WebControllerBase</link>
+	</WebControllerBase>
+	<APIControllerBase>
+		<package>MVCControllerBase</package>
+		<package>WebControllerBase</package>
+		<link>default.implement.MVC/APIControllerBase</link>
+	</APIControllerBase>
+	<ImageControllerBase>
+		<package>MVCControllerBase</package>
+		<package>WebControllerBase</package>
+		<package>APIControllerBase</package>
+		<link>default.implement.MVC/ImageControllerBase</link>
+	</ImageControllerBase>
+	<RestControllerBase>
+		<package>MVCControllerBase</package>
+		<package>WebControllerBase</package>
+		<package>APIControllerBase</package>
+		<link>default.interface.MVC/RestControllerIO</link>
+		<link>default.abstract.MVC/RestControllerBase</link>
+	</RestControllerBase>
+	<Rest>
+		<package>MVCControllerBase</package>
+		<package>WebControllerBase</package>
+		<package>APIControllerBase</package>
+		<package>RestControllerBase</package>
+		<link>default.controlmain.Rest</link>
+	</Rest>
+	<MVCAppendFilter>
+		<link mapfrom="BaseAppendFilter" mapto="MVCAppendFilter">default.controlmain.Filter/BaseAppendFilter</link>
+	</MVCAppendFilter>
+	<MVCPrependFilter>
+		<link mapfrom="BasePrependFilter" mapto="MVCPrependFilter">default.controlmain.Filter/BasePrependFilter</link>
+	</MVCPrependFilter>
+	<StaticAppendFilter>
+		<link mapfrom="BaseAppendFilter" mapto="StaticAppendFilter">default.controlmain.Filter/BaseAppendFilter</link>
+	</StaticAppendFilter>
+	<StaticPrependFilter>
+		<link mapfrom="BasePrependFilter" mapto="StaticPrependFilter">default.controlmain.Filter/BasePrependFilter</link>
+	</StaticPrependFilter>
+	<Utilities>
+		<link mapfrom="Cipher" mapto="Crypt">default.implement.Cipher/Cipher</link>
+		<link>default.implement.Utilities/Utilities</link>
+	</Utilities>
+	<Validations>
+		<link mapfrom="GenericValidations" mapto="Validations">default.implement.Utilities/GenericValidations</link>
+	</Validations>
+	<DBO>
+		<link>default.adodb5/adodb-exceptions.inc.php</link>
+		<link>default.adodb5/adodb.inc.php</link>
+		<link mapfrom="GenericDBO" mapto="DBO">default.implement.DB/GenericDBO</link>
+	</DBO>
+	<ORMapper>
+		<package>DBO</package>
+		<link renamefrom="GenericModel" renameto="Model">default.interface.ORM/GenericModel</link>
+		<link mapfrom="GenericModelBase" mapto="ModelBase">default.abstract.ORM/GenericModelBase</link>
+		<link mapfrom="GenericORMapper" mapto="ORMapper">default.implement.ORM/GenericORMapper</link>
+	</ORMapper>
+	<MigrationManager>
+		<package>DBO</package>
+		<package>ORMapper</package>
+		<link mapfrom="GenericMigrationBase" mapto="MigrationBase">default.abstract.ORM/GenericMigrationBase</link>
+		<link mapfrom="GenericMigrationManager" mapto="MigrationManager">default.implement.ORM/GenericMigrationManager</link>
+	</MigrationManager>
+	<Memcached>
+		<link mapfrom="GenericMemcached" mapto="Memcached">default.implement.KVS/GenericMemcached.class.php</link>
+	</Memcached>
+	<Crypt>
+		<link mapfrom="Cipher" mapto="Crypt">default.implement.Cipher/Cipher</link>
+	</Crypt>
+	<HTTPRequest>
+		<link>default.PEAR/HTTP/Request2.php</link>
+		<link mapfrom="GenericHttpRequest" mapto="HTTPRequest">default.implement.Request/GenericHttpRequest</link>
+	</HTTPRequest>
+	<!-- classマッピング定義ココまで -->
+	<!-- 自動解決出来ないclassファイルの定義ココから -->
+	<HtmlTemplate>
+		<link addmethod="simple_html_dom_node_get_dom" renamefrom="simple_html_dom, simple_html_dom_node" renameto="simple_html_dom_org, simple_html_dom_node_org">simple/simple_html_dom.php</link>
+		<link>default.implement.TemplateEngine/simple_html_dom_wrapper.php</link>
+		<link mapfrom="PQuery" mapto="HtmlTemplate">default.implement.TemplateEngine/PQuery.class.php</link>
+		<simple_html_dom_node_get_dom targetclass="simple_html_dom_node"><![CDATA[function & getDOM(){ return $this->dom; }]]></simple_html_dom_node_get_dom>
+	</HtmlTemplate>
+	<HtmlViewAssignor>
+		<package>HtmlTemplate</package>
+		<link>default.implement.MVC/HtmlViewAssignor</link>
+	</HtmlViewAssignor>
+	<PushNotification>
+		<link>default.AWSSDK/aws.phar</link>
+		<link mapfrom="GenericAWSNotification" mapto="PushNotification">default.implement.AWS/GenericAWSNotification</link>
+	</PushNotification>
+	<Image>
+		<pattern><![CDATA[^Image[a-zA-Z]*(Info|Util)]]></pattern>
+		<link>default.implement.Image/Image</link>
+	</Image>
+	<!-- 自動解決出来ないclassファイルの定義ココまで -->
+</xml>

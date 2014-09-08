@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<xml>
+	<default>
+		<implement suffix=".class.php">class</implement>
+		<abstract suffix=".abstract.php">class</abstract>
+		<interface suffix=".interface.php">class</interface>
+		<!-- フレームワーク標準のMVCパターンを使用する場合のパス定義 -->
+		<controlmain suffix=".php">class/MVC/Controller</controlmain>
+		<modelmain suffix=".php">class/MVC/Model</modelmain>
+	</default>
+</xml>

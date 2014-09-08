@@ -1,0 +1,39 @@
+■GenericORMapperの依存性
+・DBOクラス
+	・executeメソッドの実装がある事
+		bool execute(argQuery, argBind={key,val...});
+		executeの概要についてはGenericDBOのgetTableDescribesメソッドを参照
+	・getTableDescribesメソッドの実装がある事
+		array = getTableDescribes();
+		getTableDescribesの概要についてはGenericDBOのgetTableDescribesメソッドを参照
+
+■GenericORMapperの制約
+・対応しているDBエンジン
+	・MySQL
+	・PostgreSQL
+	・Oracle
+・シーケンスIDの自動処理
+	・プライマリーキー指定が一つだけテーブルに存在する場合に自動処理が走ります。
+	・複数のプライマリーキーが指定されている場合、シーケンスの自動処理は実行されません。
+	・フレームワークでの固定自動処理
+		・プライマリーキー名_seqをシーケンス名として自動処理をします。
+		・MySQLではauto_increment指定されていればそれに準拠します。
+		・MySQLでauto_incrementが指定されていない、且つ一つのプライマリーキー指定がある場合は
+			"UPDATE ".テーブル名."_".プライマリーキー名."_seq SET id=LAST_INSERT_ID(id+1); ";
+			"SELECT LAST_INSERT_ID() as new_id FROM ".テーブル名."_".プライマリーキー名."_seq; ";
+		 を実行します。
+			・付録-MySQL用シーケンステーブルのひな形
+				CREATE TABLE xxxx (
+				    `id` INT NOT NULL
+				);
+				INSERT INTO xxxx VALUES (xxx);
+	・MySQLでのシーケンスの振る舞い
+		・auto_incrementが設定されている場合、その内容が優先的に処理されます。
+		・独自シーケンスを使用している場合はgetModelメソッドに引数でシーケンス取得SQLを指定して下さい。
+	・また、フレームワークでの固定自動処理を使用しないならば、嘘でも全てのDBエンジンに対応したシーケンス取得SQLを指定しておく事をオススメします。
+・日付型の扱い
+	・フォーマットはYYYY-MM-DD HH24:Mi:SSで固定
+
+XXX
+Nextメソッドは修正中…
+

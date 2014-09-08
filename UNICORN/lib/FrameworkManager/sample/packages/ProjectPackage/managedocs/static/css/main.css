@@ -1,0 +1,55 @@
+
+*{
+	text-decoration: none;
+	/* 基準フォントカラー */
+	color: #666;
+}
+
+header {
+	/* style setting */
+	color: white;
+	font-size: 2em;
+}
+
+header a:link {
+	color: white;
+}
+
+header a:visited {
+	color: white;
+}
+
+header a:hover {
+	color: white;
+}
+
+header a:active {
+	color: white;
+}
+
+footer {
+	border-top: 1px solid #aa178c;
+}
+
+.background {
+	/* style setting */
+	background-color: #ff288c;
+}
+
+.headerbox {
+	/* position setting */
+	margin: 10px;
+}
+
+.panelbox {
+	/* box setting */
+	font-size: 1.5em;
+	/* position setting */
+	margin: 20px;
+	margin-bottom: 0px;
+	padding: 10px;
+	padding-bottom: 0px;
+	background-color: white;
+	/* style setting */
+	border: 2px solid #white;
+}

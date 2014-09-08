@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-10 16:50+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: projectcore/locale/strings.php:11
+msgid "During maintenance."
+msgstr "メンテナンス中です。"
+
+#: projectcore/locale/strings.php:12
+msgid "Error has occurred when connecting to DB."
+msgstr "DB接続時にエラーが発生しました。"
+
+#: projectcore/locale/strings.php:13
+msgid "An unexpected error has occured. Please try again."
+msgstr "予期しないエラーが発生しました。もう一度お試しください。"
+
+#: projectcore/locale/strings.php:14
+msgid "Application version is old.\nPlease update to the lastest version."
+msgstr "アプリのバージョンが古いままです。\n最新版にバージョンアップして下さい。"
+
+#: projectcore/locale/strings.php:15
+msgid "System error"
+msgstr "システムエラー"
+
+#: projectcore/locale/strings.php:17
+msgid "Failed to login."
+msgstr "ログインに失敗しました。"
+
+#: projectcore/locale/strings.php:18
+#, php-format
+msgid "%d:Critical error.\nThis error is seriously. Please contact to\n+813-6746-3123\nfor more details."
+msgstr "%d:致命的なエラー\nこのエラーは深刻です。詳しくはお問い合わせ下さい。\n03-6746-3123"
+
+#: projectcore/locale/strings.php:19
+msgid "Your authentication code could not be verified.\nIn case you don't understand the correct authentication code.\nPlease try again by 'Resend'."
+msgstr "ご入力頂いた認証コードでの\n認証が出来ませんでした。\n正しい認証コードが解らない場合は\n「もう一度送る」を試して見て下さい。"
+
+#: projectcore/locale/strings.php:20
+msgid "Failed to upload file. Please try again."
+msgstr "ファイルのアップロードに失敗しました。再度お試しください。"
+
+#: projectcore/locale/strings.php:21
+msgid "Specified ID has been used already ."
+msgstr "ご指定のIDは既に使用されています。"
+
+#: projectcore/locale/strings.php:22
+msgid "Can not view because it has been blocked.\nPlease unblock and try again."
+msgstr "ブロックしている為参照出来ません。\nブロックを解除してからもう一度お試し下さい。"
+
+#: projectcore/locale/strings.php:23
+msgid "You can't create album as friend."
+msgstr "ご自身を友だちとしてアルバムを作る事は出来ません。"
+
+#: projectcore/locale/strings.php:24
+msgid "The format of email address is incorrect."
+msgstr "メールアドレスの形式が正しくありません。"
+
+#: projectcore/locale/strings.php:25
+msgid "Can not register by your specified email address.\nPlease try it again or use another email address."
+msgstr "ご指定のメールアドレスでは登録出来ませんでした。\n再度お試し頂くか、別のメールアドレスでお試し下さい、"
+
+#: projectcore/locale/strings.php:26
+msgid "Specified tel number has  been used already.\nPlease widthdraw it from the previous device and then register again."
+msgstr "ご指定の電話番号は既に使用されています。\n以前お使いの端末で退会を行ってから再度登録を行って下さい。"
+
+#: projectcore/locale/strings.php:27
+msgid "You can't choose user has withdrawn to set member of existing group."
+msgstr "退会済みユーザーを予めグループのメンバーに指定する事は出来ません。"
+
+#: projectcore/locale/strings.php:28
+msgid "Please input group name between 3 and 20 characters."
+msgstr "グループ名は3文字以上20文字以内でご入力下さい。"
+
+#: projectcore/locale/strings.php:29
+msgid "Please input the correct serial code."
+msgstr "シリアルコードを正しく入力してください。"
+
+#: projectcore/locale/strings.php:30
+msgid "Stamp has expired so you can't use it."
+msgstr "スタンプの期限が切れのため、使用出来ません。"
+
+#: projectcore/locale/strings.php:31
+msgid "The answer is incorrect!\nIf you don't understand anyway, please ask your friend directly!"
+msgstr "答えが違います！\nどうしても解らない時は、友だちに直接答えを聞こう！"
+
+#: projectcore/locale/strings.php:32
+msgid "This tutorial is already finished."
+msgstr "このチュートリアルは既に終えています。"
+
+#: projectcore/locale/locale.php:66
+#, php-format
+msgid "%s' group %s"
+msgstr "%sさんのグループ %s"
+
+#: projectcore/locale/strings.php:35
+msgid "unknown"
+msgstr "退会済ユーザー"
+
+#: projectcore/locale/strings.php:38
+msgid "no name"
+msgstr "名無し"
+
+#: projectcore/locale/strings.php:41
+#, php-format
+msgid "%s uploaded photos"
+msgstr "%sさんが写真を投稿しました"
+
+#: projectcore/locale/strings.php:42
+#, php-format
+msgid "%s wrote comments"
+msgstr "%sさんがコメントしました"
+
+#: projectcore/locale/strings.php:43
+#, php-format
+msgid "%s used stamps"
+msgstr "%sさんがスタンプしました"
+
+#: projectcore/locale/strings.php:44
+#, php-format
+msgid "Became friend with %s"
+msgstr "%sさんと友達になりました"
+
+#: projectcore/locale/strings.php:45
+#, php-format
+msgid "Received friend request from %s"
+msgstr "%sさんから友達申請がありました"
+
+#: projectcore/locale/strings.php:46
+#, php-format
+msgid "%s joined the album"
+msgstr "%sさんがアルバムに参加しました"
+
+#: projectcore/locale/strings.php:47
+#, php-format
+msgid "%s joined the group"
+msgstr "%sさんがグループに参加しました"
+
+#: projectcore/locale/strings.php:48
+msgid "joined the group"
+msgstr "グループに参加しました"
+
+#: projectcore/locale/strings.php:49
+#, php-format
+msgid "%s has left group"
+msgstr "%sさんがグループから抜けました"
+
+#: projectcore/locale/strings.php:52
+msgid "Let's use Unpublish talk album CiaoPic!\n"
+msgstr "非公開トークアルバムCiaoPicを使おう！\n"
+
+#: projectcore/locale/strings.php:53
+#, php-format
+msgid "Let's use Unpublished talk album CiaoPic!\nPlease confirm album is created by %d from URL below♪\n\n※Expiration time is one week!\n"
+msgstr "非公開トークアルバムCiaoPicを使おう！\n下のURLから%dさんが作ったアルバムを確認してね♪\n\n※有効期限は１週間だよ！\n"
+
+#: projectcore/locale/locale.php:100
+msgid "Relay PreFinish Subject\n"
+msgstr "引き継ぎ仮登録完了のお知らせ\n"
+
+#: projectcore/locale/locale.php:101
+msgid "Relay PreFinish\n"
+msgstr "CiaoPicの引き継ぎ仮登録ありがとうございます。\n下記URLにアクセスして引き継ぎを完了してください。\n\n%url\n\n※このURLの有効期限は10分です。お早めにURLにアクセスしてください。\n※メーラによってはURLを直接開けない場合が有ります。\n開けない場合は一度URLをコピーしてSafariで開くか、メモアプリなどに貼り付けてからのご利用をお試し下さい。\n※このメールにお心当たりがない場合、メールアドレスが誤って送信された可能性があります。大変お手数ですが破棄して下さい。\n※このメールには返信できません。\n\nhttp://www.ciaopic.com/\n"
+
+#: projectcore/locale/locale.php:102
+msgid "Relay Finish Subject\n"
+msgstr "引き継ぎ設定が完了しましたので、お知らせします。\n"
+
+#: projectcore/locale/locale.php:103
+msgid "Relay Finish\n"
+msgstr "いつもCiaoPicをご利用いただきありがとうございます。\n引き継ぎ設定が完了しましたので、お知らせします。\n\n▼下記が登録内容となります。\n\n----------------------------------\n■メールアドレス\n%address\n----------------------------------\n\n登録頂いたメールアドレスとパスワードは他の端末に引き継ぐ際に必要となりますので、大切に保管をして頂ければ幸いです。\n\n今後ともCiaoPicをよろしくお願いします。\n\n※このメールにお心当たりがない場合、メールアドレスが誤って送信された可能性があります。大変お手数ですが破棄して下さい。\n※このメールには返信できません。\n\nhttp://www.ciaopic.com/\n"
+
+#: projectcore/locale/locale.php:132
+msgid "CiaoPic - Unpublished talk album: This is private albums (free) for secret couple showing photos about their good memories (friends, couple, family, group)"
+msgstr "非公開トークアルバムCiaoPic(チャオピク) :仲良し同士（友だち、カップル、家族、グループ）の思い出の写真を秘密の２人専用プライベートなアルバム（無料）へ"
+
+#: projectcore/locale/locale.php:133
+msgid "from"
+msgstr "さんが"
+
+#: projectcore/locale/locale.php:134
+msgid "to"
+msgstr "さんとの"
+
+#: projectcore/locale/locale.php:135
+#, php-format
+msgid "invitation of %s♪"
+msgstr "さんからの招待です♪"

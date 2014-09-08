@@ -1,0 +1,184 @@
+/* スマフォ用スタイル定義 */
+@media screen and (max-width: 640px) {
+	*{
+		text-overflow: ellipsis;
+	}
+
+	h2 {
+		color: white;
+		font-size: 1em;
+		font-weight: bold;
+		padding: 0px;
+	}
+
+	header {
+		/* box setting */
+		/* style setting */
+		color: white;
+		font-size: 1.5em;
+	}
+
+	header img {
+		width: 50%;
+		height: 50%;
+	}
+
+	header a:link {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	header a:visited {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	header a:hover {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	header a:active {
+		/* box setting */
+		overflow: hidden;
+		/* style setting */
+		color: white;
+	}
+
+	input[type='text'], input[type='password'] {
+		/* box setting */
+		width: 300px;
+	}
+
+	table {
+		width: 100%;
+		table-layout:fixed;
+	}
+
+	table td, table td * {
+		word-wrap: break-word;
+	}
+
+	.background {
+		background-position: center;
+	}
+
+	.headerbox {
+		/* position setting */
+		margin: 5px;
+	}
+
+	.layout-container {
+		overflow: visible;
+	}
+
+	.panelbox {
+		/* box setting */
+		width: 100%;
+		/* position setting */
+		margin: 0;
+		padding: 0;
+		/* style setting */
+		border: 2px solid #white;
+		font-size: 1.5em;
+	}
+
+	.main .mainbox {
+		overflow: visible;
+		min-height: 100%;
+		height: auto;
+		margin-bottom: 50px;
+		padding-bottom: 60px;
+	}
+
+	#header {
+		/* style setting */
+		background-color: black;
+	}
+
+	#header .leftbox, #header .rightbox {
+		/* box setting */
+		width: 25%;
+		/* position setting */
+		margin: 0;
+		padding: 5px;
+		padding-right: 0;
+	}
+
+	#header .rightbox {
+		/* style setting */
+		white-space:nowrap;
+	}
+
+	#header .leftbox {
+		/* style setting */
+		word-wrap: break-word;
+	}
+
+	.rightbox.headerbox ul, .rightbox.headerbox li {
+		width: 100%;
+	}
+
+	#contents.layout-container {
+		/* box setting */
+		display: block;
+		width: 100%;
+		/* position setting */
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		bottom: 0;
+	}
+
+	#contents .leftbox, #contents .rightbox {
+		/* box setting */
+		height: auto;
+		/* position setting */
+		padding: 5px;
+		/* style setting */
+		color: white;
+	}
+
+	#contents .leftbox p, #contents .rightbox p {
+		/* position setting */
+		padding: 0;
+		padding-bottom: 2px;
+		/* style setting */
+		color: white;
+	}
+
+	#contents li {
+		color: white;
+	}
+
+	#contents li a:link {
+		color: white;
+	}
+
+	#contents li a:visited {
+		color: white;
+	}
+
+	#contents li a:hover {
+		color: white;
+	}
+
+	#contents li a:active {
+		color: white;
+	}
+
+	.loginform h2 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.syntaxhighlighter code{
+		font-size: 8px !important;
+	}
+}

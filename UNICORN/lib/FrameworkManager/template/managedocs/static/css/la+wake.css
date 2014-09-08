@@ -1,0 +1,17 @@
+
+*{
+	color: #00FF40;
+}
+
+.background {
+	background-image:
+		url(https://dl.dropboxusercontent.com/u/22810487/UNICORN/image/background2.jpg);
+}
+
+nav.panelbox {
+	border: 2px solid #00FF40;
+}
+
+.maincontents {
+	border: 2px solid #00FF40;
+}

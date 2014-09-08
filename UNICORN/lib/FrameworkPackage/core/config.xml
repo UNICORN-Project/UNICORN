@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<!--
+	パス定義は必須
+	-->
+	<ROOT_PATH code="TRUE"><![CDATA[dirname(dirname(dirname(dirname(__FILE__)))).'/']]></ROOT_PATH>
+	<CORE_PATH code="TRUE"><![CDATA[dirname(__FILE__).'/']]></CORE_PATH>
+	<LIB_PATH code="TRUE"><![CDATA[%ROOT_PATH%]]></LIB_PATH>
+	<LOG_PATH code="TRUE"><![CDATA[%ROOT_PATH%.'log/']]></LOG_PATH>
+	<LOCALE_PATH code="TRUE"><![CDATA[%ROOT_PATH%.'locale/']]></LOCALE_PATH>
+	<FLOWXML_PATH>FrameworkPackage/Flow/controller/</FLOWXML_PATH>
+	<MAINTENANCE_FLAG_FILE code="TRUE"><![CDATA[dirname( __FILE__ ).'/.maintenance']]></MAINTENANCE_FLAG_FILE>
+	<WEB_MAINTENANCE_FLAG_FILE code="TRUE"><![CDATA[dirname( __FILE__ ).'/.webmaintenance']]></WEB_MAINTENANCE_FLAG_FILE>
+	<API_MAINTENANCE_FLAG_FILE code="TRUE"><![CDATA[dirname( __FILE__ ).'/.apimaintenance']]></API_MAINTENANCE_FLAG_FILE>
+	<DB_MAINTENANCE_FLAG_FILE code="TRUE"><![CDATA[dirname( __FILE__ ).'/.dbmaintenance']]></DB_MAINTENANCE_FLAG_FILE>
+	<!-- DB定義(DSN形式指定) ※この定義は必須では無いが、この定義は自動で解決されます -->
+	<DB_DSN>mysqli://root:root@localhost/mysql</DB_DSN>
+	<DENY_HTTP>false</DENY_HTTP>
+	<DENY_ALL_IP>false</DENY_ALL_IP>
+</xml>

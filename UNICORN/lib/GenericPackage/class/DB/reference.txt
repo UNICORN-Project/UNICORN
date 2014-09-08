@@ -1,0 +1,9 @@
+GenericORMapperの依存性
+・DBOクラス
+	・executeメソッドの実装がある事
+		bool execute(argQuery, argBind={key,val...});
+		executeの概要についてはGenericDBOのgetTableDescribesメソッドを参照
+	・getTableDescribesメソッドの実装がある事
+		array = getTableDescribes();
+		getTableDescribesの概要についてはGenericDBOのgetTableDescribesメソッドを参照
+

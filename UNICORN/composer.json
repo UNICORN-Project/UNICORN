@@ -1,0 +1,34 @@
+{
+    "name": "UNICORN-Project",
+    "type": "project",
+    "description" : "Fast Start Project Framework.",
+    "keywords": ["application", "website", "development", "framework", "PHP", "iOS", "Android"],
+    "license": "MIT",
+    "repositories": [
+        { "packagist": false },
+        {
+            "type": "package",
+            "package": {
+                "name": "lib",
+                "type": "unicorn-package",
+                "version": "1",
+                "dist": {
+                    "url": "https://github.com/UNICORN-Project/lib/archive/master.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/UNICORN-project/lib.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "unicorn": "1"
+    },
+    "config": {
+        "vendor-dir": "../UNICORN"
+    },
+    "minimum-stability": "dev"
+}

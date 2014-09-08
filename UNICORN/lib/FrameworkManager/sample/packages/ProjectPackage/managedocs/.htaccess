@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# PHP側でRewriteRuleを参照出来るようにする
+SetEnv RewriteRule '([^\+]*)?\.(.*)$ index.php?_c_=api/$1&_o_=$2'
+SetEnv ReverseRewriteRule '\?_c_\=api\/([^+]*)?\&_o_\=(.*) ./$1.$2'
+
+# All files with .something are skipped
+RewriteCond %{REQUEST_URI} \..+$
+RewriteCond %{REQUEST_URI} !\.json$
+RewriteCond %{REQUEST_URI} !\.html$
+RewriteRule .* - [L]
+
+# リライト
+# 認証RestへのRewrite
+RewriteRule (.*)?\.json$ index.php?_c_=mgr/Rest&_a_=execute&_r_=$1&_o_=json [QSA,L]
+RewriteRule (.*)?\.html$ index.php?_c_=mgr/$1&_a_=execute&_r_=$1&_o_=html [QSA,L]
+
+php_flag mbstring.encoding_translation off
+php_value mbstring.http_input pass
+php_value mbstring.internal_encoding UTF-8
+
+# エラーの表示設定
+# 全てのエラーを非表示
+#php_value error_reporting 1
+# 以下はPHP5環境用
+php_value error_reporting 24575

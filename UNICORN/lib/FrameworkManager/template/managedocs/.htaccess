@@ -1,0 +1,29 @@
+RewriteEngine On
+
+# PHP側でRewriteRuleを参照出来るようにする
+SetEnv RewriteRule '([^\+]*)?\.(.*)$ index.php?_c_=web/$1&_o_=$2'
+SetEnv ReverseRewriteRule '\?_c_\=web\/([^+]*)?\&_o_\=(.*) ./$1.$2'
+
+# All files with .something are skipped
+RewriteCond %{REQUEST_URI} \..+$
+RewriteCond %{REQUEST_URI} !$
+RewriteCond %{REQUEST_URI} !\.html$
+RewriteCond %{REQUEST_URI} !\.xml$
+RewriteCond %{REQUEST_URI} !\.json$
+RewriteRule .* - [L]
+
+# リライト
+# URL省略時のIndexFlowへのRewrite
+RewriteRule ^\/$ index.php?_c_=web/Index&_o_=html [QSA,L]
+# FlowへのRewrite
+RewriteRule ([^\+]*)?\.(.*)$ index.php?_c_=web/$1&_o_=$2 [QSA,L]
+
+php_flag mbstring.encoding_translation off
+php_value mbstring.http_input pass
+php_value mbstring.internal_encoding UTF-8
+
+# エラーの表示設定
+# 全てのエラーを非表示
+#php_value error_reporting 1
+# 以下はPHP5環境用
+php_value error_reporting 24575

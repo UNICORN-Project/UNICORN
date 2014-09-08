@@ -1,0 +1,105 @@
+<?php
+// XXX パスは配置によって適宜修正を
+require("../lib/VendorPackage/AWSSDK/aws.phar");
+
+use Aws\Ec2\Ec2Client;
+use Aws\Common\Enum\Region;
+use Aws\Common\Aws;
+
+define("AWS_KEY", 'AAAAAAAAAAAAAAAAA');
+define("AWS_SECRET_KEY", 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+// podeoサーバの定期バックアップ
+$instanceIDs = array("i-70c23269",);
+
+define("IMAGE_DELETE_TARGET", '-3 day'); //-3 day みたいな感じで指定
+define("PROJ_NAME", 'podeo');
+define("ADMIN_MAIL", 'test@test.test');
+define("ERROR_MAIL_TITLE", '定期バックアップ失敗');
+
+$client = Ec2Client::factory(array(
+		'key'    => AWS_KEY,
+		'secret' => AWS_SECRET_KEY,
+		'region' => Region::TOKYO
+)
+);
+
+try {
+
+	for($backupIdx=0; $backupIdx < count($instanceIDs); $backupIdx++){
+
+		$instanceID = $instanceIDs[$backupIdx];
+
+		//イメージ作成
+		//ここで指定するNameはコンソール上でAMI Nameにあたる
+		$args = array(
+				'InstanceId'  => $instanceID,
+				'Name'        => PROJ_NAME . '-' . $instanceID . '-backup-' . date('Y-m-d'),
+				'Description' => PROJ_NAME . ' backup create ' . date('Y-m-d'),
+		);
+		$result = $client->createImage($args);
+
+		$create_image_id = $result['ImageId'];
+
+		//タグの作成
+		$args = array(
+				'Resources' => array($create_image_id),
+				'Tags' => array(
+						array(
+								'Key'   => 'Created',
+								'Value' => date('Y-m-d')
+						),
+						array(
+								'Key'   => 'Name',
+								'Value' => PROJ_NAME
+						)
+				)
+		);
+		$result = $client->createTags($args);
+
+		//イメージの検索
+		$delete_date = date('Y-m-d', strtotime(IMAGE_DELETE_TARGET));
+		$search_ami_name = PROJ_NAME . '-' . $instanceID . '-backup-' . $delete_date;
+		$filters = array(
+				array(
+						'Name'   => 'tag:Created',
+						'Values' => array($delete_date)
+				),
+				array(
+						'Name'   => 'name',
+						'Values' => array($search_ami_name)
+				),
+		);
+		$args = array(
+				'Owners'  => array('self'),
+				'Filters' => $filters
+		);
+		$images = $client->describeImages($args);
+
+		//イメージ削除
+		//ヒットしたイメージは1件だけのはず
+		if(count($images['Images']) == 0) {
+			//error!
+			echo 'No result  AMI Name: ' . $search_ami_name;
+			mail(ADMIN_MAIL, ERROR_MAIL_TITLE, 'No result  AMI Name: ' . $search_ami_name);
+		}
+		else {
+			$delete_image_id = $images['Images'][0]['ImageId'];
+			$args = array(
+					'ImageId' => $delete_image_id
+			);
+			$result = $client->deregisterImage($args);
+		}
+	}
+}catch(Exception $e) {
+	errorHandle($e);
+}
+
+//エラー時の処理
+//標準出力してメール飛ばしてるだけだけど
+function errorHandle($e) {
+	echo $e->getMessage();
+	mail(ADMIN_MAIL, ERROR_MAIL_TITLE, $e->getMessage());
+	exit;
+}
+
+?>
