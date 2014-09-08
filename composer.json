@@ -40,10 +40,10 @@
         ],
         "post-install-cmd": [
             "cp -R ./_tmp ../../",
-            "cp -R ./lib ../../"
+            "mv -R ./lib ../../"
         ],
         "post-update-cmd": [
-            "cp -R ./lib ../../"
+            "mv -R ./lib ../../"
         ]
     },
     "minimum-stability": "dev"
