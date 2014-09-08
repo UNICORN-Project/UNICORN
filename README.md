@@ -5,7 +5,7 @@ UNICORN
 
 ##■利用開始方法
 ###composerを使ったインストール
-あなたのcomposer.jsonに以下のパッケージを追記し、php composer install を実行する
+1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer install」を実行します。
 ```
         { "packagist": false },
         {
@@ -26,10 +26,29 @@ UNICORN
         }
 ```
 
+2.composer install後、「UNICORN」ディレクトリが所定のvendor-dir以下に出来ています。  
+「UNICORN」ディレクトリに移動し、「UNICORN」ディレクトリ内で再度「php composer install」を実行して下さい。  
+
+
+###手動インストール
+1.以下のリンクからUNICORNを入手して下さい。  
+https://github.com/UNICORN-Project/UNICORN/archive/master.zip  
+
+2.利用したいプロジェクトのドキュメントルートディレクトリと同階層に「vendor」ディレクトリを作成して下さい。  
+
+3.ダウンロードしたUNICORNを解凍し、ディレクトリ名を「UNICORN」に変更後、上記ディレクトリ配下に配置して下さい。  
+
+4.コンソールから「UNICORN」ディレクトリへ移動し、「php composer install」を実行して下さい。  
 
 
 ##■その他リファレンス
-http://saimushi.github.io/UNICORN/
+###UNICORN WEB
+http://UNICORN-Project.github.io/
+
+
+###開発ブログ
+http://saimushi.github.io/
+
 
 ##■ライセンスについて
 **MITライセンスとします。**
