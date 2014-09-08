@@ -25,10 +25,26 @@
         }
     ],
     "require": {
-        "unicorn": "1"
+        "lib": "1"
     },
     "config": {
         "vendor-dir": "../UNICORN"
+    },
+    "scripts": {
+        "pre-update-cmd":  [
+            "cp -R ./_tmp ../../",
+            "cp -R ../../lib/FrameworkPackage/core/config.xml ../../_tmp/config.xml.bak",
+            "cp -R ../../lib/FrameworkPackage/core/package.xml ../../_tmp/package.xml.bak",
+            "cp -R ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak",
+            "cp -R ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak"
+        ],
+        "post-install-cmd": [
+            "cp -R ./_tmp ../../",
+            "cp -R ./lib ../../"
+        ],
+        "post-update-cmd": [
+            "cp -R ./lib ../../"
+        ]
     },
     "minimum-stability": "dev"
 }
