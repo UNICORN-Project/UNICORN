@@ -1647,6 +1647,11 @@ $(document).ready(function(){
 					<strong>移動しない場合は、そのまま「設定」ボタンを押して下さい。</strong>
 					<br>
 					<br>
+					<?php if(is_file(dirname(dirname($frameworkPath))."/vendor/UNICORN/composer.lock")){ ?>
+					<strong class="red">※フレームワークがcomposerによって配置されています！<br/>その場合、移動しない事をオススメします！！</strong>
+					<br>
+					<br>
+					<?php } ?>
 				</p>
 				<br>
 				<small>フレームワークパス</small>
@@ -1855,6 +1860,11 @@ $(document).ready(function(){
 					<strong>移動しない場合は、そのまま「設定」ボタンを押して下さい。</strong>
 					<br>
 					<br>
+					<?php if(is_file(dirname(dirname($frameworkPath))."/vendor/UNICORN/composer.lock")){ ?>
+					<strong class="red">※フレームワークがcomposerによって配置されています！<br/>その場合、移動しない事をオススメします！！</strong>
+					<br>
+					<br>
+					<?php } ?>
 				</p>
 				<br>
 				<div id="step3input2form_box" class="text-input-form">
