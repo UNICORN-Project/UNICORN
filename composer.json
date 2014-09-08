@@ -11,7 +11,7 @@
             "package": {
                 "name": "lib",
                 "type": "unicorn-package",
-                "version": "1",
+                "version": "2",
                 "dist": {
                     "url": "https://github.com/UNICORN-Project/lib/archive/master.zip",
                     "type": "zip"
@@ -25,25 +25,39 @@
         }
     ],
     "require": {
-        "lib": "1"
+        "lib": "2"
     },
     "config": {
         "vendor-dir": "../UNICORN"
     },
     "scripts": {
-        "pre-update-cmd":  [
-            "cp -R ./_tmp ../../",
-            "cp -R ../../lib/FrameworkPackage/core/config.xml ../../_tmp/config.xml.bak",
-            "cp -R ../../lib/FrameworkPackage/core/package.xml ../../_tmp/package.xml.bak",
-            "cp -R ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak",
-            "cp -R ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak"
-        ],
         "post-install-cmd": [
-            "cp -R ./_tmp ../../",
-            "mv -R ./lib ../../"
+            "cp -rf ./_tmp ../../",
+            "mkdir -p ../../lib 2>/dev/null",
+            "mkdir -p ../../lib/FrameworkPackage 2>/dev/null",
+            "mkdir -p ../../lib/FrameworkPackage/core 2>/dev/null",
+            "mkdir -p ../../lib/FrameworkManager 2>/dev/null",
+            "mkdir -p ../../lib/FrameworkManager/core 2>/dev/null",
+            "touch ../../lib/FrameworkPackage/core/config.xml 2>/dev/null",
+            "touch ../../lib/FrameworkPackage/core/package.xml 2>/dev/null",
+            "touch ../../lib/FrameworkManager/core/FrameworkManager.config.xml 2>/dev/null",
+            "touch ../../lib/FrameworkManager/core/FrameworkManager.package.xml 2>/dev/null",
+            "cp -f ../../lib/FrameworkPackage/core/config.xml ../../_tmp/config.xml.bak 2>/dev/null",
+            "cp -f ../../lib/FrameworkPackage/core/package.xml ../../_tmp/package.xml.bak 2>/dev/null",
+            "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
+            "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
+            "cp -rf ./lib/* ../../lib 2>/dev/null",
+            "rm -rf ./lib 2>/dev/null"
         ],
         "post-update-cmd": [
-            "mv -R ./lib ../../"
+            "cp -rf ./_tmp ../../",
+            "mkdir -p ../../lib 2>/dev/null",
+            "cp -f ../../lib/FrameworkPackage/core/config.xml ../../_tmp/config.xml.bak 2>/dev/null",
+            "cp -f ../../lib/FrameworkPackage/core/package.xml ../../_tmp/package.xml.bak 2>/dev/null",
+            "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
+            "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
+            "cp -rf ./lib/* ../../lib 2>/dev/null",
+            "rm -rf ./lib 2>/dev/null"
         ]
     },
     "minimum-stability": "dev"
