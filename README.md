@@ -5,7 +5,7 @@ UNICORN
 
 ##■利用開始方法
 ###composerを使ったインストール
-1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer install」を実行します。
+1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
 ```
         { "packagist": false },
         {
@@ -38,7 +38,7 @@ https://github.com/UNICORN-Project/UNICORN/archive/master.zip
 
 3.ダウンロードしたUNICORNを解凍し、ディレクトリ名を「UNICORN」に変更後、上記ディレクトリ配下に配置して下さい。  
 
-4.コンソールから「UNICORN」ディレクトリへ移動し、「php composer install」を実行して下さい。  
+4.コンソールから「UNICORN」ディレクトリへ移動し、「php composer.phar install」を実行して下さい。  
 
 
 ##■その他リファレンス
