@@ -2474,12 +2474,12 @@ if(TRUE === $_consoled){
 		echo PHP_EOL;
 		echo PHP_TAB . ' ■フレームワークのインストーラーをWeb公開ディレクトリに配置し、インストーラーのURLを払い出す' . PHP_EOL;
 		echo PHP_TAB . ' -> php UNICORN install installerの公開ディレクトリ installerの公開URL [or] php UNICORN NT-D  installerの公開ディレクトリ installerの公開URL' . PHP_EOL;
-		echo PHP_TAB . ' 例) php UNICORN NT-D /home/user/unicorn/htdocs/ http://mydomian.com/unicorn/' . PHP_EOL;
+		echo PHP_TAB . ' 例) php UNICORN NT-D '.dirname(dirname(dirname(dirname(__FILE__)))).'/htdocs/ http://mydomian.com/unicorn/' . PHP_EOL;
 		echo PHP_EOL;
 		echo PHP_EOL;
 		echo PHP_TAB . ' ■フレームワークのインストーラーのURLをデバッグモードフラグ付きで払い出す' . PHP_EOL;
 		echo PHP_TAB . ' -> php UNICORN NT-D installerの公開ディレクトリ installerの公開URL debug' . PHP_EOL;
-		echo PHP_TAB . ' 例) php UNICORN NT-D /home/user/unicorn/htdocs/ http://mydomian.com/unicorn/ debug' . PHP_EOL;
+		echo PHP_TAB . ' 例) php UNICORN NT-D '.dirname(dirname(dirname(dirname(__FILE__)))).'/htdocs/ http://mydomian.com/unicorn/ debug' . PHP_EOL;
 		echo PHP_EOL;
 		echo PHP_EOL;
 		// 		echo ' 2.(LA+システムによる)フレームワークマネージメント' . PHP_EOL;
