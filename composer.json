@@ -5,13 +5,12 @@
     "keywords": ["application", "website", "development", "framework", "PHP", "iOS", "Android"],
     "license": "MIT",
     "repositories": [
-        { "packagist": false },
         {
             "type": "package",
             "package": {
                 "name": "lib",
                 "type": "unicorn-package",
-                "version": "2",
+                "version": "1",
                 "dist": {
                     "url": "https://github.com/UNICORN-Project/lib/archive/master.zip",
                     "type": "zip"
@@ -25,14 +24,14 @@
         }
     ],
     "require": {
-        "lib": "2"
+        "lib": "1",
+        "aws/aws-sdk-php": "*"
     },
     "config": {
         "vendor-dir": "../UNICORN"
     },
     "scripts": {
         "post-install-cmd": [
-            "cp -rf ./log ../../",
             "cp -rf ./_tmp ../../",
             "mkdir -p ../../lib 2>/dev/null",
             "mkdir -p ../../lib/FrameworkPackage 2>/dev/null",
@@ -48,7 +47,18 @@
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
             "cp -rf ./lib/* ../../lib 2>/dev/null",
-            "rm -rf ./lib 2>/dev/null"
+            "cp -rf ./autoload.php ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./aws ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./composer ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./guzzle ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./symfony ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "rm -rf ./lib 2>/dev/null",
+            "rm -rf ./autoload.php 2>/dev/null",
+            "rm -rf ./aws 2>/dev/null",
+            "rm -rf ./composer 2>/dev/null",
+            "rm -rf ./guzzle 2>/dev/null",
+            "rm -rf ./symfony 2>/dev/null",
+            "php ../../lib/UNICORN"
         ],
         "post-update-cmd": [
             "cp -rf ./log ../../",
@@ -59,8 +69,17 @@
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
             "cp -rf ./lib/* ../../lib 2>/dev/null",
-            "rm -rf ./lib 2>/dev/null"
+            "cp -rf ./autoload.php ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./aws ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./composer ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./guzzle ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./symfony ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "rm -rf ./lib 2>/dev/null",
+            "rm -rf ./autoload.php 2>/dev/null",
+            "rm -rf ./aws 2>/dev/null",
+            "rm -rf ./composer 2>/dev/null",
+            "rm -rf ./guzzle 2>/dev/null",
+            "rm -rf ./symfony 2>/dev/null"
         ]
-    },
-    "minimum-stability": "dev"
+    }
 }

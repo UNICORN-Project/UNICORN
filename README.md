@@ -7,7 +7,7 @@ UNICORN
 ###composerを使ったインストール
 1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
 ```
-        { "packagist": false },
+    "repositories": [
         {
             "type": "package",
             "package": {
@@ -24,6 +24,10 @@ UNICORN
                 }
             }
         }
+    ],
+    "require": {
+        "UNICORN": "1"
+    }
 ```
 
 2.composer install後、「UNICORN」ディレクトリが所定のvendor-dir以下に出来ています。  

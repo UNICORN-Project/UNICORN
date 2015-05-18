@@ -1,5 +1,0 @@
-<?php
-
-// OrganizPackage Functions
-
-?>
