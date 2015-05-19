@@ -33,11 +33,6 @@ UNICORN
 2.composer install後、「UNICORN」ディレクトリが所定のvendor-dir以下に出来ています。  
 「UNICORN」ディレクトリに移動し、「UNICORN」ディレクトリ内で再度「php composer.phar install」を実行して下さい。  
 
-**2'最後に、フレームワークの初期設定を簡略化する為に、「UNICORN」コマンドを実行しましょう！**  
-UNICORNディレクトリ配下の「php composer.phar install」を実行した後には、貴方の「vendor-dir」設定しているディレクトリと並列の場所に「lib」ディレクトリが出来ているハズです。  
-コンソールから「lib」ディレクトリ配下まで移動し、以下のコマンドを実行して、指示に従いましょう！  
-**php UNICORN**  
-
 
 ###手動インストール
 1.以下のリンクからUNICORNを入手して下さい。  
@@ -48,11 +43,6 @@ https://github.com/UNICORN-Project/UNICORN/archive/master.zip
 3.ダウンロードしたUNICORNを解凍し、ディレクトリ名を「UNICORN」に変更後、上記ディレクトリ配下に配置して下さい。  
 
 4.コンソールから「UNICORN」ディレクトリへ移動し、「php composer.phar install」を実行して下さい。  
-
-**4'最後に、フレームワークの初期設定を簡略化する為に、「UNICORN」コマンドを実行しましょう！**  
-UNICORNディレクトリ配下の「php composer.phar install」を実行した後には、「vendor」ディレクトリと並列の場所に「lib」ディレクトリが出来ているハズです。  
-コンソールから「lib」ディレクトリ配下まで移動し、以下のコマンドを実行して、指示に従いましょう！  
-**php UNICORN**  
 
 
 ##■その他リファレンス
