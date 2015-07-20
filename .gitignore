@@ -22,8 +22,6 @@ nbproject/
 .local
 tmps/
 tmp/
-/logs
-!/src/logs/reference.txt
 *Project.zip
 *Model.zip
 setupunicorn
