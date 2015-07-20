@@ -53,7 +53,6 @@
             "cp -rf ./guzzlehttp ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "cp -rf ./mtdowling ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "cp -rf ./psr ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./symfony ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "rm -rf ./lib 2>/dev/null",
             "rm -rf ./autoload.php 2>/dev/null",
             "rm -rf ./aws 2>/dev/null",
@@ -61,7 +60,6 @@
             "rm -rf ./guzzlehttp 2>/dev/null",
             "rm -rf ./mtdowling 2>/dev/null",
             "rm -rf ./psr 2>/dev/null",
-            "rm -rf ./symfony 2>/dev/null",
             "php ../../lib/UNICORN"
         ],
         "post-update-cmd": [
@@ -76,14 +74,16 @@
             "cp -rf ./autoload.php ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "cp -rf ./aws ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "cp -rf ./composer ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./guzzle ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./symfony ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./guzzlehttp ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./mtdowling ../../lib/VendorPackage/AWSSDK 2>/dev/null",
+            "cp -rf ./psr ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "rm -rf ./lib 2>/dev/null",
             "rm -rf ./autoload.php 2>/dev/null",
             "rm -rf ./aws 2>/dev/null",
             "rm -rf ./composer 2>/dev/null",
-            "rm -rf ./guzzle 2>/dev/null",
-            "rm -rf ./symfony 2>/dev/null"
+            "rm -rf ./guzzlehttp 2>/dev/null",
+            "rm -rf ./mtdowling 2>/dev/null",
+            "rm -rf ./psr 2>/dev/null"
         ]
     }
 }
