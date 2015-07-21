@@ -7,8 +7,7 @@ UNICORN
 
 ##■利用開始方法  
 
-
-####composerを使ったインストール  
+###composerを使ったインストール  
 
 1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
 ```
@@ -68,6 +67,7 @@ https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/server/html/index.htm
 iOS  
 
 https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/ios/html/index.html  
+
 Android  
 https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/android/html/index.html  
 
@@ -77,10 +77,11 @@ https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/android/html/index.ht
 http://saimushi.github.io/
 
 
+
 ##■ライセンスについて  
 
 **MITライセンスとします。**
 
 内包している画像の著作権や肖像権等は各権利所有者に帰属致します。  
-著作権・肖像権及び各権利所有者様からの削除依頼があった場合、即時削除を行います。（主にNT-Dに関する画像の事）
+著作権・肖像権及び各権利所有者様からの削除依頼があった場合、即時削除を行います。（主にNT-Dに関する画像の事）  
 
