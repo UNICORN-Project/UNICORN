@@ -28,7 +28,7 @@ SOFTWARE.
 ※ライセンスの表示をUNICORNは強制しません。  
 書いても書かなくてもどちらでも構いません。  
 
-###Author saimushi<Twitter:@saimushi>
+###Author saimushi <Twitter:@saimushi>
 
 
 

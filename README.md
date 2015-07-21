@@ -86,3 +86,5 @@ http://saimushi.github.io/
 内包している画像の著作権や肖像権等は各権利所有者に帰属致します。  
 著作権・肖像権及び各権利所有者様からの削除依頼があった場合、即時削除を行います。（主にNT-Dに関する画像の事）  
 
+http://unicorn-project.github.io/licenses.html  
+
