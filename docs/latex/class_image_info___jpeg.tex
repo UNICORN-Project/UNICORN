@@ -1,0 +1,68 @@
+\hypertarget{class_image_info___jpeg}{}\section{Image\+Info\+\_\+\+Jpeg クラス}
+\label{class_image_info___jpeg}\index{Image\+Info\+\_\+\+Jpeg@{Image\+Info\+\_\+\+Jpeg}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_image_info___jpeg_aad43653da2d84f9d503561f110fa819e}{get\+Info} (\&\$data, \&\$image\+\_\+info)
+\end{DoxyCompactItemize}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_image_info___jpeg_ae6336be504ffe67dd34964fa4557d338}{is\+Valid} (\&\$data)
+\end{DoxyCompactItemize}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_image_info___jpeg_ad65b973cd1b699c17e15f2b9689039c2}{}{\bfseries \$jpeg\+\_\+type}\label{class_image_info___jpeg_ad65b973cd1b699c17e15f2b9689039c2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+J\+P\+E\+G画像の情報を処理するクラス
+
+ベースライン方式、プログレッシブ形式のみに対応しています。  private 
+
+\subsection{関数詳解}
+\hypertarget{class_image_info___jpeg_aad43653da2d84f9d503561f110fa819e}{}\index{Image\+Info\+\_\+\+Jpeg@{Image\+Info\+\_\+\+Jpeg}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!Image\+Info\+\_\+\+Jpeg@{Image\+Info\+\_\+\+Jpeg}}
+\subsubsection[{get\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Info\+\_\+\+Jpeg\+::get\+Info (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$data, }
+\item[{\&}]{\$image\+\_\+info}
+\end{DoxyParamCaption}
+)}\label{class_image_info___jpeg_aad43653da2d84f9d503561f110fa819e}
+バイナリデータから\+J\+P\+E\+G画像の情報を取得して返す
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \&\$data} & 画像のバイナリデータ \\
+\hline
+array & {\em \&\$image\+\_\+info} & 取得した画像情報を格納する配列\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean true =$>$ 情報の取得に成功 false =$>$ エラー発生 
+\end{DoxyReturn}
+\hypertarget{class_image_info___jpeg_ae6336be504ffe67dd34964fa4557d338}{}\index{Image\+Info\+\_\+\+Jpeg@{Image\+Info\+\_\+\+Jpeg}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Image\+Info\+\_\+\+Jpeg@{Image\+Info\+\_\+\+Jpeg}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}static Image\+Info\+\_\+\+Jpeg\+::is\+Valid (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_image_info___jpeg_ae6336be504ffe67dd34964fa4557d338}
+有効な\+J\+P\+E\+Gファイルのデータであるかを判定する
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \&\$data} & 画像のバイナリデータ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean true =$>$ J\+P\+E\+G画像 false =$>$ J\+P\+E\+G画像ではない 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Image/Image.\+class.\+php\end{DoxyCompactItemize}

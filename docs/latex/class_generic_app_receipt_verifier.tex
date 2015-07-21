@@ -1,0 +1,57 @@
+\hypertarget{class_generic_app_receipt_verifier}{}\section{Generic\+App\+Receipt\+Verifier クラス}
+\label{class_generic_app_receipt_verifier}\index{Generic\+App\+Receipt\+Verifier@{Generic\+App\+Receipt\+Verifier}}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_generic_app_receipt_verifier_a388ae0d1c431633edb1a7cce05d4009e}{is\+Enabled} (\$arg\+Product\+I\+D, \$arg\+Base64\+Encoded\+Receipt, \$arg\+Device\+Type, \$arg\+Signature\+Or\+Secret\+Key, \$arg\+Autorenew\+Subscription=F\+A\+L\+S\+E, \$arg\+Base64\+Public\+Key=N\+U\+L\+L, \$arg\+Package\+Name=N\+U\+L\+L, \$arg\+Client\+Id=N\+U\+L\+L, \$arg\+Client\+Secret=N\+U\+L\+L, \$arg\+Refresh\+Token=N\+U\+L\+L)
+\end{DoxyCompactItemize}
+
+
+\subsection{関数詳解}
+\hypertarget{class_generic_app_receipt_verifier_a388ae0d1c431633edb1a7cce05d4009e}{}\index{Generic\+App\+Receipt\+Verifier@{Generic\+App\+Receipt\+Verifier}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Generic\+App\+Receipt\+Verifier@{Generic\+App\+Receipt\+Verifier}}
+\subsubsection[{is\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+App\+Receipt\+Verifier\+::is\+Enabled (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Product\+I\+D, }
+\item[{}]{\$arg\+Base64\+Encoded\+Receipt, }
+\item[{}]{\$arg\+Device\+Type, }
+\item[{}]{\$arg\+Signature\+Or\+Secret\+Key, }
+\item[{}]{\$arg\+Autorenew\+Subscription = {\ttfamily FALSE}, }
+\item[{}]{\$arg\+Base64\+Public\+Key = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Package\+Name = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Client\+Id = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Client\+Secret = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Refresh\+Token = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_app_receipt_verifier_a388ae0d1c431633edb1a7cce05d4009e}
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Product\+I\+D} & 課金アイテム\+I\+D \\
+\hline
+string & {\em \$arg\+Base64\+Encoded\+Receipt} & base64レシート \\
+\hline
+string & {\em \$arg\+Device\+Type} & デバイス(ios or android) \\
+\hline
+string & {\em \$arg\+Signature\+Or\+Secret\+Key} & i\+O\+S=シークレットキー Android=base64シグネチャ \\
+\hline
+boolean & {\em \$arg\+Autorenew\+Subscription} & 自動継続購読アイテムフラグ \\
+\hline
+string & {\em \$arg\+Base64\+Public\+Key} & Google用base64公開鍵 \\
+\hline
+string & {\em \$arg\+Package\+Name} & Googleレシートチェック\+A\+P\+I用パッケージ\+I\+D \\
+\hline
+string & {\em \$arg\+Client\+Id} & Googleレシートチェック\+A\+P\+I用クライアント\+I\+D \\
+\hline
+string & {\em \$arg\+Client\+Secret} & Googleレシートチェック\+A\+P\+I用クライアントシークレット \\
+\hline
+string & {\em \$arg\+Refresh\+Token} & Googleレシートチェック\+A\+P\+I用リフレッシュトークン \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+F\+A\+L\+S\+E$\vert$array(\textquotesingle{}last\+\_\+receipt\textquotesingle{} =$>$ lastreceipt\mbox{[}, \textquotesingle{}expired\textquotesingle{} =$>$ bool(F\+A\+L\+S\+E\+:期限内・有効$\vert$\+T\+R\+U\+E\+:期限切・無効), \textquotesingle{}expire\+\_\+date\textquotesingle{} =$>$ newexpireddate\mbox{]}) 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Smartphone/Generic\+App\+Receipt\+Verifier.\+class.\+php\end{DoxyCompactItemize}

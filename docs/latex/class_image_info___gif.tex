@@ -1,0 +1,60 @@
+\hypertarget{class_image_info___gif}{}\section{Image\+Info\+\_\+\+Gif クラス}
+\label{class_image_info___gif}\index{Image\+Info\+\_\+\+Gif@{Image\+Info\+\_\+\+Gif}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_image_info___gif_a901790c8747944166a84d47db8436751}{get\+Info} (\&\$data, \&\$image\+\_\+info)
+\end{DoxyCompactItemize}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_image_info___gif_a9516f27349ef6cb8303fde07c587e8d8}{is\+Valid} (\&\$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+G\+I\+F画像の情報を処理するクラス  private 
+
+\subsection{関数詳解}
+\hypertarget{class_image_info___gif_a901790c8747944166a84d47db8436751}{}\index{Image\+Info\+\_\+\+Gif@{Image\+Info\+\_\+\+Gif}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!Image\+Info\+\_\+\+Gif@{Image\+Info\+\_\+\+Gif}}
+\subsubsection[{get\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Info\+\_\+\+Gif\+::get\+Info (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$data, }
+\item[{\&}]{\$image\+\_\+info}
+\end{DoxyParamCaption}
+)}\label{class_image_info___gif_a901790c8747944166a84d47db8436751}
+バイナリデータから\+G\+I\+F画像の情報を取得して返す
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \&\$data} & 画像のバイナリデータ \\
+\hline
+array & {\em \&\$image\+\_\+info} & 取得した画像情報を格納する配列\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean true =$>$ 情報の取得に成功 false =$>$ エラー発生 
+\end{DoxyReturn}
+\hypertarget{class_image_info___gif_a9516f27349ef6cb8303fde07c587e8d8}{}\index{Image\+Info\+\_\+\+Gif@{Image\+Info\+\_\+\+Gif}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Image\+Info\+\_\+\+Gif@{Image\+Info\+\_\+\+Gif}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}static Image\+Info\+\_\+\+Gif\+::is\+Valid (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_image_info___gif_a9516f27349ef6cb8303fde07c587e8d8}
+有効な\+J\+P\+E\+Gファイルのデータであるかを判定する
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \&\$data} & 画像のバイナリデータ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean true =$>$ P\+N\+G画像 false =$>$ P\+N\+G画像ではない 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Image/Image.\+class.\+php\end{DoxyCompactItemize}

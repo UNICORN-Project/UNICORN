@@ -1,0 +1,88 @@
+\hypertarget{class_rest}{}\section{Rest クラス}
+\label{class_rest}\index{Rest@{Rest}}
+Rest の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_rest}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rest_a6b69aeaec7507e4544cf13cfe402a7cb}{get} ()
+\item 
+\hyperlink{class_rest_aadf4ba482ce65d9423b6ce904695b50c}{post} (\$arg\+Request\+Params=N\+U\+L\+L)
+\item 
+\hyperlink{class_rest_a7e73d86dc864a3686ca192a32355bc02}{put} (\$arg\+Request\+Params=N\+U\+L\+L)
+\item 
+\hyperlink{class_rest_ad7d643a90903bc310129f8c5371ae9b3}{delete} ()
+\item 
+\hyperlink{class_rest_a0a60cc099ed9a1b70fa45b7c18f2c228}{head} ()
+\end{DoxyCompactItemize}
+\subsection*{その他の継承メンバ}
+
+
+\subsection{関数詳解}
+\hypertarget{class_rest_ad7d643a90903bc310129f8c5371ae9b3}{}\index{Rest@{Rest}!delete@{delete}}
+\index{delete@{delete}!Rest@{Rest}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+::delete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_ad7d643a90903bc310129f8c5371ae9b3}
+リソースの削除 \begin{DoxyReturn}{戻り値}
+boolean 
+\end{DoxyReturn}
+
+
+\hyperlink{interface_rest_controller_i_o_aea37c094d38f5c7ff6b5a52e9f4f30a6}{Rest\+Controller\+I\+O}を実装しています。
+
+\hypertarget{class_rest_a6b69aeaec7507e4544cf13cfe402a7cb}{}\index{Rest@{Rest}!get@{get}}
+\index{get@{get}!Rest@{Rest}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_a6b69aeaec7507e4544cf13cfe402a7cb}
+リソースの参照 \begin{DoxyReturn}{戻り値}
+mixed 成功時は最新のリソース配列 失敗時は\+F\+A\+L\+S\+E 
+\end{DoxyReturn}
+
+
+\hyperlink{interface_rest_controller_i_o_af268b91d81734f22569982048ae81a1f}{Rest\+Controller\+I\+O}を実装しています。
+
+\hypertarget{class_rest_a0a60cc099ed9a1b70fa45b7c18f2c228}{}\index{Rest@{Rest}!head@{head}}
+\index{head@{head}!Rest@{Rest}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+::head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_a0a60cc099ed9a1b70fa45b7c18f2c228}
+リソースの情報の取得 \begin{DoxyReturn}{戻り値}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_rest_aadf4ba482ce65d9423b6ce904695b50c}{}\index{Rest@{Rest}!post@{post}}
+\index{post@{post}!Rest@{Rest}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+::post (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Request\+Params = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_rest_aadf4ba482ce65d9423b6ce904695b50c}
+リソースの作成・更新・インクリメント・デクリメント \begin{DoxyReturn}{戻り値}
+mixed 成功時は最新のリソース配列 失敗時は\+F\+A\+L\+S\+E 
+\end{DoxyReturn}
+\hypertarget{class_rest_a7e73d86dc864a3686ca192a32355bc02}{}\index{Rest@{Rest}!put@{put}}
+\index{put@{put}!Rest@{Rest}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+::put (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Request\+Params = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_rest_a7e73d86dc864a3686ca192a32355bc02}
+リソースの作成・更新 \begin{DoxyReturn}{戻り値}
+mixed 成功時は最新のリソース配列 失敗時は\+F\+A\+L\+S\+E 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Package/class/\+M\+V\+C/\+Controller/Rest.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{interface_generic_model}{}\section{Generic\+Model インタフェース}
+\label{interface_generic_model}\index{Generic\+Model@{Generic\+Model}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_generic_model_a90039d90147a9fb38497b33d58dc12ba}{load} (\$arg\+Extraction\+Condition=N\+U\+L\+L, \$arg\+Binds=N\+U\+L\+L)
+\item 
+\hypertarget{interface_generic_model_a8da2c3ad88d448caf8382a12d5ae2e96}{}{\bfseries \+\_\+\+\_\+call} (\$arg\+Method\+Name, \$arguments)\label{interface_generic_model_a8da2c3ad88d448caf8382a12d5ae2e96}
+
+\item 
+\hyperlink{interface_generic_model_a53908907ddafb2d29ac69b1f380e3d59}{init} (\$argments)
+\item 
+\hyperlink{interface_generic_model_a7efef4c325056b9d526ac683f3497742}{sets} (\$argments)
+\item 
+\hyperlink{interface_generic_model_a1ec1f9b2e0f0cf79380527515d3ed4af}{set} (\$arg\+Key, \&\$arg\+Val)
+\item 
+\hypertarget{interface_generic_model_a43a20c6074b1e4dec12e09ae2f820a90}{}{\bfseries save} (\$argments, \$arg\+Replaced=T\+R\+U\+E)\label{interface_generic_model_a43a20c6074b1e4dec12e09ae2f820a90}
+
+\item 
+\hypertarget{interface_generic_model_a4d9140f501b646fbd0b9f5e82bffb4b1}{}{\bfseries remove} ()\label{interface_generic_model_a4d9140f501b646fbd0b9f5e82bffb4b1}
+
+\item 
+\hypertarget{interface_generic_model_a4715ba3e6fd86438e890a45520f35b14}{}{\bfseries next} ()\label{interface_generic_model_a4715ba3e6fd86438e890a45520f35b14}
+
+\item 
+\hypertarget{interface_generic_model_adb29e397e851eb533fdfab33e5c6acd8}{}{\bfseries get\+Next\+Model} ()\label{interface_generic_model_adb29e397e851eb533fdfab33e5c6acd8}
+
+\item 
+\hyperlink{interface_generic_model_a2e4d756ae215ca1257f53adb1d561541}{validate\+N\+U\+L\+L} (\$arg\+Key, \$arg\+Value)
+\item 
+\hypertarget{interface_generic_model_ae876a50aff0779fc2973f0177b3da00f}{}{\bfseries validate\+Type} (\$arg\+Key, \$arg\+Value)\label{interface_generic_model_ae876a50aff0779fc2973f0177b3da00f}
+
+\item 
+\hypertarget{interface_generic_model_a2b4c8c4df6f26f589fd035e67dc4d04e}{}{\bfseries validate\+Length} (\$arg\+Key, \$arg\+Value)\label{interface_generic_model_a2b4c8c4df6f26f589fd035e67dc4d04e}
+
+\item 
+\hypertarget{interface_generic_model_a8a99dde84eba7b43313aa4f3dd275cf9}{}{\bfseries validate} (\$arg\+Key, \$arg\+Value)\label{interface_generic_model_a8a99dde84eba7b43313aa4f3dd275cf9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+モデルクラスの親クラス 
+
+\subsection{関数詳解}
+\hypertarget{interface_generic_model_a53908907ddafb2d29ac69b1f380e3d59}{}\index{Generic\+Model@{Generic\+Model}!init@{init}}
+\index{init@{init}!Generic\+Model@{Generic\+Model}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Model\+::init (
+\begin{DoxyParamCaption}
+\item[{}]{\$argments}
+\end{DoxyParamCaption}
+)}\label{interface_generic_model_a53908907ddafb2d29ac69b1f380e3d59}
+連想配列で値をセット replace属性が書き変わらない値のセット 
+\begin{DoxyParams}[1]{引数}
+array & {\em \$argments} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_generic_model_a90039d90147a9fb38497b33d58dc12ba}{}\index{Generic\+Model@{Generic\+Model}!load@{load}}
+\index{load@{load}!Generic\+Model@{Generic\+Model}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Model\+::load (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Extraction\+Condition = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Binds = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{interface_generic_model_a90039d90147a9fb38497b33d58dc12ba}
+レコードの読み込み \hypertarget{interface_generic_model_a1ec1f9b2e0f0cf79380527515d3ed4af}{}\index{Generic\+Model@{Generic\+Model}!set@{set}}
+\index{set@{set}!Generic\+Model@{Generic\+Model}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Key, }
+\item[{\&}]{\$arg\+Val}
+\end{DoxyParamCaption}
+)}\label{interface_generic_model_a1ec1f9b2e0f0cf79380527515d3ed4af}
+割り当て 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Key} & \\
+\hline
+mixid & {\em \$arg\+Val} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_generic_model_a7efef4c325056b9d526ac683f3497742}{}\index{Generic\+Model@{Generic\+Model}!sets@{sets}}
+\index{sets@{sets}!Generic\+Model@{Generic\+Model}}
+\subsubsection[{sets}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Model\+::sets (
+\begin{DoxyParamCaption}
+\item[{}]{\$argments}
+\end{DoxyParamCaption}
+)}\label{interface_generic_model_a7efef4c325056b9d526ac683f3497742}
+連想配列で値をセット 
+\begin{DoxyParams}[1]{引数}
+array & {\em \$argments} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_generic_model_a2e4d756ae215ca1257f53adb1d561541}{}\index{Generic\+Model@{Generic\+Model}!validate\+N\+U\+L\+L@{validate\+N\+U\+L\+L}}
+\index{validate\+N\+U\+L\+L@{validate\+N\+U\+L\+L}!Generic\+Model@{Generic\+Model}}
+\subsubsection[{validate\+N\+U\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Model\+::validate\+N\+U\+L\+L (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Key, }
+\item[{}]{\$arg\+Value}
+\end{DoxyParamCaption}
+)}\label{interface_generic_model_a2e4d756ae215ca1257f53adb1d561541}
+N\+U\+L\+L値の許容設定に合致しているかどうかを判定する 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Key} & \\
+\hline
+mixid & {\em \$arg\+Value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{例外}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+このインタフェース詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+O\+R\+M/Generic\+Model.\+interface.\+php\end{DoxyCompactItemize}

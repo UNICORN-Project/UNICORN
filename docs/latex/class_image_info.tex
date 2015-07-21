@@ -1,0 +1,56 @@
+\hypertarget{class_image_info}{}\section{Image\+Info クラス}
+\label{class_image_info}\index{Image\+Info@{Image\+Info}}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \& \hyperlink{class_image_info_a4bab7c33da9789d92c14dab790562fa1}{get\+Info\+From\+File} (\$filename)
+\item 
+static \& \hyperlink{class_image_info_a7ce19e9a5da702ba3c0b3c7163d55663}{get\+Info\+From\+Data} (\&\$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+ファイル、またはバイナリデータから画像の情報を取得するクラス インスタンス化せず、以下のように静的に呼び出して使用します。
+
+\$result = \hyperlink{class_image_info_a4bab7c33da9789d92c14dab790562fa1}{Image\+Info\+::get\+Info\+From\+File}(\textquotesingle{}/xxx/xxx.xxx\textquotesingle{}); 
+
+\subsection{関数詳解}
+\hypertarget{class_image_info_a7ce19e9a5da702ba3c0b3c7163d55663}{}\index{Image\+Info@{Image\+Info}!get\+Info\+From\+Data@{get\+Info\+From\+Data}}
+\index{get\+Info\+From\+Data@{get\+Info\+From\+Data}!Image\+Info@{Image\+Info}}
+\subsubsection[{get\+Info\+From\+Data}]{\setlength{\rightskip}{0pt plus 5cm}static\& Image\+Info\+::get\+Info\+From\+Data (
+\begin{DoxyParamCaption}
+\item[{\&}]{\$data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_image_info_a7ce19e9a5da702ba3c0b3c7163d55663}
+バイナリデータから\+Image\+Info\+Resultオブジェクトを生成して返す
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \&\$data} & バイナリデータ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+object Image\+Info\+Resultオブジェクト 
+\end{DoxyReturn}
+\hypertarget{class_image_info_a4bab7c33da9789d92c14dab790562fa1}{}\index{Image\+Info@{Image\+Info}!get\+Info\+From\+File@{get\+Info\+From\+File}}
+\index{get\+Info\+From\+File@{get\+Info\+From\+File}!Image\+Info@{Image\+Info}}
+\subsubsection[{get\+Info\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}static\& Image\+Info\+::get\+Info\+From\+File (
+\begin{DoxyParamCaption}
+\item[{}]{\$filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_image_info_a4bab7c33da9789d92c14dab790562fa1}
+ファイルから\+Image\+Info\+Resultオブジェクトを生成して返す
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \$filename} & ファイル名 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+object Image\+Info\+Resultオブジェクト 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Image/Image.\+class.\+php\end{DoxyCompactItemize}

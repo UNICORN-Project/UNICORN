@@ -1,0 +1,81 @@
+\hypertarget{class_generic_a_w_s_s3}{}\section{Generic\+A\+W\+S\+S3 クラス}
+\label{class_generic_a_w_s_s3}\index{Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generic_a_w_s_s3_a9905ad75d5b06e7a254d86c5586f299d}{save\+Binary} (\$arg\+File\+Key, \$arg\+File\+Mime\+Type, \$arg\+Binary, \$arg\+Public=T\+R\+U\+E, \$arg\+Timeout=300)
+\item 
+\hyperlink{class_generic_a_w_s_s3_afbe0433ef2ba924f0afc28156140d290}{save} (\$arg\+File\+Key, \$arg\+File\+Mime\+Type, \$arg\+File\+Path, \$arg\+Public=T\+R\+U\+E, \$arg\+Timeout=300)
+\end{DoxyCompactItemize}
+\subsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generic_a_w_s_s3_a1ba02e0ab932bb162c1fccb2c0069176}{\+\_\+init} ()
+\end{DoxyCompactItemize}
+\subsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_generic_a_w_s_s3_a99102853009c75bcda0ec20ddad9ffb5}{}{\bfseries \$\+\_\+initialized} = F\+A\+L\+S\+E\label{class_generic_a_w_s_s3_a99102853009c75bcda0ec20ddad9ffb5}
+
+\item 
+\hypertarget{class_generic_a_w_s_s3_a3562ac7d06c99eae6938982889d39ac1}{}{\bfseries \$\+\_\+\+A\+W\+S} = N\+U\+L\+L\label{class_generic_a_w_s_s3_a3562ac7d06c99eae6938982889d39ac1}
+
+\item 
+\hypertarget{class_generic_a_w_s_s3_a25ada7d1c87a6b07e19efbaaf97b3436}{}{\bfseries \$\+\_\+region} = N\+U\+L\+L\label{class_generic_a_w_s_s3_a25ada7d1c87a6b07e19efbaaf97b3436}
+
+\item 
+\hypertarget{class_generic_a_w_s_s3_a909359ca4aff87a58825df4a4f67a5dc}{}{\bfseries \$\+\_\+tmp\+Path} = N\+U\+L\+L\label{class_generic_a_w_s_s3_a909359ca4aff87a58825df4a4f67a5dc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Amazon Simple Storage Service(\+Amazon S3)を利用したストレージクラス。
+
+\begin{DoxyAuthor}{著者}
+saimushi 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{参照}
+\href{http://aws.amazon.com/s3/}{\tt Amazon Simple Notification Service} 
+
+\href{http://docs.aws.amazon.com/aws-sdk-php/guide/latest/service-s3.html}{\tt A\+W\+S S\+D\+K for P\+H\+P documentation} 
+\end{DoxySeeAlso}
+
+
+\subsection{関数詳解}
+\hypertarget{class_generic_a_w_s_s3_a1ba02e0ab932bb162c1fccb2c0069176}{}\index{Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}!\+\_\+init@{\+\_\+init}}
+\index{\+\_\+init@{\+\_\+init}!Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}}
+\subsubsection[{\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+S3\+::\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_generic_a_w_s_s3_a1ba02e0ab932bb162c1fccb2c0069176}
+初期化します。
+
+Configureの値をもとに\+Amazon S\+N\+Sの初期化を行います。 \hypertarget{class_generic_a_w_s_s3_afbe0433ef2ba924f0afc28156140d290}{}\index{Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}!save@{save}}
+\index{save@{save}!Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+S3\+::save (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+File\+Key, }
+\item[{}]{\$arg\+File\+Mime\+Type, }
+\item[{}]{\$arg\+File\+Path, }
+\item[{}]{\$arg\+Public = {\ttfamily TRUE}, }
+\item[{}]{\$arg\+Timeout = {\ttfamily 300}}
+\end{DoxyParamCaption}
+)}\label{class_generic_a_w_s_s3_afbe0433ef2ba924f0afc28156140d290}
+指定されたファイルパス上のファイルを指定された\+S3バケットに保存します。 \hypertarget{class_generic_a_w_s_s3_a9905ad75d5b06e7a254d86c5586f299d}{}\index{Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}!save\+Binary@{save\+Binary}}
+\index{save\+Binary@{save\+Binary}!Generic\+A\+W\+S\+S3@{Generic\+A\+W\+S\+S3}}
+\subsubsection[{save\+Binary}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+S3\+::save\+Binary (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+File\+Key, }
+\item[{}]{\$arg\+File\+Mime\+Type, }
+\item[{}]{\$arg\+Binary, }
+\item[{}]{\$arg\+Public = {\ttfamily TRUE}, }
+\item[{}]{\$arg\+Timeout = {\ttfamily 300}}
+\end{DoxyParamCaption}
+)}\label{class_generic_a_w_s_s3_a9905ad75d5b06e7a254d86c5586f299d}
+ファイル( or バイナリ)を指定された\+S3バケットに保存します。 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+A\+W\+S/Generic\+A\+W\+S\+S3.\+class.\+php\end{DoxyCompactItemize}

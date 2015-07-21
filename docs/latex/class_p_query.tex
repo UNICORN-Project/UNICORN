@@ -1,0 +1,127 @@
+\hypertarget{class_p_query}{}\section{P\+Query クラス}
+\label{class_p_query}\index{P\+Query@{P\+Query}}
+P\+Query の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_p_query}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_p_query_a6d032ac38c617a86c7e8e6b40b8fd7ed}{}{\bfseries \+\_\+\+\_\+construct} (\$arg\+Target, \$arg\+String\+Enabled=N\+U\+L\+L, \$arg\+File\+Encoding=N\+U\+L\+L, \$arg\+Convert\+Encoding=N\+U\+L\+L)\label{class_p_query_a6d032ac38c617a86c7e8e6b40b8fd7ed}
+
+\item 
+\hyperlink{class_p_query_a9a4359416363f682c92fda62c43babda}{add\+Source} (\$arg\+Hint, \$arg\+Target, \$arg\+File\+Encoding=N\+U\+L\+L, \$arg\+Convert\+Encoding=N\+U\+L\+L, \$arg\+Outer\+Enabled=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_p_query_a276c00b5befedae7349d0945f5d6ba28}{refresh} ()
+\item 
+\hyperlink{class_p_query_acd073383bc3c77f25fc52d1caa7389a9}{flush} ()
+\item 
+\hyperlink{class_p_query_aa9307a2df5e2c760c7b15fb2ad7e2fbd}{assign\+Text} (\$arg\+Nodes, \$arg\+Text, \$arg\+Outer\+Enabled=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_p_query_a14104b2c5b7368417e81539d9c571693}{assign\+Html} (\$arg\+Nodes, \$arg\+Text, \$arg\+Outer\+Enabled=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_p_query_a37cb8439c38a831553457b3ce7c8846a}{put} (\$arg\+Target, \$arg\+Value)
+\item 
+\hyperlink{class_p_query_a09255b571a9b0aade9de1acbe0850864}{set\+Form} (\$argumets)
+\item 
+\hyperlink{class_p_query_a25f666ee0150463eced87debad60ef93}{get\+Attr} (\$arg\+Target, \$arg\+Target\+Attr)
+\item 
+\hyperlink{class_p_query_a34ad0dca40dd24dea9f88c608a5cb149}{set\+Attr} (\$arg\+Target, \$arg\+Target\+Attr, \$arg\+Value)
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_p_query_a83a101c5c6d7e1ffd66ed393344d5019}{}static \& {\bfseries \+\_\+convert\+Buffer} (\&\$arg\+Buffer, \$arg\+File\+Encoding=N\+U\+L\+L, \$arg\+Convert\+Encoding=N\+U\+L\+L)\label{class_p_query_a83a101c5c6d7e1ffd66ed393344d5019}
+
+\item 
+\hypertarget{class_p_query_a78cc4ef8d21c02797bfe69140be7a6f1}{}static \& {\bfseries \+\_\+read\+Buffer} (\$arg\+Target, \$arg\+String\+Enabled=N\+U\+L\+L, \$arg\+File\+Encoding=N\+U\+L\+L, \$arg\+Convert\+Encoding=N\+U\+L\+L)\label{class_p_query_a78cc4ef8d21c02797bfe69140be7a6f1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+J\+Queryを真似した、simple\+\_\+html\+\_\+domを利用した\+Selector P\+Queryの\+Pは\+P\+H\+Pの\+P X\+M\+Lないし\+Htmlを\+Selectorでごにょごにょするクラス 
+
+\subsection{関数詳解}
+\hypertarget{class_p_query_a9a4359416363f682c92fda62c43babda}{}\index{P\+Query@{P\+Query}!add\+Source@{add\+Source}}
+\index{add\+Source@{add\+Source}!P\+Query@{P\+Query}}
+\subsubsection[{add\+Source}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::add\+Source (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Hint, }
+\item[{}]{\$arg\+Target, }
+\item[{}]{\$arg\+File\+Encoding = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Convert\+Encoding = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Outer\+Enabled = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a9a4359416363f682c92fda62c43babda}
+ソースを追加する \hypertarget{class_p_query_a14104b2c5b7368417e81539d9c571693}{}\index{P\+Query@{P\+Query}!assign\+Html@{assign\+Html}}
+\index{assign\+Html@{assign\+Html}!P\+Query@{P\+Query}}
+\subsubsection[{assign\+Html}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::assign\+Html (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Nodes, }
+\item[{}]{\$arg\+Text, }
+\item[{}]{\$arg\+Outer\+Enabled = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a14104b2c5b7368417e81539d9c571693}
+該当htmlノードの一括置換 \hypertarget{class_p_query_aa9307a2df5e2c760c7b15fb2ad7e2fbd}{}\index{P\+Query@{P\+Query}!assign\+Text@{assign\+Text}}
+\index{assign\+Text@{assign\+Text}!P\+Query@{P\+Query}}
+\subsubsection[{assign\+Text}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::assign\+Text (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Nodes, }
+\item[{}]{\$arg\+Text, }
+\item[{}]{\$arg\+Outer\+Enabled = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_p_query_aa9307a2df5e2c760c7b15fb2ad7e2fbd}
+該当textノードの一括置換 \hypertarget{class_p_query_acd073383bc3c77f25fc52d1caa7389a9}{}\index{P\+Query@{P\+Query}!flush@{flush}}
+\index{flush@{flush}!P\+Query@{P\+Query}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_p_query_acd073383bc3c77f25fc52d1caa7389a9}
+html文字列にして返却 \hypertarget{class_p_query_a25f666ee0150463eced87debad60ef93}{}\index{P\+Query@{P\+Query}!get\+Attr@{get\+Attr}}
+\index{get\+Attr@{get\+Attr}!P\+Query@{P\+Query}}
+\subsubsection[{get\+Attr}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::get\+Attr (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Target, }
+\item[{}]{\$arg\+Target\+Attr}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a25f666ee0150463eced87debad60ef93}
+set\+Attributeまでの処理をラップして簡単にしたもの \hypertarget{class_p_query_a37cb8439c38a831553457b3ce7c8846a}{}\index{P\+Query@{P\+Query}!put@{put}}
+\index{put@{put}!P\+Query@{P\+Query}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::put (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Target, }
+\item[{}]{\$arg\+Value}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a37cb8439c38a831553457b3ce7c8846a}
+dom\+Stoneを作って保持する assignまでの処理をラップして簡単にしたもの \hypertarget{class_p_query_a276c00b5befedae7349d0945f5d6ba28}{}\index{P\+Query@{P\+Query}!refresh@{refresh}}
+\index{refresh@{refresh}!P\+Query@{P\+Query}}
+\subsubsection[{refresh}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::refresh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a276c00b5befedae7349d0945f5d6ba28}
+パースし直し \hypertarget{class_p_query_a34ad0dca40dd24dea9f88c608a5cb149}{}\index{P\+Query@{P\+Query}!set\+Attr@{set\+Attr}}
+\index{set\+Attr@{set\+Attr}!P\+Query@{P\+Query}}
+\subsubsection[{set\+Attr}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::set\+Attr (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Target, }
+\item[{}]{\$arg\+Target\+Attr, }
+\item[{}]{\$arg\+Value}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a34ad0dca40dd24dea9f88c608a5cb149}
+set\+Attributeまでの処理をラップして簡単にしたもの \hypertarget{class_p_query_a09255b571a9b0aade9de1acbe0850864}{}\index{P\+Query@{P\+Query}!set\+Form@{set\+Form}}
+\index{set\+Form@{set\+Form}!P\+Query@{P\+Query}}
+\subsubsection[{set\+Form}]{\setlength{\rightskip}{0pt plus 5cm}P\+Query\+::set\+Form (
+\begin{DoxyParamCaption}
+\item[{}]{\$argumets}
+\end{DoxyParamCaption}
+)}\label{class_p_query_a09255b571a9b0aade9de1acbe0850864}
+form値セットを簡単にしたもの X\+X\+X コレを利用したい場合は自動セットさせたいformのネームをテンプレートファイルのベースネームと一致させて置くこと！ 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Template\+Engine/P\+Query.\+class.\+php\end{DoxyCompactItemize}

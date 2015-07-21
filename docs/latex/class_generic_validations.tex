@@ -1,0 +1,73 @@
+\hypertarget{class_generic_validations}{}\section{Generic\+Validations クラス}
+\label{class_generic_validations}\index{Generic\+Validations@{Generic\+Validations}}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_generic_validations_a681b7f3cad2d9b67411ea5c735630864}{get\+Message} ()
+\item 
+static \hyperlink{class_generic_validations_a486033594fbf4b179d945e193b3e4457}{is\+Email} (\$arg\+Email)
+\item 
+static \hyperlink{class_generic_validations_a20ce23b0a0a08aa9f5ced1ce3779cbd6}{is\+Email\+Local\+Part} (\$arg\+Local\+Part)
+\item 
+static \hyperlink{class_generic_validations_a1801ae388b49921d472d30a0f0f13b3d}{is\+Domain} (\$arg\+Domain)
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_generic_validations_a3ab137d4611ed390ff79382224d4ad05}{\+\_\+set\+Message} (\$arg\+Msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Validate関数群
+
+使用者様へのルールとお願い\+: ・エラーがあったらthrowされるので、try〜catchして下さい ・is〜 エラーがあった時点で\+Exceptionを発生させ、処理を終了します。 ・check〜 状態をすべてチェックし、エラーを貯めこみます。最後まで処理出来れば\+T\+R\+U\+Eを返しますが、途中に起きたエラーは貯めこまれます。 → なので、使用者「何処で・いくつ」エラーが起きていたかを別メソッドを通してエラーを取得し、自身でハンドリングする必要があります。
+
+開発者様へのルールとお願い\+: ・上記使用者の意図にそって実装を追加して下さい。 ・このクラスの中にあるメソッドは全てstaticでなければなりません。 ・\+R\+F\+Cは必ず確認して下さい。 ・messageは(何エラーか,何処で)の順番で記述して下さい。備考は最後に追加して下さい。
+
+\begin{DoxyAuthor}{著者}
+saimushi 
+\end{DoxyAuthor}
+
+
+\subsection{関数詳解}
+\hypertarget{class_generic_validations_a3ab137d4611ed390ff79382224d4ad05}{}\index{Generic\+Validations@{Generic\+Validations}!\+\_\+set\+Message@{\+\_\+set\+Message}}
+\index{\+\_\+set\+Message@{\+\_\+set\+Message}!Generic\+Validations@{Generic\+Validations}}
+\subsubsection[{\+\_\+set\+Message}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Validations\+::\+\_\+set\+Message (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_generic_validations_a3ab137d4611ed390ff79382224d4ad05}
+messageのアクセサ ただし、セットは継承した子クラスしか出来ないように縛ってある \hypertarget{class_generic_validations_a681b7f3cad2d9b67411ea5c735630864}{}\index{Generic\+Validations@{Generic\+Validations}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!Generic\+Validations@{Generic\+Validations}}
+\subsubsection[{get\+Message}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Validations\+::get\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_validations_a681b7f3cad2d9b67411ea5c735630864}
+messageのアクセサ \hypertarget{class_generic_validations_a1801ae388b49921d472d30a0f0f13b3d}{}\index{Generic\+Validations@{Generic\+Validations}!is\+Domain@{is\+Domain}}
+\index{is\+Domain@{is\+Domain}!Generic\+Validations@{Generic\+Validations}}
+\subsubsection[{is\+Domain}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Validations\+::is\+Domain (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Domain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_validations_a1801ae388b49921d472d30a0f0f13b3d}
+ドメイン名が\+R\+F\+C1035に従っているかをチェックする \hypertarget{class_generic_validations_a486033594fbf4b179d945e193b3e4457}{}\index{Generic\+Validations@{Generic\+Validations}!is\+Email@{is\+Email}}
+\index{is\+Email@{is\+Email}!Generic\+Validations@{Generic\+Validations}}
+\subsubsection[{is\+Email}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Validations\+::is\+Email (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Email}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_validations_a486033594fbf4b179d945e193b3e4457}
+メールアドレスが\+R\+F\+C2822(+\+Do\+Co\+Moの拡張)に従っているかをチェックする \hypertarget{class_generic_validations_a20ce23b0a0a08aa9f5ced1ce3779cbd6}{}\index{Generic\+Validations@{Generic\+Validations}!is\+Email\+Local\+Part@{is\+Email\+Local\+Part}}
+\index{is\+Email\+Local\+Part@{is\+Email\+Local\+Part}!Generic\+Validations@{Generic\+Validations}}
+\subsubsection[{is\+Email\+Local\+Part}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Validations\+::is\+Email\+Local\+Part (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Local\+Part}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_validations_a20ce23b0a0a08aa9f5ced1ce3779cbd6}
+メールのローカルパートが\+R\+F\+C2822(+\+Do\+Co\+Moの拡張)に従っているかをチェックする R\+F\+C2822では 末尾の \textquotesingle{}.\textquotesingle{} は許されていないが, Do\+Co\+Moは許すので ここでも許している. 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Utilities/Generic\+Validations.\+class.\+php\end{DoxyCompactItemize}

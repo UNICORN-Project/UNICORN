@@ -1,0 +1,231 @@
+\hypertarget{class_session_data_d_b}{}\section{Session\+Data\+D\+B クラス}
+\label{class_session_data_d_b}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+Session\+Data\+D\+B の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_session_data_d_b}
+\end{center}
+\end{figure}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_session_data_d_b_a30a6d59940e834b23526a6db33426c12}{count} ()
+\item 
+static \hyperlink{class_session_data_d_b_a5ead6e650d4dc5995055fbac20e10313}{keys} ()
+\item 
+static \hyperlink{class_session_data_d_b_a24bd89e237f187754ee975eec333145c}{get} (\$arg\+P\+Key, \$arg\+Key=N\+U\+L\+L, \$arg\+Expiredtime=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_session_data_d_b_a989a00d64948f48d38e7f00cce59d260}{set} (\$arg\+P\+Key, \$arg\+Key, \$argment, \$arg\+Expiredtime=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_session_data_d_b_a35c45b3fa9727b478fdcde5909af9b79}{remove} (\$arg\+P\+Key, \$arg\+Key, \$arg\+Expiredtime=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_session_data_d_b_aaeb3d693283e237081b09cfeeaf08d79}{clear} (\$arg\+P\+Key=N\+U\+L\+L, \$arg\+Expiredtime=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_session_data_d_b_a36aedcb2b3168ec01821468849fae5ed}{clean} (\$arg\+Expiredtime=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_session_data_d_b_a620d706ba28277c7b81195a6eed29ef4}{\+\_\+init} (\$arg\+Expiredtime=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_session_data_d_b_a1e5ef25b9f9a6b7931658e69facbed46}{\+\_\+initialize\+Data} (\$arg\+P\+Key)
+\item 
+static \hyperlink{class_session_data_d_b_a0310669f6d2bc51db4d75828fd1700c2}{\+\_\+finalize\+Data} (\$arg\+P\+Key)
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_session_data_d_b_a198c6370f10af8501e23e063647a900e}{}static {\bfseries \$\+\_\+initialized} = F\+A\+L\+S\+E\label{class_session_data_d_b_a198c6370f10af8501e23e063647a900e}
+
+\item 
+\hypertarget{class_session_data_d_b_a481c0a95033cdb87358a864b12f03ec5}{}static {\bfseries \$\+\_\+expiredtime} = 3600\label{class_session_data_d_b_a481c0a95033cdb87358a864b12f03ec5}
+
+\item 
+\hypertarget{class_session_data_d_b_a63ba0b8b390947552d288104fde0f1d9}{}static {\bfseries \$\+\_\+session\+Data\+Tbl\+Name} = \textquotesingle{}session\+\_\+table\textquotesingle{}\label{class_session_data_d_b_a63ba0b8b390947552d288104fde0f1d9}
+
+\item 
+\hypertarget{class_session_data_d_b_a0d32fa71ed3feb51841a22e8807aa4da}{}static {\bfseries \$\+\_\+session\+Data\+P\+Key\+Name} = \textquotesingle{}identifier\textquotesingle{}\label{class_session_data_d_b_a0d32fa71ed3feb51841a22e8807aa4da}
+
+\item 
+\hypertarget{class_session_data_d_b_adb7138e161a094c8fca2bbd626610631}{}static {\bfseries \$\+\_\+serialize\+Key\+Name} = \textquotesingle{}data\textquotesingle{}\label{class_session_data_d_b_adb7138e161a094c8fca2bbd626610631}
+
+\item 
+\hypertarget{class_session_data_d_b_ac6c46779036540efb3c7f555ae8c1cdd}{}static {\bfseries \$\+\_\+session\+Data\+Date\+Key\+Name} = \textquotesingle{}modify\+\_\+date\textquotesingle{}\label{class_session_data_d_b_ac6c46779036540efb3c7f555ae8c1cdd}
+
+\item 
+\hypertarget{class_session_data_d_b_acf9b69ea99842849f94106bcb49b4f0e}{}static {\bfseries \$\+\_\+session\+Data} = N\+U\+L\+L\label{class_session_data_d_b_acf9b69ea99842849f94106bcb49b4f0e}
+
+\item 
+\hypertarget{class_session_data_d_b_acee92134b572b463c0d46eb38df2586e}{}static {\bfseries \$\+\_\+\+D\+B\+O} = N\+U\+L\+L\label{class_session_data_d_b_acee92134b572b463c0d46eb38df2586e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Sessionデータクラス(D\+B版) \begin{DoxyAuthor}{著者}
+saimushi 
+\end{DoxyAuthor}
+
+
+\subsection{関数詳解}
+\hypertarget{class_session_data_d_b_a0310669f6d2bc51db4d75828fd1700c2}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!\+\_\+finalize\+Data@{\+\_\+finalize\+Data}}
+\index{\+\_\+finalize\+Data@{\+\_\+finalize\+Data}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{\+\_\+finalize\+Data}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::\+\_\+finalize\+Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+P\+Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_session_data_d_b_a0310669f6d2bc51db4d75828fd1700c2}
+セッションデータテーブルにデータをしまう 
+\begin{DoxyParams}{引数}
+{\em string} & セッションデータのプライマリーキー \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_a620d706ba28277c7b81195a6eed29ef4}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!\+\_\+init@{\+\_\+init}}
+\index{\+\_\+init@{\+\_\+init}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Expiredtime = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_session_data_d_b_a620d706ba28277c7b81195a6eed29ef4}
+Sessionクラスの初期化 
+\begin{DoxyParams}{引数}
+{\em string} & セッションの有効期限 \\
+\hline
+{\em string} & D\+B\+D\+S\+N情報 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_a1e5ef25b9f9a6b7931658e69facbed46}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!\+\_\+initialize\+Data@{\+\_\+initialize\+Data}}
+\index{\+\_\+initialize\+Data@{\+\_\+initialize\+Data}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{\+\_\+initialize\+Data}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::\+\_\+initialize\+Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+P\+Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_session_data_d_b_a1e5ef25b9f9a6b7931658e69facbed46}
+セッションデータデーブルからデータを取得し復元する 
+\begin{DoxyParams}{引数}
+{\em string} & セッションデータのプライマリーキー \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_a36aedcb2b3168ec01821468849fae5ed}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!clean@{clean}}
+\index{clean@{clean}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{clean}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::clean (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Expiredtime = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_a36aedcb2b3168ec01821468849fae5ed}
+Expiredの切れた\+Sessionレコードを\+Deleteする 
+\begin{DoxyParams}{引数}
+{\em int} & 有効期限の直指定 \\
+\hline
+{\em mixed} & D\+B\+D\+S\+N情報の直指定 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_aaeb3d693283e237081b09cfeeaf08d79}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!clear@{clear}}
+\index{clear@{clear}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::clear (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+P\+Key = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Expiredtime = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_aaeb3d693283e237081b09cfeeaf08d79}
+identifierに紐づくセッションデータレコードをクリアする 
+\begin{DoxyParams}{引数}
+{\em string} & セッションデータのプライマリーキー \\
+\hline
+{\em int} & 有効期限の直指定 \\
+\hline
+{\em mixed} & D\+B\+D\+S\+N情報の直指定 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_a30a6d59940e834b23526a6db33426c12}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!count@{count}}
+\index{count@{count}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_a30a6d59940e834b23526a6db33426c12}
+セッションデータのキーの数を返す \hypertarget{class_session_data_d_b_a24bd89e237f187754ee975eec333145c}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!get@{get}}
+\index{get@{get}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::get (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+P\+Key, }
+\item[{}]{\$arg\+Key = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Expiredtime = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_a24bd89e237f187754ee975eec333145c}
+セッションデータの指定のキー名で保存されたデータを返す 
+\begin{DoxyParams}{引数}
+{\em string} & セッションデータのプライマリーキー \\
+\hline
+{\em string} & キー名 \\
+\hline
+{\em mixed} & 変数全て(P\+H\+Pオブジェクトは保存出来ない！) \\
+\hline
+{\em int} & 有効期限の直指定 \\
+\hline
+{\em mixed} & D\+B\+D\+S\+N情報の直指定 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_a5ead6e650d4dc5995055fbac20e10313}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!keys@{keys}}
+\index{keys@{keys}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{keys}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::keys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_a5ead6e650d4dc5995055fbac20e10313}
+セッションデータのキーの一覧を返す \hypertarget{class_session_data_d_b_a35c45b3fa9727b478fdcde5909af9b79}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!remove@{remove}}
+\index{remove@{remove}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::remove (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+P\+Key, }
+\item[{}]{\$arg\+Key, }
+\item[{}]{\$arg\+Expiredtime = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_a35c45b3fa9727b478fdcde5909af9b79}
+セッションデータに指定のキー名の値を削除する 
+\begin{DoxyParams}{引数}
+{\em string} & セッションデータのプライマリーキー \\
+\hline
+{\em string} & キー名 \\
+\hline
+{\em mixed} & 変数全て(P\+H\+Pオブジェクトは保存出来ない！) \\
+\hline
+{\em int} & 有効期限の直指定 \\
+\hline
+{\em mixed} & D\+B\+D\+S\+N情報の直指定 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_session_data_d_b_a989a00d64948f48d38e7f00cce59d260}{}\index{Session\+Data\+D\+B@{Session\+Data\+D\+B}!set@{set}}
+\index{set@{set}!Session\+Data\+D\+B@{Session\+Data\+D\+B}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}static Session\+Data\+D\+B\+::set (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+P\+Key, }
+\item[{}]{\$arg\+Key, }
+\item[{}]{\$argment, }
+\item[{}]{\$arg\+Expiredtime = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_data_d_b_a989a00d64948f48d38e7f00cce59d260}
+セッションデータに指定のキー名で指定のデータを追加する 
+\begin{DoxyParams}{引数}
+{\em string} & セッションデータのプライマリーキー \\
+\hline
+{\em string} & キー名 \\
+\hline
+{\em mixed} & 変数全て(P\+H\+Pオブジェクトは保存出来ない！) \\
+\hline
+{\em int} & 有効期限の直指定 \\
+\hline
+{\em mixed} & D\+B\+D\+S\+N情報の直指定 \\
+\hline
+\end{DoxyParams}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Package/class/\+Session/Session\+Data\+D\+B.\+abstract.\+php\end{DoxyCompactItemize}

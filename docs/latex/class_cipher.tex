@@ -1,0 +1,167 @@
+\hypertarget{class_cipher}{}\section{Cipher クラス}
+\label{class_cipher}\index{Cipher@{Cipher}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cipher_a35e01f22996f07ab76a98e43901ce16d}{\+\_\+\+\_\+construct} ()
+\item 
+\hyperlink{class_cipher_a98a6560d7d2636194b0ba4a3335a2d41}{\+\_\+\+\_\+destruct} ()
+\end{DoxyCompactItemize}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_cipher_af83586f4fa8657c1c92b74a576cf454b}{encrypt} (\$arguments)
+\item 
+static \hyperlink{class_cipher_a0f4e2a0af5e67c1d66446301b367c4e1}{decrypt} (\$arguments)
+\item 
+static \hyperlink{class_cipher_adab7e1a9d0f7ef9ef956647383dfb8ab}{get\+Now\+I\+V} ()
+\item 
+static \hyperlink{class_cipher_a1985ff8212d2cda46bdf516e2e3e413f}{pad} (\$text, \$blocksize)
+\item 
+static \hyperlink{class_cipher_a1ddce1e31a41e331de65541c00436ac8}{unpad} (\$text)
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_cipher_a8f76dc59d62626a82553636606ec3e98}{}static {\bfseries \$iv} = N\+U\+L\+L\label{class_cipher_a8f76dc59d62626a82553636606ec3e98}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+暗号化処理を行います。
+
+ブロックアルゴリズムをサポートするmcryptライブラリを利用しています。 \begin{DoxyAuthor}{著者}
+T.\+Morita 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{参照}
+\href{http://php.net/manual/ja/book.mcrypt.php}{\tt Mcrypt} 
+\end{DoxySeeAlso}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_cipher_a35e01f22996f07ab76a98e43901ce16d}{}\index{Cipher@{Cipher}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Cipher@{Cipher}}
+\subsubsection[{\+\_\+\+\_\+construct}]{\setlength{\rightskip}{0pt plus 5cm}Cipher\+::\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_cipher_a35e01f22996f07ab76a98e43901ce16d}
+コンストラクタ \hypertarget{class_cipher_a98a6560d7d2636194b0ba4a3335a2d41}{}\index{Cipher@{Cipher}!\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}}
+\index{\+\_\+\+\_\+destruct@{\+\_\+\+\_\+destruct}!Cipher@{Cipher}}
+\subsubsection[{\+\_\+\+\_\+destruct}]{\setlength{\rightskip}{0pt plus 5cm}Cipher\+::\+\_\+\+\_\+destruct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_cipher_a98a6560d7d2636194b0ba4a3335a2d41}
+デストラクタ 
+
+\subsection{関数詳解}
+\hypertarget{class_cipher_a0f4e2a0af5e67c1d66446301b367c4e1}{}\index{Cipher@{Cipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!Cipher@{Cipher}}
+\subsubsection[{decrypt}]{\setlength{\rightskip}{0pt plus 5cm}static Cipher\+::decrypt (
+\begin{DoxyParamCaption}
+\item[{}]{\$arguments}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_cipher_a0f4e2a0af5e67c1d66446301b367c4e1}
+データを復号化する 
+\begin{DoxyParams}[1]{引数}
+array & {\em \$arguments} & 復号情報 \begin{TabularNC}{5}
+\hline
+{\bfseries key} &{\bfseries type} &{\bfseries require} &{\bfseries default} &{\bfseries description}  \\\cline{1-5}
+value &string &true &&対象データ  \\\cline{1-5}
+key &string &true &&暗号キー  \\\cline{1-5}
+iv &string &false &指定されない場合生成される &初期化ベクトル  \\\cline{1-5}
+algorithm &string &false &rijndael-\/128 &M\+C\+R\+Y\+P\+T\+\_\+暗号名 定数のいずれか、 あるいはアルゴリズム名をあらわす文字列。  \\\cline{1-5}
+mode &string &false &cbc &定数 M\+C\+R\+Y\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+モード名、あるいは文字列 \char`\"{}ecb\char`\"{}, \char`\"{}cbc\char`\"{}, \char`\"{}cfb\char`\"{}, \char`\"{}ofb\char`\"{}, \char`\"{}nofb\char`\"{} ,\char`\"{}stream\char`\"{} のいずれか。  \\\cline{1-5}
+prefix &string &false&&接頭にパディングする文字列  \\\cline{1-5}
+suffix &string &false &&接尾にパディングする文字列  \\\cline{1-5}
+\end{TabularNC}
+パディング防止が必要な場合は、\textquotesingle{}prefix\textquotesingle{}と\textquotesingle{}suffix\textquotesingle{}を指定する。~\newline
+ \textquotesingle{}prefix\textquotesingle{}と\textquotesingle{}suffix\textquotesingle{}には、メタ文字( . \textbackslash{} + $\ast$ ? \mbox{[} $^\wedge$ \mbox{]} ( \$ ) )のみ指定できます。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+string$\vert$boolean 復号化されたデータもしくはfalse 
+\end{DoxyReturn}
+\hypertarget{class_cipher_af83586f4fa8657c1c92b74a576cf454b}{}\index{Cipher@{Cipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!Cipher@{Cipher}}
+\subsubsection[{encrypt}]{\setlength{\rightskip}{0pt plus 5cm}static Cipher\+::encrypt (
+\begin{DoxyParamCaption}
+\item[{}]{\$arguments}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_cipher_af83586f4fa8657c1c92b74a576cf454b}
+データを暗号化する 
+\begin{DoxyParams}[1]{引数}
+array & {\em \$arguments} & 暗号情報 \begin{TabularNC}{5}
+\hline
+{\bfseries key} &{\bfseries type} &{\bfseries require} &{\bfseries default} &{\bfseries description}  \\\cline{1-5}
+value &string &true &&対象データ  \\\cline{1-5}
+key &string &true &&暗号キー  \\\cline{1-5}
+iv &string &false &指定されない場合生成される &初期化ベクトル  \\\cline{1-5}
+algorithm &string &false &rijndael-\/128 &M\+C\+R\+Y\+P\+T\+\_\+暗号名 定数のいずれか、 あるいはアルゴリズム名をあらわす文字列。  \\\cline{1-5}
+mode &string &false &cbc &定数 M\+C\+R\+Y\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+モード名、あるいは文字列 \char`\"{}ecb\char`\"{}, \char`\"{}cbc\char`\"{}, \char`\"{}cfb\char`\"{}, \char`\"{}ofb\char`\"{}, \char`\"{}nofb\char`\"{} ,\char`\"{}stream\char`\"{} のいずれか。  \\\cline{1-5}
+prefix &string &false&&接頭にパディングする文字列  \\\cline{1-5}
+suffix &string &false &&接尾にパディングする文字列  \\\cline{1-5}
+\end{TabularNC}
+パディング防止が必要な場合は、\textquotesingle{}prefix\textquotesingle{}と\textquotesingle{}suffix\textquotesingle{}を指定する。~\newline
+ \textquotesingle{}prefix\textquotesingle{}と\textquotesingle{}suffix\textquotesingle{}には、メタ文字( . \textbackslash{} + $\ast$ ? \mbox{[} $^\wedge$ \mbox{]} ( \$ ) )のみ指定できます。 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+string$\vert$boolean 暗号化されたデータもしくはfalse 
+\end{DoxyReturn}
+\hypertarget{class_cipher_adab7e1a9d0f7ef9ef956647383dfb8ab}{}\index{Cipher@{Cipher}!get\+Now\+I\+V@{get\+Now\+I\+V}}
+\index{get\+Now\+I\+V@{get\+Now\+I\+V}!Cipher@{Cipher}}
+\subsubsection[{get\+Now\+I\+V}]{\setlength{\rightskip}{0pt plus 5cm}static Cipher\+::get\+Now\+I\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_cipher_adab7e1a9d0f7ef9ef956647383dfb8ab}
+現在設定されている、最後に使用された\+I\+V(初期化ベクトル)を返す \begin{DoxyReturn}{戻り値}
+string 初期化ベクトル 
+\end{DoxyReturn}
+\hypertarget{class_cipher_a1985ff8212d2cda46bdf516e2e3e413f}{}\index{Cipher@{Cipher}!pad@{pad}}
+\index{pad@{pad}!Cipher@{Cipher}}
+\subsubsection[{pad}]{\setlength{\rightskip}{0pt plus 5cm}static Cipher\+::pad (
+\begin{DoxyParamCaption}
+\item[{}]{\$text, }
+\item[{}]{\$blocksize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_cipher_a1985ff8212d2cda46bdf516e2e3e413f}
+P\+K\+C\+Sでpadする(5、7に有効) 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$text} & 対象文字列 \\
+\hline
+integer & {\em \$blocksize} & ブロックサイズ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+string padされた文字列 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{参照}
+\href{http://ja.wikipedia.org/wiki/PKCS}{\tt P\+K\+C\+S} 
+\end{DoxySeeAlso}
+\hypertarget{class_cipher_a1ddce1e31a41e331de65541c00436ac8}{}\index{Cipher@{Cipher}!unpad@{unpad}}
+\index{unpad@{unpad}!Cipher@{Cipher}}
+\subsubsection[{unpad}]{\setlength{\rightskip}{0pt plus 5cm}static Cipher\+::unpad (
+\begin{DoxyParamCaption}
+\item[{}]{\$text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_cipher_a1ddce1e31a41e331de65541c00436ac8}
+P\+K\+C\+Sでunpadする(5、7に有効) 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$text} & 対象文字列 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+string unpadされた文字列 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{参照}
+\href{http://ja.wikipedia.org/wiki/PKCS}{\tt P\+K\+C\+S} 
+\end{DoxySeeAlso}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+Cipher/Cipher.\+class.\+php\end{DoxyCompactItemize}

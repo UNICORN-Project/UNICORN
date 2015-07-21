@@ -1,0 +1,144 @@
+\hypertarget{class_flow_manager}{}\section{Flow\+Manager クラス}
+\label{class_flow_manager}\index{Flow\+Manager@{Flow\+Manager}}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_flow_manager_a6af8cf1d11afa9ba639fc2e2118070b4}{validate} (\$arg\+Container\+X\+M\+L)
+\item 
+\hypertarget{class_flow_manager_a5d92e9d445a8bf523f7f12e83e68a344}{}static {\bfseries reverse\+Rewrite\+U\+R\+L} (\$arg\+Action, \$arg\+Query=\textquotesingle{}\textquotesingle{})\label{class_flow_manager_a5d92e9d445a8bf523f7f12e83e68a344}
+
+\item 
+static \hyperlink{class_flow_manager_aec2bdc919808a821598cfedf427dd6fd}{load\+Next\+Flow} (\$arg\+Class\+Name=N\+U\+L\+L, \$arg\+Target\+Path= \textquotesingle{}\textquotesingle{})
+\item 
+static \hyperlink{class_flow_manager_a514963c4885f0eaedd17ec5193cf276a}{generate} (\$arg\+Target, \$arg\+Section, \$arg\+Base\+Path\+Target=\textquotesingle{}\textquotesingle{})
+\item 
+static \hyperlink{class_flow_manager_a3bc3ae3b6b4efea3c010942ca1e2bab7}{\+\_\+get\+Autogenerate\+Target\+Path} (\$arg\+Target)
+\item 
+static \hyperlink{class_flow_manager_a331069b41a81d00cac4685158ef8f575}{\+\_\+get\+Autogenerate\+File\+Path} (\$arg\+Target)
+\item 
+static \hyperlink{class_flow_manager_a22727b3f5902ba4d86017f5552e20718}{\+\_\+generate\+Code} (\$arg\+Code\+Node, \$arg\+Base\+Path\+Target=\textquotesingle{}\textquotesingle{}, \$arg\+Depth=1)
+\item 
+static \hyperlink{class_flow_manager_a32c69da4b4be7d0f0b67b080b4a1bc0d}{\+\_\+resolve\+Args} (\$arg\+Attr)
+\item 
+static \hyperlink{class_flow_manager_aca9727acaadc1b0bc967bb68ede97d73}{\+\_\+resolve\+Value} (\$arg\+Value)
+\end{DoxyCompactItemize}
+\subsection*{静的公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_flow_manager_a336fb1b43e5db055c4528f204da29418}{}static {\bfseries \$params} = array(\textquotesingle{}post\textquotesingle{}=$>$N\+U\+L\+L, \textquotesingle{}get\textquotesingle{}=$>$N\+U\+L\+L, \textquotesingle{}request\textquotesingle{}=$>$N\+U\+L\+L, \textquotesingle{}view\textquotesingle{}=$>$N\+U\+L\+L, \textquotesingle{}backflow\textquotesingle{}=$>$N\+U\+L\+L)\label{class_flow_manager_a336fb1b43e5db055c4528f204da29418}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{関数詳解}
+\hypertarget{class_flow_manager_a22727b3f5902ba4d86017f5552e20718}{}\index{Flow\+Manager@{Flow\+Manager}!\+\_\+generate\+Code@{\+\_\+generate\+Code}}
+\index{\+\_\+generate\+Code@{\+\_\+generate\+Code}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{\+\_\+generate\+Code}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::\+\_\+generate\+Code (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Code\+Node, }
+\item[{}]{\$arg\+Base\+Path\+Target = {\ttfamily \textquotesingle{}\textquotesingle{}}, }
+\item[{}]{\$arg\+Depth = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_a22727b3f5902ba4d86017f5552e20718}
+ノードを処理に分解する 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+Node} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_flow_manager_a331069b41a81d00cac4685158ef8f575}{}\index{Flow\+Manager@{Flow\+Manager}!\+\_\+get\+Autogenerate\+File\+Path@{\+\_\+get\+Autogenerate\+File\+Path}}
+\index{\+\_\+get\+Autogenerate\+File\+Path@{\+\_\+get\+Autogenerate\+File\+Path}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{\+\_\+get\+Autogenerate\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::\+\_\+get\+Autogenerate\+File\+Path (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_a331069b41a81d00cac4685158ef8f575}
+ジェネレートファイルのパスを取得する 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+Node} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_flow_manager_a3bc3ae3b6b4efea3c010942ca1e2bab7}{}\index{Flow\+Manager@{Flow\+Manager}!\+\_\+get\+Autogenerate\+Target\+Path@{\+\_\+get\+Autogenerate\+Target\+Path}}
+\index{\+\_\+get\+Autogenerate\+Target\+Path@{\+\_\+get\+Autogenerate\+Target\+Path}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{\+\_\+get\+Autogenerate\+Target\+Path}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::\+\_\+get\+Autogenerate\+Target\+Path (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_a3bc3ae3b6b4efea3c010942ca1e2bab7}
+ジェネレートファイルのターゲットパスを取得する 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+Node} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_flow_manager_a32c69da4b4be7d0f0b67b080b4a1bc0d}{}\index{Flow\+Manager@{Flow\+Manager}!\+\_\+resolve\+Args@{\+\_\+resolve\+Args}}
+\index{\+\_\+resolve\+Args@{\+\_\+resolve\+Args}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{\+\_\+resolve\+Args}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::\+\_\+resolve\+Args (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_a32c69da4b4be7d0f0b67b080b4a1bc0d}
+引数の値の解決処理 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+Node} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_flow_manager_aca9727acaadc1b0bc967bb68ede97d73}{}\index{Flow\+Manager@{Flow\+Manager}!\+\_\+resolve\+Value@{\+\_\+resolve\+Value}}
+\index{\+\_\+resolve\+Value@{\+\_\+resolve\+Value}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{\+\_\+resolve\+Value}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::\+\_\+resolve\+Value (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_aca9727acaadc1b0bc967bb68ede97d73}
+属性の値の解決処理 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+Node} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_flow_manager_a514963c4885f0eaedd17ec5193cf276a}{}\index{Flow\+Manager@{Flow\+Manager}!generate@{generate}}
+\index{generate@{generate}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::generate (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Target, }
+\item[{}]{\$arg\+Section, }
+\item[{}]{\$arg\+Base\+Path\+Target = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_a514963c4885f0eaedd17ec5193cf276a}
+定義情報をチェックする 
+\begin{DoxyParams}{引数}
+{\em string} & X\+M\+Lファイルのパス文字列 or X\+M\+L文字列 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_flow_manager_aec2bdc919808a821598cfedf427dd6fd}{}\index{Flow\+Manager@{Flow\+Manager}!load\+Next\+Flow@{load\+Next\+Flow}}
+\index{load\+Next\+Flow@{load\+Next\+Flow}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{load\+Next\+Flow}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::load\+Next\+Flow (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Class\+Name = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Target\+Path = {\ttfamily \textquotesingle{}\textquotesingle{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_aec2bdc919808a821598cfedf427dd6fd}
+次の\+Flowを特定し、ロードし、そのクラス名を返却する 
+\begin{DoxyParams}{引数}
+{\em string} & クラス名 \\
+\hline
+{\em string} & ターゲットファイルパスのヒント \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+mixed 成功時は対象のクラス名 失敗した場合は\+F\+A\+L\+S\+Eを返す 
+\end{DoxyReturn}
+\hypertarget{class_flow_manager_a6af8cf1d11afa9ba639fc2e2118070b4}{}\index{Flow\+Manager@{Flow\+Manager}!validate@{validate}}
+\index{validate@{validate}!Flow\+Manager@{Flow\+Manager}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}static Flow\+Manager\+::validate (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Container\+X\+M\+L}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_flow_manager_a6af8cf1d11afa9ba639fc2e2118070b4}
+定義情報をチェックする 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+Container\+X\+M\+L} & \\
+\hline
+\end{DoxyParams}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Package/class/\+Flow/Flow\+Manager.\+class.\+php\end{DoxyCompactItemize}

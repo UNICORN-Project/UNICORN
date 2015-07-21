@@ -1,0 +1,164 @@
+\hypertarget{class_generic_a_w_s_notification}{}\section{Generic\+A\+W\+S\+Notification クラス}
+\label{class_generic_a_w_s_notification}\index{Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generic_a_w_s_notification_a45c52f3c6fb4b3b94bfcd360e875c329}{create\+Platform\+Endpoint} (\$arg\+Devicetoken, \$arg\+Device\+Type, \$arg\+Sandbox=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_generic_a_w_s_notification_ae81ac57ce65171a902dad09ef1c071f7}{push\+Message} (\$arg\+Device\+Identifier, \$arg\+Device\+Type, \$arg\+Message, \$arg\+Badge=1, \$arg\+Custom\+U\+R\+L\+Scheme=N\+U\+L\+L, \$arg\+Sandbox=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_generic_a_w_s_notification_a469a7c3d47a9e55c09c50bd65671b001}{push\+Json} (\$arg\+Device\+Identifier, \$arg\+Device\+Type, \$argments, \$arg\+Sandbox=F\+A\+L\+S\+E)
+\end{DoxyCompactItemize}
+\subsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generic_a_w_s_notification_a703458780be7636fcd1b6e90d086b92e}{\+\_\+init} ()
+\end{DoxyCompactItemize}
+\subsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_generic_a_w_s_notification_ac7d1c05cfce8b8d945bf964e0bfa60dc}{}{\bfseries \$\+\_\+initialized} = F\+A\+L\+S\+E\label{class_generic_a_w_s_notification_ac7d1c05cfce8b8d945bf964e0bfa60dc}
+
+\item 
+\hypertarget{class_generic_a_w_s_notification_acc5ad2fc5cf3635e89828d94a0be2a06}{}{\bfseries \$\+\_\+\+A\+W\+S} = N\+U\+L\+L\label{class_generic_a_w_s_notification_acc5ad2fc5cf3635e89828d94a0be2a06}
+
+\item 
+\hypertarget{class_generic_a_w_s_notification_ab77ad23d6d7a0702cd479f642429faab}{}{\bfseries \$\+\_\+region} = N\+U\+L\+L\label{class_generic_a_w_s_notification_ab77ad23d6d7a0702cd479f642429faab}
+
+\item 
+\hypertarget{class_generic_a_w_s_notification_a88d738c95c38ceed57d10d4eca86fc0c}{}{\bfseries \$\+\_\+arn\+Base} = N\+U\+L\+L\label{class_generic_a_w_s_notification_a88d738c95c38ceed57d10d4eca86fc0c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Amazon Simple Notification Service(\+Amazon S\+N\+S)を利用してモバイルデバイスに対してプッシュ通知を行います。
+
+\begin{DoxyAuthor}{著者}
+saimushi 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{参照}
+\href{http://aws.amazon.com/sns/}{\tt Amazon Simple Notification Service} 
+
+\href{http://docs.aws.amazon.com/aws-sdk-php/guide/latest/service-sns.html}{\tt A\+W\+S S\+D\+K for P\+H\+P documentation} 
+\end{DoxySeeAlso}
+
+
+\subsection{関数詳解}
+\hypertarget{class_generic_a_w_s_notification_a703458780be7636fcd1b6e90d086b92e}{}\index{Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}!\+\_\+init@{\+\_\+init}}
+\index{\+\_\+init@{\+\_\+init}!Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}}
+\subsubsection[{\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+Notification\+::\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_generic_a_w_s_notification_a703458780be7636fcd1b6e90d086b92e}
+初期化します。
+
+Configureの値をもとに\+Amazon S\+N\+Sの初期化を行います。 \hypertarget{class_generic_a_w_s_notification_a45c52f3c6fb4b3b94bfcd360e875c329}{}\index{Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}!create\+Platform\+Endpoint@{create\+Platform\+Endpoint}}
+\index{create\+Platform\+Endpoint@{create\+Platform\+Endpoint}!Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}}
+\subsubsection[{create\+Platform\+Endpoint}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+Notification\+::create\+Platform\+Endpoint (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Devicetoken, }
+\item[{}]{\$arg\+Device\+Type, }
+\item[{}]{\$arg\+Sandbox = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_generic_a_w_s_notification_a45c52f3c6fb4b3b94bfcd360e875c329}
+Push通知先(\+Endpoint\+Arn)を登録します。
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Devicetoken} & デバイストークン \\
+\hline
+string & {\em \$arg\+Device\+Type} & デバイスタイプ 
+\begin{DoxyItemize}
+\item i\+O\+S 
+\item i\+Phone 
+\item i\+Pad 
+\item i\+Pod 
+\item Android 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Model$\vert$boolean 結果もしくはfalse 
+\end{DoxyReturn}
+\hypertarget{class_generic_a_w_s_notification_a469a7c3d47a9e55c09c50bd65671b001}{}\index{Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}!push\+Json@{push\+Json}}
+\index{push\+Json@{push\+Json}!Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}}
+\subsubsection[{push\+Json}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+Notification\+::push\+Json (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Device\+Identifier, }
+\item[{}]{\$arg\+Device\+Type, }
+\item[{}]{\$argments, }
+\item[{}]{\$arg\+Sandbox = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_generic_a_w_s_notification_a469a7c3d47a9e55c09c50bd65671b001}
+メッセージを通知します。
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Device\+Identifier} & デバイス識別子 \\
+\hline
+string & {\em \$arg\+Device\+Type} & デバイスタイプ 
+\begin{DoxyItemize}
+\item i\+O\+S 
+\item i\+Phone 
+\item i\+Pad 
+\item i\+Pod 
+\item Android 
+\end{DoxyItemize}\\
+\hline
+array & {\em \$argments} & メッセージ詳細 \begin{TabularNC}{5}
+\hline
+{\bfseries key} &{\bfseries type} &{\bfseries require} &{\bfseries default} &{\bfseries description}  \\\cline{1-5}
+alert &string &true &&メッセージ  \\\cline{1-5}
+badge &integer &true &1 &バッジ数  \\\cline{1-5}
+sound &string &true &default &通知音  \\\cline{1-5}
+\end{TabularNC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Model$\vert$boolean 結果もしくはfalse 
+\end{DoxyReturn}
+\hypertarget{class_generic_a_w_s_notification_ae81ac57ce65171a902dad09ef1c071f7}{}\index{Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}!push\+Message@{push\+Message}}
+\index{push\+Message@{push\+Message}!Generic\+A\+W\+S\+Notification@{Generic\+A\+W\+S\+Notification}}
+\subsubsection[{push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+A\+W\+S\+Notification\+::push\+Message (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Device\+Identifier, }
+\item[{}]{\$arg\+Device\+Type, }
+\item[{}]{\$arg\+Message, }
+\item[{}]{\$arg\+Badge = {\ttfamily 1}, }
+\item[{}]{\$arg\+Custom\+U\+R\+L\+Scheme = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Sandbox = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_generic_a_w_s_notification_ae81ac57ce65171a902dad09ef1c071f7}
+メッセージを通知します。
+
+
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Device\+Identifier} & デバイス識別子 \\
+\hline
+string & {\em \$arg\+Device\+Type} & デバイスタイプ 
+\begin{DoxyItemize}
+\item i\+O\+S 
+\item i\+Phone 
+\item i\+Pad 
+\item i\+Pod 
+\item Android 
+\end{DoxyItemize}\\
+\hline
+string & {\em \$arg\+Message} & メッセージ \\
+\hline
+integer & {\em \$arg\+Badge} & バッジ数 \\
+\hline
+string & {\em \$arg\+Custom\+U\+R\+L\+Scheme} & カスタム\+U\+R\+Lスキーマ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Model$\vert$boolean 結果もしくはfalse 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+A\+W\+S/Generic\+A\+W\+S\+Notification.\+class.\+php\end{DoxyCompactItemize}

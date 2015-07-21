@@ -1,0 +1,189 @@
+\hypertarget{class_generic_d_b_o}{}\section{Generic\+D\+B\+O クラス}
+\label{class_generic_d_b_o}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generic_d_b_o_a43687f2b92b21e709336c42b140b2260}{\+\_\+\+\_\+construct} (\$arg\+D\+S\+N=N\+U\+L\+L, \$arg\+Readable=F\+A\+L\+S\+E)
+\item 
+\hyperlink{class_generic_d_b_o_aa5b7d961b4297b9aa75baecfdc7d7e5e}{execute} (\$arg\+Query, \$arg\+Binds=N\+U\+L\+L, \$arg\+Auto\+Readable=T\+R\+U\+E)
+\item 
+\hyperlink{class_generic_d_b_o_af903a44ae7f95879e1bab1fb2ca16450}{select\+Limit} (\$arg\+Query, \$arg\+Rows, \$arg\+Offset=1, \$arg\+Binds=N\+U\+L\+L)
+\item 
+\hyperlink{class_generic_d_b_o_a9c5bcfb5e09fd7bad746ad57b34415c0}{get\+Tables} ()
+\item 
+\hyperlink{class_generic_d_b_o_a8db36514aa3f653b8d7642855a1b8188}{get\+Table\+Describes} (\$arg\+Table)
+\item 
+\hyperlink{class_generic_d_b_o_a3037e110cc320ad3cc63d68894ba1a54}{update\+Blob} (\$arg\+Table, \$arg\+Key, \$arg\+Val, \$arg\+Where)
+\item 
+\hyperlink{class_generic_d_b_o_a39d5c487e235013fdd186fd8960b3f5a}{update\+Clob} (\$arg\+Table, \$arg\+Key, \$arg\+Val, \$arg\+Where)
+\item 
+\hyperlink{class_generic_d_b_o_a81277b8636d6a2d29e6fe993024f703b}{get\+Last\+Error\+Message} ()
+\item 
+\hyperlink{class_generic_d_b_o_a19a06d2fa3a5770765358c09602a9b75}{begin} ()
+\item 
+\hyperlink{class_generic_d_b_o_a9054647399f072971033252d135e71d3}{commit} ()
+\item 
+\hyperlink{class_generic_d_b_o_a47aed86a9d3307c24cffba8f596a553c}{rollback} ()
+\end{DoxyCompactItemize}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_generic_d_b_o_a4b2bae77e8ef401ed8e06968b09af3a4}{shared\+Instance} (\$arg\+D\+S\+N=\char`\"{}Default\char`\"{}, \$arg\+Readable=F\+A\+L\+S\+E)
+\end{DoxyCompactItemize}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_generic_d_b_o_af955474f4d730b49664c8d96a26eb1b9}{}{\bfseries \$\+D\+S\+N} = N\+U\+L\+L\label{class_generic_d_b_o_af955474f4d730b49664c8d96a26eb1b9}
+
+\item 
+\hypertarget{class_generic_d_b_o_a2c278bc73bb2397b13eb9cfc3165036d}{}{\bfseries \$dbidentifykey} = N\+U\+L\+L\label{class_generic_d_b_o_a2c278bc73bb2397b13eb9cfc3165036d}
+
+\item 
+\hypertarget{class_generic_d_b_o_a01d607641995bcc6ab506cbb3b1aca98}{}{\bfseries \$readable\+D\+S\+N} = N\+U\+L\+L\label{class_generic_d_b_o_a01d607641995bcc6ab506cbb3b1aca98}
+
+\item 
+\hypertarget{class_generic_d_b_o_a8015daddc80026848dd483c735f6ffc9}{}{\bfseries \$dbreadableidentifykey} = N\+U\+L\+L\label{class_generic_d_b_o_a8015daddc80026848dd483c735f6ffc9}
+
+\item 
+\hypertarget{class_generic_d_b_o_a75ce49a8a41a3ef127e8ef785f777038}{}{\bfseries \$\+D\+B\+Type} = N\+U\+L\+L\label{class_generic_d_b_o_a75ce49a8a41a3ef127e8ef785f777038}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+A\+D\+O\+D\+Bを利用した\+D\+Bクラス
+
+Singletonパターン実装 \begin{DoxySeeAlso}{参照}
+\href{http://adodb.sourceforge.net/}{\tt A\+D\+Odb} 
+\end{DoxySeeAlso}
+
+
+\subsection{構築子と解体子}
+\hypertarget{class_generic_d_b_o_a43687f2b92b21e709336c42b140b2260}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{\+\_\+\+\_\+construct}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Readable = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a43687f2b92b21e709336c42b140b2260}
+インスタンス化対応 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+D\+S\+N} & D\+S\+N \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{関数詳解}
+\hypertarget{class_generic_d_b_o_a19a06d2fa3a5770765358c09602a9b75}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!begin@{begin}}
+\index{begin@{begin}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a19a06d2fa3a5770765358c09602a9b75}
+クエリー実行と\+D\+Bインスタンスの初期化を同時に行う \hypertarget{class_generic_d_b_o_a9054647399f072971033252d135e71d3}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!commit@{commit}}
+\index{commit@{commit}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{commit}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::commit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a9054647399f072971033252d135e71d3}
+クエリー実行と\+D\+Bインスタンスの初期化を同時に行う \hypertarget{class_generic_d_b_o_aa5b7d961b4297b9aa75baecfdc7d7e5e}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!execute@{execute}}
+\index{execute@{execute}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::execute (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Query, }
+\item[{}]{\$arg\+Binds = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Auto\+Readable = {\ttfamily TRUE}}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_aa5b7d961b4297b9aa75baecfdc7d7e5e}
+クエリー実行と\+D\+Bインスタンスの初期化を同時に行う 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+Query} & クエリ \\
+\hline
+array & {\em \$arg\+Binds} & バインド \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+実行結果 
+\end{DoxyReturn}
+\hypertarget{class_generic_d_b_o_a81277b8636d6a2d29e6fe993024f703b}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!get\+Last\+Error\+Message@{get\+Last\+Error\+Message}}
+\index{get\+Last\+Error\+Message@{get\+Last\+Error\+Message}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{get\+Last\+Error\+Message}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::get\+Last\+Error\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a81277b8636d6a2d29e6fe993024f703b}
+最後の実行クエリーのエラーを取得する インスタンスがある時だけ実行する 無いときは\+N\+U\+L\+Lを返す \hypertarget{class_generic_d_b_o_a8db36514aa3f653b8d7642855a1b8188}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!get\+Table\+Describes@{get\+Table\+Describes}}
+\index{get\+Table\+Describes@{get\+Table\+Describes}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{get\+Table\+Describes}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::get\+Table\+Describes (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Table}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a8db36514aa3f653b8d7642855a1b8188}
+テーブル定義の取得 \hypertarget{class_generic_d_b_o_a9c5bcfb5e09fd7bad746ad57b34415c0}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!get\+Tables@{get\+Tables}}
+\index{get\+Tables@{get\+Tables}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{get\+Tables}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::get\+Tables (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a9c5bcfb5e09fd7bad746ad57b34415c0}
+テーブル一覧の取得 \hypertarget{class_generic_d_b_o_a47aed86a9d3307c24cffba8f596a553c}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!rollback@{rollback}}
+\index{rollback@{rollback}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{rollback}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::rollback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a47aed86a9d3307c24cffba8f596a553c}
+クエリー実行と\+D\+Bインスタンスの初期化を同時に行う \hypertarget{class_generic_d_b_o_af903a44ae7f95879e1bab1fb2ca16450}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!select\+Limit@{select\+Limit}}
+\index{select\+Limit@{select\+Limit}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{select\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::select\+Limit (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Query, }
+\item[{}]{\$arg\+Rows, }
+\item[{}]{\$arg\+Offset = {\ttfamily 1}, }
+\item[{}]{\$arg\+Binds = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_af903a44ae7f95879e1bab1fb2ca16450}
+クエリー実行と\+D\+Bインスタンスの初期化を同時に行う 件数指定版execute \hypertarget{class_generic_d_b_o_a4b2bae77e8ef401ed8e06968b09af3a4}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!shared\+Instance@{shared\+Instance}}
+\index{shared\+Instance@{shared\+Instance}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{shared\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+D\+B\+O\+::shared\+Instance (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily \char`\"{}Default\char`\"{}}, }
+\item[{}]{\$arg\+Readable = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_d_b_o_a4b2bae77e8ef401ed8e06968b09af3a4}
+D\+Bインスタンスを取得 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+D\+S\+N} & D\+S\+N \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+\hyperlink{class_generic_d_b_o}{Generic\+D\+B\+O} D\+B 
+\end{DoxyReturn}
+\hypertarget{class_generic_d_b_o_a3037e110cc320ad3cc63d68894ba1a54}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!update\+Blob@{update\+Blob}}
+\index{update\+Blob@{update\+Blob}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{update\+Blob}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::update\+Blob (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Table, }
+\item[{}]{\$arg\+Key, }
+\item[{}]{\$arg\+Val, }
+\item[{}]{\$arg\+Where}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a3037e110cc320ad3cc63d68894ba1a54}
+B\+L\+O\+Bの\+Update \hypertarget{class_generic_d_b_o_a39d5c487e235013fdd186fd8960b3f5a}{}\index{Generic\+D\+B\+O@{Generic\+D\+B\+O}!update\+Clob@{update\+Clob}}
+\index{update\+Clob@{update\+Clob}!Generic\+D\+B\+O@{Generic\+D\+B\+O}}
+\subsubsection[{update\+Clob}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+D\+B\+O\+::update\+Clob (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Table, }
+\item[{}]{\$arg\+Key, }
+\item[{}]{\$arg\+Val, }
+\item[{}]{\$arg\+Where}
+\end{DoxyParamCaption}
+)}\label{class_generic_d_b_o_a39d5c487e235013fdd186fd8960b3f5a}
+C\+L\+O\+Bの\+Update 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+D\+B/Generic\+D\+B\+O.\+class.\+php\end{DoxyCompactItemize}

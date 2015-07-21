@@ -1,0 +1,52 @@
+\hypertarget{class_generic_migration_manager}{}\section{Generic\+Migration\+Manager クラス}
+\label{class_generic_migration_manager}\index{Generic\+Migration\+Manager@{Generic\+Migration\+Manager}}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_generic_migration_manager_aeb6f9ef433647f687cc85bf13f0e2b5d}{dispatch\+All} (\$arg\+D\+B\+O, \$arg\+Tbl\+Name=N\+U\+L\+L)
+\item 
+static \hyperlink{class_generic_migration_manager_a9ffcc70eeefe06069b8d041c5cdc2f59}{resolve} (\$arg\+D\+B\+O, \$arg\+Tbl\+Name, \$arg\+Last\+Migration\+Hash=N\+U\+L\+L)
+\end{DoxyCompactItemize}
+
+
+\subsection{関数詳解}
+\hypertarget{class_generic_migration_manager_aeb6f9ef433647f687cc85bf13f0e2b5d}{}\index{Generic\+Migration\+Manager@{Generic\+Migration\+Manager}!dispatch\+All@{dispatch\+All}}
+\index{dispatch\+All@{dispatch\+All}!Generic\+Migration\+Manager@{Generic\+Migration\+Manager}}
+\subsubsection[{dispatch\+All}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Migration\+Manager\+::dispatch\+All (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+B\+O, }
+\item[{}]{\$arg\+Tbl\+Name = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_migration_manager_aeb6f9ef433647f687cc85bf13f0e2b5d}
+適用されていないマイグレーションを探して、あれば実行する。なければそのまま終了する 
+\begin{DoxyParams}[1]{引数}
+instance & {\em \$arg\+D\+B\+O} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_generic_migration_manager_a9ffcc70eeefe06069b8d041c5cdc2f59}{}\index{Generic\+Migration\+Manager@{Generic\+Migration\+Manager}!resolve@{resolve}}
+\index{resolve@{resolve}!Generic\+Migration\+Manager@{Generic\+Migration\+Manager}}
+\subsubsection[{resolve}]{\setlength{\rightskip}{0pt plus 5cm}static Generic\+Migration\+Manager\+::resolve (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+B\+O, }
+\item[{}]{\$arg\+Tbl\+Name, }
+\item[{}]{\$arg\+Last\+Migration\+Hash = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_generic_migration_manager_a9ffcc70eeefe06069b8d041c5cdc2f59}
+テーブルマイグレートを自動解決する 
+\begin{DoxyParams}[1]{引数}
+unknown & {\em \$arg\+D\+B\+O} & \\
+\hline
+unknown & {\em \$arg\+Table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Generic\+Package/class/\+O\+R\+M/Generic\+Migration\+Manager.\+class.\+php\end{DoxyCompactItemize}

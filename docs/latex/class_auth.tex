@@ -1,0 +1,205 @@
+\hypertarget{class_auth}{}\section{Auth クラス}
+\label{class_auth}\index{Auth@{Auth}}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_auth_a0d90d23edfa677120d1d679e6b2d4d0a}{}static {\bfseries init} (\$arg\+D\+S\+N=N\+U\+L\+L)\label{class_auth_a0d90d23edfa677120d1d679e6b2d4d0a}
+
+\item 
+\hypertarget{class_auth_a1c796b91ca73fbc3711da1c1cbee20fb}{}static {\bfseries get\+Encrypted\+Auth\+Identifier} (\$arg\+Identifier=N\+U\+L\+L)\label{class_auth_a1c796b91ca73fbc3711da1c1cbee20fb}
+
+\item 
+\hypertarget{class_auth_a30b9301ad9e08ed19f8998aa1ae7e2eb}{}static {\bfseries get\+Decrypted\+Auth\+Identifier} (\$arg\+Identifier=N\+U\+L\+L)\label{class_auth_a30b9301ad9e08ed19f8998aa1ae7e2eb}
+
+\item 
+static \hyperlink{class_auth_a39a95cdcc33ebdfe6d9fa0b1ed7a8105}{get\+Certified\+User} (\$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_auth_a41a4a347f32312fd8080a0098d3559e8}{is\+Certification} (\$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_auth_af19cda27bb71cd0f02c6eedc5d77fd5b}{certify} (\$arg\+I\+D=N\+U\+L\+L, \$arg\+Pass=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L, \$arg\+Execut=F\+A\+L\+S\+E)
+\item 
+static \hyperlink{class_auth_a35214c906d67d5291aedc6ae3077a306}{un\+Certify} (\$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_auth_a239cdd7ce4421378ed50c4ee13497ec6}{get\+Registered\+User} (\$arg\+I\+D=N\+U\+L\+L, \$arg\+Pass=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_auth_ad8e06958d26cd1033330eb0c0dcf8237}{is\+Registered} (\$arg\+I\+D=N\+U\+L\+L, \$arg\+Pass=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\item 
+static \hyperlink{class_auth_adb637e94fe36d671e36571f1b44bc89c}{registration} (\$arg\+I\+D=N\+U\+L\+L, \$arg\+Pass=N\+U\+L\+L, \$arg\+Date=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)
+\end{DoxyCompactItemize}
+\subsection*{静的公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_auth_a03a809bbbfc02f20d510efa62f63ba5c}{}static {\bfseries \$auth\+Table} = \textquotesingle{}user\+\_\+table\textquotesingle{}\label{class_auth_a03a809bbbfc02f20d510efa62f63ba5c}
+
+\item 
+\hypertarget{class_auth_a5b7fb197d46cae1d222e6507a28f8273}{}static {\bfseries \$auth\+P\+Key\+Field} = \textquotesingle{}id\textquotesingle{}\label{class_auth_a5b7fb197d46cae1d222e6507a28f8273}
+
+\item 
+\hypertarget{class_auth_a1a1e9c62415af1e3be9d2e553cdbad25}{}static {\bfseries \$auth\+I\+D\+Field} = \textquotesingle{}mailaddress\textquotesingle{}\label{class_auth_a1a1e9c62415af1e3be9d2e553cdbad25}
+
+\item 
+\hypertarget{class_auth_ab253bd6a9a2bc5b8506a70aee6d66966}{}static {\bfseries \$auth\+Pass\+Field} = \textquotesingle{}password\textquotesingle{}\label{class_auth_ab253bd6a9a2bc5b8506a70aee6d66966}
+
+\item 
+\hypertarget{class_auth_af3a21942b3b0e75ff8f3aef25f4ba4ea}{}static {\bfseries \$auth\+Created\+Field} = \textquotesingle{}create\+\_\+date\textquotesingle{}\label{class_auth_af3a21942b3b0e75ff8f3aef25f4ba4ea}
+
+\item 
+\hypertarget{class_auth_aec98f90d8d9b9249e867bc37982b3b17}{}static {\bfseries \$auth\+Modified\+Field} = \textquotesingle{}modify\+\_\+date\textquotesingle{}\label{class_auth_aec98f90d8d9b9249e867bc37982b3b17}
+
+\item 
+\hypertarget{class_auth_aeb9548ba124de21158de2d51eae93221}{}static {\bfseries \$auth\+I\+D\+Encrypted} = \textquotesingle{}A\+E\+S128\+C\+B\+C\textquotesingle{}\label{class_auth_aeb9548ba124de21158de2d51eae93221}
+
+\item 
+\hypertarget{class_auth_a585e0969b2397e80a1bba246a1aee2a1}{}static {\bfseries \$auth\+Pass\+Encrypted} = \textquotesingle{}S\+H\+A256\textquotesingle{}\label{class_auth_a585e0969b2397e80a1bba246a1aee2a1}
+
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_auth_ac59ef46d51ed400b343c9ececd308e24}{}static {\bfseries \+\_\+init} (\$arg\+D\+S\+N=N\+U\+L\+L)\label{class_auth_ac59ef46d51ed400b343c9ececd308e24}
+
+\item 
+static \hyperlink{class_auth_a8530363c699c10036e8317881419a9d0}{\+\_\+resolve\+Encrypted} (\$arg\+String, \$arg\+Algorism=N\+U\+L\+L)
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_auth_a565d83dd2380d91ffa5f12d62dc5a4de}{}static {\bfseries \$\+\_\+session\+Crypt\+Key} = N\+U\+L\+L\label{class_auth_a565d83dd2380d91ffa5f12d62dc5a4de}
+
+\item 
+\hypertarget{class_auth_a65a0bf879f0557085e49a43ae490f1a2}{}static {\bfseries \$\+\_\+session\+Crypt\+I\+V} = N\+U\+L\+L\label{class_auth_a65a0bf879f0557085e49a43ae490f1a2}
+
+\item 
+\hypertarget{class_auth_af7ecc71fc76b007ffcf44f4f6e75c51a}{}static {\bfseries \$\+\_\+auth\+Crypt\+Key} = N\+U\+L\+L\label{class_auth_af7ecc71fc76b007ffcf44f4f6e75c51a}
+
+\item 
+\hypertarget{class_auth_a6fd50a3bc1beb343064ae57c416f4baf}{}static {\bfseries \$\+\_\+auth\+Crypt\+I\+V} = N\+U\+L\+L\label{class_auth_a6fd50a3bc1beb343064ae57c416f4baf}
+
+\item 
+\hypertarget{class_auth_a02b83cf2ecb5cfc5b9195d364467a784}{}static {\bfseries \$\+\_\+\+D\+B\+O} = N\+U\+L\+L\label{class_auth_a02b83cf2ecb5cfc5b9195d364467a784}
+
+\item 
+\hypertarget{class_auth_a4c9c442e597e0f35f4b7bd60f981ce54}{}static {\bfseries \$\+\_\+initialized} = F\+A\+L\+S\+E\label{class_auth_a4c9c442e597e0f35f4b7bd60f981ce54}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{関数詳解}
+\hypertarget{class_auth_a8530363c699c10036e8317881419a9d0}{}\index{Auth@{Auth}!\+\_\+resolve\+Encrypted@{\+\_\+resolve\+Encrypted}}
+\index{\+\_\+resolve\+Encrypted@{\+\_\+resolve\+Encrypted}!Auth@{Auth}}
+\subsubsection[{\+\_\+resolve\+Encrypted}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::\+\_\+resolve\+Encrypted (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+String, }
+\item[{}]{\$arg\+Algorism = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_auth_a8530363c699c10036e8317881419a9d0}
+登録済みかどうか 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+D\+S\+N} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_af19cda27bb71cd0f02c6eedc5d77fd5b}{}\index{Auth@{Auth}!certify@{certify}}
+\index{certify@{certify}!Auth@{Auth}}
+\subsubsection[{certify}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::certify (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+I\+D = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Pass = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Execut = {\ttfamily FALSE}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_af19cda27bb71cd0f02c6eedc5d77fd5b}
+認証を証明する(ログインしてセッションを発行する) 
+\begin{DoxyParams}{引数}
+{\em string} & 認証\+I\+D \\
+\hline
+{\em string} & 認証パスワード \\
+\hline
+{\em string} & D\+B接続情報 \\
+\hline
+{\em string} & 強制再認証 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_a39a95cdcc33ebdfe6d9fa0b1ed7a8105}{}\index{Auth@{Auth}!get\+Certified\+User@{get\+Certified\+User}}
+\index{get\+Certified\+User@{get\+Certified\+User}!Auth@{Auth}}
+\subsubsection[{get\+Certified\+User}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::get\+Certified\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a39a95cdcc33ebdfe6d9fa0b1ed7a8105}
+認証が証明済みのユーザーモデルを返す 
+\begin{DoxyParams}{引数}
+{\em string} & D\+B接続情報 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_a239cdd7ce4421378ed50c4ee13497ec6}{}\index{Auth@{Auth}!get\+Registered\+User@{get\+Registered\+User}}
+\index{get\+Registered\+User@{get\+Registered\+User}!Auth@{Auth}}
+\subsubsection[{get\+Registered\+User}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::get\+Registered\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+I\+D = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Pass = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a239cdd7ce4421378ed50c4ee13497ec6}
+登録済みかどうか 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+D\+S\+N} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_a41a4a347f32312fd8080a0098d3559e8}{}\index{Auth@{Auth}!is\+Certification@{is\+Certification}}
+\index{is\+Certification@{is\+Certification}!Auth@{Auth}}
+\subsubsection[{is\+Certification}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::is\+Certification (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a41a4a347f32312fd8080a0098d3559e8}
+認証が証明済みかどうか(セッションが既にあるかどうか) 
+\begin{DoxyParams}{引数}
+{\em string} & D\+B接続情報 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_ad8e06958d26cd1033330eb0c0dcf8237}{}\index{Auth@{Auth}!is\+Registered@{is\+Registered}}
+\index{is\+Registered@{is\+Registered}!Auth@{Auth}}
+\subsubsection[{is\+Registered}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::is\+Registered (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+I\+D = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Pass = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_ad8e06958d26cd1033330eb0c0dcf8237}
+登録済みかどうか 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+D\+S\+N} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_adb637e94fe36d671e36571f1b44bc89c}{}\index{Auth@{Auth}!registration@{registration}}
+\index{registration@{registration}!Auth@{Auth}}
+\subsubsection[{registration}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::registration (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+I\+D = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Pass = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Date = {\ttfamily NULL}, }
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_adb637e94fe36d671e36571f1b44bc89c}
+登録する 
+\begin{DoxyParams}{引数}
+{\em string} & D\+B接続情報 \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_auth_a35214c906d67d5291aedc6ae3077a306}{}\index{Auth@{Auth}!un\+Certify@{un\+Certify}}
+\index{un\+Certify@{un\+Certify}!Auth@{Auth}}
+\subsubsection[{un\+Certify}]{\setlength{\rightskip}{0pt plus 5cm}static Auth\+::un\+Certify (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+D\+S\+N = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a35214c906d67d5291aedc6ae3077a306}
+認証を非証明する(ログアウトする) 
+\begin{DoxyParams}{引数}
+{\em string} & D\+B接続情報 \\
+\hline
+\end{DoxyParams}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Package/class/\+Auth/Auth.\+class.\+php\end{DoxyCompactItemize}

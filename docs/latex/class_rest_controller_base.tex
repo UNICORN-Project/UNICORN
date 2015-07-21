@@ -1,0 +1,249 @@
+\hypertarget{class_rest_controller_base}{}\section{Rest\+Controller\+Base クラス}
+\label{class_rest_controller_base}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+Rest\+Controller\+Base の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_rest_controller_base}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a26a400c6a6547ff09c8badcbe62af52a}{}{\bfseries get\+D\+B\+O} (\$arg\+D\+S\+N=N\+U\+L\+L)\label{class_rest_controller_base_a26a400c6a6547ff09c8badcbe62af52a}
+
+\item 
+\hypertarget{class_rest_controller_base_a7a2a49f6743241f8cbaaddb08bcc4c2b}{}{\bfseries get\+Model} (\$arg\+Model, \$arg\+Identifier\+O\+R\+Query=N\+U\+L\+L, \$arg\+Binds=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)\label{class_rest_controller_base_a7a2a49f6743241f8cbaaddb08bcc4c2b}
+
+\item 
+\hypertarget{class_rest_controller_base_a59b19c50ca7006f746d91d7237018e01}{}{\bfseries convert\+Array\+From\+Model} (\$Arg\+Model, \$arg\+Fields=N\+U\+L\+L)\label{class_rest_controller_base_a59b19c50ca7006f746d91d7237018e01}
+
+\item 
+\hypertarget{class_rest_controller_base_a95ad94f5d58231686aea32c58749175c}{}{\bfseries get\+Request\+Params} ()\label{class_rest_controller_base_a95ad94f5d58231686aea32c58749175c}
+
+\item 
+\hyperlink{class_rest_controller_base_a648e6ebeaef466e01e6281c1178d2cc0}{U\+I\+D\+Auth\+And\+Execute} ()
+\item 
+\hyperlink{class_rest_controller_base_ae3e9e4f549693f6b28edd415e9b38747}{auth\+And\+Execute} ()
+\item 
+\hyperlink{class_rest_controller_base_aba28a2fce30920ac9e816d6dde7f8d2f}{execute} (\$arg\+Resource\+Hint=N\+U\+L\+L, \$arg\+Request\+Params=N\+U\+L\+L)
+\item 
+\hyperlink{class_rest_controller_base_a842a9ecef6680268e367a44c4df951a2}{get} ()
+\item 
+\hyperlink{class_rest_controller_base_a305d42e434b069c7c7e5916f2c46682a}{post} (\$arg\+Request\+Params=N\+U\+L\+L)
+\item 
+\hyperlink{class_rest_controller_base_a95556be57cfc461f8703f0f369ee05d5}{put} (\$arg\+Request\+Params=N\+U\+L\+L)
+\item 
+\hyperlink{class_rest_controller_base_a1a30a132626984159384c227f5cdc717}{delete} ()
+\item 
+\hyperlink{class_rest_controller_base_adbae680f95aaf268f9673790fb592d3c}{head} ()
+\end{DoxyCompactItemize}
+\subsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a95adbcb37b5e2800c40fbb58c99d5725}{}static {\bfseries resolve\+Request\+Params} ()\label{class_rest_controller_base_a95adbcb37b5e2800c40fbb58c99d5725}
+
+\item 
+static \hyperlink{class_rest_controller_base_af58b2d2698c8cca84d6d7c346aaabfba}{resolve\+R\+E\+S\+T\+Resource} (\$arg\+R\+E\+S\+T\+Resource\+Hint)
+\end{DoxyCompactItemize}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a6f393be69d966a891945ef2b3867ab43}{}{\bfseries \$request\+Method} = \textquotesingle{}G\+E\+T\textquotesingle{}\label{class_rest_controller_base_a6f393be69d966a891945ef2b3867ab43}
+
+\item 
+\hypertarget{class_rest_controller_base_a0a6f69ab785a9898ecc69fecc823c39f}{}{\bfseries \$rest\+Resource} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_a0a6f69ab785a9898ecc69fecc823c39f}
+
+\item 
+\hypertarget{class_rest_controller_base_a6b85ac821de6d00fc424dfd00b38f0b1}{}{\bfseries \$rest\+Resource\+Model} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_a6b85ac821de6d00fc424dfd00b38f0b1}
+
+\item 
+\hypertarget{class_rest_controller_base_a30307dce16a06ef455a287c41c7600f2}{}{\bfseries \$rest\+Resource\+Listed} = N\+U\+L\+L\label{class_rest_controller_base_a30307dce16a06ef455a287c41c7600f2}
+
+\item 
+\hypertarget{class_rest_controller_base_afc035b4462634549407ef97b4e69f733}{}{\bfseries \$rest\+Resource\+Create\+Date\+Key\+Name} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_afc035b4462634549407ef97b4e69f733}
+
+\item 
+\hypertarget{class_rest_controller_base_ae6b9ea774a33e6806a482cf73a1434f8}{}{\bfseries \$rest\+Resource\+Modify\+Date\+Key\+Name} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_ae6b9ea774a33e6806a482cf73a1434f8}
+
+\item 
+\hypertarget{class_rest_controller_base_a11364ff92cfd143a980659ee6a6eaf43}{}{\bfseries \$rest\+Resource\+Available\+Key\+Name} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_a11364ff92cfd143a980659ee6a6eaf43}
+
+\item 
+\hypertarget{class_rest_controller_base_a066ee8c6a20f8c126fb6a0cdd5776b01}{}{\bfseries \$rest\+Resource\+User\+Table\+Name} = N\+U\+L\+L\label{class_rest_controller_base_a066ee8c6a20f8c126fb6a0cdd5776b01}
+
+\item 
+\hypertarget{class_rest_controller_base_aaac5c04431d48b5c123666eb2f68fd00}{}{\bfseries \$rest\+Resource\+Relay\+Suffix} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_aaac5c04431d48b5c123666eb2f68fd00}
+
+\item 
+\hypertarget{class_rest_controller_base_a6b6690a161550e7ca4fd98c5b42c9653}{}{\bfseries \$rest\+Resource\+Relay\+Prefix} = \textquotesingle{}\textquotesingle{}\label{class_rest_controller_base_a6b6690a161550e7ca4fd98c5b42c9653}
+
+\item 
+\hypertarget{class_rest_controller_base_a7ac3e3dc294f8148f382b642fe189b73}{}{\bfseries \$\+Auth\+Device} = N\+U\+L\+L\label{class_rest_controller_base_a7ac3e3dc294f8148f382b642fe189b73}
+
+\item 
+\hypertarget{class_rest_controller_base_aff05f64025725b1bcd83fd344ea2a1ac}{}{\bfseries \$\+Auth\+User} = N\+U\+L\+L\label{class_rest_controller_base_aff05f64025725b1bcd83fd344ea2a1ac}
+
+\item 
+\hypertarget{class_rest_controller_base_a22e2c927f7df24f55851593cee338811}{}{\bfseries \$auth\+User\+I\+D} = N\+U\+L\+L\label{class_rest_controller_base_a22e2c927f7df24f55851593cee338811}
+
+\item 
+\hypertarget{class_rest_controller_base_aca6c6c8637ebe32a99e70d16394255d7}{}{\bfseries \$auth\+User\+I\+D\+Field\+Name} = N\+U\+L\+L\label{class_rest_controller_base_aca6c6c8637ebe32a99e70d16394255d7}
+
+\item 
+\hypertarget{class_rest_controller_base_ac16e13138b6ac9fd8245b094ae287bc1}{}{\bfseries \$auth\+User\+Query} = N\+U\+L\+L\label{class_rest_controller_base_ac16e13138b6ac9fd8245b094ae287bc1}
+
+\item 
+\hypertarget{class_rest_controller_base_a743204aa1d9057972a308ffcc070f742}{}{\bfseries \$deep\+R\+E\+S\+T\+Mode} = T\+R\+U\+E\label{class_rest_controller_base_a743204aa1d9057972a308ffcc070f742}
+
+\item 
+\hypertarget{class_rest_controller_base_abd5722b94c46ec8a9330eb24e8105f82}{}{\bfseries \$root\+R\+E\+S\+T} = T\+R\+U\+E\label{class_rest_controller_base_abd5722b94c46ec8a9330eb24e8105f82}
+
+\item 
+\hypertarget{class_rest_controller_base_ab06c4e2e087706ee21b5c3a7c1452ac8}{}{\bfseries \$virtual\+R\+E\+S\+T} = F\+A\+L\+S\+E\label{class_rest_controller_base_ab06c4e2e087706ee21b5c3a7c1452ac8}
+
+\item 
+\hypertarget{class_rest_controller_base_a2f460e29265d4f811f93d6554c894ee3}{}{\bfseries \$responce\+Data} = F\+A\+L\+S\+E\label{class_rest_controller_base_a2f460e29265d4f811f93d6554c894ee3}
+
+\end{DoxyCompactItemize}
+\subsection*{静的公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a89efa2069bb58cdb9d2d8c215ca7026f}{}static {\bfseries \$now\+G\+M\+T} = N\+U\+L\+L\label{class_rest_controller_base_a89efa2069bb58cdb9d2d8c215ca7026f}
+
+\end{DoxyCompactItemize}
+\subsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a698e344e2c6f158a37defa29015dc05d}{}{\bfseries \+\_\+init} ()\label{class_rest_controller_base_a698e344e2c6f158a37defa29015dc05d}
+
+\item 
+\hypertarget{class_rest_controller_base_af8b8730ca0146b74caeeb0bd302fdee0}{}{\bfseries \+\_\+get\+Model} (\$arg\+Model, \$arg\+Identifier\+O\+R\+Query=N\+U\+L\+L, \$arg\+Binds=N\+U\+L\+L, \$arg\+D\+S\+N=N\+U\+L\+L)\label{class_rest_controller_base_af8b8730ca0146b74caeeb0bd302fdee0}
+
+\item 
+\hypertarget{class_rest_controller_base_a94426891fdd91eafa514539524514056}{}{\bfseries \+\_\+convert\+Array\+From\+Model} (\$Arg\+Model, \$arg\+Fields=N\+U\+L\+L)\label{class_rest_controller_base_a94426891fdd91eafa514539524514056}
+
+\end{DoxyCompactItemize}
+\subsection*{静的限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a87e1a761d90332ddff422cefe3f65b16}{}static {\bfseries \+\_\+get\+D\+B\+O} (\$arg\+D\+S\+N=N\+U\+L\+L)\label{class_rest_controller_base_a87e1a761d90332ddff422cefe3f65b16}
+
+\end{DoxyCompactItemize}
+\subsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rest_controller_base_a1cc144075c95012b24a82aa964ded88c}{}{\bfseries \$\+\_\+initialized} = F\+A\+L\+S\+E\label{class_rest_controller_base_a1cc144075c95012b24a82aa964ded88c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{関数詳解}
+\hypertarget{class_rest_controller_base_ae3e9e4f549693f6b28edd415e9b38747}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!auth\+And\+Execute@{auth\+And\+Execute}}
+\index{auth\+And\+Execute@{auth\+And\+Execute}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{auth\+And\+Execute}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::auth\+And\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_ae3e9e4f549693f6b28edd415e9b38747}
+フレームワーク標準の\+Auth機能を利用した認証を行って、\+R\+E\+S\+Tする \begin{DoxyReturn}{戻り値}
+array 配列構造のリソースデータ 
+\end{DoxyReturn}
+\hypertarget{class_rest_controller_base_a1a30a132626984159384c227f5cdc717}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!delete@{delete}}
+\index{delete@{delete}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::delete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_a1a30a132626984159384c227f5cdc717}
+D\+E\+L\+E\+T\+Eメソッド X\+X\+X モデルの位置付けが、テーブルリソースで無い場合は、継承して\+R\+E\+S\+Tの”冪等性”に従って実装して下さい(冪等性を持ちます) \begin{DoxyReturn}{戻り値}
+boolean 
+\end{DoxyReturn}
+
+
+\hyperlink{interface_rest_controller_i_o_aea37c094d38f5c7ff6b5a52e9f4f30a6}{Rest\+Controller\+I\+O}を実装しています。
+
+\hypertarget{class_rest_controller_base_aba28a2fce30920ac9e816d6dde7f8d2f}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!execute@{execute}}
+\index{execute@{execute}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::execute (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Resource\+Hint = {\ttfamily NULL}, }
+\item[{}]{\$arg\+Request\+Params = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_aba28a2fce30920ac9e816d6dde7f8d2f}
+R\+E\+S\+Tする \begin{DoxyReturn}{戻り値}
+array 配列構造のリソースデータ 
+\end{DoxyReturn}
+\hypertarget{class_rest_controller_base_a842a9ecef6680268e367a44c4df951a2}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!get@{get}}
+\index{get@{get}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_a842a9ecef6680268e367a44c4df951a2}
+G\+E\+Tメソッド リソースの参照(冪等性を持ちます) X\+X\+X モデルの位置付けが、テーブルリソースで無い場合は、継承して、\+R\+E\+S\+Tの”冪等性”に従って実装して下さい \begin{DoxyReturn}{戻り値}
+mixed 成功時は最新のリソース配列 失敗時は\+F\+A\+L\+S\+E 
+\end{DoxyReturn}
+
+
+\hyperlink{interface_rest_controller_i_o_af268b91d81734f22569982048ae81a1f}{Rest\+Controller\+I\+O}を実装しています。
+
+\hypertarget{class_rest_controller_base_adbae680f95aaf268f9673790fb592d3c}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!head@{head}}
+\index{head@{head}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_adbae680f95aaf268f9673790fb592d3c}
+H\+E\+A\+Dメソッド \begin{DoxyReturn}{戻り値}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_rest_controller_base_a305d42e434b069c7c7e5916f2c46682a}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!post@{post}}
+\index{post@{post}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::post (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Request\+Params = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_a305d42e434b069c7c7e5916f2c46682a}
+P\+O\+S\+Tメソッド リソースの新規作成、更新、インクリメント、デクリメント(冪等性を強制しません) X\+X\+X モデルの位置付けが、テーブルリソースで無い場合は、継承して、\+R\+E\+S\+Tの”冪等性”に従って実装して下さい \begin{DoxyReturn}{戻り値}
+mixed 成功時は最新のリソース配列 失敗時は\+F\+A\+L\+S\+E 
+\end{DoxyReturn}
+\hypertarget{class_rest_controller_base_a95556be57cfc461f8703f0f369ee05d5}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!put@{put}}
+\index{put@{put}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::put (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+Request\+Params = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_a95556be57cfc461f8703f0f369ee05d5}
+P\+U\+Tメソッド リソースの新規作成、更新(冪等性を持ちます) X\+X\+X モデルの位置付けが、テーブルリソースで無い場合は、継承して、\+R\+E\+S\+Tの”冪等性”に従って実装して下さい \begin{DoxyReturn}{戻り値}
+mixed 成功時は最新のリソース配列 失敗時は\+F\+A\+L\+S\+E 
+\end{DoxyReturn}
+\hypertarget{class_rest_controller_base_af58b2d2698c8cca84d6d7c346aaabfba}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!resolve\+R\+E\+S\+T\+Resource@{resolve\+R\+E\+S\+T\+Resource}}
+\index{resolve\+R\+E\+S\+T\+Resource@{resolve\+R\+E\+S\+T\+Resource}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{resolve\+R\+E\+S\+T\+Resource}]{\setlength{\rightskip}{0pt plus 5cm}static Rest\+Controller\+Base\+::resolve\+R\+E\+S\+T\+Resource (
+\begin{DoxyParamCaption}
+\item[{}]{\$arg\+R\+E\+S\+T\+Resource\+Hint}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_rest_controller_base_af58b2d2698c8cca84d6d7c346aaabfba}
+R\+E\+S\+T\+A\+P\+Iでリソースにアクセスする際の指定リソース情報を分解してパラメータ化します \mbox{[}me指定(任意)/\mbox{]}\mbox{[}model指定(必須)/\mbox{]}\mbox{[}pkey指定(,pkey指定,...)(G\+E\+T以外は必須)/\mbox{]} 例) 自分の\char`\"{}model\char`\"{}の一覧を取得 /me/model.json X\+X\+X システム毎に\+R\+E\+S\+Tの\+U\+R\+Iパラメータ分解法が違う場合はこのメソッドをオーバーライドして下さい 
+\begin{DoxyParams}[1]{引数}
+string & {\em \$arg\+R\+E\+S\+T\+Resource\+Hint} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+array model,listed,fields,idsの配列 
+\end{DoxyReturn}
+\hypertarget{class_rest_controller_base_a648e6ebeaef466e01e6281c1178d2cc0}{}\index{Rest\+Controller\+Base@{Rest\+Controller\+Base}!U\+I\+D\+Auth\+And\+Execute@{U\+I\+D\+Auth\+And\+Execute}}
+\index{U\+I\+D\+Auth\+And\+Execute@{U\+I\+D\+Auth\+And\+Execute}!Rest\+Controller\+Base@{Rest\+Controller\+Base}}
+\subsubsection[{U\+I\+D\+Auth\+And\+Execute}]{\setlength{\rightskip}{0pt plus 5cm}Rest\+Controller\+Base\+::\+U\+I\+D\+Auth\+And\+Execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_rest_controller_base_a648e6ebeaef466e01e6281c1178d2cc0}
+フレームワーク標準の\+Auth機能を利用した認証と登録を行って、\+R\+E\+S\+Tする(スマフォ\+A\+P\+I向け) \begin{DoxyReturn}{戻り値}
+array 配列構造のリソースデータ 
+\end{DoxyReturn}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Package/class/\+M\+V\+C/Rest\+Controller\+Base.\+abstract.\+php\end{DoxyCompactItemize}
