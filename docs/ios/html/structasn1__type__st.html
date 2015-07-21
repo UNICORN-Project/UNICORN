@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>UNICORN - iOS: asn1_type_st 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">UNICORN - iOS
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="structasn1__type__st-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">asn1_type_st 構造体</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:af1bd6ef16c406f3cd3fa67eb81693b54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1bd6ef16c406f3cd3fa67eb81693b54"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:af1bd6ef16c406f3cd3fa67eb81693b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202a9080533c352b4f0892bf39bdc581"><td class="memItemLeft" ><a class="anchor" id="a202a9080533c352b4f0892bf39bdc581"></a>
+union {</td></tr>
+<tr class="memitem:a967c750239053a0566fa304ebadd2dba"><td class="memItemLeft" >
+&#160;&#160;&#160;char *&#160;&#160;&#160;<b>ptr</b></td></tr>
+<tr class="separator:a967c750239053a0566fa304ebadd2dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147dc1be109fd43125d9d51a460fc641"><td class="memItemLeft" >
+&#160;&#160;&#160;ASN1_BOOLEAN&#160;&#160;&#160;<b>boolean</b></td></tr>
+<tr class="separator:a147dc1be109fd43125d9d51a460fc641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193db7d83f0cd5c3155e426e713ba36f"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_STRING</a> *&#160;&#160;&#160;<b>asn1_string</b></td></tr>
+<tr class="separator:a193db7d83f0cd5c3155e426e713ba36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a7d07b80a35baa47cedaeba7c26fe3"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__object__st.html">ASN1_OBJECT</a> *&#160;&#160;&#160;<b>object</b></td></tr>
+<tr class="separator:ae6a7d07b80a35baa47cedaeba7c26fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c0a172c7a0636d6b0f29fb938a6973"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_INTEGER</a> *&#160;&#160;&#160;<b>integer</b></td></tr>
+<tr class="separator:a97c0a172c7a0636d6b0f29fb938a6973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1edcd379317a818fb08637c5603aed6a"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_ENUMERATED</a> *&#160;&#160;&#160;<b>enumerated</b></td></tr>
+<tr class="separator:a1edcd379317a818fb08637c5603aed6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf6e9929324c954477de80b72646458"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_BIT_STRING</a> *&#160;&#160;&#160;<b>bit_string</b></td></tr>
+<tr class="separator:a9bf6e9929324c954477de80b72646458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23cc140af69f1dde48d22f7b523d17c4"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_OCTET_STRING</a> *&#160;&#160;&#160;<b>octet_string</b></td></tr>
+<tr class="separator:a23cc140af69f1dde48d22f7b523d17c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c381c3503b09c9e0ebc2f01bde0a5f"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_PRINTABLESTRING</a> *&#160;&#160;&#160;<b>printablestring</b></td></tr>
+<tr class="separator:a50c381c3503b09c9e0ebc2f01bde0a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e5f914ba26d5ff06295fe7c307ecf7"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_T61STRING</a> *&#160;&#160;&#160;<b>t61string</b></td></tr>
+<tr class="separator:a90e5f914ba26d5ff06295fe7c307ecf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af09f564621b1e484c378e88d5cd29688"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_IA5STRING</a> *&#160;&#160;&#160;<b>ia5string</b></td></tr>
+<tr class="separator:af09f564621b1e484c378e88d5cd29688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab163815a7031cc89409d769cb6cf58f8"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_GENERALSTRING</a> *&#160;&#160;&#160;<b>generalstring</b></td></tr>
+<tr class="separator:ab163815a7031cc89409d769cb6cf58f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5970cf69ec1b83f391f64afde24d21f2"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_BMPSTRING</a> *&#160;&#160;&#160;<b>bmpstring</b></td></tr>
+<tr class="separator:a5970cf69ec1b83f391f64afde24d21f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a96111c24e97f4ec5fa2e7cda0a197"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_UNIVERSALSTRING</a> *&#160;&#160;&#160;<b>universalstring</b></td></tr>
+<tr class="separator:a17a96111c24e97f4ec5fa2e7cda0a197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54264343c324bc709d8a06e74e0b8b95"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_UTCTIME</a> *&#160;&#160;&#160;<b>utctime</b></td></tr>
+<tr class="separator:a54264343c324bc709d8a06e74e0b8b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d19f1a2a3535bccfb6b42b1038ccbc8"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_GENERALIZEDTIME</a> *&#160;&#160;&#160;<b>generalizedtime</b></td></tr>
+<tr class="separator:a1d19f1a2a3535bccfb6b42b1038ccbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07117cbeacda3adb5d5cd0c7fd4920fc"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_VISIBLESTRING</a> *&#160;&#160;&#160;<b>visiblestring</b></td></tr>
+<tr class="separator:a07117cbeacda3adb5d5cd0c7fd4920fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab33f8efc9ef207aa6f7f3ed078ce478e"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_UTF8STRING</a> *&#160;&#160;&#160;<b>utf8string</b></td></tr>
+<tr class="separator:ab33f8efc9ef207aa6f7f3ed078ce478e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac492fec735ff72950de06007a1687b"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_STRING</a> *&#160;&#160;&#160;<b>set</b></td></tr>
+<tr class="separator:a9ac492fec735ff72950de06007a1687b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ebc4a55926cabd81e4550d6d9353bb"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="structasn1__string__st.html">ASN1_STRING</a> *&#160;&#160;&#160;<b>sequence</b></td></tr>
+<tr class="separator:a88ebc4a55926cabd81e4550d6d9353bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04262891e1e7d46083cfe87267a7be06"><td class="memItemLeft" >
+&#160;&#160;&#160;ASN1_VALUE *&#160;&#160;&#160;<b>asn1_value</b></td></tr>
+<tr class="separator:a04262891e1e7d46083cfe87267a7be06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202a9080533c352b4f0892bf39bdc581"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<tr class="separator:a202a9080533c352b4f0892bf39bdc581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>FrameworkManager/sample/packages/ProjectPackage/iOSSample/Libraries/MPurchase/vendor/include/openssl/<a class="el" href="asn1_8h_source.html">asn1.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2015年07月21日(火) 17時04分03秒作成 - UNICORN - iOS / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

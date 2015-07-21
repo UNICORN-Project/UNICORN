@@ -1,0 +1,46 @@
+\hypertarget{structdsa__method}{}\section{dsa\+\_\+method 構造体}
+\label{structdsa__method}\index{dsa\+\_\+method@{dsa\+\_\+method}}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structdsa__method_a83d504a9d8609d6172a7e4a824791933}{}const char $\ast$ {\bfseries name}\label{structdsa__method_a83d504a9d8609d6172a7e4a824791933}
+
+\item 
+\hypertarget{structdsa__method_acac9dacfe7fd6637af11f0280ed087ad}{}\hyperlink{struct_d_s_a___s_i_g__st}{D\+S\+A\+\_\+\+S\+I\+G} $\ast$($\ast$ {\bfseries dsa\+\_\+do\+\_\+sign} )(const unsigned char $\ast$dgst, int dlen, \hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa)\label{structdsa__method_acac9dacfe7fd6637af11f0280ed087ad}
+
+\item 
+\hypertarget{structdsa__method_a6c731fb594e9d87b38351caf21b52f72}{}int($\ast$ {\bfseries dsa\+\_\+sign\+\_\+setup} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa, B\+N\+\_\+\+C\+T\+X $\ast$ctx\+\_\+in, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$$\ast$kinvp, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$$\ast$rp)\label{structdsa__method_a6c731fb594e9d87b38351caf21b52f72}
+
+\item 
+\hypertarget{structdsa__method_a48d8dcf12cd14676633cde4b06dbe1c5}{}int($\ast$ {\bfseries dsa\+\_\+do\+\_\+verify} )(const unsigned char $\ast$dgst, int dgst\+\_\+len, \hyperlink{struct_d_s_a___s_i_g__st}{D\+S\+A\+\_\+\+S\+I\+G} $\ast$sig, \hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa)\label{structdsa__method_a48d8dcf12cd14676633cde4b06dbe1c5}
+
+\item 
+\hypertarget{structdsa__method_a6295bfda1f4be2fc9e04e69c6a104f4d}{}int($\ast$ {\bfseries dsa\+\_\+mod\+\_\+exp} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$rr, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$a1, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$p1, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$a2, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$p2, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$m, B\+N\+\_\+\+C\+T\+X $\ast$ctx, \hyperlink{structbn__mont__ctx__st}{B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+T\+X} $\ast$in\+\_\+mont)\label{structdsa__method_a6295bfda1f4be2fc9e04e69c6a104f4d}
+
+\item 
+\hypertarget{structdsa__method_afeec883c6d822b9faa7a03f2217fc651}{}int($\ast$ {\bfseries bn\+\_\+mod\+\_\+exp} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$r, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$a, const \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$p, const \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$m, B\+N\+\_\+\+C\+T\+X $\ast$ctx, \hyperlink{structbn__mont__ctx__st}{B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+T\+X} $\ast$m\+\_\+ctx)\label{structdsa__method_afeec883c6d822b9faa7a03f2217fc651}
+
+\item 
+\hypertarget{structdsa__method_acfaf05310756308b9849f278cdfd91c6}{}int($\ast$ {\bfseries init} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa)\label{structdsa__method_acfaf05310756308b9849f278cdfd91c6}
+
+\item 
+\hypertarget{structdsa__method_aad9fed78046fe8c6f995ba9ee8bd59d2}{}int($\ast$ {\bfseries finish} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa)\label{structdsa__method_aad9fed78046fe8c6f995ba9ee8bd59d2}
+
+\item 
+\hypertarget{structdsa__method_ae5a10b0b8d5b139e5818da8da5223ebc}{}int {\bfseries flags}\label{structdsa__method_ae5a10b0b8d5b139e5818da8da5223ebc}
+
+\item 
+\hypertarget{structdsa__method_a08528c35da49dcebc0675cb9b66bbeb9}{}char $\ast$ {\bfseries app\+\_\+data}\label{structdsa__method_a08528c35da49dcebc0675cb9b66bbeb9}
+
+\item 
+\hypertarget{structdsa__method_a22d30cb3e62b00cbb818f7d2bacb99f7}{}int($\ast$ {\bfseries dsa\+\_\+paramgen} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa, int bits, const unsigned char $\ast$seed, int seed\+\_\+len, int $\ast$counter\+\_\+ret, unsigned long $\ast$h\+\_\+ret, \hyperlink{structbn__gencb__st}{B\+N\+\_\+\+G\+E\+N\+C\+B} $\ast$cb)\label{structdsa__method_a22d30cb3e62b00cbb818f7d2bacb99f7}
+
+\item 
+\hypertarget{structdsa__method_a55bf9cc2d75b43788806388a6e924eb1}{}int($\ast$ {\bfseries dsa\+\_\+keygen} )(\hyperlink{structdsa__st}{D\+S\+A} $\ast$dsa)\label{structdsa__method_a55bf9cc2d75b43788806388a6e924eb1}
+
+\end{DoxyCompactItemize}
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Purchase/vendor/include/openssl/dsa.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,224 @@
+\hypertarget{interface_h_n_k_cache}{}\section{H\+N\+K\+Cache クラス}
+\label{interface_h_n_k_cache}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+H\+N\+K\+Cache の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_h_n_k_cache}
+\end{center}
+\end{figure}
+\subsection*{実体メソッド}
+\begin{Indent}{\bf Getting images}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(U\+I\+Image $\ast$) -\/ \hyperlink{interface_h_n_k_cache_a0d0567e2654dae805279b55432226a35}{image\+For\+Entity\+:format\+Name\+:error\+:}
+\item 
+(B\+O\+O\+L) -\/ \hyperlink{interface_h_n_k_cache_a05ffc1b5bcc88ae33e9a914a17b2eaf0}{retrieve\+Image\+For\+Entity\+:format\+Name\+:completion\+Block\+:}
+\item 
+(B\+O\+O\+L) -\/ \hyperlink{interface_h_n_k_cache_a9b3f87e9d4189c0ec91b634b8f581296}{retrieve\+Image\+For\+Key\+:format\+Name\+:completion\+Block\+:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Setting images}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_h_n_k_cache_acf8eec52df76d3baddbb5db9d14ea130}{set\+Image\+:for\+Key\+:format\+Name\+:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Removing images}\par
+{\em 
+
+ 
+
+ }\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_h_n_k_cache_a6a2363137e2e666f0c2b0b6b6f1b7878}{remove\+All\+Images}
+\item 
+(void) -\/ \hyperlink{interface_h_n_k_cache_a7cefa5aa5dc717a6e6c7a4e92dad22f1}{remove\+Images\+Of\+Format\+Named\+:}
+\item 
+(void) -\/ \hyperlink{interface_h_n_k_cache_a883d1792fdc2fb05da72afbef8fdd350}{remove\+Images\+Of\+Entity\+:}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Initializing the cache}
+\label{_amgrpb7f85940c1a734cf9695eec43d94a3d8}%
+
+
+ 
+
+ \begin{DoxyCompactItemize}
+\item 
+N\+S\+Dictionary $\ast$ \hyperlink{interface_h_n_k_cache_a26177b583cb0fbc469732f304304ae63}{formats}
+\item 
+(id) -\/ \hyperlink{interface_h_n_k_cache_a85cec51236a6c4167c98e6c18a004177}{init\+With\+Name\+:}
+\item 
+(void) -\/ \hyperlink{interface_h_n_k_cache_a8b4e4bf27410dfebf218602b549e0da9}{register\+Format\+:}
+\item 
+(\hyperlink{interface_h_n_k_cache}{H\+N\+K\+Cache} $\ast$) + \hyperlink{interface_h_n_k_cache_a751b4c06b72430a498db248c201c4451}{shared\+Cache}
+\end{DoxyCompactItemize}
+
+
+\subsection{メソッド詳解}
+\hypertarget{interface_h_n_k_cache_a0d0567e2654dae805279b55432226a35}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!image\+For\+Entity\+:format\+Name\+:error\+:@{image\+For\+Entity\+:format\+Name\+:error\+:}}
+\index{image\+For\+Entity\+:format\+Name\+:error\+:@{image\+For\+Entity\+:format\+Name\+:error\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{image\+For\+Entity\+:format\+Name\+:error\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\+I\+Image $\ast$) image\+For\+Entity\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<${\bf H\+N\+K\+Cache\+Entity}$>$)}]{entity}
+\item[{formatName:(N\+S\+String $\ast$)}]{format\+Name}
+\item[{error:(N\+S\+Error$\ast$\+\_\+\+\_\+autoreleasing $\ast$)}]{error\+Ptr}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a0d0567e2654dae805279b55432226a35}
+Synchronously retrieves the image for the given entity conforming to the given format from memory or disk cache, or creates it if it doesn\textquotesingle{}t exist. 
+\begin{DoxyParams}{引数}
+{\em entity} & Entity that represents the original image. If an image for the given entity and format doesn\textquotesingle{}t exist in the cache, the entity will be asked to provide the original data or image to create it. \\
+\hline
+{\em format\+Name} & Name of the format in which the image is desired. The format must have been previously registered with the cache. If an image for the given key and format doesn\textquotesingle{}t exist in the cache, it will be created based on the format. If by creating the image the format disk capacity is surpassed, least recently used images of the format will be removed until it isn\textquotesingle{}t. \\
+\hline
+{\em error\+Ptr} & If an error occurs, upon return contains an N\+S\+Error object that describes the problem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+An image for the given entity conforming to the given format, or nil if an error ocurred.  The image will be returned synchronously but the disk cache will be updated in background. 
+\end{DoxyReturn}
+\hypertarget{interface_h_n_k_cache_a85cec51236a6c4167c98e6c18a004177}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!init\+With\+Name\+:@{init\+With\+Name\+:}}
+\index{init\+With\+Name\+:@{init\+With\+Name\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{init\+With\+Name\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\+With\+Name\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String$\ast$)}]{name}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a85cec51236a6c4167c98e6c18a004177}
+Initialize a cache with the given name. 
+\begin{DoxyParams}{引数}
+{\em name} & Name of the cache. Used as the name of the subdirectory for the disk cache. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_h_n_k_cache_a8b4e4bf27410dfebf218602b549e0da9}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!register\+Format\+:@{register\+Format\+:}}
+\index{register\+Format\+:@{register\+Format\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{register\+Format\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) register\+Format\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf H\+N\+K\+Cache\+Format}$\ast$)}]{format}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a8b4e4bf27410dfebf218602b549e0da9}
+Registers a format in the cache. Haneke will automatically update the disk\+Size of the format as images are added. If a format with the same name already exists in the cache, it will be cleared first. 
+\begin{DoxyParams}{引数}
+{\em Format} & to be registered in the cache.  If the format preload policy allows it, Haneke will add some or all images cached on disk to the memory cache. If an image of the given format is requested, Haneke will cancel preloading to give priority to the request.  A format can only be registered in one cache. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_h_n_k_cache_a6a2363137e2e666f0c2b0b6b6f1b7878}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!remove\+All\+Images@{remove\+All\+Images}}
+\index{remove\+All\+Images@{remove\+All\+Images}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{remove\+All\+Images}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\+All\+Images 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a6a2363137e2e666f0c2b0b6b6f1b7878}
+Removes all cached images. \hypertarget{interface_h_n_k_cache_a883d1792fdc2fb05da72afbef8fdd350}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!remove\+Images\+Of\+Entity\+:@{remove\+Images\+Of\+Entity\+:}}
+\index{remove\+Images\+Of\+Entity\+:@{remove\+Images\+Of\+Entity\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{remove\+Images\+Of\+Entity\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\+Images\+Of\+Entity\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<${\bf H\+N\+K\+Cache\+Entity}$>$)}]{entity}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a883d1792fdc2fb05da72afbef8fdd350}
+Removes all cached images of the given entity. 
+\begin{DoxyParams}{引数}
+{\em entity} & Entity whose images will be removed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_h_n_k_cache_a7cefa5aa5dc717a6e6c7a4e92dad22f1}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!remove\+Images\+Of\+Format\+Named\+:@{remove\+Images\+Of\+Format\+Named\+:}}
+\index{remove\+Images\+Of\+Format\+Named\+:@{remove\+Images\+Of\+Format\+Named\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{remove\+Images\+Of\+Format\+Named\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\+Images\+Of\+Format\+Named\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String$\ast$)}]{format\+Name}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a7cefa5aa5dc717a6e6c7a4e92dad22f1}
+Removes all cached images of the given format. 
+\begin{DoxyParams}{引数}
+{\em format\+Name} & Name of the format whose images will be removed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_h_n_k_cache_a05ffc1b5bcc88ae33e9a914a17b2eaf0}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!retrieve\+Image\+For\+Entity\+:format\+Name\+:completion\+Block\+:@{retrieve\+Image\+For\+Entity\+:format\+Name\+:completion\+Block\+:}}
+\index{retrieve\+Image\+For\+Entity\+:format\+Name\+:completion\+Block\+:@{retrieve\+Image\+For\+Entity\+:format\+Name\+:completion\+Block\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{retrieve\+Image\+For\+Entity\+:format\+Name\+:completion\+Block\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\+O\+O\+L) retrieve\+Image\+For\+Entity\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<${\bf H\+N\+K\+Cache\+Entity}$>$)}]{entity}
+\item[{formatName:(N\+S\+String $\ast$)}]{format\+Name}
+\item[{completionBlock:(void($^\wedge$)(U\+I\+Image $\ast$image, N\+S\+Error $\ast$error))}]{completion\+Block}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a05ffc1b5bcc88ae33e9a914a17b2eaf0}
+Retrieves an image from the cache, or creates one if it doesn\textquotesingle{}t exist. If the image exists in the memory cache, the completion block will be executed synchronously. If the image has to be retreived from the disk cache or has to be created, the completion block will be executed asynchronously. 
+\begin{DoxyParams}{引数}
+{\em entity} & Entity that represents the original image. If the image doesn\textquotesingle{}t exist in the cache, the entity will be asked to provide the original data or image to create it. Any calls to the entity will be done in the main queue. \\
+\hline
+{\em format\+Name} & Name of the format in which the image is desired. The format must have been previously registered with the cache. If the image doesn\textquotesingle{}t exist in the cache, it will be created based on the format. If by creating the image the format disk capacity is surpassed, least recently used images of the format will be removed until it isn\textquotesingle{}t. \\
+\hline
+{\em completion\+Block} & The block to be called with the requested image. Always called from the main queue. Will be called synchronously if the image exists in the memory cache, or asynchronously if the image has to be retreived from the disk cache or has to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Y\+E\+S if image exists in the memory cache (and thus, the completion block was called synchronously), N\+O otherwise. 
+\end{DoxyReturn}
+\hypertarget{interface_h_n_k_cache_a9b3f87e9d4189c0ec91b634b8f581296}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!retrieve\+Image\+For\+Key\+:format\+Name\+:completion\+Block\+:@{retrieve\+Image\+For\+Key\+:format\+Name\+:completion\+Block\+:}}
+\index{retrieve\+Image\+For\+Key\+:format\+Name\+:completion\+Block\+:@{retrieve\+Image\+For\+Key\+:format\+Name\+:completion\+Block\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{retrieve\+Image\+For\+Key\+:format\+Name\+:completion\+Block\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\+O\+O\+L) retrieve\+Image\+For\+Key\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String$\ast$)}]{key}
+\item[{formatName:(N\+S\+String $\ast$)}]{format\+Name}
+\item[{completionBlock:(void($^\wedge$)(U\+I\+Image $\ast$image, N\+S\+Error $\ast$error))}]{completion\+Block}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a9b3f87e9d4189c0ec91b634b8f581296}
+Retrieves an image from the cache. If the image exists in the memory cache, the completion block will be executed synchronously. If the image has to be retreived from the disk cache, the completion block will be executed asynchronously. 
+\begin{DoxyParams}{引数}
+{\em key} & Image cache key. \\
+\hline
+{\em format\+Name} & Name of the format in which the image is desired. The format must have been previously registered with the cache. \\
+\hline
+{\em completion\+Block} & Block to be called with the requested image. Always called from the main queue. Will be called synchronously if the image exists in the memory cache, or asynchronously if the image exists in the disk cache. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+Y\+E\+S if image exists in the memory cache (and thus, the completion block was called synchronously), N\+O otherwise. 
+\end{DoxyReturn}
+\hypertarget{interface_h_n_k_cache_acf8eec52df76d3baddbb5db9d14ea130}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!set\+Image\+:for\+Key\+:format\+Name\+:@{set\+Image\+:for\+Key\+:format\+Name\+:}}
+\index{set\+Image\+:for\+Key\+:format\+Name\+:@{set\+Image\+:for\+Key\+:format\+Name\+:}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{set\+Image\+:for\+Key\+:format\+Name\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Image\+: 
+\begin{DoxyParamCaption}
+\item[{(U\+I\+Image$\ast$)}]{image}
+\item[{forKey:(N\+S\+String$\ast$)}]{key}
+\item[{formatName:(N\+S\+String$\ast$)}]{format\+Name}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_acf8eec52df76d3baddbb5db9d14ea130}
+Sets the image of the given key for the given format. The image is added to the memory cache and the disk cache if the format allows it. 
+\begin{DoxyParams}{引数}
+{\em image} & Image to add to the cache. Can be nil, in which case the current image associated to the given key and format will be removed. \\
+\hline
+{\em key} & Image cache key. \\
+\hline
+{\em format\+Name} & Name of the format of the given image.  You can use this method to pre-\/populate the cache, invalidate a specific image or to add resized images obtained elsewhere (e.\+g., a web service that generates thumbnails). In other cases, it\textquotesingle{}s best to let the cache create the resized images. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{警告}
+The image size should match the format. This method won\textquotesingle{}t validate this. 
+\end{DoxyWarning}
+\hypertarget{interface_h_n_k_cache_a751b4c06b72430a498db248c201c4451}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!shared\+Cache@{shared\+Cache}}
+\index{shared\+Cache@{shared\+Cache}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{shared\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf H\+N\+K\+Cache} $\ast$) shared\+Cache 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_a751b4c06b72430a498db248c201c4451}
+Returns the shared cache. For simple apps that don\textquotesingle{}t require multiple caches. 
+
+\subsection{プロパティ詳解}
+\hypertarget{interface_h_n_k_cache_a26177b583cb0fbc469732f304304ae63}{}\index{H\+N\+K\+Cache@{H\+N\+K\+Cache}!formats@{formats}}
+\index{formats@{formats}!H\+N\+K\+Cache@{H\+N\+K\+Cache}}
+\subsubsection[{formats}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+Dictionary $\ast$) formats\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_a26177b583cb0fbc469732f304304ae63}
+Dictionary of formats registered with the cache. 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Haneke/H\+N\+K\+Cache.\+h\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Haneke/H\+N\+K\+Cache.\+m\end{DoxyCompactItemize}

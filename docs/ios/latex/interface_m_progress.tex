@@ -1,0 +1,53 @@
+\hypertarget{interface_m_progress}{}\section{M\+Progress クラス}
+\label{interface_m_progress}\index{M\+Progress@{M\+Progress}}
+M\+Progress の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_m_progress}
+\end{center}
+\end{figure}
+\subsection*{クラスメソッド}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_m_progress_a084003504bfe5294657588669844748f}{show\+Progress\+::}
+\item 
+\hypertarget{interface_m_progress_a2d58d40cb82a04094d01f8b211697b8a}{}(void) + {\bfseries show\+Progress\+With\+Loading\+Text\+:}\label{interface_m_progress_a2d58d40cb82a04094d01f8b211697b8a}
+
+\item 
+\hypertarget{interface_m_progress_acb69c8d5ceeb705cd2bf2c7982619f5a}{}(void) + {\bfseries show\+Progress\+With\+Loading\+Image\+:}\label{interface_m_progress_acb69c8d5ceeb705cd2bf2c7982619f5a}
+
+\item 
+\hypertarget{interface_m_progress_ad83c0abe983fc14a9c4abb70d81d36d5}{}(void) + {\bfseries show\+Progress}\label{interface_m_progress_ad83c0abe983fc14a9c4abb70d81d36d5}
+
+\item 
+(void) + \hyperlink{interface_m_progress_aac0c793bf76392e60189766fa1457d14}{dismiss\+Progress}
+\end{DoxyCompactItemize}
+
+
+\subsection{メソッド詳解}
+\hypertarget{interface_m_progress_aac0c793bf76392e60189766fa1457d14}{}\index{M\+Progress@{M\+Progress}!dismiss\+Progress@{dismiss\+Progress}}
+\index{dismiss\+Progress@{dismiss\+Progress}!M\+Progress@{M\+Progress}}
+\subsubsection[{dismiss\+Progress}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) dismiss\+Progress 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_m_progress_aac0c793bf76392e60189766fa1457d14}
+プログレスを非表示 \hypertarget{interface_m_progress_a084003504bfe5294657588669844748f}{}\index{M\+Progress@{M\+Progress}!show\+Progress\+::@{show\+Progress\+::}}
+\index{show\+Progress\+::@{show\+Progress\+::}!M\+Progress@{M\+Progress}}
+\subsubsection[{show\+Progress\+::}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) show\+Progress\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{arg\+Loading\+Image\+Name}
+\item[{:(N\+S\+String $\ast$)}]{arg\+Loading\+Text}
+\end{DoxyParamCaption}
+}\label{interface_m_progress_a084003504bfe5294657588669844748f}
+{\bfseries 初期値\+:}
+\begin{DoxyCode}
+\{
+    UIView *\_lodingView
+\end{DoxyCode}
+プログレスを表示 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Progress/M\+Progress.\+h\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Progress/M\+Progress.\+m\end{DoxyCompactItemize}

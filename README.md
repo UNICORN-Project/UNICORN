@@ -3,8 +3,8 @@ UNICORN
 可能性を追求した(する)フレームワーク  
 主にスマホアプリケーション開発において「Fast Start」である事に重点を置いています。
 
-##■利用開始方法
-###composerを使ったインストール
+##■利用開始方法  
+###composerを使ったインストール  
 1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
 ```
     "repositories": [
@@ -34,7 +34,7 @@ UNICORN
 「UNICORN」ディレクトリに移動し、「UNICORN」ディレクトリ内で再度「php composer.phar install」を実行して下さい。  
 
 
-###手動インストール
+###手動インストール  
 1.以下のリンクからUNICORNを入手して下さい。  
 https://github.com/UNICORN-Project/UNICORN/archive/master.zip  
 
@@ -45,16 +45,25 @@ https://github.com/UNICORN-Project/UNICORN/archive/master.zip
 4.コンソールから「UNICORN」ディレクトリへ移動し、「php composer.phar install」を実行して下さい。  
 
 
-##■その他リファレンス
-###UNICORN WEB
+##■その他リファレンス  
+###UNICORN WEB  
 http://UNICORN-Project.github.io/
 
 
-###開発ブログ
+###APIドキュメント  
+サーバーサイド  
+https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/server/html/index.html  
+iOS  
+https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/ios/html/index.html  
+Android  
+https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/android/html/index.html  
+
+
+###開発ブログ  
 http://saimushi.github.io/
 
 
-##■ライセンスについて
+##■ライセンスについて  
 **MITライセンスとします。**
 
 内包している画像の著作権や肖像権等は各権利所有者に帰属致します。  

@@ -1,0 +1,44 @@
+\hypertarget{protocol_h_n_k_cache_entity-p}{}\section{$<$H\+N\+K\+Cache\+Entity$>$ プロトコル}
+\label{protocol_h_n_k_cache_entity-p}\index{$<$\+H\+N\+K\+Cache\+Entity$>$@{$<$\+H\+N\+K\+Cache\+Entity$>$}}
+
+
+{\ttfamily \#import $<$H\+N\+K\+Cache.\+h$>$}
+
+$<$H\+N\+K\+Cache\+Entity$>$ の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{protocol_h_n_k_cache_entity-p}
+\end{center}
+\end{figure}
+\subsection*{プロパティ}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{protocol_h_n_k_cache_entity-p_aaedc8909c0704cdf10effcd7975b6464}{cache\+Key}
+\item 
+U\+I\+Image $\ast$ \hyperlink{protocol_h_n_k_cache_entity-p_ab9759c29a625125e6eefc9d7786b6c8a}{cache\+Original\+Image}
+\item 
+N\+S\+Data $\ast$ \hyperlink{protocol_h_n_k_cache_entity-p_a7a5e58d8e3af6b7c72f5db77602f51f7}{cache\+Original\+Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Represents an object that is associated with an image. Used by the cache to assign identifiers to images and obtain the original data or image needed to create resized images. 
+
+\subsection{プロパティ詳解}
+\hypertarget{protocol_h_n_k_cache_entity-p_aaedc8909c0704cdf10effcd7975b6464}{}\index{H\+N\+K\+Cache\+Entity-\/p@{H\+N\+K\+Cache\+Entity-\/p}!cache\+Key@{cache\+Key}}
+\index{cache\+Key@{cache\+Key}!H\+N\+K\+Cache\+Entity-\/p@{H\+N\+K\+Cache\+Entity-\/p}}
+\subsubsection[{cache\+Key}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) cache\+Key\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{protocol_h_n_k_cache_entity-p_aaedc8909c0704cdf10effcd7975b6464}
+Return a key for the original image associated with the entity.  If two different entities have the same image, they should return the same key for better performance. \hypertarget{protocol_h_n_k_cache_entity-p_a7a5e58d8e3af6b7c72f5db77602f51f7}{}\index{H\+N\+K\+Cache\+Entity-\/p@{H\+N\+K\+Cache\+Entity-\/p}!cache\+Original\+Data@{cache\+Original\+Data}}
+\index{cache\+Original\+Data@{cache\+Original\+Data}!H\+N\+K\+Cache\+Entity-\/p@{H\+N\+K\+Cache\+Entity-\/p}}
+\subsubsection[{cache\+Original\+Data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+Data$\ast$) cache\+Original\+Data\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{protocol_h_n_k_cache_entity-p_a7a5e58d8e3af6b7c72f5db77602f51f7}
+Return the original data associated with the entity. The cache will always call this method in the main queue. \hypertarget{protocol_h_n_k_cache_entity-p_ab9759c29a625125e6eefc9d7786b6c8a}{}\index{H\+N\+K\+Cache\+Entity-\/p@{H\+N\+K\+Cache\+Entity-\/p}!cache\+Original\+Image@{cache\+Original\+Image}}
+\index{cache\+Original\+Image@{cache\+Original\+Image}!H\+N\+K\+Cache\+Entity-\/p@{H\+N\+K\+Cache\+Entity-\/p}}
+\subsubsection[{cache\+Original\+Image}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\+I\+Image$\ast$) cache\+Original\+Image\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [optional]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{protocol_h_n_k_cache_entity-p_ab9759c29a625125e6eefc9d7786b6c8a}
+Return the original image associated with the entity, or nil to use cache\+Original\+Data instead. The cache will always call this method in the main queue. \begin{DoxyWarning}{警告}
+If the entity doesn\textquotesingle{}t implement this method it must implement {\ttfamily cache\+Original\+Data}. 
+\end{DoxyWarning}
+
+
+このプロトコル詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Haneke/H\+N\+K\+Cache.\+h\end{DoxyCompactItemize}

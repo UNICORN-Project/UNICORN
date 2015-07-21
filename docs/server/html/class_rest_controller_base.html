@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>UNICORN - server side: RestControllerBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">UNICORN - server side
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-static-methods">静的限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_rest_controller_base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">RestControllerBase クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+RestControllerBase の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_rest_controller_base.png" usemap="#RestControllerBase_map" alt=""/>
+  <map id="RestControllerBase_map" name="RestControllerBase_map">
+<area href="class_a_p_i_controller_base.html" alt="APIControllerBase" shape="rect" coords="0,168,125,192"/>
+<area href="interface_rest_controller_i_o.html" alt="RestControllerIO" shape="rect" coords="135,168,260,192"/>
+<area href="class_web_controller_base.html" alt="WebControllerBase" shape="rect" coords="0,112,125,136"/>
+<area href="class_m_v_c_controller_base.html" alt="MVCControllerBase" shape="rect" coords="0,56,125,80"/>
+<area href="interface_m_v_c_controller.html" alt="MVCController" shape="rect" coords="0,0,125,24"/>
+<area href="class_rest.html" alt="Rest" shape="rect" coords="67,280,192,304"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a26a400c6a6547ff09c8badcbe62af52a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26a400c6a6547ff09c8badcbe62af52a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>getDBO</b> ($argDSN=NULL)</td></tr>
+<tr class="separator:a26a400c6a6547ff09c8badcbe62af52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2a49f6743241f8cbaaddb08bcc4c2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a2a49f6743241f8cbaaddb08bcc4c2b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>getModel</b> ($argModel, $argIdentifierORQuery=NULL, $argBinds=NULL, $argDSN=NULL)</td></tr>
+<tr class="separator:a7a2a49f6743241f8cbaaddb08bcc4c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b19c50ca7006f746d91d7237018e01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59b19c50ca7006f746d91d7237018e01"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>convertArrayFromModel</b> ($ArgModel, $argFields=NULL)</td></tr>
+<tr class="separator:a59b19c50ca7006f746d91d7237018e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ad94f5d58231686aea32c58749175c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95ad94f5d58231686aea32c58749175c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>getRequestParams</b> ()</td></tr>
+<tr class="separator:a95ad94f5d58231686aea32c58749175c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648e6ebeaef466e01e6281c1178d2cc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#a648e6ebeaef466e01e6281c1178d2cc0">UIDAuthAndExecute</a> ()</td></tr>
+<tr class="separator:a648e6ebeaef466e01e6281c1178d2cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e9e4f549693f6b28edd415e9b38747"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#ae3e9e4f549693f6b28edd415e9b38747">authAndExecute</a> ()</td></tr>
+<tr class="separator:ae3e9e4f549693f6b28edd415e9b38747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba28a2fce30920ac9e816d6dde7f8d2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#aba28a2fce30920ac9e816d6dde7f8d2f">execute</a> ($argResourceHint=NULL, $argRequestParams=NULL)</td></tr>
+<tr class="separator:aba28a2fce30920ac9e816d6dde7f8d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a842a9ecef6680268e367a44c4df951a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#a842a9ecef6680268e367a44c4df951a2">get</a> ()</td></tr>
+<tr class="separator:a842a9ecef6680268e367a44c4df951a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a305d42e434b069c7c7e5916f2c46682a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#a305d42e434b069c7c7e5916f2c46682a">post</a> ($argRequestParams=NULL)</td></tr>
+<tr class="separator:a305d42e434b069c7c7e5916f2c46682a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95556be57cfc461f8703f0f369ee05d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#a95556be57cfc461f8703f0f369ee05d5">put</a> ($argRequestParams=NULL)</td></tr>
+<tr class="separator:a95556be57cfc461f8703f0f369ee05d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a30a132626984159384c227f5cdc717"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#a1a30a132626984159384c227f5cdc717">delete</a> ()</td></tr>
+<tr class="separator:a1a30a132626984159384c227f5cdc717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbae680f95aaf268f9673790fb592d3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#adbae680f95aaf268f9673790fb592d3c">head</a> ()</td></tr>
+<tr class="separator:adbae680f95aaf268f9673790fb592d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_m_v_c_controller_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_m_v_c_controller_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_m_v_c_controller_base.html">MVCControllerBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a333dc4807e54360e6ca3966563f8bc56 inherit pub_methods_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_v_c_controller_base.html#a333dc4807e54360e6ca3966563f8bc56">execute</a> ()</td></tr>
+<tr class="separator:a333dc4807e54360e6ca3966563f8bc56 inherit pub_methods_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_rest_controller_i_o"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_rest_controller_i_o')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="interface_rest_controller_i_o.html">RestControllerIO</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a7794cde539999775d8401934d3087b97 inherit pub_methods_interface_rest_controller_i_o"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_rest_controller_i_o.html#a7794cde539999775d8401934d3087b97">post</a> ()</td></tr>
+<tr class="separator:a7794cde539999775d8401934d3087b97 inherit pub_methods_interface_rest_controller_i_o"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff718592723dba44e0dcc0c72fea183c inherit pub_methods_interface_rest_controller_i_o"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_rest_controller_i_o.html#aff718592723dba44e0dcc0c72fea183c">put</a> ()</td></tr>
+<tr class="separator:aff718592723dba44e0dcc0c72fea183c inherit pub_methods_interface_rest_controller_i_o"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a95adbcb37b5e2800c40fbb58c99d5725"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95adbcb37b5e2800c40fbb58c99d5725"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>resolveRequestParams</b> ()</td></tr>
+<tr class="separator:a95adbcb37b5e2800c40fbb58c99d5725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58b2d2698c8cca84d6d7c346aaabfba"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rest_controller_base.html#af58b2d2698c8cca84d6d7c346aaabfba">resolveRESTResource</a> ($argRESTResourceHint)</td></tr>
+<tr class="separator:af58b2d2698c8cca84d6d7c346aaabfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a6f393be69d966a891945ef2b3867ab43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f393be69d966a891945ef2b3867ab43"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$requestMethod</b> = 'GET'</td></tr>
+<tr class="separator:a6f393be69d966a891945ef2b3867ab43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6f69ab785a9898ecc69fecc823c39f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a6f69ab785a9898ecc69fecc823c39f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResource</b> = ''</td></tr>
+<tr class="separator:a0a6f69ab785a9898ecc69fecc823c39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b85ac821de6d00fc424dfd00b38f0b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b85ac821de6d00fc424dfd00b38f0b1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceModel</b> = ''</td></tr>
+<tr class="separator:a6b85ac821de6d00fc424dfd00b38f0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30307dce16a06ef455a287c41c7600f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30307dce16a06ef455a287c41c7600f2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceListed</b> = NULL</td></tr>
+<tr class="separator:a30307dce16a06ef455a287c41c7600f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc035b4462634549407ef97b4e69f733"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc035b4462634549407ef97b4e69f733"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceCreateDateKeyName</b> = ''</td></tr>
+<tr class="separator:afc035b4462634549407ef97b4e69f733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b9ea774a33e6806a482cf73a1434f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6b9ea774a33e6806a482cf73a1434f8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceModifyDateKeyName</b> = ''</td></tr>
+<tr class="separator:ae6b9ea774a33e6806a482cf73a1434f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11364ff92cfd143a980659ee6a6eaf43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11364ff92cfd143a980659ee6a6eaf43"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceAvailableKeyName</b> = ''</td></tr>
+<tr class="separator:a11364ff92cfd143a980659ee6a6eaf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066ee8c6a20f8c126fb6a0cdd5776b01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a066ee8c6a20f8c126fb6a0cdd5776b01"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceUserTableName</b> = NULL</td></tr>
+<tr class="separator:a066ee8c6a20f8c126fb6a0cdd5776b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac5c04431d48b5c123666eb2f68fd00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaac5c04431d48b5c123666eb2f68fd00"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceRelaySuffix</b> = ''</td></tr>
+<tr class="separator:aaac5c04431d48b5c123666eb2f68fd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6690a161550e7ca4fd98c5b42c9653"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b6690a161550e7ca4fd98c5b42c9653"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResourceRelayPrefix</b> = ''</td></tr>
+<tr class="separator:a6b6690a161550e7ca4fd98c5b42c9653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac3e3dc294f8148f382b642fe189b73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ac3e3dc294f8148f382b642fe189b73"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$AuthDevice</b> = NULL</td></tr>
+<tr class="separator:a7ac3e3dc294f8148f382b642fe189b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff05f64025725b1bcd83fd344ea2a1ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff05f64025725b1bcd83fd344ea2a1ac"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$AuthUser</b> = NULL</td></tr>
+<tr class="separator:aff05f64025725b1bcd83fd344ea2a1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e2c927f7df24f55851593cee338811"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22e2c927f7df24f55851593cee338811"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$authUserID</b> = NULL</td></tr>
+<tr class="separator:a22e2c927f7df24f55851593cee338811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6c6c8637ebe32a99e70d16394255d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca6c6c8637ebe32a99e70d16394255d7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$authUserIDFieldName</b> = NULL</td></tr>
+<tr class="separator:aca6c6c8637ebe32a99e70d16394255d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16e13138b6ac9fd8245b094ae287bc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac16e13138b6ac9fd8245b094ae287bc1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$authUserQuery</b> = NULL</td></tr>
+<tr class="separator:ac16e13138b6ac9fd8245b094ae287bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743204aa1d9057972a308ffcc070f742"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a743204aa1d9057972a308ffcc070f742"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$deepRESTMode</b> = TRUE</td></tr>
+<tr class="separator:a743204aa1d9057972a308ffcc070f742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5722b94c46ec8a9330eb24e8105f82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd5722b94c46ec8a9330eb24e8105f82"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$rootREST</b> = TRUE</td></tr>
+<tr class="separator:abd5722b94c46ec8a9330eb24e8105f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab06c4e2e087706ee21b5c3a7c1452ac8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab06c4e2e087706ee21b5c3a7c1452ac8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$virtualREST</b> = FALSE</td></tr>
+<tr class="separator:ab06c4e2e087706ee21b5c3a7c1452ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f460e29265d4f811f93d6554c894ee3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f460e29265d4f811f93d6554c894ee3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$responceData</b> = FALSE</td></tr>
+<tr class="separator:a2f460e29265d4f811f93d6554c894ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_a_p_i_controller_base"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_p_i_controller_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_a_p_i_controller_base.html">APIControllerBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:abc0ec09daf4e9e08caa4a4ad9af5fa7b inherit pub_attribs_class_a_p_i_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc0ec09daf4e9e08caa4a4ad9af5fa7b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$httpStatus</b> = 200</td></tr>
+<tr class="separator:abc0ec09daf4e9e08caa4a4ad9af5fa7b inherit pub_attribs_class_a_p_i_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31a17a759527251f174a7874c05fe4a inherit pub_attribs_class_a_p_i_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae31a17a759527251f174a7874c05fe4a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$outputType</b> = &quot;json&quot;</td></tr>
+<tr class="separator:ae31a17a759527251f174a7874c05fe4a inherit pub_attribs_class_a_p_i_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938a02e1bd646e49dcb898e61878551c inherit pub_attribs_class_a_p_i_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a938a02e1bd646e49dcb898e61878551c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$validateError</b> = &quot;&quot;</td></tr>
+<tr class="separator:a938a02e1bd646e49dcb898e61878551c inherit pub_attribs_class_a_p_i_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad327eff759e71d160c6b950a50253675 inherit pub_attribs_class_a_p_i_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad327eff759e71d160c6b950a50253675"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$jsonUnescapedUnicode</b> = true</td></tr>
+<tr class="separator:ad327eff759e71d160c6b950a50253675 inherit pub_attribs_class_a_p_i_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_web_controller_base"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_web_controller_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_web_controller_base.html">WebControllerBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:aa76c4fb55244a81dd4d15def490aad52 inherit pub_attribs_class_web_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa76c4fb55244a81dd4d15def490aad52"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$httpStatus</b> = 200</td></tr>
+<tr class="separator:aa76c4fb55244a81dd4d15def490aad52 inherit pub_attribs_class_web_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e21eaa2c9dcf86a2ea70af99400636 inherit pub_attribs_class_web_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2e21eaa2c9dcf86a2ea70af99400636"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$outputType</b> = &quot;html&quot;</td></tr>
+<tr class="separator:aa2e21eaa2c9dcf86a2ea70af99400636 inherit pub_attribs_class_web_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_m_v_c_controller_base"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_m_v_c_controller_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_m_v_c_controller_base.html">MVCControllerBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:ac93554590de5a9fa1d9d14132a0bfd7a inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac93554590de5a9fa1d9d14132a0bfd7a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$controlerClassName</b> = &quot;&quot;</td></tr>
+<tr class="separator:ac93554590de5a9fa1d9d14132a0bfd7a inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf02ad9e097c55c3336b15a400c3cb8b inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf02ad9e097c55c3336b15a400c3cb8b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$httpStatus</b> = 200</td></tr>
+<tr class="separator:acf02ad9e097c55c3336b15a400c3cb8b inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c73e4b25e1a4e0a40c65224c0f1964b inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c73e4b25e1a4e0a40c65224c0f1964b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$outputType</b> = &quot;html&quot;</td></tr>
+<tr class="separator:a6c73e4b25e1a4e0a40c65224c0f1964b inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841fa7809ce635f4b0b9839a63eef8af inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a841fa7809ce635f4b0b9839a63eef8af"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$requestMethod</b> = &quot;GET&quot;</td></tr>
+<tr class="separator:a841fa7809ce635f4b0b9839a63eef8af inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2061872d0215e9a5a08e66938a2097b7 inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2061872d0215e9a5a08e66938a2097b7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$restResource</b> = ''</td></tr>
+<tr class="separator:a2061872d0215e9a5a08e66938a2097b7 inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af816a433553d35ae3bf5f9d5ae61e899 inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af816a433553d35ae3bf5f9d5ae61e899"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$jsonUnescapedUnicode</b> = TRUE</td></tr>
+<tr class="separator:af816a433553d35ae3bf5f9d5ae61e899 inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70d838e98b8aa9329feb8a7aa6e2e9b inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae70d838e98b8aa9329feb8a7aa6e2e9b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$deviceType</b> = &quot;PC&quot;</td></tr>
+<tr class="separator:ae70d838e98b8aa9329feb8a7aa6e2e9b inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab363a54f929a5a7cda8ccb2c3a7196fa inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab363a54f929a5a7cda8ccb2c3a7196fa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$appVersion</b> = &quot;1.0.0&quot;</td></tr>
+<tr class="separator:ab363a54f929a5a7cda8ccb2c3a7196fa inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9ee1ae1966371f115334bc8119dd4b4 inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9ee1ae1966371f115334bc8119dd4b4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$appleReviewd</b> = FALSE</td></tr>
+<tr class="separator:ab9ee1ae1966371f115334bc8119dd4b4 inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65caef2110c8d21b6ec65a2a03f9bdbe inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65caef2110c8d21b6ec65a2a03f9bdbe"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$mustAppVersioned</b> = FALSE</td></tr>
+<tr class="separator:a65caef2110c8d21b6ec65a2a03f9bdbe inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af637663bfb89da6beba8eead3bc408c7 inherit pub_attribs_class_m_v_c_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af637663bfb89da6beba8eead3bc408c7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$allowed</b> = NULL</td></tr>
+<tr class="separator:af637663bfb89da6beba8eead3bc408c7 inherit pub_attribs_class_m_v_c_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:a89efa2069bb58cdb9d2d8c215ca7026f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89efa2069bb58cdb9d2d8c215ca7026f"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>$nowGMT</b> = NULL</td></tr>
+<tr class="separator:a89efa2069bb58cdb9d2d8c215ca7026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a698e344e2c6f158a37defa29015dc05d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a698e344e2c6f158a37defa29015dc05d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>_init</b> ()</td></tr>
+<tr class="separator:a698e344e2c6f158a37defa29015dc05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b8730ca0146b74caeeb0bd302fdee0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8b8730ca0146b74caeeb0bd302fdee0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>_getModel</b> ($argModel, $argIdentifierORQuery=NULL, $argBinds=NULL, $argDSN=NULL)</td></tr>
+<tr class="separator:af8b8730ca0146b74caeeb0bd302fdee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94426891fdd91eafa514539524514056"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94426891fdd91eafa514539524514056"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>_convertArrayFromModel</b> ($ArgModel, $argFields=NULL)</td></tr>
+<tr class="separator:a94426891fdd91eafa514539524514056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+静的限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a87e1a761d90332ddff422cefe3f65b16"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87e1a761d90332ddff422cefe3f65b16"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>_getDBO</b> ($argDSN=NULL)</td></tr>
+<tr class="separator:a87e1a761d90332ddff422cefe3f65b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_class_a_p_i_controller_base"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_a_p_i_controller_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_a_p_i_controller_base.html">APIControllerBase</a> に属する継承静的限定公開メンバ関数</td></tr>
+<tr class="memitem:af4481a33cc0b486ed1853937902e13aa inherit pro_static_methods_class_a_p_i_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4481a33cc0b486ed1853937902e13aa"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>_clearCacheImage</b> ($argFilePath, $argMemcacheDSN=NULL)</td></tr>
+<tr class="separator:af4481a33cc0b486ed1853937902e13aa inherit pro_static_methods_class_a_p_i_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_class_web_controller_base"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_web_controller_base')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_web_controller_base.html">WebControllerBase</a> に属する継承静的限定公開メンバ関数</td></tr>
+<tr class="memitem:a950063303910b8909b697f3faec17700 inherit pro_static_methods_class_web_controller_base"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a950063303910b8909b697f3faec17700"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><b>_clearCacheImage</b> ($argFilePath, $argMemcacheDSN=NULL)</td></tr>
+<tr class="separator:a950063303910b8909b697f3faec17700 inherit pro_static_methods_class_web_controller_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a1cc144075c95012b24a82aa964ded88c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1cc144075c95012b24a82aa964ded88c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$_initialized</b> = FALSE</td></tr>
+<tr class="separator:a1cc144075c95012b24a82aa964ded88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a class="anchor" id="ae3e9e4f549693f6b28edd415e9b38747"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::authAndExecute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>フレームワーク標準のAuth機能を利用した認証を行って、RESTする </p><dl class="section return"><dt>戻り値</dt><dd>array 配列構造のリソースデータ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1a30a132626984159384c227f5cdc717"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DELETEメソッド XXX モデルの位置付けが、テーブルリソースで無い場合は、継承してRESTの”冪等性”に従って実装して下さい(冪等性を持ちます) </p><dl class="section return"><dt>戻り値</dt><dd>boolean </dd></dl>
+
+<p><a class="el" href="interface_rest_controller_i_o.html#aea37c094d38f5c7ff6b5a52e9f4f30a6">RestControllerIO</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="aba28a2fce30920ac9e816d6dde7f8d2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::execute </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$argResourceHint</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$argRequestParams</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>RESTする </p><dl class="section return"><dt>戻り値</dt><dd>array 配列構造のリソースデータ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a842a9ecef6680268e367a44c4df951a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>GETメソッド リソースの参照(冪等性を持ちます) XXX モデルの位置付けが、テーブルリソースで無い場合は、継承して、RESTの”冪等性”に従って実装して下さい </p><dl class="section return"><dt>戻り値</dt><dd>mixed 成功時は最新のリソース配列 失敗時はFALSE </dd></dl>
+
+<p><a class="el" href="interface_rest_controller_i_o.html#af268b91d81734f22569982048ae81a1f">RestControllerIO</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="adbae680f95aaf268f9673790fb592d3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::head </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>HEADメソッド </p><dl class="section return"><dt>戻り値</dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a305d42e434b069c7c7e5916f2c46682a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::post </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$argRequestParams</em> = <code>NULL</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>POSTメソッド リソースの新規作成、更新、インクリメント、デクリメント(冪等性を強制しません) XXX モデルの位置付けが、テーブルリソースで無い場合は、継承して、RESTの”冪等性”に従って実装して下さい </p><dl class="section return"><dt>戻り値</dt><dd>mixed 成功時は最新のリソース配列 失敗時はFALSE </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a95556be57cfc461f8703f0f369ee05d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::put </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$argRequestParams</em> = <code>NULL</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>PUTメソッド リソースの新規作成、更新(冪等性を持ちます) XXX モデルの位置付けが、テーブルリソースで無い場合は、継承して、RESTの”冪等性”に従って実装して下さい </p><dl class="section return"><dt>戻り値</dt><dd>mixed 成功時は最新のリソース配列 失敗時はFALSE </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af58b2d2698c8cca84d6d7c346aaabfba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static RestControllerBase::resolveRESTResource </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$argRESTResourceHint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>RESTAPIでリソースにアクセスする際の指定リソース情報を分解してパラメータ化します [me指定(任意)/][model指定(必須)/][pkey指定(,pkey指定,...)(GET以外は必須)/] 例) 自分の"model"の一覧を取得 /me/model.json XXX システム毎にRESTのURIパラメータ分解法が違う場合はこのメソッドをオーバーライドして下さい </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$argRESTResourceHint</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>array model,listed,fields,idsの配列 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a648e6ebeaef466e01e6281c1178d2cc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RestControllerBase::UIDAuthAndExecute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>フレームワーク標準のAuth機能を利用した認証と登録を行って、RESTする(スマフォAPI向け) </p><dl class="section return"><dt>戻り値</dt><dd>array 配列構造のリソースデータ </dd></dl>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>FrameworkPackage/class/MVC/RestControllerBase.abstract.php</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2015年07月21日(火) 17時05分45秒作成 - UNICORN - server side / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

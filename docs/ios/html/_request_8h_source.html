@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>UNICORN - iOS: FrameworkManager/sample/packages/ProjectPackage/iOSSample/Libraries/Request/Request.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">UNICORN - iOS
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f2a6e71bf18ac5c72a1dc3c5dfa96368.html">FrameworkManager</a></li><li class="navelem"><a class="el" href="dir_e50ddff23b5ac29d8fc8ca964878fafd.html">sample</a></li><li class="navelem"><a class="el" href="dir_d16f75c33d21d6216e7d0d824fdfaee5.html">packages</a></li><li class="navelem"><a class="el" href="dir_5e48a6f17fb6176d0e8167a5cf4f71cf.html">ProjectPackage</a></li><li class="navelem"><a class="el" href="dir_38a3591d0c1185e91075ac3ead1448c9.html">iOSSample</a></li><li class="navelem"><a class="el" href="dir_1e6b8e4a7e55757c9b7f7536e857dc21.html">Libraries</a></li><li class="navelem"><a class="el" href="dir_f637675e1a81d7de58eed1e812b560a4.html">Request</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Request.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  Request.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//  ローディング表示にまつわることは何もしません。</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  ローディング表示はシステムのよってその表示ポリシーが違う為です。</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  その変わり、RequestはDelegateを提供します。</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//  Delegateを利用して、システムに合ったローディング表示を実施して下さい。</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//  Created by saimushi on 14/06/16.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//  Copyright (c) 2014年 saimushi. All rights reserved.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> void(^RequestCompletionHandler)(BOOL success, NSInteger statusCode, NSHTTPURLResponse *responseHeader, NSString *responseBody, NSError* error);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define DEFAULT_TIMEOUT 40</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define DEFAULT_COOKIE_EXPIRED @&quot;3600&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_request_delegate-p.html">RequestDelegate</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="interface_request.html">   20</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_request.html">Request</a> : NSObject &lt;NSURLSessionTaskDelegate&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    id &lt;RequestDelegate&gt; delegate;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    RequestCompletionHandler completion;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> (strong, nonatomic) id&lt;RequestDelegate&gt; delegate;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@property</span> (strong, nonatomic) RequestCompletionHandler completion;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (strong, nonatomic) NSString *userAgent;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// 通常のリクエスト処理</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// NSMutableDictionary内のvalueはstringのみ</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;- (void)start:(NSString *)requestURL :(NSString *)method :(NSMutableDictionary *)requestParams;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// 通常のリクエスト処理に加えて、マルチパートでファイルをPOST(PUT)する</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// XXX 大きいファイルのアップロードは次のメソッド- (void)start:(NSString *)requestURL :(NSString *)method :(NSMutableDictionary *)requestParams :(NSURL *)uploadFilePath;を使ってアップロードタスクで実行して下さい！</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;- (void)start:(NSString *)requestURL :(NSString *)method :(NSMutableDictionary *)requestParams :(NSData *)uploadData :(NSString *)fileName :(NSString *)contentType :(NSString *)dataKeyName;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// 通常のリクエスト処理に加えて、マルチパートでファイルをPOST(PUT)する</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// ファイルをアップロードする</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// XXX PUTメソッドでアップロードした場合、サーバー側でファイル以外に送信されたPOSTデータを判別出来なくなる事に注意して下さい！</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;- (void)start:(NSString *)requestURL :(NSString *)method :(NSMutableDictionary *)requestParams :(NSURL *)uploadFilePath;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// 以下スタティックメソッド定義</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// アプリ固有のユーザーエージェンを作成</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;+ (NSString *)createUserAgent;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// support RESTful</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// GET リソース参照</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;+ (void)get:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;+ (void)get:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;+ (void)get:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;+ (void)get:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams withCompletion:(RequestCompletionHandler)argCompletion;;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// POST リソース追加・更新・インクリメント・デクリメント</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;+ (void)post:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;+ (void)post:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSData *)uploadData :(NSString *)fileName :(NSString *)contentType :(NSString *)dataKeyName;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;+ (void)post:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;+ (void)post:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSData *)uploadData :(NSString *)fileName :(NSString *)contentType :(NSString *)dataKeyName withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// ファイルアップロード</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;+ (void)post:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSURL *)uploadFilePath;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;+ (void)post:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSURL *)uploadFilePath withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// PUT リソース追加・更新</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;+ (void)put:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;+ (void)put:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSData *)uploadData :(NSString *)fileName :(NSString *)contentType :(NSString *)dataKeyName;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;+ (void)put:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;+ (void)put:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSData *)uploadData :(NSString *)fileName :(NSString *)contentType :(NSString *)dataKeyName withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// ファイルアップロード</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;+ (void)put:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSURL *)uploadFilePath;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;+ (void)put:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams :(NSURL *)uploadFilePath withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// DELETE リソース削除</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;+ (void)delete:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;+ (void)delete:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL :(NSMutableDictionary *)requestParams withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// HEAD リソース定義参照</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;+ (void)head:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (void)head:(<span class="keywordtype">id</span>)calledClass :(NSString *)requestURL withCompletion:(RequestCompletionHandler)argCompletion;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// Cookie関連</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// CookieをCookieStorageにセットする(簡易設定版)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;+ (void)setCookie:(NSString *)value forKey:(NSString *)key domain:(NSString *)domain;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// CookieをCookieStorageにセットする(詳細設定版)</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;+ (void)setCookie:(NSString *)value forKey:(NSString *)key domain:(NSString *)domain cookiePath:(NSString *)path expires:(NSString *)expires;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// CookieをNSUserDefaultから復帰する</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;+ (void)loadCookie;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// CookieをNSUserDefaultに保存し、永続化する</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;+ (void)saveCookie;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_request_delegate-p.html">RequestDelegate</a>  &lt;NSObject&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="protocol_request_delegate-p.html">   88</a></span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;- (void)setSessionDataTask:(NSURLSessionTask *)task;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;- (void)didFinishSuccess:(NSHTTPURLResponse *)responseHeader :(NSString *)responseBody;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;- (void)didFinishError:(NSHTTPURLResponse *)responseHeader :(NSString *)responseBody :(NSError *)failedHandler;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;- (void)didChangeProgress:(<span class="keywordtype">double</span>)packetBytesSent :(<span class="keywordtype">double</span>)totalBytesSent :(<span class="keywordtype">double</span>)totalBytesExpectedToSend;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="protocol_request_delegate-p_html"><div class="ttname"><a href="protocol_request_delegate-p.html">RequestDelegate-p</a></div><div class="ttdef"><b>Definition:</b> Request.h:88</div></div>
+<div class="ttc" id="interface_request_html"><div class="ttname"><a href="interface_request.html">Request</a></div><div class="ttdef"><b>Definition:</b> Request.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2015年07月21日(火) 17時04分02秒作成 - UNICORN - iOS / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,106 @@
+\hypertarget{structdtls1__state__st}{}\section{dtls1\+\_\+state\+\_\+st 構造体}
+\label{structdtls1__state__st}\index{dtls1\+\_\+state\+\_\+st@{dtls1\+\_\+state\+\_\+st}}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structdtls1__state__st_af87b8915e3c04aa1e8c858e15a967b2d}{}unsigned int {\bfseries send\+\_\+cookie}\label{structdtls1__state__st_af87b8915e3c04aa1e8c858e15a967b2d}
+
+\item 
+\hypertarget{structdtls1__state__st_a3600731c890da666b152e0bea4b17644}{}unsigned char {\bfseries cookie} \mbox{[}D\+T\+L\+S1\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}\label{structdtls1__state__st_a3600731c890da666b152e0bea4b17644}
+
+\item 
+\hypertarget{structdtls1__state__st_a1a9425f1e37d872f3cc13026092b4ac6}{}unsigned char {\bfseries rcvd\+\_\+cookie} \mbox{[}D\+T\+L\+S1\+\_\+\+C\+O\+O\+K\+I\+E\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}\label{structdtls1__state__st_a1a9425f1e37d872f3cc13026092b4ac6}
+
+\item 
+\hypertarget{structdtls1__state__st_aa91963cca02aa5c981c3c1d5c3c6e472}{}unsigned int {\bfseries cookie\+\_\+len}\label{structdtls1__state__st_aa91963cca02aa5c981c3c1d5c3c6e472}
+
+\item 
+\hypertarget{structdtls1__state__st_aa3c8e7915e684e4d99aef7e102c57479}{}unsigned short {\bfseries r\+\_\+epoch}\label{structdtls1__state__st_aa3c8e7915e684e4d99aef7e102c57479}
+
+\item 
+\hypertarget{structdtls1__state__st_ac2348d97c73af669675caa7791fc7320}{}unsigned short {\bfseries w\+\_\+epoch}\label{structdtls1__state__st_ac2348d97c73af669675caa7791fc7320}
+
+\item 
+\hypertarget{structdtls1__state__st_a3e9ffaed4676ae794845eed4755ef8ce}{}\hyperlink{structdtls1__bitmap__st}{D\+T\+L\+S1\+\_\+\+B\+I\+T\+M\+A\+P} {\bfseries bitmap}\label{structdtls1__state__st_a3e9ffaed4676ae794845eed4755ef8ce}
+
+\item 
+\hypertarget{structdtls1__state__st_a2ef30a3f09e71c8d936db1f4a8a68c10}{}\hyperlink{structdtls1__bitmap__st}{D\+T\+L\+S1\+\_\+\+B\+I\+T\+M\+A\+P} {\bfseries next\+\_\+bitmap}\label{structdtls1__state__st_a2ef30a3f09e71c8d936db1f4a8a68c10}
+
+\item 
+\hypertarget{structdtls1__state__st_ac14d838ba2fa596ab378ac07bee6e0c8}{}unsigned short {\bfseries handshake\+\_\+write\+\_\+seq}\label{structdtls1__state__st_ac14d838ba2fa596ab378ac07bee6e0c8}
+
+\item 
+\hypertarget{structdtls1__state__st_ae5ce4e4dc2d5625594b6c7a339198a23}{}unsigned short {\bfseries next\+\_\+handshake\+\_\+write\+\_\+seq}\label{structdtls1__state__st_ae5ce4e4dc2d5625594b6c7a339198a23}
+
+\item 
+\hypertarget{structdtls1__state__st_a928b4ab02c52ca660cb46762133b21bb}{}unsigned short {\bfseries handshake\+\_\+read\+\_\+seq}\label{structdtls1__state__st_a928b4ab02c52ca660cb46762133b21bb}
+
+\item 
+\hypertarget{structdtls1__state__st_aceeaa0dd2d3f7a47a99a85c8db8013ea}{}unsigned char {\bfseries last\+\_\+write\+\_\+sequence} \mbox{[}8\mbox{]}\label{structdtls1__state__st_aceeaa0dd2d3f7a47a99a85c8db8013ea}
+
+\item 
+\hypertarget{structdtls1__state__st_ada130633ccbd3372ee777efb93c953a9}{}\hyperlink{structrecord__pqueue__st}{record\+\_\+pqueue} {\bfseries unprocessed\+\_\+rcds}\label{structdtls1__state__st_ada130633ccbd3372ee777efb93c953a9}
+
+\item 
+\hypertarget{structdtls1__state__st_ac7496a32427c880c57cad29cf624983b}{}\hyperlink{structrecord__pqueue__st}{record\+\_\+pqueue} {\bfseries processed\+\_\+rcds}\label{structdtls1__state__st_ac7496a32427c880c57cad29cf624983b}
+
+\item 
+\hypertarget{structdtls1__state__st_af242d453bd217c772b95c98e8848a8b4}{}pqueue {\bfseries buffered\+\_\+messages}\label{structdtls1__state__st_af242d453bd217c772b95c98e8848a8b4}
+
+\item 
+\hypertarget{structdtls1__state__st_a8372fea113b299678228ba73dcd17b03}{}pqueue {\bfseries sent\+\_\+messages}\label{structdtls1__state__st_a8372fea113b299678228ba73dcd17b03}
+
+\item 
+\hypertarget{structdtls1__state__st_a00969b1c93b0b229fbb98a4aabe9cd01}{}\hyperlink{structrecord__pqueue__st}{record\+\_\+pqueue} {\bfseries buffered\+\_\+app\+\_\+data}\label{structdtls1__state__st_a00969b1c93b0b229fbb98a4aabe9cd01}
+
+\item 
+\hypertarget{structdtls1__state__st_a834e8572b18cebed829621b26f629715}{}unsigned int {\bfseries listen}\label{structdtls1__state__st_a834e8572b18cebed829621b26f629715}
+
+\item 
+\hypertarget{structdtls1__state__st_a0518fb297c24c3b28e9ee3122be2967a}{}unsigned int {\bfseries mtu}\label{structdtls1__state__st_a0518fb297c24c3b28e9ee3122be2967a}
+
+\item 
+\hypertarget{structdtls1__state__st_aa16e59d7f125177caa2b5939fcb13890}{}struct \hyperlink{structhm__header__st}{hm\+\_\+header\+\_\+st} {\bfseries w\+\_\+msg\+\_\+hdr}\label{structdtls1__state__st_aa16e59d7f125177caa2b5939fcb13890}
+
+\item 
+\hypertarget{structdtls1__state__st_a1c6a7daa242306285d142a607d0a63b1}{}struct \hyperlink{structhm__header__st}{hm\+\_\+header\+\_\+st} {\bfseries r\+\_\+msg\+\_\+hdr}\label{structdtls1__state__st_a1c6a7daa242306285d142a607d0a63b1}
+
+\item 
+\hypertarget{structdtls1__state__st_af619339c285b02986b695f6d505f1c36}{}struct \hyperlink{structdtls1__timeout__st}{dtls1\+\_\+timeout\+\_\+st} {\bfseries timeout}\label{structdtls1__state__st_af619339c285b02986b695f6d505f1c36}
+
+\item 
+\hypertarget{structdtls1__state__st_a499a60c3bed45a4de6da508430035578}{}struct timeval {\bfseries next\+\_\+timeout}\label{structdtls1__state__st_a499a60c3bed45a4de6da508430035578}
+
+\item 
+\hypertarget{structdtls1__state__st_ad5deca28499d48a4faa5fae12f621d93}{}unsigned short {\bfseries timeout\+\_\+duration}\label{structdtls1__state__st_ad5deca28499d48a4faa5fae12f621d93}
+
+\item 
+\hypertarget{structdtls1__state__st_a7fc037708d5e02c3b7e401aa06bf8df9}{}unsigned char {\bfseries alert\+\_\+fragment} \mbox{[}D\+T\+L\+S1\+\_\+\+A\+L\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}\label{structdtls1__state__st_a7fc037708d5e02c3b7e401aa06bf8df9}
+
+\item 
+\hypertarget{structdtls1__state__st_afc29db2cfa1741bc83934534a82c9c99}{}unsigned int {\bfseries alert\+\_\+fragment\+\_\+len}\label{structdtls1__state__st_afc29db2cfa1741bc83934534a82c9c99}
+
+\item 
+\hypertarget{structdtls1__state__st_a1fca455e80d0a3036c79d9209ac51633}{}unsigned char {\bfseries handshake\+\_\+fragment} \mbox{[}D\+T\+L\+S1\+\_\+\+H\+M\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H\mbox{]}\label{structdtls1__state__st_a1fca455e80d0a3036c79d9209ac51633}
+
+\item 
+\hypertarget{structdtls1__state__st_abeb5303866e89417b37551332cf28f08}{}unsigned int {\bfseries handshake\+\_\+fragment\+\_\+len}\label{structdtls1__state__st_abeb5303866e89417b37551332cf28f08}
+
+\item 
+\hypertarget{structdtls1__state__st_a55559920472b96c76fbe4b1bf83c62e5}{}unsigned int {\bfseries retransmitting}\label{structdtls1__state__st_a55559920472b96c76fbe4b1bf83c62e5}
+
+\item 
+\hypertarget{structdtls1__state__st_a1d0bfd86d37d9058a404a119b2f68ee9}{}unsigned int {\bfseries change\+\_\+cipher\+\_\+spec\+\_\+ok}\label{structdtls1__state__st_a1d0bfd86d37d9058a404a119b2f68ee9}
+
+\item 
+\hypertarget{structdtls1__state__st_ab36e1f11a227d22300d6de44ea3ca7c7}{}int {\bfseries next\+\_\+state}\label{structdtls1__state__st_ab36e1f11a227d22300d6de44ea3ca7c7}
+
+\item 
+\hypertarget{structdtls1__state__st_adb9566c47686031f7236b44b25ff6356}{}int {\bfseries shutdown\+\_\+received}\label{structdtls1__state__st_adb9566c47686031f7236b44b25ff6356}
+
+\end{DoxyCompactItemize}
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Purchase/vendor/include/openssl/dtls1.\+h\end{DoxyCompactItemize}

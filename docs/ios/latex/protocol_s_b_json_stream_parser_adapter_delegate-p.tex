@@ -1,0 +1,64 @@
+\hypertarget{protocol_s_b_json_stream_parser_adapter_delegate-p}{}\section{$<$S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate$>$ プロトコル}
+\label{protocol_s_b_json_stream_parser_adapter_delegate-p}\index{$<$\+S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate$>$@{$<$\+S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate$>$}}
+
+
+Delegate for getting objects \& arrays from the stream parser adapter.  
+
+
+
+
+{\ttfamily \#import $<$S\+B\+Json\+Stream\+Parser\+Adapter.\+h$>$}
+
+$<$S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate$>$ の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{protocol_s_b_json_stream_parser_adapter_delegate-p}
+\end{center}
+\end{figure}
+\subsection*{実体メソッド}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_s_b_json_stream_parser_adapter_delegate-p_acac3b4b2e4cfb45a8ca8ca945a47e326}{parser\+:found\+Array\+:}
+\begin{DoxyCompactList}\small\item\em Called if a J\+S\+O\+N array is found. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocol_s_b_json_stream_parser_adapter_delegate-p_abefd538a1ce6d75eb3e8572a1049f597}{parser\+:found\+Object\+:}
+\begin{DoxyCompactList}\small\item\em Called when a J\+S\+O\+N object is found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Delegate for getting objects \& arrays from the stream parser adapter. 
+
+\begin{DoxySeeAlso}{参照}
+The Tweet\+Stream example project. 
+\end{DoxySeeAlso}
+
+
+\subsection{メソッド詳解}
+\hypertarget{protocol_s_b_json_stream_parser_adapter_delegate-p_acac3b4b2e4cfb45a8ca8ca945a47e326}{}\index{S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p@{S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p}!parser\+:found\+Array\+:@{parser\+:found\+Array\+:}}
+\index{parser\+:found\+Array\+:@{parser\+:found\+Array\+:}!S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p@{S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p}}
+\subsubsection[{parser\+:found\+Array\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) parser\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf S\+B\+Json\+Stream\+Parser} $\ast$)}]{parser}
+\item[{foundArray:(N\+S\+Array $\ast$)}]{array}
+\end{DoxyParamCaption}
+}\label{protocol_s_b_json_stream_parser_adapter_delegate-p_acac3b4b2e4cfb45a8ca8ca945a47e326}
+
+
+Called if a J\+S\+O\+N array is found. 
+
+This method is called if a J\+S\+O\+N array is found. \hypertarget{protocol_s_b_json_stream_parser_adapter_delegate-p_abefd538a1ce6d75eb3e8572a1049f597}{}\index{S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p@{S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p}!parser\+:found\+Object\+:@{parser\+:found\+Object\+:}}
+\index{parser\+:found\+Object\+:@{parser\+:found\+Object\+:}!S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p@{S\+B\+Json\+Stream\+Parser\+Adapter\+Delegate-\/p}}
+\subsubsection[{parser\+:found\+Object\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) parser\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf S\+B\+Json\+Stream\+Parser} $\ast$)}]{parser}
+\item[{foundObject:(N\+S\+Dictionary $\ast$)}]{dict}
+\end{DoxyParamCaption}
+}\label{protocol_s_b_json_stream_parser_adapter_delegate-p_abefd538a1ce6d75eb3e8572a1049f597}
+
+
+Called when a J\+S\+O\+N object is found. 
+
+This method is called if a J\+S\+O\+N object is found. 
+
+このプロトコル詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+S\+B\+Json\+Agent/\+S\+B\+Json/S\+B\+Json\+Stream\+Parser\+Adapter.\+h\end{DoxyCompactItemize}

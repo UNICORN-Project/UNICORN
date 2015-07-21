@@ -1,0 +1,40 @@
+\hypertarget{structpkcs7__st}{}\section{pkcs7\+\_\+st 構造体}
+\label{structpkcs7__st}\index{pkcs7\+\_\+st@{pkcs7\+\_\+st}}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structpkcs7__st_ab1fc765421d37e4483b30cf1f12123d5}{}unsigned char $\ast$ {\bfseries asn1}\label{structpkcs7__st_ab1fc765421d37e4483b30cf1f12123d5}
+
+\item 
+\hypertarget{structpkcs7__st_a565b91c0f8c20b54770879e006bd41ee}{}long {\bfseries length}\label{structpkcs7__st_a565b91c0f8c20b54770879e006bd41ee}
+
+\item 
+\hypertarget{structpkcs7__st_a347c4591ec3bcf75f4dd86b430b20426}{}int {\bfseries state}\label{structpkcs7__st_a347c4591ec3bcf75f4dd86b430b20426}
+
+\item 
+\hypertarget{structpkcs7__st_aaefed5b8e3dc5995f7fb1e1a300b7668}{}int {\bfseries detached}\label{structpkcs7__st_aaefed5b8e3dc5995f7fb1e1a300b7668}
+
+\item 
+\hypertarget{structpkcs7__st_acd92bf461725525e7785077578ccf226}{}\hyperlink{structasn1__object__st}{A\+S\+N1\+\_\+\+O\+B\+J\+E\+C\+T} $\ast$ {\bfseries type}\label{structpkcs7__st_acd92bf461725525e7785077578ccf226}
+
+\item 
+\hypertarget{structpkcs7__st_a6da670f9831f55522b3782fadb3c4a2a}{}\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>char $\ast$ {\bfseries ptr}\\
+\>\hyperlink{structasn1__string__st}{ASN1\_OCTET\_STRING} $\ast$ {\bfseries data}\\
+\>\hyperlink{structpkcs7__signed__st}{PKCS7\_SIGNED} $\ast$ {\bfseries sign}\\
+\>\hyperlink{structpkcs7__enveloped__st}{PKCS7\_ENVELOPE} $\ast$ {\bfseries enveloped}\\
+\>\hyperlink{structpkcs7__signedandenveloped__st}{PKCS7\_SIGN\_ENVELOPE} $\ast$ {\bfseries signed\_and\_enveloped}\\
+\>\hyperlink{structpkcs7__digest__st}{PKCS7\_DIGEST} $\ast$ {\bfseries digest}\\
+\>\hyperlink{structpkcs7__encrypted__st}{PKCS7\_ENCRYPT} $\ast$ {\bfseries encrypted}\\
+\>\hyperlink{structasn1__type__st}{ASN1\_TYPE} $\ast$ {\bfseries other}\\
+\} {\bfseries d}\label{structpkcs7__st_a6da670f9831f55522b3782fadb3c4a2a}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Purchase/vendor/include/openssl/pkcs7.\+h\end{DoxyCompactItemize}

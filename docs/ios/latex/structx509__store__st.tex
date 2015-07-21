@@ -1,0 +1,67 @@
+\hypertarget{structx509__store__st}{}\section{x509\+\_\+store\+\_\+st 構造体}
+\label{structx509__store__st}\index{x509\+\_\+store\+\_\+st@{x509\+\_\+store\+\_\+st}}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structx509__store__st_a1776bb2f46d4e05fb8fb6fcab0c20083}{}{\bfseries S\+T\+A\+C\+K\+\_\+\+O\+F} (\hyperlink{structx509__object__st}{X509\+\_\+\+O\+B\+J\+E\+C\+T})$\ast$objs\label{structx509__store__st_a1776bb2f46d4e05fb8fb6fcab0c20083}
+
+\item 
+\hypertarget{structx509__store__st_a7f1a555ef706f624180a55c3e87225db}{}{\bfseries S\+T\+A\+C\+K\+\_\+\+O\+F} (\hyperlink{structx509__lookup__st}{X509\+\_\+\+L\+O\+O\+K\+U\+P})$\ast$get\+\_\+cert\+\_\+methods\label{structx509__store__st_a7f1a555ef706f624180a55c3e87225db}
+
+\item 
+\hypertarget{structx509__store__st_aee14512a7342ddda8e21732da5bdb510}{}{\bfseries S\+T\+A\+C\+K\+\_\+\+O\+F} (\hyperlink{structx509__st}{X509})$\ast$($\ast$lookup\+\_\+certs)(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx\label{structx509__store__st_aee14512a7342ddda8e21732da5bdb510}
+
+\item 
+\hypertarget{structx509__store__st_aeb4d9b3b06b5132d4c48bdb68f5da2b1}{}{\bfseries S\+T\+A\+C\+K\+\_\+\+O\+F} (\hyperlink{struct_x509__crl__st}{X509\+\_\+\+C\+R\+L})$\ast$($\ast$lookup\+\_\+crls)(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx\label{structx509__store__st_aeb4d9b3b06b5132d4c48bdb68f5da2b1}
+
+\end{DoxyCompactItemize}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structx509__store__st_a39100a4cc433d10485ffe0c30c5b88f8}{}int {\bfseries cache}\label{structx509__store__st_a39100a4cc433d10485ffe0c30c5b88f8}
+
+\item 
+\hypertarget{structx509__store__st_a988c764019923790356d956bc071c50b}{}\hyperlink{struct_x509___v_e_r_i_f_y___p_a_r_a_m__st}{X509\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+P\+A\+R\+A\+M} $\ast$ {\bfseries param}\label{structx509__store__st_a988c764019923790356d956bc071c50b}
+
+\item 
+\hypertarget{structx509__store__st_a942efe26133aadd04d45f30a824644a7}{}int($\ast$ {\bfseries verify} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx)\label{structx509__store__st_a942efe26133aadd04d45f30a824644a7}
+
+\item 
+\hypertarget{structx509__store__st_a2babc2b1c606dc4a45bee39bcb2dddad}{}int($\ast$ {\bfseries verify\+\_\+cb} )(int ok, \hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx)\label{structx509__store__st_a2babc2b1c606dc4a45bee39bcb2dddad}
+
+\item 
+\hypertarget{structx509__store__st_a1201b752d9780b08579097b6f53f05b6}{}int($\ast$ {\bfseries get\+\_\+issuer} )(\hyperlink{structx509__st}{X509} $\ast$$\ast$issuer, \hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx, \hyperlink{structx509__st}{X509} $\ast$x)\label{structx509__store__st_a1201b752d9780b08579097b6f53f05b6}
+
+\item 
+\hypertarget{structx509__store__st_a28e3031f30d155bfcee3077781875dd5}{}int($\ast$ {\bfseries check\+\_\+issued} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx, \hyperlink{structx509__st}{X509} $\ast$x, \hyperlink{structx509__st}{X509} $\ast$issuer)\label{structx509__store__st_a28e3031f30d155bfcee3077781875dd5}
+
+\item 
+\hypertarget{structx509__store__st_af48617053d5abd22e6f0bb877a3801d9}{}int($\ast$ {\bfseries check\+\_\+revocation} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx)\label{structx509__store__st_af48617053d5abd22e6f0bb877a3801d9}
+
+\item 
+\hypertarget{structx509__store__st_a805b166e3886e35dac65014a43752c17}{}int($\ast$ {\bfseries get\+\_\+crl} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx, \hyperlink{struct_x509__crl__st}{X509\+\_\+\+C\+R\+L} $\ast$$\ast$crl, \hyperlink{structx509__st}{X509} $\ast$x)\label{structx509__store__st_a805b166e3886e35dac65014a43752c17}
+
+\item 
+\hypertarget{structx509__store__st_a7aac41f5042c0d73d994d554dc80bab4}{}int($\ast$ {\bfseries check\+\_\+crl} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx, \hyperlink{struct_x509__crl__st}{X509\+\_\+\+C\+R\+L} $\ast$crl)\label{structx509__store__st_a7aac41f5042c0d73d994d554dc80bab4}
+
+\item 
+\hypertarget{structx509__store__st_a9e4cbd526c96a9d6eca4b05026e3848f}{}int($\ast$ {\bfseries cert\+\_\+crl} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx, \hyperlink{struct_x509__crl__st}{X509\+\_\+\+C\+R\+L} $\ast$crl, \hyperlink{structx509__st}{X509} $\ast$x)\label{structx509__store__st_a9e4cbd526c96a9d6eca4b05026e3848f}
+
+\item 
+\hypertarget{structx509__store__st_a15c220dcc8bf593c683cec71425a5519}{}\hyperlink{struct_x509__name__st}{X509\+\_\+\+N\+A\+M\+E} $\ast$ {\bfseries nm}\label{structx509__store__st_a15c220dcc8bf593c683cec71425a5519}
+
+\item 
+\hypertarget{structx509__store__st_a47f8b84ffcf429407df15bf5b896f29a}{}int($\ast$ {\bfseries cleanup} )(\hyperlink{structx509__store__ctx__st}{X509\+\_\+\+S\+T\+O\+R\+E\+\_\+\+C\+T\+X} $\ast$ctx)\label{structx509__store__st_a47f8b84ffcf429407df15bf5b896f29a}
+
+\item 
+\hypertarget{structx509__store__st_acb8c355184a6de1d30c4a2cee60f0839}{}\hyperlink{structcrypto__ex__data__st}{C\+R\+Y\+P\+T\+O\+\_\+\+E\+X\+\_\+\+D\+A\+T\+A} {\bfseries ex\+\_\+data}\label{structx509__store__st_acb8c355184a6de1d30c4a2cee60f0839}
+
+\item 
+\hypertarget{structx509__store__st_a2ecec6a415050f38b3d260c258f4f913}{}int {\bfseries references}\label{structx509__store__st_a2ecec6a415050f38b3d260c258f4f913}
+
+\end{DoxyCompactItemize}
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Purchase/vendor/include/openssl/x509\+\_\+vfy.\+h\end{DoxyCompactItemize}

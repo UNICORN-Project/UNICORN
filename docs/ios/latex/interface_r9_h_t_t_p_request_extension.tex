@@ -1,0 +1,65 @@
+\hypertarget{interface_r9_h_t_t_p_request_extension}{}\section{R9\+H\+T\+T\+P\+Request\+Extension クラス}
+\label{interface_r9_h_t_t_p_request_extension}\index{R9\+H\+T\+T\+P\+Request\+Extension@{R9\+H\+T\+T\+P\+Request\+Extension}}
+R9\+H\+T\+T\+P\+Request\+Extension の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_r9_h_t_t_p_request_extension}
+\end{center}
+\end{figure}
+\subsection*{実体メソッド}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a3132b244d04c4132fbe71bb4bc282518}{}(id) -\/ {\bfseries init\+With\+U\+R\+L\+:}\label{interface_r9_h_t_t_p_request_extension_a3132b244d04c4132fbe71bb4bc282518}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a095713bf01778a3fabd870784b29791a}{}(void) -\/ {\bfseries add\+Header\+:for\+Key\+:}\label{interface_r9_h_t_t_p_request_extension_a095713bf01778a3fabd870784b29791a}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a7459e8f6b487d60bc6bc8e1f3c26ee78}{}(void) -\/ {\bfseries add\+Body\+:for\+Key\+:}\label{interface_r9_h_t_t_p_request_extension_a7459e8f6b487d60bc6bc8e1f3c26ee78}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_ac5e0f736cfc0e8defae6746a2305674a}{}(void) -\/ {\bfseries set\+Data\+:with\+File\+Name\+:and\+Content\+Type\+:for\+Key\+:}\label{interface_r9_h_t_t_p_request_extension_ac5e0f736cfc0e8defae6746a2305674a}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a2afdced2ff69fa98768e041ce9dc0ffb}{}(void) -\/ {\bfseries set\+Timeout\+Interval\+:}\label{interface_r9_h_t_t_p_request_extension_a2afdced2ff69fa98768e041ce9dc0ffb}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a45f1593efbe04c21c6816d72dfab37d2}{}(void) -\/ {\bfseries start\+Request}\label{interface_r9_h_t_t_p_request_extension_a45f1593efbe04c21c6816d72dfab37d2}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a96a0bb891310cdabb4d1f3f62f9dfd1f}{}(N\+S\+Mutable\+U\+R\+L\+Request $\ast$) -\/ {\bfseries get\+Request}\label{interface_r9_h_t_t_p_request_extension_a96a0bb891310cdabb4d1f3f62f9dfd1f}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a39d72b708ab2de0ea16cba504f1a169a}{}(N\+S\+Data $\ast$) -\/ {\bfseries create\+Multipart\+Body\+Data}\label{interface_r9_h_t_t_p_request_extension_a39d72b708ab2de0ea16cba504f1a169a}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a1932a5642faf4a599f655f1ab5c32cac}{}(N\+S\+Data $\ast$) -\/ {\bfseries create\+Body\+Data}\label{interface_r9_h_t_t_p_request_extension_a1932a5642faf4a599f655f1ab5c32cac}
+
+\end{DoxyCompactItemize}
+\subsection*{プロパティ}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a555c7e217ecef45f7897095909104e3a}{}Completion\+Handler {\bfseries completion\+Handler}\label{interface_r9_h_t_t_p_request_extension_a555c7e217ecef45f7897095909104e3a}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a73a2dce0f486761d4fd2b9fd869d848d}{}Failed\+Handler {\bfseries failed\+Handler}\label{interface_r9_h_t_t_p_request_extension_a73a2dce0f486761d4fd2b9fd869d848d}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a9754685f66fa27ea8a7a9138b5d652d1}{}Upload\+Progress\+Handler {\bfseries upload\+Progress\+Handler}\label{interface_r9_h_t_t_p_request_extension_a9754685f66fa27ea8a7a9138b5d652d1}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_ad0c8a260caae5e315a968eebfc643d3c}{}N\+S\+String $\ast$ {\bfseries H\+T\+T\+P\+Method}\label{interface_r9_h_t_t_p_request_extension_ad0c8a260caae5e315a968eebfc643d3c}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a46c0c352a3e5cb1f867bf12ee796594a}{}B\+O\+O\+L {\bfseries should\+Redirect}\label{interface_r9_h_t_t_p_request_extension_a46c0c352a3e5cb1f867bf12ee796594a}
+
+\item 
+\hypertarget{interface_r9_h_t_t_p_request_extension_a8cde4de955fe40e1fca5037f70e304fa}{}B\+O\+O\+L {\bfseries run\+On\+Main\+Thread}\label{interface_r9_h_t_t_p_request_extension_a8cde4de955fe40e1fca5037f70e304fa}
+
+\end{DoxyCompactItemize}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Request/R9\+H\+T\+T\+P\+Request\+Extension.\+h\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Request/R9\+H\+T\+T\+P\+Request\+Extension.\+m\end{DoxyCompactItemize}

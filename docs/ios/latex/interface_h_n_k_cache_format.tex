@@ -1,0 +1,124 @@
+\hypertarget{interface_h_n_k_cache_format}{}\section{H\+N\+K\+Cache\+Format クラス}
+\label{interface_h_n_k_cache_format}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+
+
+{\ttfamily \#import $<$H\+N\+K\+Cache.\+h$>$}
+
+H\+N\+K\+Cache\+Format の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_h_n_k_cache_format}
+\end{center}
+\end{figure}
+\subsection*{実体メソッド}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_h_n_k_cache_format_aaf0bfc464371a36f6c7617a577e31ec9}{init\+With\+Name\+:}
+\item 
+(U\+I\+Image $\ast$) -\/ \hyperlink{interface_h_n_k_cache_format_a546c0846f6afd51b7f649f5f32a12fa0}{resized\+Image\+From\+Image\+:}
+\end{DoxyCompactItemize}
+\subsection*{プロパティ}
+\begin{DoxyCompactItemize}
+\item 
+B\+O\+O\+L \hyperlink{interface_h_n_k_cache_format_aab518aa4d3e96125bb27fd8f9eba8434}{allow\+Upscaling}
+\item 
+C\+G\+Float \hyperlink{interface_h_n_k_cache_format_a3edfe8ac876f90afe1164ecae20cac21}{compression\+Quality}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_h_n_k_cache_format_a2cabd5d85fdedcf7adc29d03e4fd8c41}{name}
+\item 
+C\+G\+Size \hyperlink{interface_h_n_k_cache_format_a23bcc9d23bed21b1113f28ee296c59f9}{size}
+\item 
+H\+N\+K\+Scale\+Mode \hyperlink{interface_h_n_k_cache_format_aed4283be1c435789db25798ebe64d90c}{scale\+Mode}
+\item 
+unsigned long long \hyperlink{interface_h_n_k_cache_format_ab7b9cd33c5cc626688d92511651b8d81}{disk\+Capacity}
+\item 
+unsigned long long \hyperlink{interface_h_n_k_cache_format_aeeea00feba542e026e941c74ec94e432}{disk\+Size}
+\item 
+H\+N\+K\+Preload\+Policy \hyperlink{interface_h_n_k_cache_format_a8cf73fa8bf0b16d18bf3040ba05432ce}{preload\+Policy}
+\item 
+U\+I\+Image $\ast$($^\wedge$ \hyperlink{interface_h_n_k_cache_format_ab7d4412f1d6a87036f8a3b670cd028e9}{pre\+Resize\+Block} )(N\+S\+String $\ast$key, U\+I\+Image $\ast$image)
+\item 
+U\+I\+Image $\ast$($^\wedge$ \hyperlink{interface_h_n_k_cache_format_aa45b853ab58054e92b3234c6d00e5f91}{post\+Resize\+Block} )(N\+S\+String $\ast$key, U\+I\+Image $\ast$image)
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Image cache format. Defines the transformation applied to images as well as cache policies such as disk capacity. 
+
+\subsection{メソッド詳解}
+\hypertarget{interface_h_n_k_cache_format_aaf0bfc464371a36f6c7617a577e31ec9}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!init\+With\+Name\+:@{init\+With\+Name\+:}}
+\index{init\+With\+Name\+:@{init\+With\+Name\+:}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{init\+With\+Name\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\+With\+Name\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String$\ast$)}]{name}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_format_aaf0bfc464371a36f6c7617a577e31ec9}
+Initializes a format with the given name. 
+\begin{DoxyParams}{引数}
+{\em name} & Name of the format. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_h_n_k_cache_format_a546c0846f6afd51b7f649f5f32a12fa0}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!resized\+Image\+From\+Image\+:@{resized\+Image\+From\+Image\+:}}
+\index{resized\+Image\+From\+Image\+:@{resized\+Image\+From\+Image\+:}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{resized\+Image\+From\+Image\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\+I\+Image $\ast$) resized\+Image\+From\+Image\+: 
+\begin{DoxyParamCaption}
+\item[{(U\+I\+Image$\ast$)}]{image}
+\end{DoxyParamCaption}
+}\label{interface_h_n_k_cache_format_a546c0846f6afd51b7f649f5f32a12fa0}
+Resized the given image based on the format. Used by the cache to create its images. 
+\begin{DoxyParams}{引数}
+{\em image} & Image to resize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+A resized image based on the format. 
+\end{DoxyReturn}
+
+
+\subsection{プロパティ詳解}
+\hypertarget{interface_h_n_k_cache_format_aab518aa4d3e96125bb27fd8f9eba8434}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!allow\+Upscaling@{allow\+Upscaling}}
+\index{allow\+Upscaling@{allow\+Upscaling}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{allow\+Upscaling}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\+O\+O\+L) allow\+Upscaling\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_aab518aa4d3e96125bb27fd8f9eba8434}
+Allow upscalling. Images smaller than the format size will be upscaled if set to Y\+E\+S. N\+O by default.  Has no effect if the scale mode is H\+N\+K\+Scale\+Mode\+None. \hypertarget{interface_h_n_k_cache_format_a3edfe8ac876f90afe1164ecae20cac21}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!compression\+Quality@{compression\+Quality}}
+\index{compression\+Quality@{compression\+Quality}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{compression\+Quality}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\+G\+Float) compression\+Quality\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_a3edfe8ac876f90afe1164ecae20cac21}
+The quality of the resulting J\+P\+E\+G image, expressed as a value from 0.\+0 to 1.\+0. The value 0.\+0 represents the maximum compression (or lowest quality) while the value 1.\+0 represents the least compression (or best quality). 1.\+0 by default.  Only affects opaque images. \hypertarget{interface_h_n_k_cache_format_ab7b9cd33c5cc626688d92511651b8d81}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!disk\+Capacity@{disk\+Capacity}}
+\index{disk\+Capacity@{disk\+Capacity}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{disk\+Capacity}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (unsigned long long) disk\+Capacity\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_ab7b9cd33c5cc626688d92511651b8d81}
+The disk cache capacity for the format. If 0 Haneke will only use memory cache. 0 by default. \hypertarget{interface_h_n_k_cache_format_aeeea00feba542e026e941c74ec94e432}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!disk\+Size@{disk\+Size}}
+\index{disk\+Size@{disk\+Size}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{disk\+Size}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (unsigned long long) disk\+Size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_aeeea00feba542e026e941c74ec94e432}
+Current size in bytes of the disk cache used by the format. \hypertarget{interface_h_n_k_cache_format_a2cabd5d85fdedcf7adc29d03e4fd8c41}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!name@{name}}
+\index{name@{name}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_a2cabd5d85fdedcf7adc29d03e4fd8c41}
+Format name. Used by Haneke as the format subdirectory name in the disk cache and to uniquely identify the disk queue of the format. Avoid special characters. \hypertarget{interface_h_n_k_cache_format_aa45b853ab58054e92b3234c6d00e5f91}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!post\+Resize\+Block@{post\+Resize\+Block}}
+\index{post\+Resize\+Block@{post\+Resize\+Block}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{post\+Resize\+Block}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\+I\+Image$\ast$($^\wedge$ post\+Resize\+Block) (N\+S\+String $\ast$key, U\+I\+Image $\ast$image))\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}\label{interface_h_n_k_cache_format_aa45b853ab58054e92b3234c6d00e5f91}
+Block to be called after an image is resized. The returned image will be used by the cache. nil by default. \begin{DoxyWarning}{警告}
+The block will be called only if the requested image is not found in the cache. 
+
+The block will be called in background when using the asynchronous methods of the cache. 
+\end{DoxyWarning}
+\hypertarget{interface_h_n_k_cache_format_a8cf73fa8bf0b16d18bf3040ba05432ce}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!preload\+Policy@{preload\+Policy}}
+\index{preload\+Policy@{preload\+Policy}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{preload\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (H\+N\+K\+Preload\+Policy) preload\+Policy\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_a8cf73fa8bf0b16d18bf3040ba05432ce}
+Preload policy. If set, Haneke will add some or all images cached on disk to the memory cache. H\+N\+K\+Preload\+Policy\+None by default. \hypertarget{interface_h_n_k_cache_format_ab7d4412f1d6a87036f8a3b670cd028e9}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!pre\+Resize\+Block@{pre\+Resize\+Block}}
+\index{pre\+Resize\+Block@{pre\+Resize\+Block}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{pre\+Resize\+Block}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\+I\+Image$\ast$($^\wedge$ pre\+Resize\+Block) (N\+S\+String $\ast$key, U\+I\+Image $\ast$image))\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}\label{interface_h_n_k_cache_format_ab7d4412f1d6a87036f8a3b670cd028e9}
+Block to be called before an image is resized. The returned image will be resized. nil by default. \begin{DoxyWarning}{警告}
+The block will be called only if the requested image is not found in the cache. 
+
+The block will be called in background when using the asynchronous methods of the cache. 
+\end{DoxyWarning}
+\hypertarget{interface_h_n_k_cache_format_aed4283be1c435789db25798ebe64d90c}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!scale\+Mode@{scale\+Mode}}
+\index{scale\+Mode@{scale\+Mode}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{scale\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (H\+N\+K\+Scale\+Mode) scale\+Mode\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_aed4283be1c435789db25798ebe64d90c}
+Format scale mode. Determines if images will fit or fill the format size or not. H\+N\+K\+Scale\+Mode\+Fill by default. \hypertarget{interface_h_n_k_cache_format_a23bcc9d23bed21b1113f28ee296c59f9}{}\index{H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}!size@{size}}
+\index{size@{size}!H\+N\+K\+Cache\+Format@{H\+N\+K\+Cache\+Format}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\+G\+Size) size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}\label{interface_h_n_k_cache_format_a23bcc9d23bed21b1113f28ee296c59f9}
+Format image size. Images will be scaled to fit or fill this size or ignore it based on scale\+Mode.  Has no effect if the scale mode is H\+N\+K\+Scale\+Mode\+None. 
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Haneke/H\+N\+K\+Cache.\+h\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+Haneke/H\+N\+K\+Cache.\+m\end{DoxyCompactItemize}

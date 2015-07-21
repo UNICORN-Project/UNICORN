@@ -1,0 +1,52 @@
+\hypertarget{structrsa__meth__st}{}\section{rsa\+\_\+meth\+\_\+st 構造体}
+\label{structrsa__meth__st}\index{rsa\+\_\+meth\+\_\+st@{rsa\+\_\+meth\+\_\+st}}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structrsa__meth__st_a7ce6d4139c1e9e8b220d2d3b3f240a14}{}const char $\ast$ {\bfseries name}\label{structrsa__meth__st_a7ce6d4139c1e9e8b220d2d3b3f240a14}
+
+\item 
+\hypertarget{structrsa__meth__st_a6ff51f7f2fd9b5b7e16a30616301caa7}{}int($\ast$ {\bfseries rsa\+\_\+pub\+\_\+enc} )(int flen, const unsigned char $\ast$from, unsigned char $\ast$to, \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa, int padding)\label{structrsa__meth__st_a6ff51f7f2fd9b5b7e16a30616301caa7}
+
+\item 
+\hypertarget{structrsa__meth__st_a4eb63fb1e1abbe10f8cd81c1efef8cf4}{}int($\ast$ {\bfseries rsa\+\_\+pub\+\_\+dec} )(int flen, const unsigned char $\ast$from, unsigned char $\ast$to, \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa, int padding)\label{structrsa__meth__st_a4eb63fb1e1abbe10f8cd81c1efef8cf4}
+
+\item 
+\hypertarget{structrsa__meth__st_abb623f4c63d15a39af63ec2ead7cf803}{}int($\ast$ {\bfseries rsa\+\_\+priv\+\_\+enc} )(int flen, const unsigned char $\ast$from, unsigned char $\ast$to, \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa, int padding)\label{structrsa__meth__st_abb623f4c63d15a39af63ec2ead7cf803}
+
+\item 
+\hypertarget{structrsa__meth__st_a0a9fcf9d1e4799ab69233c2187921fe1}{}int($\ast$ {\bfseries rsa\+\_\+priv\+\_\+dec} )(int flen, const unsigned char $\ast$from, unsigned char $\ast$to, \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa, int padding)\label{structrsa__meth__st_a0a9fcf9d1e4799ab69233c2187921fe1}
+
+\item 
+\hypertarget{structrsa__meth__st_a055a4194b3a73d653111656553b2ae8c}{}int($\ast$ {\bfseries rsa\+\_\+mod\+\_\+exp} )(\hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$r0, const \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$I, \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa, B\+N\+\_\+\+C\+T\+X $\ast$ctx)\label{structrsa__meth__st_a055a4194b3a73d653111656553b2ae8c}
+
+\item 
+\hypertarget{structrsa__meth__st_a1dc3f40f6072ffed989d7dfedc66cda1}{}int($\ast$ {\bfseries bn\+\_\+mod\+\_\+exp} )(\hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$r, const \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$a, const \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$p, const \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$m, B\+N\+\_\+\+C\+T\+X $\ast$ctx, \hyperlink{structbn__mont__ctx__st}{B\+N\+\_\+\+M\+O\+N\+T\+\_\+\+C\+T\+X} $\ast$m\+\_\+ctx)\label{structrsa__meth__st_a1dc3f40f6072ffed989d7dfedc66cda1}
+
+\item 
+\hypertarget{structrsa__meth__st_ac8c394e65dbeda15573657fb550c5fe7}{}int($\ast$ {\bfseries init} )(\hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa)\label{structrsa__meth__st_ac8c394e65dbeda15573657fb550c5fe7}
+
+\item 
+\hypertarget{structrsa__meth__st_a12aded957112894c6fd832168a380fbc}{}int($\ast$ {\bfseries finish} )(\hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa)\label{structrsa__meth__st_a12aded957112894c6fd832168a380fbc}
+
+\item 
+\hypertarget{structrsa__meth__st_ab01ea2742087308a50209ccff23832c7}{}int {\bfseries flags}\label{structrsa__meth__st_ab01ea2742087308a50209ccff23832c7}
+
+\item 
+\hypertarget{structrsa__meth__st_a3d4a936065797413aad5dc1c7a132f00}{}char $\ast$ {\bfseries app\+\_\+data}\label{structrsa__meth__st_a3d4a936065797413aad5dc1c7a132f00}
+
+\item 
+\hypertarget{structrsa__meth__st_a9417375cd40a1ebef8631897593212e5}{}int($\ast$ {\bfseries rsa\+\_\+sign} )(int type, const unsigned char $\ast$m, unsigned int m\+\_\+length, unsigned char $\ast$sigret, unsigned int $\ast$siglen, const \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa)\label{structrsa__meth__st_a9417375cd40a1ebef8631897593212e5}
+
+\item 
+\hypertarget{structrsa__meth__st_a9a5b98e6b902fd0a31b0663b91460627}{}int($\ast$ {\bfseries rsa\+\_\+verify} )(int dtype, const unsigned char $\ast$m, unsigned int m\+\_\+length, const unsigned char $\ast$sigbuf, unsigned int siglen, const \hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa)\label{structrsa__meth__st_a9a5b98e6b902fd0a31b0663b91460627}
+
+\item 
+\hypertarget{structrsa__meth__st_a08d964380b9ca4fd0d7664fe0d14dfd0}{}int($\ast$ {\bfseries rsa\+\_\+keygen} )(\hyperlink{structrsa__st}{R\+S\+A} $\ast$rsa, int bits, \hyperlink{structbignum__st}{B\+I\+G\+N\+U\+M} $\ast$e, \hyperlink{structbn__gencb__st}{B\+N\+\_\+\+G\+E\+N\+C\+B} $\ast$cb)\label{structrsa__meth__st_a08d964380b9ca4fd0d7664fe0d14dfd0}
+
+\end{DoxyCompactItemize}
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Framework\+Manager/sample/packages/\+Project\+Package/i\+O\+S\+Sample/\+Libraries/\+M\+Purchase/vendor/include/openssl/rsa.\+h\end{DoxyCompactItemize}
