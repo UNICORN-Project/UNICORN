@@ -24,8 +24,7 @@
         }
     ],
     "require": {
-        "lib": "1",
-        "aws/aws-sdk-php": "*"
+        "lib": "1"
     },
     "config": {
         "vendor-dir": "../UNICORN"
@@ -49,19 +48,6 @@
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
             "cp -rf ./lib/* ../../lib 2>/dev/null",
-            "cp -rf ./autoload.php ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./aws ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./composer ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./guzzlehttp ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./mtdowling ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./psr ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "rm -rf ./lib 2>/dev/null",
-            "rm -rf ./autoload.php 2>/dev/null",
-            "rm -rf ./aws 2>/dev/null",
-            "rm -rf ./composer 2>/dev/null",
-            "rm -rf ./guzzlehttp 2>/dev/null",
-            "rm -rf ./mtdowling 2>/dev/null",
-            "rm -rf ./psr 2>/dev/null",
             "php ../../lib/UNICORN"
         ],
         "post-update-cmd": [
@@ -73,19 +59,7 @@
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
             "cp -rf ./lib/* ../../lib 2>/dev/null",
-            "cp -rf ./autoload.php ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./aws ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./composer ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./guzzlehttp ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./mtdowling ../../lib/VendorPackage/AWSSDK 2>/dev/null",
-            "cp -rf ./psr ../../lib/VendorPackage/AWSSDK 2>/dev/null",
             "rm -rf ./lib 2>/dev/null",
-            "rm -rf ./autoload.php 2>/dev/null",
-            "rm -rf ./aws 2>/dev/null",
-            "rm -rf ./composer 2>/dev/null",
-            "rm -rf ./guzzlehttp 2>/dev/null",
-            "rm -rf ./mtdowling 2>/dev/null",
-            "rm -rf ./psr 2>/dev/null"
         ]
     }
 }
