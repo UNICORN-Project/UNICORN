@@ -48,6 +48,12 @@
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
             "cp -rf ./lib/* ../../lib 2>/dev/null",
+            "rm -rf ./docs 2>/dev/null",
+            "rm -rf ./logs 2>/dev/null",
+            "rm -rf ./_tmp 2>/dev/null",
+            "rm -rf ./composer 2>/dev/null",
+            "rm -rf ./lib 2>/dev/null",
+            "rm -rf ./autoload.php 2>/dev/null",
             "php ../../lib/UNICORN"
         ],
         "post-update-cmd": [
@@ -59,7 +65,13 @@
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.config.xml ../../_tmp/FrameworkManager.config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkManager/core/FrameworkManager.package.xml ../../_tmp/FrameworkManager.package.xml.bak 2>/dev/null",
             "cp -rf ./lib/* ../../lib 2>/dev/null",
+            "rm -rf ./docs 2>/dev/null",
+            "rm -rf ./logs 2>/dev/null",
+            "rm -rf ./_tmp 2>/dev/null",
+            "rm -rf ./composer 2>/dev/null",
             "rm -rf ./lib 2>/dev/null",
+            "rm -rf ./autoload.php 2>/dev/null",
+            "php ../../lib/UNICORN"
         ]
     }
 }
