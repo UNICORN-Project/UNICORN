@@ -111,7 +111,8 @@ Any comments, questions, remarks, ... should be sent to
 
 OpenSSL is 'OpenSSL License'
 ====
-  LICENSE ISSUES 
+  LICENSE ISSUES
+
   ==============
 
   The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
