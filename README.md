@@ -37,7 +37,8 @@ UNICORN
 
 2.composer install後、「UNICORN」ディレクトリが所定のvendor-dir以下に出来ています。  
 「UNICORN」ディレクトリに移動し、「UNICORN」ディレクトリ内で再度「php composer.phar install」を実行して下さい。  
-
+※最新版がどうしても入手できない場合、composerのキャッシュに古いバージョンが残ってしまっている場合があります。
+そう言う場合は「~/.composer」の中身を削除(sudo rm -rf ~/.composer/)してから「php composer.phar install」を試して下さい。
 
 ###手動インストール  
 
