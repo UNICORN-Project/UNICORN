@@ -59,9 +59,7 @@
             "php ../../lib/UNICORN"
         ],
         "post-update-cmd": [
-            "cp -rf ./docs ../../",
-            "cp -rf ./_tmp ../../",
-            "cp -rf ./supple ../../",
+            "mkdir -p ../../_tmp 2>/dev/null",
             "mkdir -p ../../lib 2>/dev/null",
             "cp -f ../../lib/FrameworkPackage/core/config.xml ../../_tmp/config.xml.bak 2>/dev/null",
             "cp -f ../../lib/FrameworkPackage/core/package.xml ../../_tmp/package.xml.bak 2>/dev/null",
