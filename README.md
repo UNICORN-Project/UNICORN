@@ -9,9 +9,14 @@ UNICORN
 ##■利用開始方法  
 
 ###composerを使ったインストール  
+※現状ではセキュリティの観点から、利用法を理解していない場合の「composerを使ったインストール」手順は推奨しません。  
+対応がなされるまでは、「手動インストール」手順を推奨します。
 
 1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
 ```
+    "config": {
+        "secure-http": false
+    },
     "repositories": [
         {
             "type": "package",
