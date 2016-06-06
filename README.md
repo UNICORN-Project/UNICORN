@@ -15,6 +15,7 @@ UNICORN
 1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
 ```
     "config": {
+        "disable-tls": true,
         "secure-http": false
     },
     "repositories": [

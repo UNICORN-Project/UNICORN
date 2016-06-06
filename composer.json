@@ -1,4 +1,8 @@
 {
+    "config": {
+        "disable-tls": true,
+        "secure-http": false
+    },
     "name": "UNICORN-Project",
     "type": "project",
     "description" : "Fast Start Project Framework.",
