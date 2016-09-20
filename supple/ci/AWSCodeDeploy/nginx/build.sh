@@ -1,8 +1,8 @@
 #!/bin/bash
 
-projectName=SPAJAMProjectPackage
-devdomain=spajam2016.otkr.net
-proddomain=spajam2016.otkr.net
+projectName=ProjectPackage
+devdomain=project.domain
+proddomain=project.domain
 isdev=/var/www/.dev
 isProd=/var/www/.production
 logdir=/var/www/logs
@@ -13,11 +13,11 @@ releasedir=/var/www/release
 
 # 環境によって設定が別れる変数の定義
 # 開発環境用
-devbacketname=spajam2016
+devbacketname=projectbacuketdev
 devregion=ap-northeast-1
 devloadbalancer=developmen-elbaslb-KEEUWWOJMQRE
 # リリース環境用
-prodbacketname=spajam2016
+prodbacketname=projectbacuket
 prodregion=ap-northeast-1
 prodloadbalancer=production-elbaslb-KEEUWWOJMQRE
 
@@ -38,7 +38,7 @@ else
   fi
 fi
 
-# ProxyProtocolを有効にする
+# ProxyProtocolを有効にする(HTTP2用)
 export AWS_DEFAULT_REGION=$region
 aws elb create-load-balancer-policy --load-balancer-name $loadbalancer --policy-name EnableProxyProtocol  --policy-type-name ProxyProtocolPolicyType --policy-attributes AttributeName=ProxyProtocol,AttributeValue=True
 aws elb set-load-balancer-policies-for-backend-server --load-balancer-name $loadbalancer --instance-port 443 --policy-names EnableProxyProtocol
@@ -109,8 +109,8 @@ if [ ! -e /etc/nginx/conf.d/nginx-${projectName}.conf ]; then
   sed -i -e "s/development.domain/${domain}/" /etc/nginx/conf.d/nginx-${projectName}.conf
   sed -i -e "s/production.domain/${domain}/" /etc/nginx/conf.d/nginx-${projectName}.conf
 fi
-# SSL設定
-# Let's encryptする！
+
+# 自己署名SSLを仮設定
 if [ ! -e /var/www/.ssl ]; then
   mkdir /var/www/.ssl
 fi

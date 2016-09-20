@@ -17,7 +17,6 @@ hooks:
       timeout: 600
       runas: root
   ValidateService:
-    - location: bin/nginx/web/validate.sh
+    - location: supple/ci/AWSCodeDeploy/nginx/validate.sh
       timeout: 3600
       runas: root
-      

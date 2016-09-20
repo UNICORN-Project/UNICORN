@@ -14,8 +14,18 @@ sync
 echo 3 > /proc/sys/vm/drop_caches
 free
 
+# タイムゾーンの設定変更
+\cp -f /usr/share/zoneinfo/Japan /etc/localtime
+
 # 時刻合わせ
 chkconfig ntpd on
+
+# ホスト名をアプリケーションプレフィックス-LocalIPｂの形に変更する
+EC2_PREFIX=$backetname
+LOCAL_IPV4=`curl -s http://169.254.169.254/latest/meta-data/local-ipv4`
+NAME=${EC2_PREFIX}-${LOCAL_IPV4//./-}
+echo "NAME: " ${NAME}
+hostname ${NAME}
 
 # 必要なミドルウェアの自動インストール
 # リポジトリの向け先を一度latestに向ける
@@ -24,10 +34,24 @@ if ! grep "releasever=latest" /etc/yum.conf > /dev/null 2>&1; then
   sed -i -e "14a releasever=latest" /etc/yum.conf
   yum clean all
 fi
+
 # mlocateのインストール
 if [ ! -e /var/lib/mlocate ]; then
   yum install mlocate -y
 fi
+
+# OpenSSLのインストール
+if [ ! -e /usr/bin/openssl ]; then
+  yum install openssl -y
+fi
+# OpenSSLのアップデート
+yum update openssl -y
+
+# gitのインストール
+if [ ! -e /usr/share/git-core/ ]; then
+  yum install -y git
+fi
+
 # MySQLのインストール(不要な場合はコメントアウトして下さい)
 if [ ! -e /etc/my.cnf ]; then
   rpm -ihv http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
@@ -37,45 +61,8 @@ if [ ! -e /etc/my.cnf ]; then
   # 自動起動設定
   chkconfig mysqld on
 fi
+
 # Nginx+PHP-FPMのインストール(不要な場合はコメントアウトして下さい)
-if [ ! -e /etc/nginx/nginx.conf ]; then
-  # opensslとlibsshを先ずは入れて置く
-  yum install -y openssl openssl-devel libssh2 libssh2-devel
-  rpm -Uvh ftp://ftp.scientificlinux.org/linux/scientific/6.4/x86_64/updates/fastbugs/scl-utils-20120927-8.el6.x86_64.rpm
-  rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-  yum -y install libwebp --disablerepo=amzn-main --enablerepo=epel
-  yum -y install libmcrypt libtool-ltdl libtidy libXpm libtiff tcl gd-last autoconf automake
-  yum install --enablerepo=epel,remi,remi-php70 nginx php70 php70-php-devel php70-php-fpm php70-php-mbstring php70-php-mysqlnd php70-php-xml php70-php-xmlrpc php70-php-soap php70-php-opcache php70-php-mcrypt php70-php-gd php70-php-pecl-apcu php70-php-pecl-apcu-bc php70-php-pecl-apcu-devel php70-php-pecl-memcache php70-php-pecl-memcached -y
-  # phpコマンドで実行出来るようにリンクを貼る
-  ln -s /usr/bin/php70 /usr/bin/php
-  ln -s /etc/rc.d/init.d/php70-php-fpm /etc/rc.d/init.d/php-fpm
-  # Nginxを1.9にアップデートするために、一度削除
-  yum remove -y nginx
-  rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
-  sed -i -e "s/baseurl=http:\/\/nginx.org\/packages\/centos\/6\/\$basearch\//baseurl=http:\/\/nginx.org\/packages\/mainline\/centos\/6\/\$basearch\//" /etc/yum.repos.d/nginx.repo 
-  sed -i -e "7a priority=1" /etc/yum.repos.d/nginx.repo
-  yum install -y nginx
-  # 設定ファイルの修正
-  sed -i -e "s/user = apache/user = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
-  sed -i -e "s/group = apache/group = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
-  sed -i -e "s/listen = 127.0.0.1:9000/listen =  \/var\/run\/php-fpm\/php-fpm.sock/" /etc/opt/remi/php70/php-fpm.d/www.conf
-  sed -i -e "s/;listen.owner = nobody/listen.owner = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
-  sed -i -e "s/;listen.group = nobody/listen.group = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
-  sed -i -e "s/;request_terminate_timeout = 0/request_terminate_timeout = 600/" /etc/opt/remi/php70/php-fpm.d/www.conf
-  if [ ! -e /var/run/php-fpm/ ]; then
-    mkdir /var/run/php-fpm/
-  fi
-  # サービス起動設定
-  service nginx restart
-  service php-fpm restart
-  # 自動起動設定
-  chkconfig nginx on
-  chkconfig php-fpm on
-fi
-# Nginx用のバーチャルホスト用confの置き場所を初期化
-if [ ! -e /etc/nginx/conf.d/ ]; then
-  mkdir /etc/nginx/conf.d/
-fi
 # リバースプロキシ用のディレクトリを作成
 if [ ! -e /var/www/cache ]; then
   mkdir /var/www/cache
@@ -91,10 +78,55 @@ if [ ! -e /var/www/cache/nginx/tmp ]; then
 fi
 chown -R nginx:nginx /var/www/cache
 chmod -R 0777 /var/www/cache
-
-# 必要なミドルウェアの自動アップデート
-# OpenSSLアップデート
-yum update openssl -y
+# Nginx用のバーチャルホスト用confの置き場所を初期化
+if [ ! -e /etc/nginx/conf.d/ ]; then
+  mkdir /etc/nginx/conf.d/
+fi
+# Nginx+PHP7のインストールと設定
+if [ ! -e /etc/nginx/nginx.conf ]; then
+  # opensslとlibsshを先ずは入れて置く
+  yum install -y openssl openssl-devel libssh2 libssh2-devel
+  rpm -Uvh ftp://ftp.scientificlinux.org/linux/scientific/6.4/x86_64/updates/fastbugs/scl-utils-20120927-8.el6.x86_64.rpm
+  rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+  yum -y install libwebp --disablerepo=amzn-main --enablerepo=epel
+  yum -y install libmcrypt libtool-ltdl libtidy libXpm libtiff tcl gd-last autoconf automake
+  yum install --enablerepo=epel,remi,remi-php70 nginx php70 php70-php-devel php70-php-fpm php70-php-mbstring php70-php-mysqlnd php70-php-xml php70-php-xmlrpc php70-php-soap php70-php-opcache php70-php-mcrypt php70-php-gd php70-php-pecl-apcu php70-php-pecl-apcu-bc php70-php-pecl-apcu-devel php70-php-pecl-memcache php70-php-pecl-memcached -y
+  # phpコマンドで実行出来るようにリンクを貼る
+  ln -s /usr/bin/php70 /usr/bin/php
+  ln -s /etc/rc.d/init.d/php70-php-fpm /etc/rc.d/init.d/php-fpm
+  # Nginxを1.9以降にアップデートするために、一度削除
+  yum remove -y nginx
+  rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
+  sed -i -e "s/baseurl=http:\/\/nginx.org\/packages\/centos\/6\/\$basearch\//baseurl=http:\/\/nginx.org\/packages\/mainline\/centos\/6\/\$basearch\//" /etc/yum.repos.d/nginx.repo 
+  sed -i -e "7a priority=1" /etc/yum.repos.d/nginx.repo
+  yum install -y nginx
+  # 設定ファイルの修正
+  ln -s /etc/opt/remi/php70/php-fpm.d /etc/php-fpm.d
+  sed -i -e "s/user = apache/user = nginx/" /etc/php-fpm.d/www.conf
+  sed -i -e "s/group = apache/group = nginx/" /etc/php-fpm.d/www.conf
+  sed -i -e "s/listen = 127.0.0.1:9000/listen =  \/var\/run\/php-fpm\/php-fpm.sock/" /etc/php-fpm.d/www.conf
+  sed -i -e "s/;listen.owner = nobody/listen.owner = nginx/" /etc/php-fpm.d/www.conf
+  sed -i -e "s/;listen.group = nobody/listen.group = nginx/" /etc/php-fpm.d/www.conf
+  sed -i -e "s/;request_terminate_timeout = 0/request_terminate_timeout = 600/" /etc/php-fpm.d/www.conf
+  if [ ! -e /var/run/php-fpm/ ]; then
+    mkdir /var/run/php-fpm/
+  fi
+  #sed -i -e "s/user = apache/user = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
+  #sed -i -e "s/group = apache/group = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
+  #sed -i -e "s/listen = 127.0.0.1:9000/listen =  \/var\/run\/php-fpm\/php-fpm.sock/" /etc/opt/remi/php70/php-fpm.d/www.conf
+  #sed -i -e "s/;listen.owner = nobody/listen.owner = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
+  #sed -i -e "s/;listen.group = nobody/listen.group = nginx/" /etc/opt/remi/php70/php-fpm.d/www.conf
+  #sed -i -e "s/;request_terminate_timeout = 0/request_terminate_timeout = 600/" /etc/opt/remi/php70/php-fpm.d/www.conf
+  #if [ ! -e /var/run/php-fpm/ ]; then
+  #  mkdir /var/run/php-fpm/
+  #fi
+  # サービス起動設定
+  service nginx restart
+  service php-fpm restart
+  # 自動起動設定
+  chkconfig nginx on
+  chkconfig php-fpm on
+fi
 
 # デプロイ前処理
 # currentdirが存在する場合は削除
