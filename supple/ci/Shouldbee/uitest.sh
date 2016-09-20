@@ -20,17 +20,17 @@ executed_body=''
 room_id=0
 members=''
 
+# テストケースファイルの存在チェック
+if [ ! -e ${testpath}shouldbee ]; then
+  exit 0
+fi
+
 # shouldbee cliがインストール済みか確認
 if [ ! -e /usr/bin/shouldbee ]; then
   # shouldbee cli for linuxをダウンロード
   wget https://github.com/shouldbee/homebrew-shouldbee/blob/master/build/linux-amd64/shouldbee?raw=true -O shouldbee
   mv shouldbee /usr/bin
   chmod 0755 /usr/bin/shouldbee
-fi
-
-# テストケースファイルの存在チェック
-if [ ! -e ${testpath}shouldbee ]; then
-  exit 0
 fi
 
 # shouldbeeのID PASSをexport

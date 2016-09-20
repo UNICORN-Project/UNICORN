@@ -1,0 +1,23 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/current/
+hooks:
+  BeforeInstall:
+    - location: supple/ci/AWSCodeDeploy/nginx/prebuild.sh
+      timeout: 600
+      runas: root
+  AfterInstall:
+    - location: supple/ci/AWSCodeDeploy/nginx/build.sh
+      timeout: 600
+      runas: root
+  ApplicationStart:
+    - location: supple/ci/AWSCodeDeploy/nginx/start.sh
+      timeout: 600
+      runas: root
+  ValidateService:
+    - location: bin/nginx/web/validate.sh
+      timeout: 3600
+      runas: root
+      

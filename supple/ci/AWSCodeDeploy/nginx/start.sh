@@ -5,10 +5,10 @@ isProd=/var/www/.production
 
 # 観葉によって設定が別れる変数の定義
 # 開発環境用
-devbacketname=unicorndev
+devbacketname=spajam2016
 devregion=ap-northeast-1
 # リリース環境用
-prodbacketname=unicornprod
+prodbacketname=spajam2016
 prodregion=ap-northeast-1
 
 # 観葉による設定の振り分け
@@ -33,7 +33,7 @@ service nginx restart
 service php-fpm restart
 
 # 起動後にPHPセッションディレクトリの書込権限を変更
-chmod -R 0777 /var/lib/php/5.6/session/
+chmod -R 0777 /var/lib/php/7.0/session/
 
 # メンテナンスを開放
 maintenancefile=/var/www/release/lib/FrameworkPackage/.maintenance
@@ -46,7 +46,7 @@ fi
 # UIテストを実行
 if [ -e $isdev ]; then
   # 本番リリースはテストを実行しない(今のところ)
-  sh /var/www/release/bin/job/uitest.sh
+  sh /var/www/release/supple/ci/SHouldbee/uitest.sh
 fi
 
 # locateを更新
