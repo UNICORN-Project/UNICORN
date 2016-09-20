@@ -1,8 +1,11 @@
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
 /.settings
-Thumbs.db
+/.buildpath
+/.project
+/tmps
 .DS_Store
+_site/
 /.project
 Breakpoints.xcbkptlist
 *.xcuserstate
