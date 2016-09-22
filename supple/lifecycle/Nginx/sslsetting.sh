@@ -431,7 +431,7 @@ if [ "$?" -eq 0 ]; then
   STR=$(realpath /etc/letsencrypt/live/${rootdomain}/fullchain.pem)
   STR=${STR##*/fullchain}
   latestnum=${STR%.*}
-  mkdir -p ${mountpath}/sslworkspace/live/${rootdomain}i
+  mkdir -p ${mountpath}/sslworkspace/live/${rootdomain}
   if [ 0 -lt ${#projectname} ]; then
     echo ${latestnum} > ${mountpath}/sslworkspace/live/${rootdomain}/latest
   fi
