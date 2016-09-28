@@ -29,3 +29,5 @@ tmp/
 *Model.zip
 setupunicorn
 .dbinitialized
+/nbproject/
+/.vagrant

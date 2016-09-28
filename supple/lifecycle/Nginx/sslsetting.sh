@@ -63,13 +63,13 @@ members='[To:1234] [To:1234]'
 notifymail=saimushi@gmail.com
 
 # プロジェクト名(UNICORN以外の場合は''(空文字)にして下さい)
-projectname='Project'
+projectname='SPAJAMProject'
 # httpd実行時の権限ユーザー名
 httpduser=nginx
 # Nginxの設定再読み込みコマンドの定義(最後に自動実行してくれる)
-restartcmd="service nginx reload"
+restartcmd="service nginx restart"
 # Apacheの場合は↓を使って下さい
-#restartcmd="service httpd reload"
+#restartcmd="service httpd restart"
 # s3をマウントするパス設定(パスは無い自動生成されます)
 mountpath=/s3mnt
 # TOPドメイン用SSL証明書配置パス(パスは無い自動生成されます・httpdの設定・変更は自動ではしません)
@@ -84,12 +84,12 @@ mgrdomainsslpath=/var/www/.ssl
 staticdomainsslpath=/var/www/.ssl
 # アプリドメイン用SSL証明書配置パス(パスは無い自動生成されます・httpdの設定・変更は自動ではしません)
 appdomainsslpath=/var/www/.ssl
-topdomaindocumentrootpath=/var/www/release/lib/ProjectPackage/webdocs
-webdomaindocumentrootpath=/var/www/release/lib/ProjectPackage/webdocs
-apidomaindocumentrootpath=/var/www/release/lib/ProjectPackage/apidocs
+topdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
+webdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
+apidomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/apidocs
 mgrdomaindocumentrootpath=/var/www/release/lib/FrameworkManager/template/managedocs
-staticdomaindocumentrootpath=/var/www/release/lib/ProjectPackage/webdocs
-appdomaindocumentrootpath=/var/www/release/lib/ProjectPackage/webdocs
+staticdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
+appdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
 # ログパス
 logpath=/var/www/logs
 isdev=/var/www/.dev
@@ -97,26 +97,26 @@ isProd=/var/www/.production
 
 # 環境によって設定が別れる変数の定義
 # 開発環境用
-devtopdomain=devproject.domain
+devtopdomain=devspajam2016.otkr.net
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
 devwebdomain=''
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
-devapidomain=devapiproject.domain
-devmgrdomain=devfwmproject.domain
+devapidomain=devapispajam2016.otkr.net
+devmgrdomain=devfwmspajam2016.otkr.net
 devstaticdomain=''
 devappdomain=''
-devbacketname=projectbacuketdev
+devbacketname=spajam2016dev
 devregion=ap-northeast-1
 # リリース環境用
-prodtopdomain=project.domain
+prodtopdomain=spajam2016.otkr.net
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
 prodwebdomain=''
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
-prodapidomain=apiproject.domain
-prodmgrdomain=fwmproject.domain
+prodapidomain=apispajam2016.otkr.net
+prodmgrdomain=fwmspajam2016.otkr.net
 prodstaticdomain=''
 prodappdomain=''
-prodbacketname=projectbacuket
+prodbacketname=spajam2016
 prodregion=ap-northeast-1
 
 # ------------------------------- 変数定義ココまで(適宜変更) ------------------------------- 
@@ -203,9 +203,9 @@ if [ ! -e /etc/gocode/bin/goofys ]; then
   go install github.com/kahing/goofys
 fi
 
-# Let's Encryptのインストール(ACME対応SSL設定用)
+# Let's Encrypt(sh版のacme.sh)のインストール(ACME対応SSL設定用)
 chmod 0777 ${mepath}
-if [ ! -e /etc/certbot/certbotinstalled ]; then
+if [ ! -e /root/.acme.sh ]; then
   # Pyhonのアップデートから
   yum -y install gcc libffi-devel openssl-devel expect
   yum -y install python27 python27-devel
@@ -227,28 +227,13 @@ if [ ! -e /etc/certbot/certbotinstalled ]; then
   pip install virtualenv --upgrade
   # Pythonが27系になるのでawscliも27系用に更新しておく
   pip install --upgrade awscli
-  # Let's Encryptのインストール
-  mkdir -p /etc/certbot
-  git clone https://github.com/certbot/certbot /etc/certbot
-  # pythonのcryptographyのインストールがメモリーオーバーになる場合があるのでスワップファイルを作って対応する
-  dd if=/dev/zero of=/swapfile bs=1024 count=524288
-  chmod 600 /swapfile
-  mkswap /swapfile
-  swapon /swapfile
-  # 念のためもう一回！
-  pip install virtualenv --upgrade
   yum -y install augeas-libs dialog python27-tools system-rpm-config
-  unset PYTHON_INSTALL_LAYOUT
-  /etc/certbot/certbot-auto --debug > /tmp/certbotinstall.log
-  #expect -c "
-  #  spawn /etc/certbot/certbot-auto -y --debug > /tmp/certbotinstall.log
-  #  expect \"s Is this ok \[y/d/N\]:\"
-  #  send \"\n\"
-  #"
-  # スワップ外す
-  swapoff /swapfile
-  touch /etc/certbot/certbotinstalled
+  # Let's Encrypt sh版のacme.shのインストール
+  curl https://get.acme.sh | sh
 fi
+
+# acmeのアップデート
+/root/.acme.sh/acme.sh --upgrade
 
 # goofysでS3マウントしてSSLの設定を各Webサーバで共有する
 if [ ! -e ${mountpath}/ ]; then
@@ -262,21 +247,54 @@ fi
 #aws s3 mb s3://anlimiteddev-mnt
 #/etc/gocode/bin/goofys -o allow_other --uid "$(id -u nginx)" --gid "$(id -g nginx)" anlimiteddev-mnt /s3mnt
 
+# s3マウントを待つ
 sleep 1
 
+# 取得コマンド生成と、rootドメインの特定
+rootdomain=''
+certcmd="/root/.acme.sh/acme.sh --issue"
+if [ 0 -lt ${#topdomain} ]; then
+  certcmd="${certcmd} -d ${topdomain} -w ${topdomaindocumentrootpath}"
+  if [ 0 -ge ${#rootdomain} ]; then
+    rootdomain=${topdomain}
+  fi
+fi
+if [ 0 -lt ${#webdomain} ]; then
+  certcmd="${certcmd} -d ${webdomain} -w ${webdomaindocumentrootpath}"
+  if [ 0 -ge ${#rootdomain} ]; then
+    rootdomain=${webdomain}
+  fi
+fi
+if [ 0 -lt ${#apidomain} ]; then
+  certcmd="${certcmd} -d ${apidomain} -w ${apidomaindocumentrootpath}"
+  if [ 0 -ge ${#rootdomain} ]; then
+    rootdomain=${apidomain}
+  fi
+fi
+if [ 0 -lt ${#mgrdomain} ]; then
+  certcmd="${certcmd} -d ${mgrdomain} -w ${mgrdomaindocumentrootpath}"
+  if [ 0 -ge ${#rootdomain} ]; then
+    rootdomain=${mgrdomain}
+  fi
+fi
+if [ 0 -lt ${#staticdomain} ]; then
+  certcmd="${certcmd} -d ${staticdomain} -w ${staticdomaindocumentrootpath}"
+  if [ 0 -ge ${#rootdomain} ]; then
+    rootdomain=${staticdomain}
+  fi
+fi
+if [ 0 -lt ${#appdomain} ]; then
+  certcmd="${certcmd} -d ${appdomain} -w ${appdomaindocumentrootpath}"
+  if [ 0 -ge ${#rootdomain} ]; then
+    rootdomain=${appdomain}
+  fi
+fi
+# spajam2016の例
+# /root/.acme.sh/acme.sh --issue -d devapispajam2016.otkr.net -w /var/www/release/lib/SPAJAMProjectPackage/apidocs -d devfwmspajam2016.otkr.net -w /var/www/release/lib/FrameworkManager/template/managedocs
+
 # 証明書作業領域の初期化
-if [ ! -e ${mountpath}/sslworkspace/ ]; then
-  # 完全なる初期化
-  mkdir -p ${mountpath}/sslworkspace/archive
-  mkdir -p ${mountpath}/sslworkspace/accounts
-  mkdir -p ${mountpath}/sslworkspace/renewal
-  rm -rf /etc/letsencrypt/archive
-  rm -rf /etc/letsencrypt/accounts
-  rm -rf /etc/letsencrypt/renewal
-  mkdir -p /etc/letsencrypt
-  ln -s ${mountpath}/sslworkspace/archive /etc/letsencrypt/archive
-  ln -s ${mountpath}/sslworkspace/accounts /etc/letsencrypt/accounts
-  ln -s ${mountpath}/sslworkspace/renewal /etc/letsencrypt/renewal
+if [ ! -e ${mountpath}/sslworkspace/${rootdomain} ]; then
+  mkdir -p ${mountpath}/sslworkspace
   # 各種SSL取得用ドキュメントルートの設定
   mkdir -p ${mountpath}/sslworkspace/topdomaindocumentroot/.well-known
   mkdir -p ${mountpath}/sslworkspace/webdomaindocumentroot/.well-known
@@ -310,13 +328,8 @@ if [ ! -e ${mountpath}/sslworkspace/ ]; then
   fi
 else
   # 既存の作業領域で初期化
-  rm -rf /etc/letsencrypt/archive
-  rm -rf /etc/letsencrypt/accounts
-  rm -rf /etc/letsencrypt/renewal
-  mkdir -p /etc/letsencrypt
-  ln -s ${mountpath}/sslworkspace/archive /etc/letsencrypt/archive
-  ln -s ${mountpath}/sslworkspace/accounts /etc/letsencrypt/accounts
-  ln -s ${mountpath}/sslworkspace/renewal /etc/letsencrypt/renewal
+  rm -rf /root/.acme.sh/${rootdomain}
+  cp -Rf ${mountpath}/sslworkspace/${rootdomain} /root/.acme.sh/
   # 各種SSL取得用ドキュメントルートの設定
   rm -rf ${topdomaindocumentrootpath}/.well-known
   rm -rf ${webdomaindocumentrootpath}/.well-known
@@ -344,160 +357,90 @@ else
   fi
 fi
 
-# 取得コマンド生成と、rootドメインの特定
-rootdomain=''
-certcmd="/etc/certbot/certbot-auto certonly -t --webroot --agree-tos"
-if [ 0 -lt ${#topdomain} ]; then
-  certcmd="${certcmd} -w ${topdomaindocumentrootpath} -d ${topdomain}"
-  if [ 0 -ge ${#rootdomain} ]; then
-    rootdomain=${topdomain}
-  fi
-fi
-if [ 0 -lt ${#webdomain} ]; then
-  certcmd="${certcmd} -w ${webdomaindocumentrootpath} -d ${webdomain}"
-  if [ 0 -ge ${#rootdomain} ]; then
-    rootdomain=${webdomain}
-  fi
-fi
-if [ 0 -lt ${#apidomain} ]; then
-  certcmd="${certcmd} -w ${apidomaindocumentrootpath} -d ${apidomain}"
-  if [ 0 -ge ${#rootdomain} ]; then
-    rootdomain=${apidomain}
-  fi
-fi
-if [ 0 -lt ${#mgrdomain} ]; then
-  certcmd="${certcmd} -w ${mgrdomaindocumentrootpath} -d ${mgrdomain}"
-  if [ 0 -ge ${#rootdomain} ]; then
-    rootdomain=${mgrdomain}
-  fi
-fi
-if [ 0 -lt ${#staticdomain} ]; then
-  certcmd="${certcmd} -w ${staticdomaindocumentrootpath} -d ${staticdomain}"
-  if [ 0 -ge ${#rootdomain} ]; then
-    rootdomain=${staticdomain}
-  fi
-fi
-if [ 0 -lt ${#appdomain} ]; then
-  certcmd="${certcmd} -w ${appdomaindocumentrootpath} -d ${appdomain}"
-  if [ 0 -ge ${#rootdomain} ]; then
-    rootdomain=${appdomain}
-  fi
-fi
-certcmd="${certcmd} -m ${notifymail} --debug"
-# 3bkの例
-# /etc/certbot/certbot-auto certonly -t --webroot --agree-tos -w /var/www/release/webdocs -d dev.3bk.jp -w /var/www/release/managedocs -d devfwm.3bk.jp -w /var/www/release/webdocs -d devstatic.3bk.jp -w /var/www/release/webdocs -d devapp.3bk.jp -m develop+devssl@digiq.co.jp --debug
-
-# 証明書取得の復帰処理
-if [ -e ${mountpath}/sslworkspace/live/${rootdomain}/latest ]; then
-  # マウント直後に既に前回取得結果がある場合
-  latest=`cat ${mountpath}/sslworkspace/live/${rootdomain}/latest`
-  echo "latest=${latest}"
-  if [ -e /etc/letsencrypt/archive/${rootdomain}/fullchain${latest}.pem ]; then
-    # /etc/letsencrypt/liveをS3のファイルから復帰する
-    mkdir -p /etc/letsencrypt/live/${rootdomain}
-    ln -s /etc/letsencrypt/archive/${rootdomain}/cert${latest}.pem /etc/letsencrypt/live/${rootdomain}/cert.pem
-    ln -s /etc/letsencrypt/archive/${rootdomain}/chain${latest}.pem /etc/letsencrypt/live/${rootdomain}/chain.pem
-    ln -s /etc/letsencrypt/archive/${rootdomain}/fullchain${latest}.pem /etc/letsencrypt/live/${rootdomain}/fullchain.pem
-    ln -s /etc/letsencrypt/archive/${rootdomain}/privkey${latest}.pem /etc/letsencrypt/live/${rootdomain}/privkey.pem
-  fi
-fi
-
-# 証明書取得処理
-executed_title=''
+# 証明書取得・更新の実行
 executed_body=''
-if [ ! -e /etc/letsencrypt/live/${rootdomain}/fullchain.pem ]; then
-  executed_title="${rootdomain}-${NAME}SSL証明書取得処理"
-  # 証明書取得実行(初実行)
-  echo "/etc/certbot/certbot-auto --debug > /tmp/certbotinstall.log"
-  echo "${certcmd}"
-  executed_body=$($certcmd)
+executed_title="${rootdomain}-${NAME}SSL証明書取得・更新処理"
+# 実行
+echo "${certcmd}"
+# XXX 強制更新コマンドは以下 ただし、デイリーバッチではやらない事！バッチ登録処理部分も変更する事！
+#echo "${certcmd} --force"
+executed_body=$($certcmd)
+
+# 成功時の書換処理諸々
+if [ "$?" -eq 0 ]; then
+  # 取得成功 or 更新成功
+  executed_title="${executed_title} 成功"
+  # 成功時メンション通知は不要
+  members=''
+  # 一旦削除
+  rm -rf /s3mnt/sslworkspace/${rootdomain}
+  # まるっとコピーし直し
+  cp -Rf /root/.acme.sh/${rootdomain} /s3mnt/sslworkspace/
 else
-  executed_title="${rootdomain}-${NAME}SSL証明書更新処理"
-  # 証明書更新
-  echo "/etc/certbot/certbot-auto --debug > /tmp/certbotinstall.log"
-  echo "/etc/certbot/certbot-auto renew"
-  # XXX 強制更新コマンドは以下 ただし、デイリーバッチではやらない事！バッチ登録処理部分も変更する事！
-  #echo "/etc/certbot/certbot-auto renew --force-renew"
-  executed_body=$(/etc/certbot/certbot-auto renew)
+  if [ ! "`echo $executed_body | grep -e 'Skip, Next renewal'`" ]; then
+    # 更新失敗
+    executed_title="${executed_title} 失敗"
+  else
+    # 更新不要
+    executed_title="${executed_title} スキップ"
+    members=''
+  fi
 fi
 
-# 結果をチャットワークに通知
-if [ "$?" -eq 0 ]; then
-  # 更新成功 or 更新不要
-  executed_title="${executed_title} 成功"
-  # 成功時通知不要
-  members=''
-  # 最後の実行結果ファイルを特定し、履歴を残す
-  STR=$(realpath /etc/letsencrypt/live/${rootdomain}/fullchain.pem)
-  STR=${STR##*/fullchain}
-  latestnum=${STR%.*}
-  mkdir -p ${mountpath}/sslworkspace/live/${rootdomain}
-  if [ 0 -lt ${#projectname} ]; then
-    echo ${latestnum} > ${mountpath}/sslworkspace/live/${rootdomain}/latest
-  fi
-  # 証明書を各ドメインのsslディレクトリにコピー
-  #if [ ! "`echo $executed_body | grep -e 'No renewals'`" ]; then
-  # XXX一旦毎回
-    # 証明書を差し替える
-    if [ 0 -lt ${#topdomain} ]; then
-      rm -rf ${topdomainsslpath}/
-      mkdir -p ${topdomainsslpath}/
-      # 実態をちゃんとコピー
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/fullchain.pem ${topdomainsslpath}/private.pem
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/privkey.pem ${topdomainsslpath}/private.key
-      chown -R $httpduser:$httpduser ${topdomainsslpath}/
-      chmod -R 0600 ${topdomainsslpath}/
-    fi
-    if [ 0 -lt ${#webdomain} ]; then
-      rm -rf ${webdomainsslpath}/
-      mkdir -p ${webdomainsslpath}/
-      # 実態をちゃんとコピー
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/fullchain.pem ${webdomainsslpath}/private.pem
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/privkey.pem ${webdomainsslpath}/private.key
-      chown -R $httpduser:$httpduser ${webdomainsslpath}/
-      chmod -R 0600 ${webdomainsslpath}/
-    fi
-    if [ 0 -lt ${#apidomain} ]; then
-      rm -rf ${apidomainsslpath}/
-      mkdir -p ${apidomainsslpath}/
-      # 実態をちゃんとコピー
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/fullchain.pem ${apidomainsslpath}/private.pem
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/privkey.pem ${apidomainsslpath}/private.key
-      chown -R $httpduser:$httpduser ${apidomainsslpath}/
-      chmod -R 0600 ${apidomainsslpath}/
-    fi
-    if [ 0 -lt ${#mgrdomain} ]; then
-      rm -rf ${mgrdomainsslpath}/
-      mkdir -p ${mgrdomainsslpath}/
-      # 実態をちゃんとコピー
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/fullchain.pem ${mgrdomainsslpath}/private.pem
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/privkey.pem ${mgrdomainsslpath}/private.key
-      chown -R $httpduser:$httpduser ${mgrdomainsslpath}/
-      chmod -R 0600 ${mgrdomainsslpath}/
-    fi
-    if [ 0 -lt ${#staticdomain} ]; then
-      rm -rf ${staticdomainsslpath}/
-      mkdir -p ${staticdomainsslpath}/
-      # 実態をちゃんとコピー
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/fullchain.pem ${staticdomainsslpath}/private.pem
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/privkey.pem ${staticdomainsslpath}/private.key
-      chown -R $httpduser:$httpduser ${staticdomainsslpath}/
-      chmod -R 0600 ${staticdomainsslpath}/
-    fi
-    if [ 0 -lt ${#appdomain} ]; then
-      rm -rf ${appdomainsslpath}/
-      mkdir -p ${appdomainsslpath}/
-      # 実態をちゃんとコピー
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/fullchain.pem ${appdomainsslpath}/private.pem
-      \cp -rfH /etc/letsencrypt/live/${rootdomain}/privkey.pem ${appdomainsslpath}/private.key
-      chown -R $httpduser:$httpduser ${appdomainsslpath}/
-      chmod -R 0600 ${appdomainsslpath}/
-    fi
-    # XXX 勝手にhttpdをリスタートしたりはしない！
-  #fi
-else
-  # 更新失敗
-  executed_title="${executed_title} 失敗"
+# 証明書を差し替える
+if [ 0 -lt ${#topdomain} -a -e /root/.acme.sh/${rootdomain}/fullchain.cer ]; then
+  rm -rf ${topdomainsslpath}/
+  mkdir -p ${topdomainsslpath}/
+  # 実態をちゃんとコピー
+  \cp -rfH /root/.acme.sh/${rootdomain}/fullchain.cer ${topdomainsslpath}/private.pem
+  \cp -rfH /root/.acme.sh/${rootdomain}/${rootdomain}.key ${topdomainsslpath}/private.key
+  chown -R $httpduser:$httpduser ${topdomainsslpath}/
+  chmod -R 0600 ${topdomainsslpath}/
+fi
+if [ 0 -lt ${#webdomain} -a -e /root/.acme.sh/${rootdomain}/fullchain.cer ]; then
+  rm -rf ${webdomainsslpath}/
+  mkdir -p ${webdomainsslpath}/
+  # 実態をちゃんとコピー
+  \cp -rfH /root/.acme.sh/${rootdomain}/fullchain.cer ${webdomainsslpath}/private.pem
+  \cp -rfH /root/.acme.sh/${rootdomain}/${rootdomain}.key ${webdomainsslpath}/private.key
+  chown -R $httpduser:$httpduser ${webdomainsslpath}/
+  chmod -R 0600 ${webdomainsslpath}/
+fi
+if [ 0 -lt ${#apidomain} -a -e /root/.acme.sh/${rootdomain}/fullchain.cer ]; then
+  rm -rf ${apidomainsslpath}/
+  mkdir -p ${apidomainsslpath}/
+  # 実態をちゃんとコピー
+  \cp -rfH /root/.acme.sh/${rootdomain}/fullchain.cer ${apidomainsslpath}/private.pem
+  \cp -rfH /root/.acme.sh/${rootdomain}/${rootdomain}.key ${apidomainsslpath}/private.key
+  chown -R $httpduser:$httpduser ${apidomainsslpath}/
+  chmod -R 0600 ${apidomainsslpath}/
+fi
+if [ 0 -lt ${#mgrdomain} -a -e /root/.acme.sh/${rootdomain}/fullchain.cer ]; then
+  rm -rf ${mgrdomainsslpath}/
+  mkdir -p ${mgrdomainsslpath}/
+  # 実態をちゃんとコピー
+  \cp -rfH /root/.acme.sh/${rootdomain}/fullchain.cer ${mgrdomainsslpath}/private.pem
+  \cp -rfH /root/.acme.sh/${rootdomain}/${rootdomain}.key ${mgrdomainsslpath}/private.key
+  chown -R $httpduser:$httpduser ${mgrdomainsslpath}/
+  chmod -R 0600 ${mgrdomainsslpath}/
+fi
+if [ 0 -lt ${#staticdomain} -a -e /root/.acme.sh/${rootdomain}/fullchain.cer ]; then
+  rm -rf ${staticdomainsslpath}/
+  mkdir -p ${staticdomainsslpath}/
+  # 実態をちゃんとコピー
+  \cp -rfH /root/.acme.sh/${rootdomain}/fullchain.cer ${staticdomainsslpath}/private.pem
+  \cp -rfH /root/.acme.sh/${rootdomain}/${rootdomain}.key ${staticdomainsslpath}/private.key
+  chown -R $httpduser:$httpduser ${staticdomainsslpath}/
+  chmod -R 0600 ${staticdomainsslpath}/
+fi
+if [ 0 -lt ${#appdomain} -a -e /root/.acme.sh/${rootdomain}/fullchain.cer ]; then
+  rm -rf ${appdomainsslpath}/
+  mkdir -p ${appdomainsslpath}/
+  # 実態をちゃんとコピー
+  \cp -rfH /root/.acme.sh/${rootdomain}/fullchain.cer ${appdomainsslpath}/private.pem
+  \cp -rfH /root/.acme.sh/${rootdomain}/${rootdomain}.key ${appdomainsslpath}/private.key
+  chown -R $httpduser:$httpduser ${appdomainsslpath}/
+  chmod -R 0600 ${appdomainsslpath}/
 fi
 
 # チャットワークに結果送信
