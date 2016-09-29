@@ -118,7 +118,7 @@ localip=`expr $localip + ${#arr[@]}`
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
 sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
 sed -i '' -e "s/# config.vm.provider \"virtualbox\" do |vb|/config.vm.provider \"virtualbox\" do |vb|/" ${fpath}/Vagrantfile
-sed -i '' -e "s:# config.vm.synced_folder \"../data\"\, \"/vagrant_data\":config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\":" ${fpath}/Vagrantfile
+sed -i '' -e "s|# config.vm.synced_folder \"../data\"\, \"/vagrant_data\"|config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\", :create => \"true\",type:\"nfs\"|" ${fpath}/Vagrantfile
 sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
 sed -i '' -e "49 s/  #/    vb.cpus = 2/" ${fpath}/Vagrantfile
 sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
@@ -141,6 +141,11 @@ if ! grep "docker_autostart.service" ${fpath}/Vagrantfile > /dev/null 2>&1; then
   gsed -i -e "81i systemctl enable docker_autostart.service" ${fpath}/Vagrantfile
   gsed -i -e "82i systemctl start docker_autostart" ${fpath}/Vagrantfile
   gsed -i -e "83i systemctl restart nginx" ${fpath}/Vagrantfile
+fi
+if ! grep "mkdir -p \/cache\/nginx\/cache" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+  gsed -i -e "84i mkdir -p \/cache\/nginx\/cache" ${fpath}/Vagrantfile
+  gsed -i -e "85i mkdir -p \/cache\/nginx\/tmp" ${fpath}/Vagrantfile
+  gsed -i -e "86i chmod -R 0777 \/cache" ${fpath}/Vagrantfile
 fi
 # 不要な作業ファイルが出来るので削除
 rm -rf ${fpath}/Vagrantfile-e
