@@ -153,11 +153,20 @@ mkdir -p ${fpath}/cache/nginx
 sudo chmod -R 0777 ${fpath}/logs
 sudo chmod -R 0777 ${fpath}/cache/nginx
 sudo chmod -R 0777 ${fpath}/cache/nginx
+if [ -e ${fpath}/lib ]; then
+  sudo chmod -R 0777 ${fpath}/lib
+fi
+if [ -e ${fpath}/lib/FrameworkManager/autogenerate ]; then
+  sudo chmod -R 0777 ${fpath}/lib/FrameworkManager
+fi
 if [ -e ${fpath}/lib/FrameworkManager/autogenerate ]; then
   sudo chmod -R 0777 ${fpath}/lib/FrameworkManager/autogenerate
 fi
 if [ -e ${fpath}/lib/FrameworkManager/automigration ]; then
   sudo chmod -R 0777 ${fpath}/lib/FrameworkManager/automigration
+fi
+if [ -e ${fpath}/lib/${fdir}ProjectPackage/autogenerate ]; then
+  sudo chmod -R 0777 ${fpath}/lib/${fdir}ProjectPackage
 fi
 if [ -e ${fpath}/lib/${fdir}ProjectPackage/autogenerate ]; then
   sudo chmod -R 0777 ${fpath}/lib/${fdir}ProjectPackage/autogenerate
@@ -175,6 +184,10 @@ if [ -e ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf ]; then
   sed -i '' -e "s:/ProjectPackage/:/${fdir}ProjectPackage/:" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
 fi
 rm -rf ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf-e
+# Vagrant用にデフォルトのローカルフラグのDB設定を書き換える
+sed -i '' -e "s/\$host = \'localhost\'/\$host = \'mysqld\'/" ${fpath}/lib/GenericPackage/class/ORM/GenericMigrationManager.class.php
+sed -i '' -e "s/fwmpass@localhost/fwmpass@mysqld/" ${fpath}/lib/FrameworkManager/core/FrameworkManager.config.xml
+sed -i '' -e "s/fwmpass@localhost/fwmpass@mysqld/" ${fpath}/lib/FrameworkManager/sample/packages/ProjectPackage/core/Project.config.xml
 
 # hosts書換
 if ! grep "192.168.33.${localip}   api${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
@@ -211,7 +224,7 @@ fi
 if [ ${cmd} = 'start' ]; then
   # 開始
   echo 'start VM'
-  cd ~/VM/${fdir} && vagrant up && open https://fwm${basedomain}.localhost/
+  cd ~/VM/${fdir} && vagrant up && open https://fwm${basedomain}.localhost/migration.php
 fi
 
 if [ ${cmd} = 'stop' ]; then
