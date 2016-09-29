@@ -187,7 +187,7 @@ rm -rf ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf-e
 # Vagrant用にデフォルトのローカルフラグのDB設定を書き換える
 sed -i '' -e "s/\$host = \'localhost\'/\$host = \'mysqld\'/" ${fpath}/lib/GenericPackage/class/ORM/GenericMigrationManager.class.php
 sed -i '' -e "s/fwmpass@localhost/fwmpass@mysqld/" ${fpath}/lib/FrameworkManager/core/FrameworkManager.config.xml
-sed -i '' -e "s/fwmpass@localhost/fwmpass@mysqld/" ${fpath}/lib/FrameworkManager/sample/packages/ProjectPackage/core/Project.config.xml
+sed -i '' -e "s/projectpass@localhost/projectpass@mysqld/" ${fpath}/lib/FrameworkManager/sample/packages/ProjectPackage/core/Project.config.xml
 
 # hosts書換
 if ! grep "192.168.33.${localip}   api${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
