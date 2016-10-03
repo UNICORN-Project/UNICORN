@@ -127,25 +127,26 @@ sed -i '' -e "s/# config.vm.provision \"shell\", inline: <<-SHELL/config.vm.prov
 sed -i '' -e "70 s/# SHELL/SHELL/" ${fpath}/Vagrantfile
 if ! grep "docker_autostart.service" ${fpath}/Vagrantfile > /dev/null 2>&1; then
   echo 'add config.vm.provision'
-  gsed -i -e "70i ln -s \/var\/www\/ \/var\/www\/release" ${fpath}/Vagrantfile
-  gsed -i -e "71i sh -c \'cat << EOF > \/usr\/lib\/systemd\/system\/docker_autostart.service" ${fpath}/Vagrantfile
-  gsed -i -e "72i [Unit]" ${fpath}/Vagrantfile
-  gsed -i -e "73i Description=auto start of docker containers" ${fpath}/Vagrantfile
-  gsed -i -e "74i After=docker.service" ${fpath}/Vagrantfile
-  gsed -i -e "75i Requires=docker.service" ${fpath}/Vagrantfile
-  gsed -i -e "76i [Service]" ${fpath}/Vagrantfile
-  gsed -i -e "77i ExecStart=/bin/bash -c \"/usr/bin/docker start mysqld web\"" ${fpath}/Vagrantfile
-  gsed -i -e "78i [Install]" ${fpath}/Vagrantfile
-  gsed -i -e "79i WantedBy=multi-user.target" ${fpath}/Vagrantfile
-  gsed -i -e "80i EOF\'" ${fpath}/Vagrantfile
-  gsed -i -e "81i systemctl enable docker_autostart.service" ${fpath}/Vagrantfile
-  gsed -i -e "82i systemctl start docker_autostart" ${fpath}/Vagrantfile
-  gsed -i -e "83i systemctl restart nginx" ${fpath}/Vagrantfile
+  gsed -i -e "70i if [ ! -e \/var\/www\/release ]; then" ${fpath}/Vagrantfile
+  gsed -i -e "71i   ln -s \/var\/www\/ \/var\/www\/release" ${fpath}/Vagrantfile
+  gsed -i -e "72i fi" ${fpath}/Vagrantfile
+  gsed -i -e "73i sh -c \'cat << EOF > \/usr\/lib\/systemd\/system\/docker_autostart.service" ${fpath}/Vagrantfile
+  gsed -i -e "74i [Unit]" ${fpath}/Vagrantfile
+  gsed -i -e "75i Description=auto start of docker containers" ${fpath}/Vagrantfile
+  gsed -i -e "76i After=docker.service" ${fpath}/Vagrantfile
+  gsed -i -e "77i Requires=docker.service" ${fpath}/Vagrantfile
+  gsed -i -e "78i [Service]" ${fpath}/Vagrantfile
+  gsed -i -e "79i ExecStart=/bin/bash -c \"/usr/bin/docker start mysqld web\"" ${fpath}/Vagrantfile
+  gsed -i -e "80i [Install]" ${fpath}/Vagrantfile
+  gsed -i -e "81i WantedBy=multi-user.target" ${fpath}/Vagrantfile
+  gsed -i -e "82i EOF\'" ${fpath}/Vagrantfile
+  gsed -i -e "83i systemctl enable docker_autostart.service" ${fpath}/Vagrantfile
+  gsed -i -e "84i docker exec web systemctl restart nginx" ${fpath}/Vagrantfile
 fi
-if ! grep "mkdir -p \/cache\/nginx\/cache" ${fpath}/Vagrantfile > /dev/null 2>&1; then
-  gsed -i -e "84i mkdir -p \/cache\/nginx\/cache" ${fpath}/Vagrantfile
-  gsed -i -e "85i mkdir -p \/cache\/nginx\/tmp" ${fpath}/Vagrantfile
-  gsed -i -e "86i chmod -R 0777 \/cache" ${fpath}/Vagrantfile
+if ! grep "/etc/udev/rules.d/70-persistent-net.rules" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+  gsed -i -e "85i if [ ! -e \/etc\/udev\/rules.d\/70-persistent-net.rules ]; then" ${fpath}/Vagrantfile
+  gsed -i -e "86i ln -s -f \/dev\/null \/etc\/udev\/rules.d\/70-persistent-net.rules" ${fpath}/Vagrantfile
+  gsed -i -e "87i fi" ${fpath}/Vagrantfile
 fi
 # 不要な作業ファイルが出来るので削除
 rm -rf ${fpath}/Vagrantfile-e
@@ -193,6 +194,7 @@ rm -rf ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf-e
 sed -i '' -e "s/\$host = \'localhost\'/\$host = \'mysqld\'/" ${fpath}/lib/GenericPackage/class/ORM/GenericMigrationManager.class.php
 sed -i '' -e "s/fwmpass@localhost/fwmpass@mysqld/" ${fpath}/lib/FrameworkManager/core/FrameworkManager.config.xml
 sed -i '' -e "s/projectpass@localhost/projectpass@mysqld/" ${fpath}/lib/FrameworkManager/sample/packages/ProjectPackage/core/Project.config.xml
+sudo chmod -R 0755 ${fpath}/lib/FrameworkManager/template/managedocs/supple/myadm/config.*
 
 # hosts書換
 if ! grep "192.168.33.${localip}   api${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
@@ -229,7 +231,7 @@ fi
 if [ ${cmd} = 'start' ]; then
   # 開始
   echo 'start VM'
-  cd ~/VM/${fdir} && vagrant up && open https://fwm${basedomain}.localhost/migration.php
+  cd ~/VM/${fdir} && vagrant up && vagrant ssh -- 'sudo docker exec web systemctl restart nginx' && open https://fwm${basedomain}.localhost/migration.php
 fi
 
 if [ ${cmd} = 'stop' ]; then
@@ -241,13 +243,13 @@ fi
 if [ ${cmd} = 'package' ]; then
   # アーカイブ
   echo 'export VM image'
-  cd ~/VM/${fdir} && vagrant halt && vagrant package && vagrant up
+  cd ~/VM/${fdir} && vagrant halt && vagrant package && vagrant up && vagrant ssh -- 'sudo docker exec web systemctl restart nginx'
 fi
 
 if [ ${cmd} = 'reload' ]; then
   # 再読込
   echo 'reload VM'
-  cd ~/VM/${fdir} && vagrant halt && vagrant up
+  cd ~/VM/${fdir} && vagrant halt && vagrant up && vagrant ssh -- 'sudo docker exec web systemctl restart nginx'
 fi
 
 # ログイン
