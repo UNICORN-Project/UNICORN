@@ -509,6 +509,10 @@ fi
 chmod -R 0755 /etc/cron.daily/
 # 行置換
 sed -i -e "15 s/.*/10 5 * * * root run-parts \/etc\/cron.daily/" /etc/crontab
+# JST時間でcronが実行される場合は以下の行を使って下さい
+#sed -i -e "15 s/.*/10 5 * * * root run-parts \/etc\/cron.daily/" /etc/crontab
+yum install -y cronie-noanacron
+yum remove -y cronie-anacron
 
 # 証明書を読み込み直す
 echo "${restartcmd}"

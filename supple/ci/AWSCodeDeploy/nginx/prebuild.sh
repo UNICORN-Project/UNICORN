@@ -90,10 +90,11 @@ if [ ! -e /etc/nginx/nginx.conf ]; then
   rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
   yum -y install libwebp --disablerepo=amzn-main --enablerepo=epel
   yum -y install libmcrypt libtool-ltdl libtidy libXpm libtiff tcl gd-last autoconf automake
-  yum install --enablerepo=epel,remi,remi-php70 nginx php70 php70-php-devel php70-php-fpm php70-php-mbstring php70-php-mysqlnd php70-php-xml php70-php-xmlrpc php70-php-soap php70-php-opcache php70-php-mcrypt php70-php-gd php70-php-pecl-apcu php70-php-pecl-apcu-bc php70-php-pecl-apcu-devel php70-php-pecl-memcache php70-php-pecl-memcached -y
+  yum install --enablerepo=epel,remi,remi-php70 nginx php70 php70-php-devel php70-php-mbstring php70-php-fpm php70-php-mbstring php70-php-mysqlnd php70-php-xml php70-php-xmlrpc php70-php-soap php70-php-opcache php70-php-mcrypt php70-php-gd php70-php-pecl-zip php70-php-pecl-apcu php70-php-pecl-apcu-bc php70-php-pecl-apcu-devel php70-php-pecl-memcache php70-php-pecl-memcached -y
   # phpコマンドで実行出来るようにリンクを貼る
   ln -s /usr/bin/php70 /usr/bin/php
   ln -s /etc/rc.d/init.d/php70-php-fpm /etc/rc.d/init.d/php-fpm
+  source /opt/remi/php70/enable
   # Nginxを1.9以降にアップデートするために、一度削除
   yum remove -y nginx
   rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
