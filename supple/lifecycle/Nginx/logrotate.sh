@@ -196,9 +196,6 @@ if [ ! -e ${mountpath}/ ]; then
   # S3をマウント
   /etc/gocode/bin/goofys -o allow_other --uid "$(id -u nginx)" --gid "$(id -g nginx)" ${backetname}-mnt ${mountpath}
 fi
-# 3bkの場合
-#aws s3 mb s3://anlimiteddev-mnt
-#/etc/gocode/bin/goofys -o allow_other --uid "$(id -u nginx)" --gid "$(id -g nginx)" anlimiteddev-mnt /s3mnt
 
 # fluentdのインストール
 if [ ! -e /opt/td-agent/embedded/bin/ ]; then

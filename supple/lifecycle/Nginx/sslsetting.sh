@@ -243,9 +243,6 @@ if [ ! -e ${mountpath}/ ]; then
 fi
 # S3をマウント
 /etc/gocode/bin/goofys -o allow_other --uid "$(id -u nginx)" --gid "$(id -g nginx)" ${backetname}-mnt ${mountpath}
-# 3bkの場合
-#aws s3 mb s3://anlimiteddev-mnt
-#/etc/gocode/bin/goofys -o allow_other --uid "$(id -u nginx)" --gid "$(id -g nginx)" anlimiteddev-mnt /s3mnt
 
 # s3マウントを待つ
 sleep 1
