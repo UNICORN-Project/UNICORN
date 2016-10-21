@@ -155,10 +155,10 @@ rm -rf ${fpath}/Vagrantfile-e
 if [ ! -e ${fpath}/.ssl/ ]; then
   cp -Rf ${fpath}/supple/setting/NginxWithPHPFPM/.ssl ${fpath}/
 fi
-mkdir -p ${fpath}/cache/nginx
+#mkdir -p ${fpath}/cache/nginx
 sudo chmod -R 0777 ${fpath}/logs
-sudo chmod -R 0777 ${fpath}/cache/nginx
-sudo chmod -R 0777 ${fpath}/cache/nginx
+#sudo chmod -R 0777 ${fpath}/cache/nginx
+#sudo chmod -R 0777 ${fpath}/cache/nginx
 if [ -e ${fpath}/lib ]; then
   sudo chmod -R 0777 ${fpath}/lib
 fi
