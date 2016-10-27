@@ -186,8 +186,10 @@ if [ -e ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf ]; then
   sed -i '' -e "s/localapiservice.domain/api${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localwebservice.domain/web${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localfwmservice.domain/fwm${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
-  # 仮で書き換えてしまう
-  sed -i '' -e "s:/ProjectPackage/:/${fdir}ProjectPackage/:" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
+  if [ ! ${fdir} = 'unicorn-project' ]; then
+    # 仮で書き換えてしまう
+    sed -i '' -e "s:/FrameworkManager/sample/packages/ProjectPackage/:/${fdir}ProjectPackage/:" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
+  fi
 fi
 rm -rf ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf-e
 # Vagrant用にデフォルトのローカルフラグのDB設定を書き換える
@@ -208,7 +210,7 @@ if ! grep "192.168.33.${localip}   fwm${basedomain}.localhost" /etc/hosts > /dev
 fi
 
 # virtualマシンが追加済みかどうかチェックする
-if [ ! "`echo $vmlist | grep -e ${fdir}`" ]; then
+if [ ${cmd} = 'start' ]; then
   # まだ無いので初期化
   echo 'create VM'
   # BOXを追加

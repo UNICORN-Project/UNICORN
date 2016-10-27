@@ -501,14 +501,15 @@ _EOT_
   curl -s -S -X POST --data-urlencode "payload={\"channel\": \"${CHANNEL}\", \"username\": \"${BOTNAME}\", \"icon_emoji\": \"${FACEICON}\", \"text\": \"${MESSAGE}${WEBMESSAGE}\" }" ${webhookurl} >/dev/null
 fi
 
-# /etc/cron.daily/に自動登録
+# /etc/crondaily/に自動登録
+mkdir -p /etc/crondaily
 # このシェルファイルが更新されてる場合もあるので、毎回書き換える
-\cp -rf ${mepath} /etc/cron.daily/
-chmod -R 0755 /etc/cron.daily/
+\cp -rf ${mepath} /etc/crondaily/
+chmod -R 0755 /etc/crondaily/
 # 行置換
-sed -i -e "15 s/.*/10 20 * * * root run-parts \/etc\/cron.daily/" /etc/crontab
+sed -i -e "15 s/.*/10 20 * * * root run-parts \/etc\/crondaily/" /etc/crontab
 # JST時間でcronが実行される場合は以下の行を使って下さい
-#sed -i -e "15 s/.*/10 5 * * * root run-parts \/etc\/cron.daily/" /etc/crontab
+#sed -i -e "15 s/.*/10 5 * * * root run-parts \/etc\/crondaily/" /etc/crontab
 yum install -y cronie-noanacron
 yum remove -y cronie-anacron
 
