@@ -148,6 +148,10 @@ if ! grep "/etc/udev/rules.d/70-persistent-net.rules" ${fpath}/Vagrantfile > /de
   gsed -i -e "86i ln -s -f \/dev\/null \/etc\/udev\/rules.d\/70-persistent-net.rules" ${fpath}/Vagrantfile
   gsed -i -e "87i fi" ${fpath}/Vagrantfile
 fi
+if ! grep "natdnshostresolver1" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+  gsed -i -e "52i vb.customize [\"modifyvm\", :id, \"--natdnsproxy1\", \"on\"]" ${fpath}/Vagrantfile
+  gsed -i -e "53i vb.customize [\"modifyvm\", :id, \"--natdnshostresolver1\", \"on\"]" ${fpath}/Vagrantfile
+fi
 # 不要な作業ファイルが出来るので削除
 rm -rf ${fpath}/Vagrantfile-e
 
@@ -186,7 +190,7 @@ if [ -e ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf ]; then
   sed -i '' -e "s/localapiservice.domain/api${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localwebservice.domain/web${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localfwmservice.domain/fwm${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
-  if [ ! ${fdir} = 'unicorn-project' ]; then
+  if [ ! ${fdir} = 'UNICORN-Project' ]; then
     # 仮で書き換えてしまう
     sed -i '' -e "s:/FrameworkManager/sample/packages/ProjectPackage/:/${fdir}ProjectPackage/:" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   fi
