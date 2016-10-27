@@ -506,9 +506,9 @@ mkdir -p /etc/crondaily
 \cp -rf ${mepath} /etc/crondaily/
 chmod -R 0755 /etc/crondaily/
 # 行置換
-sed -i -e "15 s/.*/10 20 * * * root run-parts \/etc\/crondaily/" /etc/crontab
+#sed -i -e "15 s/.*/10 20 * * * root run-parts \/etc\/crondaily/" /etc/crontab
 # JST時間でcronが実行される場合は以下の行を使って下さい
-#sed -i -e "15 s/.*/10 5 * * * root run-parts \/etc\/crondaily/" /etc/crontab
+sed -i -e "15 s/.*/10 5 * * * root run-parts \/etc\/crondaily/" /etc/crontab
 yum install -y cronie-noanacron
 yum remove -y cronie-anacron
 
