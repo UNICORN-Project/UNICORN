@@ -32,3 +32,4 @@ setupunicorn
 /nbproject/
 /.vagrant
 /cache
+/logs
