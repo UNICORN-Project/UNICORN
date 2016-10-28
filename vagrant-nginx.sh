@@ -107,14 +107,14 @@ if [ ! -e ~/VM/${fdir}/ ]; then
 fi
 
 # boxの数に応じてローカルIPを変える
-localip=10
+localip=11
 vmlist=`vagrant box list`
 vmlist=`echo ${vmlist} | sed -e "s/) /)@/g"`
 vmlist=`echo $vmlist | tr -s ' ' '+'`
 arr=( `echo $vmlist | tr -s '@' ' '`)
 localip=`expr $localip + ${#arr[@]}`
 
-echo 'localip=192.168.33.'$localip
+echo 'VM IP=192.168.33.'$localip
 
 # Vagrantfileを環境に合わせて書き換える
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
