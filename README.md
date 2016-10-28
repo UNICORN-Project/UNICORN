@@ -6,13 +6,26 @@ UNICORN
 
 
 
-##■利用開始方法  
+## ■利用開始方法  
 
-###composerを使ったインストール  
+### curlで一発簡単インストール   
+※現状ではセキュリティの観点から、利用法を理解していない場合の「curlで一発簡単インストール」手順は推奨しません。  
+
+1.UNICORN環境を構築するディレクトリを作成・移動し、以下のコマンドを実行します。
+
+```
+curl https://unicorn-project.github.io/install.sh | sh
+```
+
+2.「Wellcom UNICORN」とコンソールに表示されたらインストールは完了です。  
+環境に合わせた初期化を実行して下さい。
+
+### composerを使ったインストール  
 ※現状ではセキュリティの観点から、利用法を理解していない場合の「composerを使ったインストール」手順は推奨しません。  
 対応がなされるまでは、「手動インストール」手順を推奨します。
 
 1.あなたのcomposer.jsonに以下のパッケージを追記し、「php composer.phar install」を実行します。
+
 ```
     "config": {
         "disable-tls": true,
@@ -46,7 +59,7 @@ UNICORN
 ※最新版がどうしても入手できない場合、composerのキャッシュに古いバージョンが残ってしまっている場合があります。
 そう言う場合は「~/.composer」の中身を削除(sudo rm -rf ~/.composer/)してから「php composer.phar install」を試して下さい。
 
-###手動インストール  
+### 手動インストール  
 
 1.以下のリンクからUNICORNを入手して下さい。  
 
@@ -59,14 +72,14 @@ https://github.com/UNICORN-Project/UNICORN/archive/master.zip
 4.コンソールから「UNICORN」ディレクトリへ移動し、「php composer.phar install」を実行して下さい。  
 
 
-##■その他リファレンス  
+## ■その他リファレンス  
 
-###UNICORN WEB  
+### UNICORN WEB  
 
 http://UNICORN-Project.github.io/
 
 
-###APIドキュメント  
+### APIドキュメント  
 
 サーバーサイド  
 
@@ -81,13 +94,13 @@ Android
 https://cdn.rawgit.com/UNICORN-Project/UNICORN/master/docs/android/html/index.html  
 
 
-###開発ブログ  
+### 開発ブログ  
 
 http://saimushi.github.io/
 
 
 
-##■ライセンスについて  
+## ■ライセンスについて  
 
 **MITライセンスとします。**
 

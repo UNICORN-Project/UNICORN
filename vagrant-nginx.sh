@@ -114,9 +114,12 @@ vmlist=`echo $vmlist | tr -s ' ' '+'`
 arr=( `echo $vmlist | tr -s '@' ' '`)
 localip=`expr $localip + ${#arr[@]}`
 
+echo 'localip=192.168.33.'$localip
+
 # Vagrantfileを環境に合わせて書き換える
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
 sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
+sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.11\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
 sed -i '' -e "s/# config.vm.provider \"virtualbox\" do |vb|/config.vm.provider \"virtualbox\" do |vb|/" ${fpath}/Vagrantfile
 sed -i '' -e "s|# config.vm.synced_folder \"../data\"\, \"/vagrant_data\"|config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\", :create => \"true\",type:\"nfs\"|" ${fpath}/Vagrantfile
 sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
@@ -216,16 +219,18 @@ fi
 # virtualマシンが追加済みかどうかチェックする
 if [ ${cmd} = 'start' ]; then
   # まだ無いので初期化
-  echo 'create VM'
-  # BOXを追加
-  if [ ! 0 -lt ${#imageFilePath} ]; then
-    # NetからUNICORNのイメージファイルをDLしてbox add
-    echo "vagrant box add ${fdir} https://dl.dropboxusercontent.com/u/22810487/VM/nginx110php70mysql56andmemcached14.box --force"
-    vagrant box add ${fdir} https://dl.dropboxusercontent.com/u/22810487/VM/nginx110php70mysql56andmemcached14.box --force
-  else
-    # ファイル指定でのbox add
-    echo "vagrant box add ${fdir} ${imageFilePath} --force"
-    vagrant box add ${fdir} ${imageFilePath} --force
+  if [ ! "`echo $vmlist | grep -e $fdir`" ]; then
+    echo 'create VM'
+    # BOXを追加
+    if [ ! 0 -lt ${#imageFilePath} ]; then
+      # NetからUNICORNのイメージファイルをDLしてbox add
+      echo "vagrant box add ${fdir} https://dl.dropboxusercontent.com/u/22810487/VM/nginx110php70mysql56andmemcached14.box --force"
+      vagrant box add ${fdir} https://dl.dropboxusercontent.com/u/22810487/VM/nginx110php70mysql56andmemcached14.box --force
+    else
+      # ファイル指定でのbox add
+      echo "vagrant box add ${fdir} ${imageFilePath} --force"
+      vagrant box add ${fdir} ${imageFilePath} --force
+    fi
   fi
   # vagrantを起動
   if [ ! ${cmd} = 'start' ]; then
@@ -237,6 +242,13 @@ fi
 if [ ${cmd} = 'start' ]; then
   # 開始
   echo 'start VM'
+  echo ''
+  echo 'デフォルトの管理画面のID、PASSは以下になります。'
+  echo '※ログイン後、MyAdminなどから直ぐに変更する事をオススメします！'
+  echo ''
+  echo 'ID: root@super.user'
+  echo 'PASS: R00t@sup3r'
+  echo ''
   cd ~/VM/${fdir} && vagrant up && vagrant ssh -- 'sudo docker exec web systemctl restart nginx' && open https://fwm${basedomain}.localhost/migration.php
 fi
 
