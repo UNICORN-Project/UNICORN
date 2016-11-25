@@ -106,20 +106,25 @@ if [ ! -e ~/VM/${fdir}/ ]; then
   ln -s ${fpath} ~/VM/
 fi
 
-# boxの数に応じてローカルIPを変える
-localip=11
 vmlist=`vagrant box list`
 vmlist=`echo ${vmlist} | sed -e "s/) /)@/g"`
 vmlist=`echo $vmlist | tr -s ' ' '+'`
 arr=( `echo $vmlist | tr -s '@' ' '`)
-localip=`expr $localip + ${#arr[@]}`
 
-echo 'VM IP=192.168.33.'$localip
+# boxの数に応じてローカルIPを変える
+localip=''
+if grep "192.168.33.10" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+  localip=11
+  localip=`expr $localip + ${#arr[@]}`
+  echo 'VM IP=192.168.33.'$localip
+fi
 
 # Vagrantfileを環境に合わせて書き換える
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
-sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
-sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.11\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
+if [ 0 -lt ${#localip} ]; then
+  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
+  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.11\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
+fi
 sed -i '' -e "s/# config.vm.provider \"virtualbox\" do |vb|/config.vm.provider \"virtualbox\" do |vb|/" ${fpath}/Vagrantfile
 sed -i '' -e "s|# config.vm.synced_folder \"../data\"\, \"/vagrant_data\"|config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\", :create => \"true\",type:\"nfs\"|" ${fpath}/Vagrantfile
 sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
@@ -206,14 +211,16 @@ sed -i '' -e "s/projectpass@localhost/projectpass@mysqld/" ${fpath}/lib/Framewor
 sudo chmod -R 0755 ${fpath}/lib/FrameworkManager/template/managedocs/supple/myadm/config.*
 
 # hosts書換
-if ! grep "192.168.33.${localip}   api${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
-  sudo sed -i '' -e "1s/^/192.168.33.${localip}   api${basedomain}.localhost"\\$'\n'"/" /etc/hosts
-fi
-if ! grep "192.168.33.${localip}   web${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
-  sudo sed -i '' -e "1s/^/192.168.33.${localip}   web${basedomain}.localhost"\\$'\n'"/" /etc/hosts
-fi
-if ! grep "192.168.33.${localip}   fwm${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
-  sudo sed -i '' -e "1s/^/192.168.33.${localip}   fwm${basedomain}.localhost"\\$'\n'"/" /etc/hosts
+if [ 0 -lt ${#localip} ]; then
+  if ! grep "192.168.33.${localip}   api${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
+    sudo sed -i '' -e "1s/^/192.168.33.${localip}   api${basedomain}.localhost"\\$'\n'"/" /etc/hosts
+  fi
+  if ! grep "192.168.33.${localip}   web${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
+    sudo sed -i '' -e "1s/^/192.168.33.${localip}   web${basedomain}.localhost"\\$'\n'"/" /etc/hosts
+  fi
+  if ! grep "192.168.33.${localip}   fwm${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
+    sudo sed -i '' -e "1s/^/192.168.33.${localip}   fwm${basedomain}.localhost"\\$'\n'"/" /etc/hosts
+  fi
 fi
 
 # virtualマシンが追加済みかどうかチェックする
