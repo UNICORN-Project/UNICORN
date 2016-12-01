@@ -67,7 +67,7 @@ projectname='SPAJAMProject'
 # httpd実行時の権限ユーザー名
 httpduser=nginx
 # Nginxの設定再読み込みコマンドの定義(最後に自動実行してくれる)
-restartcmd="service nginx restart"
+restartcmd="service nginx restart && service php-fpm restart"
 # Apacheの場合は↓を使って下さい
 #restartcmd="service httpd restart"
 # s3をマウントするパス設定(パスは無い自動生成されます)
