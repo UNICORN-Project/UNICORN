@@ -3,11 +3,11 @@
 # 自分自身のファイルパス
 mepath=${0}
 
-# Letsencrypt(certbot)によるSSL証明書自動設定・自動更新登録
+# Letsencrypt(acme.sh)によるSSL証明書自動設定・自動更新登録
 # (!!!) EC2専用です！
 # ※ デフォルトは毎日朝5時10分に自動更新が走るように設定されます。
-# ※ もしかしたら https://github.com/Neilpang/acme.sh の方が簡単で確実かも知れません！
 # ※ このShellはオートスケール・複数Frontサーバーでの動作が可能です。
+# ※ acme.shの詳細はコチラ https://github.com/Neilpang/acme.sh
 # 
 # Create by S.Ohno
 # Create at 2016-09-15
@@ -40,13 +40,13 @@ mepath=${0}
 
 # 環境変数
 # AWS IAMのS3リードライト権限のあるKEY情報を定義
-export AWS_ACCESS_KEY_ID=AKIAJ24CTQHWUMKUE7CQ
-export AWS_SECRET_ACCESS_KEY=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
+export AWS_ACCESS_KEY_ID=XXX
+export AWS_SECRET_ACCESS_KEY=XXXXXXXXX
 export AWS_DEFAULT_REGION=ap-northeast-1
 
 # 変数定義
 # Slack設定(webhookurlがある場合のみ処理されます)
-webhookurl=https://hooks.slack.com/services/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
+webhookurl=''
 # サーバー監視通知チャンネル
 channelname=projects
 # 通知先(@xxx @xxx...形式で指定)
@@ -63,7 +63,7 @@ members='[To:1234] [To:1234]'
 notifymail=saimushi@gmail.com
 
 # プロジェクト名(UNICORN以外の場合は''(空文字)にして下さい)
-projectname='SPAJAMProject'
+projectname='Project'
 # httpd実行時の権限ユーザー名
 httpduser=nginx
 # Nginxの設定再読み込みコマンドの定義(最後に自動実行してくれる)
@@ -84,12 +84,12 @@ mgrdomainsslpath=/var/www/.ssl
 staticdomainsslpath=/var/www/.ssl
 # アプリドメイン用SSL証明書配置パス(パスは無い自動生成されます・httpdの設定・変更は自動ではしません)
 appdomainsslpath=/var/www/.ssl
-topdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
-webdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
-apidomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/apidocs
+topdomaindocumentrootpath=/var/www/release/webdocs
+webdomaindocumentrootpath=/var/www/release/webdocs
+apidomaindocumentrootpath=/var/www/release/apidocs
 mgrdomaindocumentrootpath=/var/www/release/lib/FrameworkManager/template/managedocs
-staticdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
-appdomaindocumentrootpath=/var/www/release/lib/SPAJAMProjectPackage/webdocs
+staticdomaindocumentrootpath=/var/www/release/webdocs
+appdomaindocumentrootpath=/var/www/release/webdocs
 # ログパス
 logpath=/var/www/logs
 isdev=/var/www/.dev
@@ -97,26 +97,26 @@ isProd=/var/www/.production
 
 # 環境によって設定が別れる変数の定義
 # 開発環境用
-devtopdomain=devspajam2016.otkr.net
+devtopdomain=dev.your.domain
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
-devwebdomain=''
+devwebdomain=devweb.your.domain
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
-devapidomain=devapispajam2016.otkr.net
-devmgrdomain=devfwmspajam2016.otkr.net
+devapidomain=devapi.your.domain
+devmgrdomain=devfwm.your.domain
 devstaticdomain=''
 devappdomain=''
-devbacketname=spajam2016dev
+devbacketname=projectbucketdev
 devregion=ap-northeast-1
 # リリース環境用
-prodtopdomain=spajam2016.otkr.net
+prodtopdomain=your.domain
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
-prodwebdomain=''
+prodwebdomain=www.your.domain
 # SSLが不要なドメインの場合は、このようにドメイン設定を空文字にして下さい。documentrootpathは仮想で構わないので設定しておいて下さい
-prodapidomain=apispajam2016.otkr.net
-prodmgrdomain=fwmspajam2016.otkr.net
+prodapidomain=api.your.domain
+prodmgrdomain=fwm.your.domain
 prodstaticdomain=''
 prodappdomain=''
-prodbacketname=spajam2016
+prodbacketname=projectbucket
 prodregion=ap-northeast-1
 
 # ------------------------------- 変数定義ココまで(適宜変更) ------------------------------- 
