@@ -50,7 +50,7 @@ webhookurl=''
 # サーバー監視通知チャンネル
 channelname=projects
 # 通知先(@xxx @xxx...形式で指定)
-users='@saimushi '
+users='@user1 user2 '
 
 # チャットワーク設定(apitokenが在る場合のみ処理されます)
 apitoken=''
@@ -60,7 +60,7 @@ roomid=''
 members='[To:1234] [To:1234]'
 
 # メール設定(メール通知が在る場合は通知先としても使われる)
-notifymail=saimushi@gmail.com
+notifymail=sslnotify@example.com
 
 # プロジェクト名(UNICORN以外の場合は''(空文字)にして下さい)
 projectname='Project'
