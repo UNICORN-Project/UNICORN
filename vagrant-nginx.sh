@@ -116,8 +116,9 @@ localip=''
 if grep "192.168.33.10" ${fpath}/Vagrantfile > /dev/null 2>&1; then
   localip=11
   localip=`expr $localip + ${#arr[@]}`
-  echo 'VM IP=192.168.33.'$localip
+  sed -i '' -e "s/localip='21'/localip='${localip}'/" ${fpath}/vagrant-nginx.sh
 fi
+echo 'VM IP=192.168.33.'$localip
 
 # Vagrantfileを環境に合わせて書き換える
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
