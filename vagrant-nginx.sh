@@ -232,8 +232,8 @@ if [ ${cmd} = 'start' ]; then
     # BOXを追加
     if [ ! 0 -lt ${#imageFilePath} ]; then
       # NetからUNICORNのイメージファイルをDLしてbox add
-      echo "vagrant box add ${fdir} https://dl.dropboxusercontent.com/u/22810487/VM/nginx110php70mysql56andmemcached14.box --force"
-      vagrant box add ${fdir} https://dl.dropboxusercontent.com/u/22810487/VM/nginx110php70mysql56andmemcached14.box --force
+      echo "wget -O nginx110php70mysql56-base.box https://www.dropbox.com/s/cedt6354z4ubh70/nginx110php70mysql56andmemcached14.box?dl=0 |vagrant box add --name ${fdir} nginx110php70mysql56-base.box --force"
+      wget -O nginx110php70mysql56-base.box https://www.dropbox.com/s/cedt6354z4ubh70/nginx110php70mysql56andmemcached14.box?dl=0 |vagrant box add --name ${fdir} nginx110php70mysql56-base.box --force
     else
       # ファイル指定でのbox add
       echo "vagrant box add ${fdir} ${imageFilePath} --force"
