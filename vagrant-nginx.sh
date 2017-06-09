@@ -123,8 +123,8 @@ echo 'VM IP=192.168.33.'$localip
 # Vagrantfileを環境に合わせて書き換える
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
 if [ 0 -lt ${#localip} ]; then
-  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
-  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.11\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\"/" ${fpath}/Vagrantfile
+  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\",auto_config: false/" ${fpath}/Vagrantfile
+  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.11\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\",auto_config: false/" ${fpath}/Vagrantfile
 fi
 sed -i '' -e "s/# config.vm.provider \"virtualbox\" do |vb|/config.vm.provider \"virtualbox\" do |vb|/" ${fpath}/Vagrantfile
 sed -i '' -e "s|# config.vm.synced_folder \"../data\"\, \"/vagrant_data\"|config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\", :create => \"true\",type:\"nfs\"|" ${fpath}/Vagrantfile
