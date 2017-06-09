@@ -128,8 +128,8 @@ if [ 0 -lt ${#localip} ]; then
 fi
 sed -i '' -e "s/# config.vm.provider \"virtualbox\" do |vb|/config.vm.provider \"virtualbox\" do |vb|/" ${fpath}/Vagrantfile
 sed -i '' -e "s|# config.vm.synced_folder \"../data\"\, \"/vagrant_data\"|config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\", :create => \"true\",type:\"nfs\"|" ${fpath}/Vagrantfile
-sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
-sed -i '' -e "49 s/  #/    vb.cpus = 2/" ${fpath}/Vagrantfile
+# sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
+sed -i '' -e "49 s/  #/    vb.cpus = 1/" ${fpath}/Vagrantfile
 sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
 sed -i '' -e "52 s/# end/end/" ${fpath}/Vagrantfile
 sed -i '' -e "s/# config.vm.provision \"shell\", inline: <<-SHELL/config.vm.provision \"shell\", inline: <<-SHELL/" ${fpath}/Vagrantfile
