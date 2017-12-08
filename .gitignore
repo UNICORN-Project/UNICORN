@@ -33,3 +33,4 @@ setupunicorn
 /.vagrant
 /cache
 /logs
+/*.box

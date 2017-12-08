@@ -17,15 +17,20 @@ if [ ! 0 -lt ${#cmd} ]; then
   echo 'start :VMを作成起動します。'
   echo 'login :VMにログインします。'
   echo 'reload :VMを再起動し、VMにログインします。その際、新しい設定の読み込みを試みます。'
-  exit;
+  exit 0;
 fi
 
 # 削除は即
 if [ ${cmd} = 'remove' ]; then
   # 停止
   echo 'remove VM'
+  echo "cd ~/VM/${fdir} && vagrant box remove ${fdir} && vagrant destroy"
   cd ~/VM/${fdir} && vagrant box remove ${fdir} && vagrant destroy
-  exit
+  echo "sudo rm -rf ~/VM/${fdir}/.vagrant"
+  sudo rm -rf ~/VM/${fdir}/.vagrant
+  echo "sudo rm -rf ~/VM/${fdir}"
+  sudo rm -rf ~/VM/${fdir}
+  exit 0;
 fi
 
 # 必要なパッケージのインストール
@@ -89,6 +94,16 @@ if [ ! "`which vagrant | grep -e 'vagrant'`" ]; then
   brew cask install vagrant
 fi
 
+# vagrant hostsupdaterの存在チェック
+vplist=`vagrant plugin list`
+vplist=`echo ${vplist} | sed -e "s/) /)@/g"`
+vplist=`echo $vplist | tr -s ' ' '+'`
+arr=( `echo $vplist | tr -s '@' ' '`)
+if [ ! "`echo $vplist | grep -e hostsupdater`" ]; then
+  echo 'vagrant plugin install vagrant-hostsupdater'
+  vagrant plugin install vagrant-hostsupdater
+fi
+
 # gsed入れとく
 if [ ! -e /usr/local/opt/gnu-sed/ ]; then
   echo 'sudo chown -R $USER /usr/local'
@@ -116,26 +131,29 @@ localip=''
 if grep "192.168.33.10" ${fpath}/Vagrantfile > /dev/null 2>&1; then
   localip=11
   localip=`expr $localip + ${#arr[@]}`
-  sed -i '' -e "s/localip='21'/localip='${localip}'/" ${fpath}/vagrant-nginx.sh
+  sed -i '' -e "130 s/localip=''/localip='${localip}'/" ${fpath}/vagrant-nginx.sh
 fi
 echo 'VM IP=192.168.33.'$localip
 
 # Vagrantfileを環境に合わせて書き換える
 sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
 if [ 0 -lt ${#localip} ]; then
-  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\",auto_config: false/" ${fpath}/Vagrantfile
-  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.11\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\",auto_config: false/" ${fpath}/Vagrantfile
+  sed -i '' -e "s/config.vm.network \"private_network\", ip: \"192.168.33.10\"/config.vm.network \"private_network\", ip: \"192.168.33.${localip}\", auto_config: false/" ${fpath}/Vagrantfile
 fi
+
+# Vagrantfileを環境に合わせて書き換える
+sed -i '' -e "s/config.vm.box = \"base\"/config.vm.box = \"${fdir}\"/" ${fpath}/Vagrantfile
 sed -i '' -e "s/# config.vm.provider \"virtualbox\" do |vb|/config.vm.provider \"virtualbox\" do |vb|/" ${fpath}/Vagrantfile
 sed -i '' -e "s|# config.vm.synced_folder \"../data\"\, \"/vagrant_data\"|config.vm.synced_folder \"~/VM/${fdir}\"\, \"/var/www\", :create => \"true\",type:\"nfs\"|" ${fpath}/Vagrantfile
+sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "1024"/" ${fpath}/Vagrantfile
 # sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
-sed -i '' -e "49 s/  #/    vb.cpus = 1/" ${fpath}/Vagrantfile
-sed -i '' -e "s/#   vb.memory = \"1024\"/  vb.memory = "2048"/" ${fpath}/Vagrantfile
+# sed -i '' -e "49 s/  #/    vb.cpus = 1/" ${fpath}/Vagrantfile
+# sed -i '' -e "49 s/  #/    vb.cpus = 2/" ${fpath}/Vagrantfile
 sed -i '' -e "52 s/# end/end/" ${fpath}/Vagrantfile
 sed -i '' -e "s/# config.vm.provision \"shell\", inline: <<-SHELL/config.vm.provision \"shell\", inline: <<-SHELL/" ${fpath}/Vagrantfile
 sed -i '' -e "70 s/# SHELL/SHELL/" ${fpath}/Vagrantfile
 if ! grep "docker_autostart.service" ${fpath}/Vagrantfile > /dev/null 2>&1; then
-  echo 'add config.vm.provision'
+  echo 'add config.vm.provision 1'
   gsed -i -e "70i if [ ! -e \/var\/www\/release ]; then" ${fpath}/Vagrantfile
   gsed -i -e "71i   ln -s \/var\/www\/ \/var\/www\/release" ${fpath}/Vagrantfile
   gsed -i -e "72i fi" ${fpath}/Vagrantfile
@@ -152,10 +170,14 @@ if ! grep "docker_autostart.service" ${fpath}/Vagrantfile > /dev/null 2>&1; then
   gsed -i -e "83i systemctl enable docker_autostart.service" ${fpath}/Vagrantfile
   gsed -i -e "84i docker exec web systemctl restart nginx" ${fpath}/Vagrantfile
 fi
-if ! grep "/etc/udev/rules.d/70-persistent-net.rules" ${fpath}/Vagrantfile > /dev/null 2>&1; then
-  gsed -i -e "85i if [ ! -e \/etc\/udev\/rules.d\/70-persistent-net.rules ]; then" ${fpath}/Vagrantfile
-  gsed -i -e "86i ln -s -f \/dev\/null \/etc\/udev\/rules.d\/70-persistent-net.rules" ${fpath}/Vagrantfile
-  gsed -i -e "87i fi" ${fpath}/Vagrantfile
+#if ! grep "/etc/udev/rules.d/70-persistent-net.rules" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+#  gsed -i -e "85i if [ ! -e \/etc\/udev\/rules.d\/70-persistent-net.rules ]; then" ${fpath}/Vagrantfile
+#  gsed -i -e "86i ln -s -f \/dev\/null \/etc\/udev\/rules.d\/70-persistent-net.rules" ${fpath}/Vagrantfile
+#  gsed -i -e "87i fi" ${fpath}/Vagrantfile
+#fi
+if ! grep "ifcfg-enp0s8" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+  echo 'add config.vm.provision 2'
+  gsed -i -e "85i sudo sed -i -e \"6 s\/IPADDR=192.168.33.11\/IPADDR=192.168.33.${localip}\/\" \/etc\/sysconfig\/network-scripts\/ifcfg-enp0s8" ${fpath}/Vagrantfile
 fi
 if ! grep "natdnshostresolver1" ${fpath}/Vagrantfile > /dev/null 2>&1; then
   gsed -i -e "52i vb.customize [\"modifyvm\", :id, \"--natdnsproxy1\", \"on\"]" ${fpath}/Vagrantfile
@@ -196,6 +218,7 @@ fi
 # Webサーバー設定
 basedomain=`echo "$fdir" | tr 'A-Z' 'a-z'`
 if [ -e ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf ]; then
+  sed -i '' -e "s/localservice.domain/${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localapiservice.domain/api${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localwebservice.domain/web${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
   sed -i '' -e "s/localfwmservice.domain/fwm${basedomain}.localhost/" ${fpath}/supple/setting/NginxWithPHPFPM/conf.d/nginx-linux.conf
@@ -211,29 +234,26 @@ sed -i '' -e "s/fwmpass@localhost/fwmpass@mysqld/" ${fpath}/lib/FrameworkManager
 sed -i '' -e "s/projectpass@localhost/projectpass@mysqld/" ${fpath}/lib/FrameworkManager/sample/packages/ProjectPackage/core/Project.config.xml
 sudo chmod -R 0755 ${fpath}/lib/FrameworkManager/template/managedocs/supple/myadm/config.*
 
-# hosts書換
-if [ 0 -lt ${#localip} ]; then
-  if ! grep "192.168.33.${localip}   api${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
-    sudo sed -i '' -e "1s/^/192.168.33.${localip}   api${basedomain}.localhost"\\$'\n'"/" /etc/hosts
-  fi
-  if ! grep "192.168.33.${localip}   web${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
-    sudo sed -i '' -e "1s/^/192.168.33.${localip}   web${basedomain}.localhost"\\$'\n'"/" /etc/hosts
-  fi
-  if ! grep "192.168.33.${localip}   fwm${basedomain}.localhost" /etc/hosts > /dev/null 2>&1; then
-    sudo sed -i '' -e "1s/^/192.168.33.${localip}   fwm${basedomain}.localhost"\\$'\n'"/" /etc/hosts
-  fi
+# hostsupdater設定の追記
+if ! grep "${basedomain}.localhost" ${fpath}/Vagrantfile > /dev/null 2>&1; then
+  echo 'add hostsupdater setting for Vagrantfile'
+  gsed -i -e "30i config.vm.hostname = \"${basedomain}.localhost\"" ${fpath}/Vagrantfile
+  gsed -i -e "31i config.hostsupdater.aliases = [\"api${basedomain}.localhost\",\"web${basedomain}.localhost\",\"fwm${basedomain}.localhost\"]" ${fpath}/Vagrantfile
 fi
 
 # virtualマシンが追加済みかどうかチェックする
+added=''
 if [ ${cmd} = 'start' ]; then
   # まだ無いので初期化
   if [ ! "`echo $vmlist | grep -e $fdir`" ]; then
     echo 'create VM'
     # BOXを追加
     if [ ! 0 -lt ${#imageFilePath} ]; then
-      # NetからUNICORNのイメージファイルをDLしてbox add
-      echo "curl -sSL https://www.dropbox.com/s/cedt6354z4ubh70/nginx110php70mysql56andmemcached14.box > ./nginx110php70mysql56-base.box"
-      curl -sSL https://www.dropbox.com/s/cedt6354z4ubh70/nginx110php70mysql56andmemcached14.box > ./nginx110php70mysql56-base.box
+      if [ ! -e ${fpath}/nginx110php70mysql56-base.box ]; then
+        # NetからUNICORNのイメージファイルをDLしてbox add
+        echo "curl -sSL https://www.dropbox.com/s/cedt6354z4ubh70/nginx110php70mysql56andmemcached14.box > ./nginx110php70mysql56-base.box"
+        curl -sSL https://www.dropbox.com/s/cedt6354z4ubh70/nginx110php70mysql56andmemcached14.box > ./nginx110php70mysql56-base.box
+      fi
       echo "vagrant box add ${fdir} nginx110php70mysql56-base.box --force"
       vagrant box add ${fdir} nginx110php70mysql56-base.box --force
     else
@@ -241,11 +261,7 @@ if [ ${cmd} = 'start' ]; then
       echo "vagrant box add ${fdir} ${imageFilePath} --force"
       vagrant box add ${fdir} ${imageFilePath} --force
     fi
-  fi
-  # vagrantを起動
-  if [ ! ${cmd} = 'start' ]; then
-    echo 'init start VM'
-    cd ~/VM/${fdir} && vagrant up
+    added='added'
   fi
 fi
 
@@ -259,6 +275,19 @@ if [ ${cmd} = 'start' ]; then
   echo 'ID: root@super.user'
   echo 'PASS: R00t@sup3r'
   echo ''
+  if [ "$added" = 'added' ]; then
+    # add直後はネットワークの再設定が未反映なので、再起動を挟む
+    echo "※初回のBox追加はネットワークの再設定とNFSマウントの為2度再起動します"
+    echo "cd ~/VM/${fdir} && vagrant up"
+    cd ~/VM/${fdir} && vagrant up
+    echo "cd ~/VM/${fdir} && vagrant halt"
+    cd ~/VM/${fdir} && vagrant halt
+    echo "cd ~/VM/${fdir} && vagrant up"
+    cd ~/VM/${fdir} && vagrant up
+    echo "cd ~/VM/${fdir} && vagrant halt"
+    cd ~/VM/${fdir} && vagrant halt
+  fi
+  echo "cd ~/VM/${fdir} && vagrant up && vagrant ssh -- 'sudo docker exec web systemctl restart nginx' && open https://fwm${basedomain}.localhost/migration.php"
   cd ~/VM/${fdir} && vagrant up && vagrant ssh -- 'sudo docker exec web systemctl restart nginx' && open https://fwm${basedomain}.localhost/migration.php
 fi
 
@@ -281,7 +310,7 @@ if [ ${cmd} = 'reload' ]; then
 fi
 
 # ログイン
-[ ${cmd} = 'login' -o ${cmd} = 'reload' ] && echo 'login VM' && cd ~/VM/${fdir} && vagrant ssh
+[ ${cmd} = 'login' -o ${cmd} = 'reload' -o ${cmd} = 'start' ] && echo 'login VM' && cd ~/VM/${fdir} && vagrant ssh
 
 # shell終了
 exit 0;
